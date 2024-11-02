@@ -1,18 +1,18 @@
-## Portfolio
+## Welcome to My Homepage!
 
 ---
 
-### Category Name 1 
+### Great Minds That Matters to me
 
-[Project 1 Title](/sample_page)
+[Kyrie Irving](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Taylor Swift](/pdf/sample_presentation.pdf)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
+[Steve Jobs](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---

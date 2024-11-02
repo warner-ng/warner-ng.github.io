@@ -17,7 +17,7 @@
 
 ---
 
-### My Current Occupation
+### My Current Occupations
 
 - [Student, Tongji Univ.](https://www.tongji.edu.cn/)
 - [Research Assistant, Shanghai Research Institute for Intelligent Autunomous System ](https://srias.tongji.edu.cn/main.htm)

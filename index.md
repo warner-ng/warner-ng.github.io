@@ -5,15 +5,15 @@
 ### Great Minds That Matters to me
 
 [Kyrie Irving]
-<img src="image/Kyrie_Irvine.jpg?raw=true"/>
+<img src="images/Kyrie_Irvine.jpg?raw=true"/>
 
 ---
 [Taylor Swift]
-<img src="image/Taylor_Swift.jpg?raw=true"/>
+<img src="images/Taylor_Swift.jpg?raw=true"/>
 
 ---
 [Steve Jobs]
-<img src="image/Steve_Jobs.jpg?raw=true"/>
+<img src="images/Steve_Jobs.jpg?raw=true"/>
 
 ---
 

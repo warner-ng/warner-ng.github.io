@@ -17,19 +17,19 @@
 
 ---
 
-### Category Name 2
+### My Current Occupation
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
-
----
-
-
+- [Student, Tongji Univ.](https://www.tongji.edu.cn/)
+- [Research Assistant, Shanghai Research Institute for Intelligent Autunomous System ](https://srias.tongji.edu.cn/main.htm)
+- [Student Staff, Students' Association for Science And Technology of Tongji Univ.]((https://www.tongji.edu.cn/))
+- [Chief Technology Officer, Lotus Tongji Racing Team](http://www.tjuracing.com/)
 
 
 ---
-<p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
+
+
+
+
+---
+
 <!-- Remove above link if you don't want to attibute -->

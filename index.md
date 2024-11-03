@@ -2,7 +2,7 @@
 
 ---
 
-### Great Minds That Matter to me
+### Great Minds That Matter to Me
 
 [Kyrie Irving]
 <img src="images/Kyrie_Irvine.jpg?raw=true"/>

@@ -24,16 +24,49 @@
 
 [Hardware for OpenAI] 
 
-<img src="images/design1.jpg?raw=true"/>
-<img src="images/design2.jpg?raw=true"/>
+<div class="image-container">
+  <img src="images/design1.jpg?raw=true" class="half-size" />
+  <img src="images/design2.jpg?raw=true" class="half-size" />
+</div>
+
+<style>
+  .image-container {
+    display: flex; /* 启用 flexbox 布局 */
+    gap: 10px; /* 设置图片之间的间距（可调整） */
+  }
+
+  .half-size {
+    width: 50%; /* 每张图片占容器宽度的 50% */
+    height: auto; /* 保持宽高比 */
+    object-fit: cover; /* 填充容器并保持图片比例 */
+  }
+</style>
+
 
 ---
 
 [Where a great app begins] 
 
-<img src="images/app1.jpg?raw=true"/>
-<img src="images/app2.jpg?raw=true"/>
-<img src="images/app3.jpg?raw=true"/>
+<div class="image-container">
+  <img src="images/app1.jpg?raw=true" class="uniform-size" />
+  <img src="images/app2.jpg?raw=true" class="uniform-size" />
+  <img src="images/app3.jpg?raw=true" class="uniform-size" />
+</div>
+
+<style>
+  .image-container {
+    display: flex; /* 启用 flexbox 布局 */
+    justify-content: space-between; /* 图片之间均匀分布 */
+    gap: 10px; /* 图片之间的间隔（可根据需要调整） */
+  }
+
+  .uniform-size {
+    width: 30%; /* 每张图片占容器的 30% */
+    height: auto; /* 保持宽高比 */
+    object-fit: cover; /* 图片填充容器并保持比例 */
+  }
+</style>
+
 
 ---
 

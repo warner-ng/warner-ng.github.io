@@ -5,15 +5,35 @@
 ### Great Minds That Matter to Me
 
 [Kyrie Irving]
+
 <img src="images/Kyrie_Irvine.jpg?raw=true"/>
 
 ---
 [Taylor Swift]
+
 <img src="images/Taylor_Swift.jpg?raw=true"/>
 
 ---
 [Steve Jobs]
+
 <img src="images/Steve_Jobs.jpg?raw=true"/>
+
+---
+
+### Products Proudly Made
+
+[Hardware for OpenAI] 
+
+<img src="images/design1.jpg?raw=true"/>
+<img src="images/design2.jpg?raw=true"/>
+
+---
+
+[Where a great app begins] 
+
+<img src="images/app1.jpg?raw=true"/>
+<img src="images/app2.jpg?raw=true"/>
+<img src="images/app3.jpg?raw=true"/>
 
 ---
 

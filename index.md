@@ -24,7 +24,7 @@
 
 [Hardware for OpenAI] 
 
-<div class="image-container">
+
   <img src="images/design1.png?raw=true"  width="200" height="200">
   <img src="images/design2.jpg?raw=true" width="200" height="200">
 
@@ -32,7 +32,7 @@
 
 [Where a great app begins] 
 
-<div class="image-container">
+
   <img src="images/app1.jpg?raw=true" width="100" height="210">
   <img src="images/app2.png?raw=true" width="100" height="210">
   <img src="images/app3.png?raw=true" width="100" height="210">

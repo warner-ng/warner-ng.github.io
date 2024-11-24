@@ -36,9 +36,9 @@
   }
 
   .half-size {
-    width: 50%; /* 每张图片占容器宽度的 50% */
-    height: auto; /* 保持宽高比 */
-    object-fit: cover; /* 填充容器并保持图片比例 */
+    width: 50%; 
+    height: auto; 
+    object-fit: cover; 
   }
 </style>
 
@@ -55,15 +55,15 @@
 
 <style>
   .image-container {
-    display: flex; /* 启用 flexbox 布局 */
-    justify-content: space-between; /* 图片之间均匀分布 */
-    gap: 10px; /* 图片之间的间隔（可根据需要调整） */
+    display: flex; 
+    justify-content: space-between; 
+    gap: 10px; 
   }
 
   .uniform-size {
-    width: 30%; /* 每张图片占容器的 30% */
-    height: auto; /* 保持宽高比 */
-    object-fit: cover; /* 图片填充容器并保持比例 */
+    width: 30%; 
+    height: auto; 
+    object-fit: cover; 
   }
 </style>
 
@@ -84,5 +84,3 @@
 
 
 ---
-
-<!-- Remove above link if you don't want to attibute -->

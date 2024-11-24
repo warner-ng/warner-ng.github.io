@@ -25,14 +25,14 @@
 [Hardware for OpenAI] 
 
 <div class="image-container">
-  <img src="images/design1.jpg?raw=true" class="half-size" />
+  <img src="images/design1.png?raw=true" class="half-size" />
   <img src="images/design2.jpg?raw=true" class="half-size" />
 </div>
 
 <style>
   .image-container {
-    display: flex; /* 启用 flexbox 布局 */
-    gap: 10px; /* 设置图片之间的间距（可调整） */
+    display: flex; 
+    gap: 10px; 
   }
 
   .half-size {
@@ -49,8 +49,8 @@
 
 <div class="image-container">
   <img src="images/app1.jpg?raw=true" class="uniform-size" />
-  <img src="images/app2.jpg?raw=true" class="uniform-size" />
-  <img src="images/app3.jpg?raw=true" class="uniform-size" />
+  <img src="images/app2.png?raw=true" class="uniform-size" />
+  <img src="images/app3.png?raw=true" class="uniform-size" />
 </div>
 
 <style>

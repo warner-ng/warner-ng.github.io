@@ -33,9 +33,9 @@
 [Where a great app begins] 
 
 <div class="image-container">
-  <img src="images/app1.jpg?raw=true" width="300" height="500">
-  <img src="images/app2.png?raw=true" width="300" height="500">
-  <img src="images/app3.png?raw=true" width="300" height="500">
+  <img src="images/app1.jpg?raw=true" width="300" height="550">
+  <img src="images/app2.png?raw=true" width="300" height="550">
+  <img src="images/app3.png?raw=true" width="300" height="550">
 
 
 ---

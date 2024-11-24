@@ -25,47 +25,17 @@
 [Hardware for OpenAI] 
 
 <div class="image-container">
-  <img src="images/design1.png?raw=true" class="half-size" />
-  <img src="images/design2.jpg?raw=true" class="half-size" />
-</div>
-
-<style>
-  .image-container {
-    display: flex; 
-    gap: 10px; 
-  }
-
-  .half-size {
-    width: 50%; 
-    height: auto; 
-    object-fit: cover; 
-  }
-</style>
-
+  <img src="images/design1.png?raw=true"  width="500" height="500">
+  <img src="images/design2.jpg?raw=true" width="500" height="500">
 
 ---
 
 [Where a great app begins] 
 
 <div class="image-container">
-  <img src="images/app1.jpg?raw=true" class="uniform-size" />
-  <img src="images/app2.png?raw=true" class="uniform-size" />
-  <img src="images/app3.png?raw=true" class="uniform-size" />
-</div>
-
-<style>
-  .image-container {
-    display: flex; 
-    justify-content: space-between; 
-    gap: 10px; 
-  }
-
-  .uniform-size {
-    width: 30%; 
-    height: auto; 
-    object-fit: cover; 
-  }
-</style>
+  <img src="images/app1.jpg?raw=true" width="200" height="500">
+  <img src="images/app2.png?raw=true" width="200" height="500">
+  <img src="images/app3.png?raw=true" width="200" height="500">
 
 
 ---

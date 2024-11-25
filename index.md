@@ -43,7 +43,6 @@
 ### My Current Occupations
 
 - [Student, Tongji Univ.](https://www.tongji.edu.cn/)
-- [Research Assistant, Shanghai Research Institute for Intelligent Autunomous System ](https://srias.tongji.edu.cn/main.htm)
 - [Student Staff, Students' Association for Science and Technology of Tongji Univ.](https://www.tongji.edu.cn/)
 - [Chief Technology Officer, Autonomous Driving Department of Lotus Tongji Racing Team](http://www.tjuracing.com/)
 

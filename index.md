@@ -34,8 +34,8 @@
 
 
   <img src="images/app1.jpg?raw=true" width="100" height="210">
-  <img src="images/app2.png?raw=true" width="100" height="210">
-  <img src="images/app3.png?raw=true" width="100" height="210">
+  <img src="images/app2.jpg?raw=true" width="100" height="210">
+  <img src="images/app3.jpg?raw=true" width="100" height="210">
 
 
 ---

@@ -1,7 +1,8 @@
 ## Welcome to My Homepage!
 
 ---
-
+Hello there! I am a sophomore student who are passionate about robotics and sustainable energy. Starting from here, I will devote myself in creating a world with human-friendly machines that are natural and elegant. Anyway, welcome to witness the journey together with me!
+---
 ### Great Minds That Matter to Me
 
 [Kyrie Irving]

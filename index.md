@@ -43,6 +43,7 @@
 ### My Current Occupations
 
 - [Student, Tongji Univ.](https://www.tongji.edu.cn/)
+- [Research Intern, Shanghai AI Lab.](https://www.shlab.org.cn/)
 - [Student Staff, Students' Association for Science and Technology of Tongji Univ.](https://www.tongji.edu.cn/)
 - [Chief Technology Officer, Autonomous Driving Department of Lotus Tongji Racing Team](http://www.tjuracing.com/)
 

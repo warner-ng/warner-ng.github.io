@@ -2,7 +2,7 @@
 
 ---
 
-Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who are passionate about robotics and sustainable energy. Starting from here, I will devote myself in creating a world with human-friendly machines that are natural and elegant. Anyway, welcome to witness the journey together with me!
+Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate about robotics and sustainable energy. Starting from here, I will devote myself in creating a world with human-friendly machines that are natural and elegant. Anyway, welcome to witness the journey together with me!
 
 ---
 ### Great Minds That Matter to Me

@@ -6,6 +6,9 @@ description: > # your text below (remove <br> elements if you don't need line br
   A motivated future entrepreneur
   <br><br>
   <a href="https://www.linkedin.com/in/warner-ng-662312326/">View My LinkedIn Profile</a> 
+   <br><br>
+  <a href="/pdf/CV.pdf" target="_blank">My CV</a> 
+
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:

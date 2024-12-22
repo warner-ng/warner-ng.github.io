@@ -36,9 +36,9 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 [Where a great app begins] 
 
 
-  <img src="images/app1.jpg?raw=true" width="160" height="320">
-  <img src="images/app2.jpg?raw=true" width="160" height="320">
-  <img src="images/app3.jpg?raw=true" width="160" height="320">
+  <img src="images/app1.jpg?raw=true" width="160" height="330">
+  <img src="images/app2.jpg?raw=true" width="160" height="330">
+  <img src="images/app3.jpg?raw=true" width="160" height="330">
 
 
 ---

@@ -28,17 +28,17 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 [Hardware for OpenAI] 
 
 
-  <img src="images/design1.png?raw=true"  width="250" height="250">
-  <img src="images/design2.jpg?raw=true" width="250" height="250">
+  <img src="images/design1.png?raw=true"  width="240" height="240">
+  <img src="images/design2.jpg?raw=true" width="240" height="240">
 
 ---
 
 [Where a great app begins] 
 
 
-  <img src="images/app1.jpg?raw=true" width="160" height="300">
-  <img src="images/app2.jpg?raw=true" width="160" height="300">
-  <img src="images/app3.jpg?raw=true" width="160" height="300">
+  <img src="images/app1.jpg?raw=true" width="160" height="320">
+  <img src="images/app2.jpg?raw=true" width="160" height="320">
+  <img src="images/app3.jpg?raw=true" width="160" height="320">
 
 
 ---

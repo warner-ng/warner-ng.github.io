@@ -65,7 +65,7 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 
 ---
 
-### My Homebrew RL Tutorial with Theory and Codes
+### My Homebrew RL Tutorial Series
 
 <div style="text-align: center; margin: 20px 0;">
   <iframe src="//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1" 

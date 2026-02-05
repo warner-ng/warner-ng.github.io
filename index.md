@@ -7,19 +7,20 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 ---
 ### Great Minds That Matter to Me
 
-[Kyrie Irving]
-
-<img src="images/Kyrie_Irvine.jpg?raw=true"/>
-
----
-[Taylor Swift]
-
-<img src="images/Taylor_Swift.jpg?raw=true"/>
-
----
-[Steve Jobs]
-
-<img src="images/Steve_Jobs.jpg?raw=true"/>
+<div style="display: flex; gap: 15px; align-items: center;">
+  <div style="text-align: center;">
+    <img src="images/Kyrie_Irvine.jpg?raw=true" width="100" height="100" style="object-fit: cover;"/>
+    <p style="font-size: 12px; margin: 5px 0;">Kyrie Irving</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="images/Taylor_Swift.jpg?raw=true" width="100" height="100" style="object-fit: cover;"/>
+    <p style="font-size: 12px; margin: 5px 0;">Taylor Swift</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="images/Steve_Jobs.jpg?raw=true" width="100" height="100" style="object-fit: cover;"/>
+    <p style="font-size: 12px; margin: 5px 0;">Steve Jobs</p>
+  </div>
+</div>
 
 ---
 

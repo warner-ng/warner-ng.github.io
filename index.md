@@ -65,6 +65,22 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 
 ---
 
+### My Homebrew RL Tutorial with Theory and Codes
+
+<div style="text-align: center; margin: 20px 0;">
+  <iframe src="//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1" 
+          scrolling="no" 
+          border="0" 
+          frameborder="no" 
+          framespacing="0" 
+          allowfullscreen="true" 
+          style="width: 640px; height: 430px; max-width: 100%;">
+  </iframe>
+  <p style="font-style: italic; margin-top: 10px; color: #666;">My homebrew RL tutorial series with theory and codes</p>
+</div>
+
+---
+
 ### My Current Occupations
 
 - [Student, Tongji Univ.](https://en.tongji.edu.cn/p/#/)

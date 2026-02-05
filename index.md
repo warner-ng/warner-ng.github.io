@@ -12,8 +12,8 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
   <div style="flex-shrink: 0;">
     <img src="images/demo.gif?raw=true" style="width: 250px; height: auto; border-radius: 6px; display: block;"/>
   </div>
-  <div>
-    <h3 style="margin-top: 0; font-size: 20px; line-height: 1.4; font-weight: 600;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
+  <div style="min-width: 600px;">
+    <h3 style="margin-top: 0;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
     <p>Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
     <p style="font-style: italic;">International Conference on Machine Learning (ICML), 2026 (under review)</p>
     <div style="display: flex; flex-wrap: nowrap; gap: 10px; margin-top: 18px;">

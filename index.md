@@ -2,7 +2,7 @@
 
 ---
 
-Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate about robotics and sustainable energy. Starting from here, I will devote myself in creating a world with human-friendly robots that are natural and elegant. Anyway, welcome to witness the journey together with me!
+Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate about robotics and sustainable energy. You can call me Warner. Starting from here, I will devote myself to creating a world with human-friendly robots that are natural and elegant. Anyway, welcome to witness the journey together with me!
 
 ---
 

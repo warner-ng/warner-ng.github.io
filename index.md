@@ -77,6 +77,7 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
           style="width: 640px; height: 430px; max-width: 100%;">
   </iframe>
   <p style="font-style: italic; margin-top: 10px; color: #666;">My homebrew RL tutorial series with theory and codes</p>
+  <p style="font-style: italic; margin-top: 10px; color: #666;">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>
 </div>
 
 ---

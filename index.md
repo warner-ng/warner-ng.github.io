@@ -8,7 +8,7 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 
 ## Publications
 
-<div style="max-width: 900px; margin: 0 auto 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #fafafa;">
+<div style="margin: 0 auto 30px; padding: 20px; border: 1px solid #B8D4E8; border-radius: 8px; background-color: #E3F2FD;">
   <div style="display: grid; grid-template-columns: 250px 1fr; gap: 25px; align-items: start;">
     <div>
       <img src="images/demo.gif?raw=true" style="width: 100%; max-width: 250px; height: auto; border-radius: 6px; display: block;"/>

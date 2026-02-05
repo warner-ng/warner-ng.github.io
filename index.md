@@ -8,24 +8,24 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 
 ## Publications
 
-<div style="max-width: 1200px; margin: 0 auto 40px; padding: 30px; border: 1px solid #e0e0e0; border-radius: 12px; background-color: #fafafa;">
-  <div style="display: grid; grid-template-columns: 400px 1fr; gap: 40px; align-items: start;">
+<div style="max-width: 900px; margin: 0 auto 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #fafafa;">
+  <div style="display: grid; grid-template-columns: 250px 1fr; gap: 25px; align-items: start;">
     <div>
-      <img src="images/demo.gif?raw=true" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; display: block;"/>
+      <img src="images/demo.gif?raw=true" style="width: 100%; max-width: 250px; height: auto; border-radius: 6px; display: block;"/>
     </div>
     <div>
-      <h3 style="margin-top: 0; font-size: 24px; line-height: 1.3;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
-      <p style="color: #555; margin: 15px 0; font-size: 16px;">
+      <h3 style="margin-top: 0; font-size: 18px; line-height: 1.3;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
+      <p style="color: #555; margin: 10px 0; font-size: 14px;">
         Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang
       </p>
-      <p style="color: #777; font-style: italic; margin: 15px 0; font-size: 15px;">
+      <p style="color: #777; font-style: italic; margin: 10px 0; font-size: 13px;">
         International Conference on Machine Learning (ICML), 2026 (under review)
       </p>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 500;">Paper</a>
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 500;">arXiv</a>
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 500;">Video</a>
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 500;">Project Page</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;">
+        <a href="#" style="padding: 8px 16px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 14px;">Paper</a>
+        <a href="#" style="padding: 8px 16px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 14px;">arXiv</a>
+        <a href="#" style="padding: 8px 16px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 14px;">Video</a>
+        <a href="#" style="padding: 8px 16px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 14px;">Project Page</a>
       </div>
     </div>
   </div>

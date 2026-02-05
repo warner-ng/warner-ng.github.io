@@ -8,25 +8,19 @@ Hello there! My name is Binghuan Wu (吴秉寰), a sophomore  who is passionate 
 
 ## Publications
 
-<div style="margin: 0 auto 30px; padding: 20px; border: 1px solid #B8D4E8; border-radius: 8px; background-color: #E3F2FD;">
-  <div style="display: grid; grid-template-columns: 250px 1fr; gap: 25px; align-items: start;">
-    <div>
-      <img src="images/demo.gif?raw=true" style="width: 100%; max-width: 250px; height: auto; border-radius: 6px; display: block;"/>
-    </div>
-    <div>
-      <h3 style="margin-top: 0; font-size: 20px; line-height: 1.4; font-weight: 600;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
-      <p style="color: #444; margin: 12px 0; font-size: 15px; line-height: 1.5;">
-        Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang
-      </p>
-      <p style="color: #666; font-style: italic; margin: 12px 0; font-size: 14px;">
-        International Conference on Machine Learning (ICML), 2026 (under review)
-      </p>
-      <div style="display: flex; flex-wrap: nowrap; gap: 10px; margin-top: 18px;">
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Paper</a>
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">arXiv</a>
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Video</a>
-        <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Project Page</a>
-      </div>
+<div style="display: flex; gap: 25px; align-items: start; margin-bottom: 30px;">
+  <div style="flex-shrink: 0;">
+    <img src="images/demo.gif?raw=true" style="width: 250px; height: auto; border-radius: 6px; display: block;"/>
+  </div>
+  <div>
+    <h3 style="margin-top: 0; font-size: 20px; line-height: 1.4; font-weight: 600;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
+    <p>Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
+    <p style="font-style: italic;">International Conference on Machine Learning (ICML), 2026 (under review)</p>
+    <div style="display: flex; flex-wrap: nowrap; gap: 10px; margin-top: 18px;">
+      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Paper</a>
+      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">arXiv</a>
+      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Video</a>
+      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Project Page</a>
     </div>
   </div>
 </div>

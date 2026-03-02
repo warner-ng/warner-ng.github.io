@@ -7,9 +7,34 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
    <link rel="icon" type="image/png" href="/images/logo_sky_blue.png">
+   <style>
+      .nav-bar {
+         background-color: #5B9BD5;
+         padding: 15px 20px;
+         display: flex;
+         gap: 15px;
+         margin-bottom: 30px;
+      }
+      .nav-bar a {
+         color: white;
+         text-decoration: none;
+         padding: 10px 20px;
+         background-color: #5B9BD5;
+         border-radius: 5px;
+         font-weight: bold;
+         transition: background-color 0.3s;
+      }
+      .nav-bar a:hover {
+         background-color: #2f7ac0;
+      }
+   </style>
 </head>
 
 <body>
+   <div class="nav-bar">
+      <a href="{{ "/" | absolute_url }}">Main Page</a>
+      <a href="{{ "/blogs/blogIndex.html" | absolute_url }}">Blogs</a>
+   </div>
    <div class="wrapper">
       <header>
          <h1><a href="{{ "/" | absolute_url }}">Warner Wu (吳秉寰)</a></h1>

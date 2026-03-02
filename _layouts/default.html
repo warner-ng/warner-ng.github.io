@@ -7,6 +7,16 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
    <link rel="icon" type="image/png" href="/images/logo_sky_blue.png">
+   <script>
+      MathJax = {
+         tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+            tags: 'ams'
+         }
+      };
+   </script>
+   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
    <style>
       .nav-bar {
          background-color: #5B9BD5;

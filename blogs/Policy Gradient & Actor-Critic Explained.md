@@ -1,4 +1,8 @@
 ﻿
+---
+layout: default
+---
+
 # Policy Gradient & Actor-Critic Explained
 
 (This article was written in English, for a Chinese version, please see below)

@@ -38,9 +38,9 @@ notice that (2) is a Monte Carlo estimate and (3) is the exact integral. So ther
 
 Q1: what is pθ here, what does it mean to do the sum and integral?
 
-•  $τ = (s₁, a₁, s₂, a₂, … , s_H , a_H)$  is a trajectory sample from the policy πθ  
+•  $\tau = (s_1, a_1, s_2, a_2, \ldots , s_H , a_H)$  is a trajectory sample from the policy $\pi_\theta$
 
-•  $p_θ(τ) = ρ(s₁) ∏_{t=1}^{H} πθ(a_t | s_t) P(s_{t+1} | s_t , a_t)$  denotes the probability distribution of each τ. This calculation is very intuitive, starting from state s₁ , sample from πθ for every s_i , a_i , times the state transitioning distribution P(s' | s , a)
+•  $p_\theta(\tau) = \rho(s_1) \prod_{t=1}^{H} \pi_\theta(a_t | s_t) P(s_{t+1} | s_t , a_t)$  denotes the probability distribution of each $\tau$. This calculation is very intuitive, starting from state $s_1$, sample from $\pi_\theta$ for every $s_i$, $a_i$, times the state transitioning distribution $P(s' | s , a)$
 
 So now we can take the gradient of it, which is literally Policy Gradient, for future Back Propagation in a neural network.
 
@@ -55,7 +55,7 @@ $$
 \end{align}
 $$
 
-Now all we have is simply sample the trajectory from $p_θ$  so we can get the $∇J(θ)$. Then we do a gradient descent on $θ$
+Now all we have is simply sample the trajectory from $p_\theta$ so we can get the $\nabla J(\theta)$. Then we do a gradient descent on $\theta$
 
 Q2: how to calculate the log item?
 

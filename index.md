@@ -8,12 +8,13 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
 
 ## Publications
 
-<h3>DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
-<div style="display: flex; gap: 25px; align-items: start; margin-bottom: 30px; flex-wrap: wrap;">
+<div style="border: 1px solid #ccc; border-radius: 10px; padding: 16px; margin-bottom: 30px;">
+<h3 style="margin-top: 0;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
+<div style="display: flex; gap: 25px; align-items: flex-end; flex-wrap: wrap;">
   <div style="flex-shrink: 0; width: 100%; max-width: 250px;">
     <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block;"/>
   </div>
-  <div style="flex: 1; min-width: 200px; max-width: 100%;">
+  <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
     <p style="margin: 5px 0; font-size: 12px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
     <p style="font-style: italic; margin: 5px 0; font-size: 12px;">Under review, 2026</p>
     <div style="display: flex; flex-wrap: nowrap; gap: 8px; margin-top: 12px;">
@@ -23,6 +24,7 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
       <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Project Page</a>
     </div>
   </div>
+</div>
 </div>
 
 ---

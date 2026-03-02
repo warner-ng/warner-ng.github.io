@@ -1,4 +1,4 @@
-# Welcome to My Homepage!
+## Welcome to My Homepage!
 
 ---
 
@@ -28,7 +28,7 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
 </div>
 
 ---
-## Great Minds That Matter to Me
+### Great Minds That Matter to Me
 
 <div style="display: flex; gap: 15px; align-items: center;">
   <div style="text-align: center;">
@@ -47,7 +47,7 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
 
 ---
 
-## Products Proudly Made
+### Products Proudly Made
 
 [Hardware for OpenAI] 
 
@@ -55,7 +55,7 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
   <img src="images/design1.png?raw=true"  width="240" height="240">
   <img src="images/design2.jpg?raw=true" width="240" height="240">
 
----
+
 
 [Where a great app begins] 
 
@@ -67,7 +67,7 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
 
 ---
 
-## My Homebrew RL Tutorial Series
+### My Homebrew RL Tutorial Series
 
 <div style="text-align: center; margin: 20px 0;">
   <iframe src="//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1" 
@@ -84,7 +84,7 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
 
 ---
 
-## My Current Occupations
+### My Current Occupations
 
 - [Student, Tongji Univ.](https://en.tongji.edu.cn/p/#/)
 - [Research Intern, Shanghai AI Lab.](https://www.shlab.org.cn/)

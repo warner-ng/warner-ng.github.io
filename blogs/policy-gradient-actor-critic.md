@@ -40,7 +40,7 @@ Q1: what is pθ here, what does it mean to do the sum and integral?
 
 •  $\tau = (s_1, a_1, s_2, a_2, \ldots , s_H , a_H)$  is a trajectory sample from the policy $\pi_\theta$
 
-•  $p_\theta(\tau) = \rho(s_1) \prod_{t=1}^{H} \pi_\theta(a_t | s_t) P(s_{t+1} | s_t , a_t)$  denotes the probability distribution of each $\tau$. This calculation is very intuitive, starting from state $s_1$, sample from $\pi_\theta$ for every $s_i$, $a_i$, times the state transitioning distribution $P(s' | s , a)$
+•  $p_\theta(\tau) = \rho(s_1) \prod_{t=1}^{H} \pi_\theta(a_t \mid s_t) P(s_{t+1} \mid s_t , a_t)$  denotes the probability distribution of each $\tau$. This calculation is very intuitive, starting from state $s_1$, sample from $\pi_\theta$ for every $s_i$, $a_i$, times the state transitioning distribution $P(s' \mid s , a)$
 
 So now we can take the gradient of it, which is literally Policy Gradient, for future Back Propagation in a neural network.
 

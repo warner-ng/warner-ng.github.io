@@ -14,13 +14,13 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
   </div>
   <div style="min-width: 550px;">
     <h3 style="margin-top: 0; margin-bottom: 8px;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
-    <p style="margin: 5px 0;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
-    <p style="font-style: italic; margin: 5px 0;">Under review, 2026</p>
-    <div style="display: flex; flex-wrap: nowrap; gap: 10px; margin-top: 18px;">
-      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Paper</a>
-      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">arXiv</a>
-      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Video</a>
-      <a href="#" style="padding: 10px 20px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 15px; white-space: nowrap;">Project Page</a>
+    <p style="margin: 5px 0; font-size: 12px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
+    <p style="font-style: italic; margin: 5px 0; font-size: 12px;">Under review, 2026</p>
+    <div style="display: flex; flex-wrap: nowrap; gap: 8px; margin-top: 12px;">
+      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Paper</a>
+      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">arXiv</a>
+      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Video</a>
+      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Project Page</a>
     </div>
   </div>
 </div>

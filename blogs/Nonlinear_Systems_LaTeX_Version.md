@@ -337,11 +337,12 @@ Then we say it is globally AS
 **LaSalle Thm**
 preset 
 - SISL
-- let $\mathcal{S}'$={x $\in$ D|$\dot{V}(x)=0$}, suppose $\exists$ $\phi$, s.t. $\dot{\phi}(t)=f(\phi(t))$,there must be $ \phi(t)=x_e=0$
+- let $\mathcal{S}'=\{x\in D \mid \dot V(x)=0\}$, suppose $\exists \phi$ , s.t. $\dot{\phi}(t)=f(\phi(t))$, there must be $ \phi(t)=x_e=0$
 
 then $x_e$ is AS
 
 this basically says the point will fall downward and fix only to the origin
+
 ---
 
 ## 14. Instability Theorem

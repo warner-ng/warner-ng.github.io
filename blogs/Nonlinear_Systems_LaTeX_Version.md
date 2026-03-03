@@ -191,19 +191,31 @@ $$
 x(t) = x_0 + \int_{t_0}^{t} f(s, x(s)) ds.
 $$
 
-Define operator
+Define operator P
 
 $$
 (Px)(t) = x_0 + \int_{t_0}^{t} f(s, x(s)) ds.
 $$
 
-A solution satisfies
+This means: give me a function 
+𝑥, and I will compute a new function using this formula.
+
+Now this holds
 
 $$
-Px = x.
+(Px)(t)=x(t),
+$$
+
+which is written compactly as
+
+$$
+Px=x.
 $$
 
 This is a fixed-point problem in a function space.
+solving the differential equation is equivalent to **finding a fixed point of an operator** in a function space.
+
+this will help in later contraction mapping theorem
 
 ------------------------------------------------------------------------
 
@@ -241,7 +253,7 @@ $$
 t = \frac{1}{x_0}.
 $$
 
-Smoothness alone does not guarantee global existence.
+SO, smoothness alone does not guarantee global existence.
 
 ------------------------------------------------------------------------
 
@@ -275,11 +287,13 @@ $$
 
 Lyapunov stability:
 
-For every $\varepsilon > 0$, there exists $\delta > 0$ such that
+For $\forall$ $\varepsilon > 0$, there $\exists$ $\delta > 0$ such that
 
 $$
 \|x(0) - x_e\| < \delta \Rightarrow \|x(t) - x_e\| < \varepsilon.
 $$
+
+$\delta > 0$ could be big circleor smaller circle than $\varepsilon$
 
 Asymptotic stability requires convergence:
 
@@ -299,7 +313,7 @@ $$
 V(x) > 0 \text{ for } x \neq x_e, \quad V(x_e)=0.
 $$
 
-Derivative along trajectories:
+Derivative along trajectories:($\dot{x} = f(x)$)
 
 $$
 \dot{V}(x) = \nabla V(x)^\top f(x).

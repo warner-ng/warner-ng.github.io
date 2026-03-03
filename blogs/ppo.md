@@ -115,15 +115,31 @@ After this major revision for multiple gradient update, we can move on. However,
 $$
 \begin{align}
 L^{\text{CLIP}}(\theta')
-&=J(\theta')
-&=
-\mathbb{E}_{\tau\sim{p_\theta(\tau)}}
-\left[
-\min
-\Big(
-r_t(\theta) A_t,\;
-\operatorname{clip}\big(r_t(\theta),\, 1-\epsilon,\, 1+\epsilon\big) A_t
-\Big)
-\right]
+=J(\theta')
+=
+\mathbb{E}_{\tau\sim{p_\theta(\tau)}}[min\omega(\tau)r(\tau),\omega_c(\tau)r(\tau)]
+
 \end{align}
 $$
+
+where
+
+$$
+\begin{align}
+\omega(\tau)=\frac{p_\theta'}{p_\theta}
+\end{align}
+$$
+
+$$
+\begin{align}
+\omega_c(\tau) = \max \{ 1-\epsilon, \min \{ 1+\epsilon, \frac{p_{\theta'}}{p_{\theta}} \} \}
+\end{align}
+$$
+
+the formula is not that intuitive, but the idea is to basically **CLIP** the gradient to be update.
+
+Let's consider the reward to be negative, and then
+![alt text](image-2.png)
+Photo courtesy from https://ai.stackexchange.com/questions/37608/why-clip-the-ppo-objective-on-only-one-side
+
+now you see: by this cutting, we enable the gradient to be within the range of [1-$\epsilon$,+$\infty$], however, it is not going to be +$\infty$ since the $L^{\text{CLIP}}(\theta')$ is very negative at the point, which the optimization will punish it and won't take any gradient to that. (we are doing gradient ascend if we have negative reward)

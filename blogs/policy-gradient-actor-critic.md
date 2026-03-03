@@ -124,6 +124,7 @@ where $y_t^{(i)} = r(s_t,a_t)+\hat{V^\pi_\phi}(S_{t+1})$
 after fitting critic network in a single iteration, now we finally fit our actor model, namely our policy, here
 
 the policy network optimization stays the same as Policy Gradient, which is
+
 $$
 \begin{align}
 \nabla_\theta J(\theta) = \mathbb{E}_{\tau\sim p_\theta(\tau)}[(\sum\nabla_\theta log\pi_\theta(a|s)(\sum r (s,a))]

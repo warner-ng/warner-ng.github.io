@@ -20,4 +20,4 @@ plugins:
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
 
 kramdown:
-  math_engine: mathjax
+  math_engine: null

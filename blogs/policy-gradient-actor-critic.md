@@ -94,28 +94,28 @@ regarding the reward, which is the value function here, we have several steps to
 ### 2.1. Advantage
 
 $$
-\begin {align}
+\begin{align}
 A = Q(s_t,a_t)-V(s_t)
 \end{align}
 $$
+
 this subtraction is to minus the averange of Q (action value), which is a *bias* item for the value-function. think about when you in a chess game, when the starting position is already good, whatever moves you make, no matter how bad it is, could lead to a very high reward. That's why we do need to subtract the bias term
 
 $$
-\begin {align}
+\begin{align}
 A^\pi(s_t,a_t) &= Q(s_t,a_t)-V(s_t)\\
 &= r(s_t,a_t)+V_\phi(s_{t+1})-V_\phi(s_t)
-
-
-
 \end{align}
 $$
 
 ### 2.2 Critic Network
-now we fit the $A^\pi$  as the objective function of our critic network
+now we fit the $A^\pi$ as the objective function of our critic network
+
 $$
-\begin {align}
-\mathcal{L}(\phi)=\mathbb{MSE}(\hat{V}^\pi_\phi(s_t^{(i)}-y_t^{(i)}))
+\begin{align}
+\mathcal{L}(\phi)=\mathbb{E}[(\hat{V}^\pi_\phi(s_t^{(i)})-y_t^{(i)})^2]
 \end{align}
 $$
+
 where $y_t^{(i)} = r(s_t,a_t)+\hat{V^\pi_\phi}(S_{t+1})$
 . You can call it TD(temporal difference) target too

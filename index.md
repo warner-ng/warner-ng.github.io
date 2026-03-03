@@ -76,14 +76,24 @@ Starting from here, I will devote myself to creating a world with human-friendly
 ### My Homebrew RL Tutorial Series
 
 <div style="text-align: center; margin: 20px 0;">
-  <iframe src="//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1&autoplay=0" 
-          scrolling="no" 
-          border="0" 
-          frameborder="no" 
-          framespacing="0" 
-          allowfullscreen="true" 
-          style="width: 540px; height: 360px; max-width: 100%; border-radius: 10px;">
-  </iframe>
+  <div id="bili-player" onclick="loadBiliPlayer()" style="position: relative; width: 540px; max-width: 100%; height: 360px; margin: 0 auto; cursor: pointer; border-radius: 10px; overflow: hidden; background: #000;">
+    <img src="https://i0.hdslb.com/bfs/archive/6f8779c43f010fada59d1fffef90f39f4e00bd80.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 10px; opacity: 0.85;" onerror="this.style.background='#1a1a2e'; this.style.height='360px';"/>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; background: rgba(0,161,214,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 0; height: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-left: 28px solid white; margin-left: 6px;"></div>
+    </div>
+  </div>
+  <script>
+    function loadBiliPlayer() {
+      var container = document.getElementById('bili-player');
+      var iframe = document.createElement('iframe');
+      iframe.src = '//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1&autoplay=1';
+      iframe.scrolling = 'no';
+      iframe.frameBorder = '0';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'width:540px;max-width:100%;height:360px;border-radius:10px;border:none;';
+      container.replaceWith(iframe);
+    }
+  </script>
   <p style="font-style: italic; margin-top: 10px; color: #666;">My homebrew RL tutorial series with theory and codes</p>
   <p style="font-style: italic; margin-top: 10px; color: #666;">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>
 </div>

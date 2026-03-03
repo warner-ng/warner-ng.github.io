@@ -40,6 +40,7 @@ $$
 $$
 
 note that you can also write in trajectory
+
 $$
 \begin{align}
 \nabla J(\theta)
@@ -68,3 +69,5 @@ r(\tau)
 \right].
 \end{align}
 $$
+
+now you still sample from the 

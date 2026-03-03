@@ -49,20 +49,20 @@ Hello there! My name is Binghuan(Warner) Wu, a junior student who is passionate 
 
 ### Products Proudly Made
 
-[Hardware for OpenAI] 
+[Hardware] 
 
+<div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
+  <img src="images/design1.png?raw=true" width="170" height="170" style="object-fit: cover;">
+  <img src="images/design2.jpg?raw=true" width="170" height="170" style="object-fit: cover;">
+</div>
 
-  <img src="images/design1.png?raw=true"  width="200" height="200">
-  <img src="images/design2.jpg?raw=true" width="200" height="200">
+[Software] 
 
-
-
-[Where a great app begins] 
-
-
-  <img src="images/app1.jpg?raw=true" width="130" height="280">
-  <img src="images/app2.jpg?raw=true" width="130" height="280">
-  <img src="images/app3.jpg?raw=true" width="130" height="280">
+<div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
+  <img src="images/app1.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
+  <img src="images/app2.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
+  <img src="images/app3.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
+</div>
 
 
 ---

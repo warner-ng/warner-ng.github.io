@@ -90,8 +90,8 @@ Starting from here, I will devote myself to creating a world with human-friendly
 
 ### My Current Occupations
 
-- [Student, Tongji Univ.](https://en.tongji.edu.cn/p/#/)
 - [Research Intern, Shanghai AI Lab.](https://www.shlab.org.cn/)
+- [Student Staff, Berkeley Emerging Technology Association](https://betaucb.org/)
 - [Student Staff, Students' Association for Science and Technology of Tongji Univ.](https://www.tongji.edu.cn/)
 - [Chief Technology Officer, Autonomous Driving Department of Lotus Tongji Racing Team](http://www.tjuracing.com/)
 

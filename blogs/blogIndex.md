@@ -12,3 +12,7 @@ An in-depth explanation of Policy Gradient and Actor-Critic methods in Reinforce
 The comtemporary RL algo used widely in robotics sim2real
 
 ---
+### [Nonlinear Systems — Complete Notes](./Nonlinear_Systems_LaTeX_Version.html)
+Complete notes on nonlinear systems: stability theory, Lyapunov methods, contraction mapping, and existence/uniqueness. Taught by [Prof. Koushil Sreenath.](https://hybrid-robotics.berkeley.edu/koushil/) 
+
+---

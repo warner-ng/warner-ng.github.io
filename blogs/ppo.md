@@ -89,14 +89,14 @@ And that means you can do it multiple times, too
     \FOR{$k = 1$ to $K$}   \COMMENT{multiple policy updates}
         \FOR{each $(s_t,a_t,A_t)$ in batch}
             \STATE Compute ratio:
-            $r_t(\theta) =
+            $\omega_t(\theta) =
             \dfrac{\pi_\theta(a_t|s_t)}
             {\pi_{\theta_{\text{old}}}(a_t|s_t)}$
             
             \STATE Update policy:
             $\theta \leftarrow
             \theta + \alpha \,
-            r_t(\theta)\,
+            \omega_t(\theta)\,
             \nabla_\theta \log \pi_\theta(a_t|s_t)\,
             A_t$
         \ENDFOR

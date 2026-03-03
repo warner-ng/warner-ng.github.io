@@ -40,7 +40,6 @@ $$
 $$
 
 note that you can also write in trajectory
-
 $$
 \begin{align}
 \nabla J(\theta)
@@ -102,3 +101,6 @@ now you still sample from the
 \end{algorithmic}
 \end{algorithm}
 ```
+now you still sample from the $p_{old}$ but we have prove that you are doing exactly the same to $\theta'$.
+
+And that means you can do it multiple times, too

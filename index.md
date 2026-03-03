@@ -21,7 +21,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
       <p style="margin: 5px 0; font-size: 12px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
       <p style="font-style: italic; margin: 5px 0; font-size: 12px;">Under review, 2026</p>
     </div>
-    <div style="display: flex; flex-wrap: nowrap; gap: 8px; margin-top: 12px;">
+    <div style="display: flex; flex-wrap: nowrap; gap: 8px; margin-top: 40px;">
       <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Paper</a>
       <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">arXiv</a>
       <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Video</a>

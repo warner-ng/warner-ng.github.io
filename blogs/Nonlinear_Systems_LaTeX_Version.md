@@ -107,6 +107,8 @@ $$
 
 A space is complete if every Cauchy sequence converges in that space.
 
+actually in $\mathbb{R}$ , every cauthy seq is converged.
+
 A complete normed space is called a Banach space.
 
 Completeness is required for fixed-point theorems.
@@ -172,7 +174,9 @@ $$
 
 Local Lipschitz guarantees local existence and uniqueness.
 
-Global Lipschitz guarantees global existence (no finite escape time).
+Global Lipschitz guarantees global existence (the condition for **no finite escape time**).
+
+- you can actually take the derivative of the **linear system**, then the answer is the lipschitz constant
 
 ---
 
@@ -201,6 +205,8 @@ Conclusion:
 - Local Lipschitz ⇒ local solution  
 - Global growth control ⇒ global solution  
 
+linear system does not have a finite escape time because the derivatives always a constant, so it is globally lipschitz $\rightarrow$ no finite escape time
+
 ---
 
 ## 9. Grönwall Inequality
@@ -219,13 +225,17 @@ $$
 
 Used for:
 
-- Uniqueness  
-- Continuous dependence  
+- Continuous dependence on IC
 - Growth bounds  
 
 ---
 
-## 10. Continuous Dependence on Initial Conditions
+## 10. Continuous Dependence on IC (Initial Conditions)
+four question for nonlinear system
+1. solution exist?
+2. solution unique?
+3. have finite escape time?
+4. continuous on IC?
 
 Consider
 
@@ -329,7 +339,7 @@ $$
 
 ---
 
-## 13. Global AS and LaSalle Thm (different condition for AS)
+## 13. Global AS and LaSalle Thm (one different condition for AS)
 
 
 
@@ -346,7 +356,7 @@ Then we say it is globally AS
 **LaSalle Thm**
 preset 
 - SISL
-- let $\mathcal{S}'=\{x\in D \mid \dot V(x)=0\}$, if the only solution of the system dynamics within S is x(t)=$x_e$
+- let $\mathcal{S}'=\{x\in D \mid \dot V(x)=0\}$, if the only solution of the system dynamics within S is x(t)=$x_e$ = 0
 
 then $x_e$ is AS
 

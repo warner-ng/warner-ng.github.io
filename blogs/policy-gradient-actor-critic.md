@@ -57,7 +57,7 @@ $$
 \end{align}
 $$
 
-Now all we have is simply sample the trajectory from $p_\theta$ so we can get the $\nabla J(\theta)$. Then we do a gradient descent on $\theta$
+Now all we have is simply sample the trajectory from $p_\theta$ so we can get the $\nabla J(\theta)$. Then we do a gradient ascend on $\theta$
 
 Q2: how to calculate the log item?
 

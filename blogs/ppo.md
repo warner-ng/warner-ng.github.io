@@ -110,4 +110,20 @@ And that means you can do it multiple times, too
 ```
 
 ## 2. Clipped gradient (PPO)
-After this major rebvision for multiple gradient update, we can move on. However, problems occur
+After this major revision for multiple gradient update, we can move on. However, problems occur if you update too aggressively, the new policy may assign much higher or much lower probability to the sampled actions. Then $r(\tau)$ becomes very large or very small.
+
+$$
+\begin{align}
+L^{\text{CLIP}}(\theta')
+&=J(\theta')
+&=
+\mathbb{E}_{\tau\sim{p_\theta(\tau)}}
+\left[
+\min
+\Big(
+r_t(\theta) A_t,\;
+\operatorname{clip}\big(r_t(\theta),\, 1-\epsilon,\, 1+\epsilon\big) A_t
+\Big)
+\right]
+\end{align}
+$$

@@ -54,16 +54,16 @@ Starting from here, I will devote myself to creating a world with human-friendly
 [Hardware] 
 
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
-  <img src="images/design1.png?raw=true" width="170" height="170" style="object-fit: cover;">
+  <img src="images/design1.png?raw=true" width="170" height="170" style="object-fit: cover;border-radius: 10px;">
   <img src="images/design2.jpg?raw=true" width="170" height="170" style="object-fit: cover; border-radius: 10px;">
 </div>
 
 [Software] 
 
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
-  <img src="images/app1.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
+  <img src="images/app1.jpg?raw=true" width="110" height="240" style="object-fit: cover;border-radius: 10px;">
   <img src="images/app2.jpg?raw=true" width="110" height="240" style="object-fit: cover; border-radius: 10px;">
-  <img src="images/app3.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
+  <img src="images/app3.jpg?raw=true" width="110" height="240" style="object-fit: cover;border-radius: 10px;">
 </div>
 
 

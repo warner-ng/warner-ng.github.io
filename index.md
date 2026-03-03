@@ -76,7 +76,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
 ### My Homebrew RL Tutorial Series
 
 <div style="text-align: center; margin: 20px 0;">
-  <iframe src="//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1" 
+  <iframe src="//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1&autoplay=0" 
           scrolling="no" 
           border="0" 
           frameborder="no" 

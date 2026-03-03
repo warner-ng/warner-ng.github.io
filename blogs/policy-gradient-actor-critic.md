@@ -98,7 +98,7 @@ A = Q(s_t,a_t)-V(s_t)
 \end{align}
 $$
 
-this subtraction is to minus the averange of Q (action value), which is a *bias* item for the value-function. think about when you in a chess game, when the starting position is already good, whatever moves you make, no matter how bad it is, could lead to a very high reward. That's why we do need to subtract the bias term
+this subtraction is to minus the average of Q (action value), which is a *bias* item for the value-function. think about when you in a chess game, when the starting position is already good, whatever moves you make, no matter how bad it is, could lead to a very high reward. That's why we do need to subtract the bias term
 
 $$
 \begin{align}

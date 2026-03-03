@@ -119,3 +119,7 @@ $$
 
 where $y_t^{(i)} = r(s_t,a_t)+\hat{V^\pi_\phi}(S_{t+1})$
 . You can call it TD(temporal difference) target too
+
+### 2.3 Actor Network
+after fitting critic network in a single iteration, now we finally fit our actor model, namely our policy, here
+

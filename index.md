@@ -61,6 +61,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
   <img src="images/design2.jpg?raw=true" width="170" height="170" style="object-fit: cover; border-radius: 10px;">
 </div>
 
+
 [Software] 
 
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">

@@ -148,6 +148,10 @@ $$
 \|x_n - x_m\| \to 0 \quad \text{as } n,m \to \infty.
 $$
 
+a Cauchy sequence does not necessarily converge
+
+a **space** is complete if **every Cauchy sequence** in that space actually converges to a point inside the same space. 
+
 A Banach space is a complete normed space.
 
 Completeness is required for fixed-point theorems.

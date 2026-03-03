@@ -69,4 +69,6 @@ r(\tau)
 \end{align}
 $$
 
-now you still sample from the 
+now you still sample from the $p_{old}$ but we have prove that you are doing exactly the same to $\theta'$.
+
+And that means you can do it multiple times, too

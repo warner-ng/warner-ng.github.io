@@ -279,6 +279,15 @@ $$
 \Vert x(t)-x_e\Vert <\varepsilon
 $$
 
+that 𝑡 means any time 
+𝑡
+≥
+0
+not 
+𝑡
+→
+∞
+
 Asymptotically stable if additionally:
 
 $$

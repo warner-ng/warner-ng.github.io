@@ -12,7 +12,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
 
 <div style="border: 1px solid #ccc; border-radius: 10px; padding: 16px; margin-bottom: 30px;">
 <h3 style="margin-top: 0;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
-<div style="display: flex; gap: 25px; align-items: flex-end; flex-wrap: wrap;">
+<div style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
   <div style="flex-shrink: 0; width: 100%; max-width: 250px;">
     <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid #ccc;"/>
   </div>

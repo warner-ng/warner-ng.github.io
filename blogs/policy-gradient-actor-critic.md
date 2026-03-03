@@ -123,3 +123,38 @@ where $y_t^{(i)} = r(s_t,a_t)+\hat{V^\pi_\phi}(S_{t+1})$
 ### 2.3 Actor Network
 after fitting critic network in a single iteration, now we finally fit our actor model, namely our policy, here
 
+the policy network optimization stays the same as Policy Gradient, which is
+$$
+\begin{align}
+\nabla_\theta J(\theta) = \mathbb{E}_{\tau\sim p_\theta(\tau)}[(\sum\nabla_\theta log\pi_\theta(a|s)(\sum r (s,a))]
+\end{align}
+$$
+
+So, the whole actor-critic algorithm should look like this
+```
+Algorithm: On-Policy Actor–Critic (TD)
+
+Initialize policy parameters θ
+Initialize value function parameters φ
+
+for each iteration do
+
+    Collect trajectories using current policy π_θ
+
+    for each transition (s_t, a_t, r_t, s_{t+1}) do
+
+        # ----- Critic Update -----
+        y_t = r_t + γ V_φ(s_{t+1})           (TD target)
+        δ_t = y_t - V_φ(s_t)                 (TD error)
+
+        Update φ by minimizing:
+            L(φ) = (V_φ(s_t) - y_t)^2
+
+        # ----- Actor Update -----
+        Update θ using policy gradient:
+            θ ← θ + α ∇_θ log π_θ(a_t | s_t) · δ_t
+
+    end for
+
+end for
+```

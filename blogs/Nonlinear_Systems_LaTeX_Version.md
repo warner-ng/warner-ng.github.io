@@ -76,7 +76,7 @@ Behavior depends on geometry of the vector field.
 A norm satisfies:
 
 1. $\Vert x\Vert  \ge 0$, and $\Vert x\Vert =0 \iff x=0$  
-2. $|\alpha x| = |\alpha||x|$  
+2. $\vert\alpha x\vert = \vert\alpha\vert\vert x\vert$  
 3. $\Vert x+y\Vert  \le \Vert x\Vert +\Vert y\Vert $  
 
 Common norms in $\mathbb{R}^n$:

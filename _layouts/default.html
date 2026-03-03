@@ -9,7 +9,9 @@
    <link rel="icon" type="image/png" href="/images/logo_sky_blue.png">
    {% seo %}
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.css">
    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+   <script defer src="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.js"></script>
    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
       onload="renderMathInElement(document.body, {
          delimiters: [
@@ -19,6 +21,24 @@
             {left: '\\(', right: '\\)', display: false}
          ]
       });"></script>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         document.querySelectorAll('pre code.language-algorithm').forEach(function (codeBlock) {
+            var source = codeBlock.textContent;
+            var pre = codeBlock.parentElement;
+            var container = document.createElement('div');
+
+            try {
+               pseudocode.render(source, container, {
+                  lineNumber: true
+               });
+               pre.replaceWith(container);
+            } catch (error) {
+               console.error('Failed to render algorithm block:', error);
+            }
+         });
+      });
+   </script>
    <style>
       .nav-bar {
          background-color: #5B9BD5;

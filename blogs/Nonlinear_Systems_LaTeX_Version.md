@@ -359,6 +359,27 @@ Then equilibrium is unstable.
 
 # PART VI — LINEARIZATION & INDIRECT METHOD
 
+## 14. Lyapunov Equation
+
+For the linearized system
+$$
+\dot{x} = A(x - x_e),
+$$
+
+consider the quadratic Lyapunov function
+$$
+V(x) = (x - x_e)^{\top} P (x - x_e),
+$$
+where $P = P^{\top} > 0$.
+
+The matrix $P$ satisfies the Lyapunov equation
+$$
+A^{\top} P + P A = -Q,
+$$
+where $Q = Q^{\top} > 0$. You can just assign $I$
+
+If such a positive definite $P$ exists, then the equilibrium $x_e$ is locally asymptotically stable.
+
 ## 15. Linearization
 
 Linearization matrix:

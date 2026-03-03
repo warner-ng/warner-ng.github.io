@@ -83,8 +83,8 @@ $$
 
 Nonlinear systems can exhibit
 
--   Limit cycles\
--   Bifurcations\
+-   Limit cycles
+-   Bifurcations
 -   Finite escape time
 
 Superposition does not hold because
@@ -103,8 +103,8 @@ Behavior depends on geometry of the vector field.
 
 A normed space $(V, \|\cdot\|)$ satisfies:
 
-1.  $\|x\| \ge 0$, and $\|x\| = 0 \iff x = 0$\
-2.  $\|\alpha x\| = |\alpha| \|x\|$\
+1.  $\|x\| \ge 0$, and $\|x\| = 0 \iff x = 0$
+2.  $\|\alpha x\| = |\alpha| \|x\|$
 3.  $\|x + y\| \le \|x\| + \|y\|$
 
 Common norms in $\mathbb{R}^n$:

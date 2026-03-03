@@ -6,7 +6,7 @@ description: An in-depth explanation of Policy Gradient and Actor-Critic methods
 
 # Policy Gradient & Actor-Critic Explained
 
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwarner-ng.github.io%2Fblogs%2Fpolicy-gradient-actor-critic&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" />
+![views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwarner-ng.github.io%2Fblogs%2Fpolicy-gradient-actor-critic&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false)
 
 PPO, TRPO, SAC, those contemporary algorithms build the foundation of today's RL research. We see them in RL fine-tuning in Large Language Model, humanoid robots sim2real training and AI player plays chess game.
 

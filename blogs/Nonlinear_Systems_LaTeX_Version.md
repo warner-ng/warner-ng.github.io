@@ -6,7 +6,7 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 
 # NONLINEAR SYSTEMS — COMPLETE NOTES
 
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwarner-ng.github.io%2Fblogs%2FNonlinear_Systems_LaTeX_Version&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" />
+![views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwarner-ng.github.io%2Fblogs%2FNonlinear_Systems_LaTeX_Version&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false)
 
 # PART I — LINEAR VS NONLINEAR SYSTEMS
 
@@ -77,16 +77,16 @@ Behavior depends on geometry of the vector field.
 
 A norm satisfies:
 
-1. $\|x\| \ge 0$, and $\|x\|=0 \iff x=0$  
+1. $\lVertx\lVert \ge 0$, and $\lVertx\lVert=0 \iff x=0$  
 2. $|\alpha x| = |\alpha||x|$  
-3. $\|x+y\| \le \|x\|+\|y\|$  
+3. $\lVertx+y\lVert \le \lVertx\lVert+\lVerty\lVert$  
 
 Common norms in $\mathbb{R}^n$:
 
 $$
-\|x\|_2 = \sqrt{x^\top x}, \quad
-\|x\|_1 = \sum |x_i|, \quad
-\|x\|_\infty = \max_i |x_i|
+\lVertx\lVert_2 = \sqrt{x^\top x}, \quad
+\lVertx\lVert_1 = \sum |x_i|, \quad
+\lVertx\lVert_\infty = \max_i |x_i|
 $$
 
 All norms are equivalent in finite dimensions.
@@ -98,13 +98,13 @@ All norms are equivalent in finite dimensions.
 A sequence converges if:
 
 $$
-\|x_n - x\| \to 0
+\lVertx_n - x\lVert \to 0
 $$
 
 A sequence is Cauchy if:
 
 $$
-\|x_n - x_m\| \to 0 \quad \text{as } n,m \to \infty
+\lVertx_n - x_m\lVert \to 0 \quad \text{as } n,m \to \infty
 $$
 
 A space is complete if every Cauchy sequence converges in that space.
@@ -120,7 +120,7 @@ Completeness is required for fixed-point theorems.
 A mapping $P$ is a contraction if:
 
 $$
-\|P(x)-P(y)\| \le L \|x-y\|, \quad 0 \le L < 1
+\lVertP(x)-P(y)\lVert \le L \lVertx-y\lVert, \quad 0 \le L < 1
 $$
 
 **Banach Fixed-Point Theorem**
@@ -169,7 +169,7 @@ Thus the ODE becomes a fixed-point problem.
 Global Lipschitz:
 
 $$
-\|f(x)-f(y)\| \le L \|x-y\|
+\lVertf(x)-f(y)\lVert \le L \lVertx-y\lVert
 $$
 
 Local Lipschitz guarantees local existence and uniqueness.
@@ -247,10 +247,10 @@ More precisely:
 For $\forall$  $T>t_0$ and $\forall$ $\varepsilon>0$, there $\exists$ $\delta>0$ such that
 
 $$
-\|x_0 - y_0\| < \delta
+\lVertx_0 - y_0\lVert < \delta
 \Rightarrow
 \sup_{t \in [t_0,T]}
-\|x(t,x_0) - x(t,y_0)\| < \varepsilon
+\lVertx(t,x_0) - x(t,y_0)\lVert < \varepsilon
 $$
 
 This means small perturbations in the initial condition produce small changes in the entire trajectory over finite time intervals.
@@ -276,9 +276,9 @@ Stable if:
 For any $\varepsilon>0$, there exists $\delta>0$ such that
 
 $$
-\|x(0)-x_e\|<\delta
+\lVertx(0)-x_e\lVert<\delta
 \Rightarrow
-\|x(t)-x_e\|<\varepsilon
+\lVertx(t)-x_e\lVert<\varepsilon
 $$
 
 Asymptotically stable if additionally:
@@ -511,7 +511,7 @@ Lyapunov sufficient conditions:
 
 - $V(x)>0$  
 - $\dot{V}(x)<0$  
-- $V(x)\to\infty$ as $\|x\|\to\infty$  
+- $V(x)\to\infty$ as $\lVertx\lVert\to\infty$  
 
 Then system is globally asymptotically stable.
 
@@ -540,7 +540,7 @@ A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
 Used in Lyapunov bounds:
 
 $$
-\alpha_1(\|x\|) \le V(t,x) \le \alpha_2(\|x\|)
+\alpha_1(\lVertx\lVert) \le V(t,x) \le \alpha_2(\lVertx\lVert)
 $$
 
 ---
@@ -550,7 +550,7 @@ $$
 Equilibrium is exponentially stable if:
 
 $$
-\|x(t)\| \le M e^{-\lambda t} \|x_0\|
+\lVertx(t)\lVert \le M e^{-\lambda t} \lVertx_0\lVert
 $$
 
 for some $M>0$, $\lambda>0$.
@@ -560,13 +560,13 @@ Lyapunov condition:
 If
 
 $$
-\alpha_1\|x\|^2 \le V(x) \le \alpha_2\|x\|^2
+\alpha_1\lVertx\lVert^2 \le V(x) \le \alpha_2\lVertx\lVert^2
 $$
 
 and
 
 $$
-\dot{V}(x) \le -\alpha_3 \|x\|^2
+\dot{V}(x) \le -\alpha_3 \lVertx\lVert^2
 $$
 
 Then system is exponentially stable.

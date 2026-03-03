@@ -27,3 +27,44 @@ before we dive into the world of PPO, let's look at what is previously not effic
 \end{algorithmic}
 \end{algorithm}
 ```
+vanilla policy gradient is inefficient because each gradient update ideally requires fresh data, which wastes samples if you only use them once.
+
+so now in order to do multiple value update, we should notice that in a sample, you cannot do multiple policy update due to mismatch of sample and current policy:
+
+$$
+\begin{align}
+\nabla J(\theta)
+&= \mathbb{E}_{a \sim \pi_\theta(\tau)}
+\nabla_\theta \log \pi_\theta(\tau)\, r(\tau)
+\end{align}
+$$
+
+note that you can also write in trajectory
+$$
+\begin{align}
+\nabla J(\theta)
+
+&= \mathbb{E}_{\tau \sim p_\theta(\tau)}
+\nabla_\theta \log p_\theta(\tau)\, r(\tau)
+\end{align}
+$$
+
+the only difference is the layer, but they mean basically the same thing
+
+now you do gradient update multiple times, but the trajectory $\tau$ is still sample from the old policy $\pi_{old}$ instead of the $\pi_{new}$ now this is a serious **mismatch** of the policy parameter and the sample. in order to make the sample seemingly match the new polict $ \theta'$(prime ' denotes the next) we rewrite $\nabla J(\theta)$  as
+
+$$
+\begin{align}
+J(\theta') 
+&= \mathbb{E}_{\tau \sim p_{\theta'}} \left[r(\tau)\right] \\
+&= \int p_{\theta'}(\tau)\, r(\tau)\, d\tau \\
+&= \int p_\theta(\tau)\,
+\frac{p_{\theta'}(\tau)}{p_\theta(\tau)}\,
+r(\tau)\, d\tau \\
+&= \mathbb{E}_{\tau \sim p_\theta}
+\left[
+\frac{p_{\theta'}(\tau)}{p_\theta(\tau)}
+r(\tau)
+\right].
+\end{align}
+$$

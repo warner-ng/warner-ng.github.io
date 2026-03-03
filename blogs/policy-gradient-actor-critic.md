@@ -70,3 +70,24 @@ $$
 $$
 
 here every single item is trackable. log item is calculate by PyTorch Autograd, and the reward item is from the system dynamics, such as predefine rules or functions.
+
+
+
+---
+
+## 2. Actor Critic
+
+
+
+---
+
+## 2. Actor Critic
+
+The difference of vanilla Policy Gradient and Actor Critic is whether there is a additional value function approximator by parameter $\phi $
+
+<img src="/images/Policy Gradient.png" style="width: 100%; max-width: 700px; display: block; margin: 20px auto;"/>
+the vanilla PG
+<img src="/images/Actor Critic.png" style="width: 100%; max-width: 700px; display: block; margin: 20px auto;"/>
+the Actor Critic
+
+regarding the reward, which is the value function here, we have several

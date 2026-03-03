@@ -40,6 +40,7 @@ $$
 $$
 
 note that you can also write in trajectory
+
 $$
 \begin{align}
 \nabla J(\theta)
@@ -50,6 +51,8 @@ $$
 $$
 
 the only difference is the layer, but they mean basically the same thing
+
+## 1. importance sampling 
 
 now you do gradient update multiple times, but the trajectory $\tau$ is still sample from the old policy $\pi_{old}$ instead of the $\pi_{new}$ now this is a serious **mismatch** of the policy parameter and the sample. in order to make the sample seemingly match the new polict $ \theta'$(prime ' denotes the next) we rewrite $\nabla J(\theta)$  as
 
@@ -69,7 +72,11 @@ r(\tau)
 \end{align}
 $$
 
-now you still sample from the 
+now you still sample from the $p_{old}$ but we have prove that you are doing exactly the same to $\theta'$.
+
+The ratio $\frac{p_{\theta'}(\tau)}{p_\theta(\tau)}$ is called **Importance Weight**
+
+And that means you can do it multiple times, too
 
 ```algorithm
 \begin{algorithm}
@@ -101,6 +108,6 @@ now you still sample from the
 \end{algorithmic}
 \end{algorithm}
 ```
-now you still sample from the $p_{old}$ but we have prove that you are doing exactly the same to $\theta'$.
 
-And that means you can do it multiple times, too
+## 2. Clipped gradient (PPO)
+After this major rebvision for multiple gradient update, we can move on. However, problems occur

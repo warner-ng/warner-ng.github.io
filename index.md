@@ -65,9 +65,9 @@ Starting from here, I will devote myself to creating a world with human-friendly
 [Software] 
 
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
-  <img src="images/app1.jpg?raw=true" width="110" height="240" style="object-fit: cover;border-radius: 10px;">
-  <img src="images/app2.jpg?raw=true" width="110" height="240" style="object-fit: cover; border-radius: 10px;">
-  <img src="images/app3.jpg?raw=true" width="110" height="240" style="object-fit: cover;border-radius: 10px;">
+  <img src="images/app1.jpg?raw=true" width="120" height="240" style="object-fit: cover;border-radius: 10px;">
+  <img src="images/app2.jpg?raw=true" width="120" height="240" style="object-fit: cover; border-radius: 10px;">
+  <img src="images/app3.jpg?raw=true" width="120" height="240" style="object-fit: cover;border-radius: 10px;">
 </div>
 
 

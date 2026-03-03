@@ -346,9 +346,11 @@ Then we say it is globally AS
 **LaSalle Thm**
 preset 
 - SISL
-- let $\mathcal{S}'=\{x\in D \mid \dot V(x)=0\}$, suppose $\exists$ $\phi$ , s.t. $\dot{\phi}(t)=f(\phi(t))$, there must be $ \phi(t)=x_e=0$
+- let $\mathcal{S}'=\{x\in D \mid \dot V(x)=0\}$, if the only solution of the system dynamics within S is x(t)=$x_e$
 
 then $x_e$ is AS
+
+S is invariance set,  in set S the $\dot{V} =0$, the other region in D is $\dot{V} <0$
 
 this basically says the point will fall downward and fix only to the origin
 

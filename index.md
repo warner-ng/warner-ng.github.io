@@ -7,6 +7,11 @@ My name is Binghuan (Warner) Wu, a junior student passionate about robotics and 
 From here on, I will devote myself to creating a world with human-friendly robots that are natural and elegant. Welcome to join me on this journey!
 
 ---
+## News
+
+[2026.3] Several technical blogs releases. Take a look [here](https://warner-ng.github.io/blogs/blogIndex.html).
+
+---
 
 ## Publications
 

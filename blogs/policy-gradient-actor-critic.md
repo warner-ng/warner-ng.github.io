@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: Policy Gradient & Actor-Critic Explained
 description: An in-depth explanation of Policy Gradient and Actor-Critic methods in Reinforcement Learning, covering PPO, TRPO, SAC and more.
@@ -6,7 +6,6 @@ description: An in-depth explanation of Policy Gradient and Actor-Critic methods
 
 # Policy Gradient & Actor-Critic Explained
 
-![views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwarner-ng.github.io%2Fblogs%2Fpolicy-gradient-actor-critic&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false)
 
 PPO, TRPO, SAC, those contemporary algorithms build the foundation of today's RL research. We see them in RL fine-tuning in Large Language Model, humanoid robots sim2real training and AI player plays chess game.
 
@@ -36,7 +35,7 @@ J(\theta)
 \end{align}
 $$
 
-notice that (3) is a Monte Carlo estimate and (4) is the exact integral. So there is a sum & mean for N samples in (3) whereas (4) does not. (4) is purely the integration of every deterministic trajectory τ , the N is hidden in the integral
+notice that (3) is a Monte Carlo estimate and (4) is the exact integral. So there is a sum & mean for N samples in (3) whereas (4) does not. (4) is purely the integration of every deterministic trajectory t , the N is hidden in the integral
 
 Q1: what is $p_\theta$ here, what does it mean to do the sum and integral?
 
@@ -61,7 +60,7 @@ Now all we have is simply sample the trajectory from $p_\theta$ so we can get th
 
 Q2: how to calculate the log item?
 
-- expanding the $p_θ$ as we mentioned previously, take the derivative of the log item, then the objective function should be finally like
+- expanding the $p_?$ as we mentioned previously, take the derivative of the log item, then the objective function should be finally like
 
 $$
 \begin{align}

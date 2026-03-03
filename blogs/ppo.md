@@ -71,3 +71,34 @@ r(\tau)
 $$
 
 now you still sample from the 
+
+```algorithm
+\begin{algorithm}
+\caption{Multi-Step Policy Gradient (Importance Sampling)}
+\begin{algorithmic}
+\STATE Initialize $\theta$
+\FOR{each iteration}
+    \STATE Collect trajectories $\tau$ using $\pi_{\theta_{\text{old}}}$
+    \STATE Store old log-probabilities $\log \pi_{\theta_{\text{old}}}(a_t|s_t)$
+    
+    \FOR{$k = 1$ to $K$}   \COMMENT{multiple policy updates}
+        \FOR{each $(s_t,a_t,A_t)$ in batch}
+            \STATE Compute ratio:
+            $r_t(\theta) =
+            \dfrac{\pi_\theta(a_t|s_t)}
+            {\pi_{\theta_{\text{old}}}(a_t|s_t)}$
+            
+            \STATE Update policy:
+            $\theta \leftarrow
+            \theta + \alpha \,
+            r_t(\theta)\,
+            \nabla_\theta \log \pi_\theta(a_t|s_t)\,
+            A_t$
+        \ENDFOR
+    \ENDFOR
+    
+    \STATE $\theta_{\text{old}} \leftarrow \theta$
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+```

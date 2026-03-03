@@ -14,7 +14,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
 <h3 style="margin-top: 0;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
 <div style="display: flex; gap: 25px; align-items: flex-end; flex-wrap: wrap;">
   <div style="flex-shrink: 0; width: 100%; max-width: 250px;">
-    <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block;"/>
+    <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid #ccc;"/>
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
     <p style="margin: 5px 0; font-size: 12px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
@@ -34,7 +34,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
 
 <div style="display: flex; gap: 15px; align-items: center;">
   <div style="text-align: center;">
-    <img src="images/Kyrie_Irvine.jpg?raw=true" width="100" height="100" style="object-fit: cover;"/>
+    <img src="images/Kyrie_Irvine.jpg?raw=true" width="100" height="100" style="object-fit: cover; border-radius: 10px;"/>
     <p style="font-size: 12px; margin: 5px 0;">Kyrie Irving</p>
   </div>
   <div style="text-align: center;">
@@ -42,7 +42,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
     <p style="font-size: 12px; margin: 5px 0;">Taylor Swift</p>
   </div>
   <div style="text-align: center;">
-    <img src="images/Steve_Jobs.jpg?raw=true" width="100" height="100" style="object-fit: cover;"/>
+    <img src="images/Steve_Jobs.jpg?raw=true" width="100" height="100" style="object-fit: cover; border-radius: 10px;"/>
     <p style="font-size: 12px; margin: 5px 0;">Steve Jobs</p>
   </div>
 </div>
@@ -55,14 +55,14 @@ Starting from here, I will devote myself to creating a world with human-friendly
 
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
   <img src="images/design1.png?raw=true" width="170" height="170" style="object-fit: cover;">
-  <img src="images/design2.jpg?raw=true" width="170" height="170" style="object-fit: cover;">
+  <img src="images/design2.jpg?raw=true" width="170" height="170" style="object-fit: cover; border-radius: 10px;">
 </div>
 
 [Software] 
 
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
   <img src="images/app1.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
-  <img src="images/app2.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
+  <img src="images/app2.jpg?raw=true" width="110" height="240" style="object-fit: cover; border-radius: 10px;">
   <img src="images/app3.jpg?raw=true" width="110" height="240" style="object-fit: cover;">
 </div>
 
@@ -78,7 +78,7 @@ Starting from here, I will devote myself to creating a world with human-friendly
           frameborder="no" 
           framespacing="0" 
           allowfullscreen="true" 
-          style="width: 540px; height: 360px; max-width: 100%;">
+          style="width: 540px; height: 360px; max-width: 100%; border-radius: 10px;">
   </iframe>
   <p style="font-style: italic; margin-top: 10px; color: #666;">My homebrew RL tutorial series with theory and codes</p>
   <p style="font-style: italic; margin-top: 10px; color: #666;">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>

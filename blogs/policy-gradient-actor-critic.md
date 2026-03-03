@@ -132,33 +132,7 @@ $$
 $$
 
 So, the whole actor-critic algorithm should look like this
-```
-Algorithm: On-Policy Actor–Critic (TD)
 
-Initialize policy parameters θ
-Initialize value function parameters φ
-
-for each iteration do
-
-    Collect trajectories using current policy π_θ
-
-    for each transition (s_t, a_t, r_t, s_{t+1}) do
-
-        # ----- Critic Update -----
-        y_t = r_t + γ V_φ(s_{t+1})           (TD target)
-        δ_t = y_t - V_φ(s_t)                 (TD error)
-
-        Update φ by minimizing:
-            L(φ) = (V_φ(s_t) - y_t)^2
-
-        # ----- Actor Update -----
-        Update θ using policy gradient:
-            θ ← θ + α ∇_θ log π_θ(a_t | s_t) · δ_t
-
-    end for
-
-end for
-```
 ```algorithm
 \begin{algorithm}
 \caption{On-Policy Actor--Critic (TD)}

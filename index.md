@@ -2,7 +2,7 @@
 
 ---
 
-Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate about robotics and sustainable energy. Starting from here, I will devote myself to creating a world with human-friendly robots that are natural and elegant. Anyway, welcome to witness the journey together with me!
+Hello there! My name is Binghuan(Warner) Wu, a junior student who is passionate about robotics and sustainable energy. Starting from here, I will devote myself to creating a world with human-friendly robots that are natural and elegant. Anyway, welcome to witness the journey together with me!
 
 ---
 
@@ -52,17 +52,17 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
 [Hardware for OpenAI] 
 
 
-  <img src="images/design1.png?raw=true"  width="240" height="240">
-  <img src="images/design2.jpg?raw=true" width="240" height="240">
+  <img src="images/design1.png?raw=true"  width="200" height="200">
+  <img src="images/design2.jpg?raw=true" width="200" height="200">
 
 
 
 [Where a great app begins] 
 
 
-  <img src="images/app1.jpg?raw=true" width="160" height="330">
-  <img src="images/app2.jpg?raw=true" width="160" height="330">
-  <img src="images/app3.jpg?raw=true" width="160" height="330">
+  <img src="images/app1.jpg?raw=true" width="130" height="280">
+  <img src="images/app2.jpg?raw=true" width="130" height="280">
+  <img src="images/app3.jpg?raw=true" width="130" height="280">
 
 
 ---
@@ -76,7 +76,7 @@ Hello there! My name is Binghuan(Warner) Wu, a sophomore  who is passionate abou
           frameborder="no" 
           framespacing="0" 
           allowfullscreen="true" 
-          style="width: 640px; height: 430px; max-width: 100%;">
+          style="width: 540px; height: 360px; max-width: 100%;">
   </iframe>
   <p style="font-style: italic; margin-top: 10px; color: #666;">My homebrew RL tutorial series with theory and codes</p>
   <p style="font-style: italic; margin-top: 10px; color: #666;">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>

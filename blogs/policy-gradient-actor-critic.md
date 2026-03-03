@@ -81,15 +81,22 @@ here every single item is trackable. log item is calculate by PyTorch Autograd, 
 The difference of vanilla Policy Gradient and Actor Critic is whether there is a additional value function approximator by parameter $\phi $
 
 <img src="/images/Policy Gradient.png">
+
 the vanilla PG
+
 <img src="/images/Actor Critic.png">
+
 the Actor Critic
 
 regarding the reward, which is the value function here, we have several steps to make it more precise, the final step is the introduction of actor critic
 
 
-# Advantage
+### 2.1. Advantage
 $$ \begin {align}
 A = Q(s_t,a_t)-V(s_t)
 \end{align} 
 $$
+this subtraction is to minus the averange of Q (action value), which is a *bias* item for the value-function. think about when you in a chess game, when the starting position is already good, whatever moves you make, no matter how bad it is, could lead to a very high reward. That's why we do need to subtract the bias term
+
+
+### 2.2

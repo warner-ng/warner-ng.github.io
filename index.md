@@ -9,7 +9,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
 ---
 ## News
 
-[2026.3] Several technical blogs releases. Take a look [here](https://warner-ng.github.io/blogs/blogIndex.html).
+[2026.3] Several technical blogs release. Take a look [here](https://warner-ng.github.io/blogs/blogIndex.html).
 
 ---
 

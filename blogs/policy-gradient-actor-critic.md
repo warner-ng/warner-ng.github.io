@@ -38,7 +38,7 @@ $$
 
 notice that (3) is a Monte Carlo estimate and (4) is the exact integral. So there is a sum & mean for N samples in (3) whereas (4) does not. (4) is purely the integration of every deterministic trajectory τ , the N is hidden in the integral
 
-Q1: what is pθ here, what does it mean to do the sum and integral?
+Q1: what is $p_\theta$ here, what does it mean to do the sum and integral?
 
 - $\tau = (s_1, a_1, s_2, a_2, \ldots , s_H , a_H)$  is a trajectory sample from the policy $\pi_\theta$
 

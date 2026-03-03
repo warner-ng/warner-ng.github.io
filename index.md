@@ -40,7 +40,8 @@ Starting from here, I will devote myself to creating a world with human-friendly
     <p style="font-size: 12px; margin: 5px 0;">Kyrie Irving</p>
   </div>
   <div style="text-align: center;">
-    <img src="images/Taylor_Swift.jpg?raw=true" width="100" height="100" style="object-fit: cover;"/>
+    <img src="images/Taylor_Swift.jpg?raw=true" width="100" height="100" style="object-fit: cover;
+    border-radius: 10px;"/>
     <p style="font-size: 12px; margin: 5px 0;">Taylor Swift</p>
   </div>
   <div style="text-align: center;">

@@ -36,7 +36,7 @@ J(\theta)
 \end{align}
 $$
 
-notice that (2) is a Monte Carlo estimate and (3) is the exact integral. So there is a sum & mean for N samples in (2) whereas (3) does not. (3) is purely the integration of every deterministic trajectory τ , the N is hidden in the integral
+notice that (3) is a Monte Carlo estimate and (4) is the exact integral. So there is a sum & mean for N samples in (3) whereas (4) does not. (4) is purely the integration of every deterministic trajectory τ , the N is hidden in the integral
 
 Q1: what is pθ here, what does it mean to do the sum and integral?
 

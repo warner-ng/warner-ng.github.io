@@ -6,7 +6,7 @@ description: The comtemporary RL algo used widely in robotics sim2real
 
 # PPO: proximal policy optimization
 
-(This article was written in English, for a Chinese version, please see below)
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwarner-ng.github.io%2Fblogs%2Fppo&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" />
 
 before we dive into the world of PPO, let's look at what is previously not efficient
 

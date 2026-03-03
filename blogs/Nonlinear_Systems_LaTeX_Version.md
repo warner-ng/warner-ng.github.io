@@ -6,7 +6,7 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 
 # NONLINEAR SYSTEMS — COMPLETE NOTES
 
----
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwarner-ng.github.io%2Fblogs%2FNonlinear_Systems_LaTeX_Version&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" />
 
 # PART I — LINEAR VS NONLINEAR SYSTEMS
 
@@ -78,7 +78,7 @@ Behavior depends on geometry of the vector field.
 A norm satisfies:
 
 1. $\|x\| \ge 0$, and $\|x\|=0 \iff x=0$  
-2. $\|\alpha x\| = |\alpha|\|x\|$  
+2. $|\alpha x| = |\alpha||x|$  
 3. $\|x+y\| \le \|x\|+\|y\|$  
 
 Common norms in $\mathbb{R}^n$:

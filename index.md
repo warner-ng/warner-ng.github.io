@@ -37,16 +37,27 @@ From here on, I will devote myself to creating a world with human-friendly robot
 </div>
 
 ---
-### Great Minds That Matter to Me
 
+### My Current Occupations
+
+- [Research Intern, Shanghai AI Lab.](https://www.shlab.org.cn/)
+- [Student Staff, Berkeley Emerging Technology Association](https://betaucb.org/)
+- [Student Staff, Students' Association for Science and Technology of Tongji Univ.](https://www.tongji.edu.cn/)
+- [Chief Technology Officer, Autonomous Driving Department of Lotus Tongji Racing Team](http://www.tjuracing.com/)
+
+---
+### Miscellanea
+
+<details>
+<summary><strong>Great Minds That Matter to Me</strong></summary>
+<br>
 <div style="display: flex; gap: 15px; align-items: center;">
   <div style="text-align: center;">
     <img src="images/Kyrie_Irvine.jpg?raw=true" width="100" height="100" style="object-fit: cover; border-radius: 10px;"/>
     <p style="font-size: 12px; margin: 5px 0;">Kyrie Irving</p>
   </div>
   <div style="text-align: center;">
-    <img src="images/Taylor_Swift.jpg?raw=true" width="100" height="100" style="object-fit: cover;
-    border-radius: 10px;"/>
+    <img src="images/Taylor_Swift.jpg?raw=true" width="100" height="100" style="object-fit: cover; border-radius: 10px;"/>
     <p style="font-size: 12px; margin: 5px 0;">Taylor Swift</p>
   </div>
   <div style="text-align: center;">
@@ -54,32 +65,27 @@ From here on, I will devote myself to creating a world with human-friendly robot
     <p style="font-size: 12px; margin: 5px 0;">Steve Jobs</p>
   </div>
 </div>
+</details>
 
----
-
-### Products Proudly Made
-
-[Hardware] 
-
+<details>
+<summary><strong>Products Proudly Made</strong></summary>
+<br>
+<p>[Hardware]</p>
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
-  <img src="images/design1.png?raw=true" width="155" height="155" style="object-fit: cover;border-radius: 10px;">
+  <img src="images/design1.png?raw=true" width="155" height="155" style="object-fit: cover; border-radius: 10px;">
   <img src="images/design2.jpg?raw=true" width="155" height="155" style="object-fit: cover; border-radius: 10px;">
 </div>
-
-
-[Software] 
-
+<p>[Software]</p>
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0;">
-  <img src="images/app1.jpg?raw=true" width="120" height="260" style="object-fit: cover;border-radius: 10px;">
+  <img src="images/app1.jpg?raw=true" width="120" height="260" style="object-fit: cover; border-radius: 10px;">
   <img src="images/app2.jpg?raw=true" width="120" height="260" style="object-fit: cover; border-radius: 10px;">
-  <img src="images/app3.jpg?raw=true" width="120" height="260" style="object-fit: cover;border-radius: 10px;">
+  <img src="images/app3.jpg?raw=true" width="120" height="260" style="object-fit: cover; border-radius: 10px;">
 </div>
+</details>
 
-
----
-
-### My Homebrew RL Tutorial Series
-
+<details>
+<summary><strong>My Homebrew RL Tutorial Series</strong></summary>
+<br>
 <div style="text-align: center; margin: 20px 0;">
   <iframe src="//player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1&autoplay=0" 
           scrolling="no" 
@@ -92,16 +98,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
   <p style="font-style: italic; margin-top: 10px; color: #666;">My homebrew RL tutorial series with theory and codes</p>
   <p style="font-style: italic; margin-top: 10px; color: #666;">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>
 </div>
-
----
-
-### My Current Occupations
-
-- [Research Intern, Shanghai AI Lab.](https://www.shlab.org.cn/)
-- [Student Staff, Berkeley Emerging Technology Association](https://betaucb.org/)
-- [Student Staff, Students' Association for Science and Technology of Tongji Univ.](https://www.tongji.edu.cn/)
-- [Chief Technology Officer, Autonomous Driving Department of Lotus Tongji Racing Team](http://www.tjuracing.com/)
-
+</details>
 
 ---
 

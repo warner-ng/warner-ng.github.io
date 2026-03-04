@@ -7,7 +7,7 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 # NONLINEAR SYSTEMS — COMPLETE NOTES
 ### ESSENTIAL MATRIX DERIVATIVE RULES
 
-1. Derivative of a Transpose
+#### 1. Derivative of a Transpose
 
 Let $X = X(t)$.
 
@@ -19,7 +19,7 @@ $$
 
 ---
 
-2. Matrix Product Rule
+#### 2. Matrix Product Rule
 
 $$
 \frac{d}{dt}(XY)
@@ -29,7 +29,7 @@ $$
 
 ---
 
-3. Quadratic Form
+#### 3. Quadratic Form
 
 Let
 
@@ -51,7 +51,7 @@ $$
 
 ---
 
-4. Chain Rule (Lyapunov Use)
+#### 4. Chain Rule (Lyapunov Use)
 
 For
 

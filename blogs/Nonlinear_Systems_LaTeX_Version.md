@@ -82,10 +82,10 @@ A norm satisfies:
 Common norms in $\mathbb{R}^n$:
 
 $$
-\Vert x\Vert _2 = \sqrt{x^\top x}, \quad
-\Vert x\Vert _1 = \sum |x_i|, \quad
-\Vert x\Vert _\infty = \max_i |x_i|
-$$
+\Vert x\Vert _2 = \sqrt{x^\top x}, \quad$$
+$$\Vert x\Vert _1 = \sum |x_i|, \quad$$
+$$\Vert x\Vert _\infty = \max_i |x_i|$$
+
 
 All norms are equivalent in finite dimensions.
 

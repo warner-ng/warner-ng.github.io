@@ -105,6 +105,8 @@ From here on, I will devote myself to creating a world with human-friendly robot
 
 ---
 
+<div style="display: flex; justify-content: center;">
 <div style="border-radius: 12px; overflow: hidden; display: inline-block;">
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=5faff4&w=300&t=tt&d=mTZmUph4vjdpXM7mzNvlXo1xGAH3Rw4DVw0hT4u5654&co=e0f2ff&ct=55abf4'></script>
+</div>
 </div>

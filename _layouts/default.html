@@ -134,7 +134,9 @@
          {% if site.github.is_project_page %}
          <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
          {% endif %}
-
+         {% unless page.url == "/" %}
+         <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=5faff4&w=1&t=tt&d=mTZmUph4vjdpXM7mzNvlXo1xGAH3Rw4DVw0hT4u5654&co=e0f2ff&ct=55abf4'></script>
+         {% endunless %}
       </footer>
    </div>
    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>

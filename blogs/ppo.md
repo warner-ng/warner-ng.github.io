@@ -114,8 +114,8 @@ After this major revision for multiple gradient update, we can move on. However,
 $$
 \begin{align}
 L^{\text{CLIP}}(\theta')
-=J(\theta')
-=
+&=J(\theta')\\
+&=
 \mathbb{E}_{\tau\sim{p_\theta(\tau)}}[min\omega(\tau)r(\tau),\omega_c(\tau)r(\tau)]
 
 \end{align}

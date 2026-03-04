@@ -5,7 +5,66 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 ---
 
 # NONLINEAR SYSTEMS — COMPLETE NOTES
+### ESSENTIAL MATRIX DERIVATIVE RULES
 
+1. Derivative of a Transpose
+
+Let $X = X(t)$.
+
+$$
+\frac{d}{dt}(X^\top)
+=
+\left(\frac{dX}{dt}\right)^\top
+$$
+
+---
+
+2. Matrix Product Rule
+
+$$
+\frac{d}{dt}(XY)
+=
+\dot X Y + X \dot Y
+$$
+
+---
+
+3. Quadratic Form
+
+Let
+
+$$
+V(x) = x^\top A x
+$$
+
+Then
+
+$$
+\nabla V(x) = (A + A^\top)x
+$$
+
+If $A = A^\top$,
+
+$$
+\nabla V(x) = 2Ax
+$$
+
+---
+
+4. Chain Rule (Lyapunov Use)
+
+For
+
+$$
+\dot x = f(x)
+$$
+
+$$
+\dot V(x)
+=
+\nabla V(x)^\top f(x)
+$$
+---
 # PART I — LINEAR VS NONLINEAR SYSTEMS
 
 ## 1. Linear Systems

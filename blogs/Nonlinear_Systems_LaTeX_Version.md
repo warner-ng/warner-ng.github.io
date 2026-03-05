@@ -433,6 +433,8 @@ Asymptotically stable if additionally:
 $$
 x(t)\to x_e
 $$
+intuition:
+![alt text](image-5.png)
 
 ---
 

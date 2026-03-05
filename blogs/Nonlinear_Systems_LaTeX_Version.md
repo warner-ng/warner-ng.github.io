@@ -665,9 +665,9 @@ after linearization,
 
 If eigenvalues of $J(x)$:
 
-- All have negative real parts → locally asymptotically stable  
-- At least one positive real part → unstable  
-- Zero real part present → inconclusive  (cannot say SISL) (if the linear system neither grows nor decays → higher-order nonlinear terms decide, so the test is inconclusive.)
+- $\forall$ Re(λ)<0 → locally asymptotically stable  
+- $\exists$ Re(λ)>0 → unstable  
+- $\exists$ Re(λ)=0 → inconclusive  (cannot say SISL) (if the linear system neither grows nor decays → higher-order nonlinear terms decide, so the test is inconclusive.)
 
 Indirect method is local.
 
@@ -705,10 +705,6 @@ provides an inner estimate of ROA.
 
 ## 18. Global Asymptotic Stability (GAS)
 
-If:
-
-- Equilibrium stable  
-- All trajectories converge  
 
 Lyapunov sufficient conditions:
 

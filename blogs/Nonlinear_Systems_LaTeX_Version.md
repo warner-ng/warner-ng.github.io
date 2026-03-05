@@ -546,6 +546,11 @@ where $Q = Q^{\top} > 0$. You can just assign $I$
 
 If such a positive definite $P$ exists, then the equilibrium $x_e$ is locally asymptotically stable.
 
+because the Lyapunov Equation makes 
+$$
+\dot{V} (x)= (x - x_e)^{\top} Q (x - x_e)<0
+$$
+
 ## 15. Linearization
 
 Linearization matrix:

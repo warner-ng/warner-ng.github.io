@@ -519,7 +519,7 @@ or say:
 
 in some point in the $B_\delta(X_e) $ $V(x)>0$, 
 
-and $\exists \varepsilon$ s.t. all $\dot{V}(x)$ >0 in this \{ $B_\epsilon(X_e) $ | $V(x)>0$ \}
+and $\exists \varepsilon$ s.t. all $\dot{V}(x)$ >0 in this \{ $B_\epsilon(X_e)$ $\vert$ $V(x)>0$ \}
 
 Then equilibrium is unstable.
 

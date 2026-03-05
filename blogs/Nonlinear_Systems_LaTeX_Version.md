@@ -699,20 +699,6 @@ $$
 
 provides an inner estimate of ROA.
 
----
-
-# PART VIII — GLOBAL ASYMPTOTIC STABILITY
-
-## 18. Global Asymptotic Stability (GAS)
-
-
-Lyapunov sufficient conditions:
-
-- $V(x)>0$  
-- $\dot{V}(x)<0$  
-- $V(x)\to\infty$ as $\Vert x\Vert \to\infty$  
-
-Then system is globally asymptotically stable.
 
 ---
 

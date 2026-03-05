@@ -431,7 +431,7 @@ this basically says the point will fall downward and fix only to the origin
 
 ---
 
-## 14. Instability Theorem
+## 14. Instability Theorem (Chetaev)
 
 If:
 
@@ -439,7 +439,15 @@ If:
 - $V(x)>0$  
 - $\dot{V}(x)>0$  in a wedged region
 
+or say: 
+
+in some point in the $B_\delta(X_e) $ $V(x)>0$, 
+
+and $\exists \varepsilon$ s.t. all $\dot{V}(x)$ >0 in this \{ $B_\epsilon(X_e) $ | $V(x)>0$ \}
+
 Then equilibrium is unstable.
+
+![alt text](image-3.png)
 
 ---
 

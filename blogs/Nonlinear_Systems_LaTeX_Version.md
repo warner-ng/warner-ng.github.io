@@ -441,8 +441,6 @@ $$
 x(t)\to x_e
 $$
 
-intuition:
-![alt text](/blogs/image-5.png){: width="75%" }
 
 ---
 
@@ -476,6 +474,9 @@ $$
 $$
 
 → Asymptotically stable.
+
+intuition:
+![alt text](/blogs/image-5.png){: width="75%" }
 
 ---
 

@@ -300,7 +300,7 @@ $$
 
 Local Lipschitz guarantees local existence and uniqueness.(with p.w. continuity)
 > piecewise continuity looks like not continued
-![alt text](image-4.png)
+![alt text](/blogs/image-4.png)
 
 Global Lipschitz guarantees global existence (the condition for **no finite escape time**).
 
@@ -399,11 +399,16 @@ This means small perturbations in the initial condition produce small changes in
 
 ## 10. Equilibrium
 
-An equilibrium satisfies:
 
 $$
 f(x_e)=0
 $$
+
+## 11. Compact
+
+close + bounded = compact
+
+[0,1]
 
 ---
 
@@ -434,7 +439,7 @@ $$
 x(t)\to x_e
 $$
 intuition:
-![alt text](image-5.png)
+![alt text](/blogs/image-5.png)
 
 ---
 
@@ -514,7 +519,7 @@ and $\exists \varepsilon$ s.t. all $\dot{V}(x)$ >0 in this \{ $B_\epsilon(X_e) $
 
 Then equilibrium is unstable.
 
-![alt text](image-3.png)
+![Chetaev instability theorem sketch](/blogs/image-3.png)
 
 ---
 

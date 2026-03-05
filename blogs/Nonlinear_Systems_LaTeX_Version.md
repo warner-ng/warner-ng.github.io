@@ -523,7 +523,8 @@ and $\exists \varepsilon$ s.t. all $\dot{V}(x)$ >0 in this \{ $B_\epsilon(X_e)$ 
 
 Then equilibrium is unstable.
 
-![Chetaev instability theorem sketch](/blogs/image-3.png){: width="75%" }
+!![alt text](image-6.png){: width="75%" }
+
 
 ---
 

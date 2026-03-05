@@ -650,12 +650,13 @@ $$
 ---
 
 ## 16. Lyapunov Indirect Method
+after linearization,
 
 If eigenvalues of $A$:
 
 - All have negative real parts → locally asymptotically stable  
 - At least one positive real part → unstable  
-- Zero real part present → inconclusive  
+- Zero real part present → inconclusive  (cannot say SISL) (if the linear system neither grows nor decays → higher-order nonlinear terms decide, so the test is inconclusive.)
 
 Indirect method is local.
 

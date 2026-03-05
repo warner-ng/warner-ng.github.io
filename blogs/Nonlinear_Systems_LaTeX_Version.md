@@ -64,6 +64,8 @@ $$
 =
 \nabla V(x)^\top f(x)
 $$
+
+
 ---
 # PART I — LINEAR VS NONLINEAR SYSTEMS
 

@@ -100,6 +100,60 @@ Properties of linear systems:
 - No limit cycles exist  
 - The global behavior is completely determined by the spectrum of $A$
 
+
+### 1.1 limit cycle
+
+A limit cycle is an isolated periodic orbit of a nonlinear autonomous system
+
+$$
+\dot{x} = f(x)
+$$
+
+A trajectory $\gamma $ is a limit cycle if
+
+- it is **periodic**
+- there are no other periodic orbits arbitrarily close to it
+
+Nearby trajectories may approach the orbit (stable), move away from it (unstable), or approach from one side only (semi-stable).
+
+Limit cycles do not occur in linear systems.
+
+---
+
+#### Example
+
+Consider the system in **polar coordinates**
+
+$$
+\dot R = -R(R^2-1), \qquad \dot \theta = 1
+$$
+
+Radial equilibria satisfy
+
+$$
+\dot R = 0 \Rightarrow R = 0,\; R = 1
+$$
+
+For $0<R<1$, $\dot R > 0 $ so the radius increases.  
+For $R>1$, $ \dot R < 0 $ so the radius decreases.
+
+Thus trajectories move toward R=1 while $\theta $ keeps rotating.
+
+The circle
+
+$$
+R = 1
+$$
+
+is therefore a stable limit cycle.
+you can have unstable one too if you like
+
+
+
+
+
+
+
 ---
 
 ## 2. Nonlinear Systems
@@ -164,6 +218,13 @@ $$
 \Vert x_n - x\Vert  \to 0
 $$
 
+(in strict definition: every 
+ε>0, there exists an integer 
+N such that for all 
+n≥N
+the above <ε)
+
+
 A sequence is Cauchy if:
 
 $$
@@ -193,7 +254,7 @@ $$
 If $P$ is a contraction on a complete space:
 
 - A unique fixed point exists  
-- Iteration converges  
+- x is cauthy and iteration converges to fixed point $x^*$
 
 ---
 
@@ -237,11 +298,14 @@ $$
 \Vert f(x)-f(y)\Vert  \le L \Vert x-y\Vert 
 $$
 
-Local Lipschitz guarantees local existence and uniqueness.
+Local Lipschitz guarantees local existence and uniqueness.(with p.w. continuity)
+> piecewise continuity looks like not continued
+![alt text](image-4.png)
 
 Global Lipschitz guarantees global existence (the condition for **no finite escape time**).
 
 - you can actually take the derivative of the **linear system**, then the answer is the lipschitz constant
+- lipschitz continuity $\rightarrow $ continuity
 
 ---
 
@@ -299,6 +363,7 @@ Used for:
 four question for nonlinear system
 1. solution exist?
 2. solution unique?
+
 3. have finite escape time?
 4. continuous on IC?
 

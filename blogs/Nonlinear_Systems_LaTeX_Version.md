@@ -540,7 +540,9 @@ $$
 consider the quadratic Lyapunov function
 
 $$
+
 V(x) = (x - x_e)^{\top} P (x - x_e),
+
 $$
 where $P = P^{\top} > 0$.
 
@@ -557,9 +559,9 @@ If such a positive definite $P$ exists, then the equilibrium $x_e$ is locally as
 because the Lyapunov Equation makes 
 
 $$
-\begin{align}
+
 \dot{V} (x)= (x - x_e)^{\top} Q (x - x_e)<0
-\end{align}
+
 $$
 
 ## 15. Linearization

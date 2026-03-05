@@ -71,6 +71,8 @@ $$
 
 A linear time-invariant system:
 
+System:
+
 $$
 \dot{x} = A x
 $$
@@ -81,18 +83,22 @@ $$
 x(t) = e^{At} x(0)
 $$
 
-Stability depends on eigenvalues $\lambda_i$ of $A$:
+The stability of the system is determined by the eigenvalues $\lambda_i$ of $A$.
 
-- $\operatorname{Re}(\lambda_i) < 0$ → asymptotically stable  
-- $\operatorname{Re}(\lambda_i) > 0$ → unstable  
-- $\operatorname{Re}(\lambda_i) = 0$ → inconclusive  
+- $\operatorname{Re}(\lambda_i) < 0$ for all $i$ $\Rightarrow$ **asymptotically stable**
 
-Linear systems:
+- $\operatorname{Re}(\lambda_i) > 0$ for some $i$ $\Rightarrow$ **unstable**
 
-- Superposition holds  
-- Typically unique equilibrium $x=0$  
-- No limit cycles  
-- Global behavior determined by spectrum  
+- $\operatorname{Re}(\lambda_i) = 0$ for some $i$
+  - if the eigenvalues on the imaginary axis are **simple** $\Rightarrow$ Lyapunov stable
+  - otherwise $\Rightarrow$ unstable
+
+Properties of linear systems:
+
+- Superposition principle holds  
+- The equilibrium is typically unique: $x = 0$  
+- No limit cycles exist  
+- The global behavior is completely determined by the spectrum of $A$
 
 ---
 

@@ -540,9 +540,7 @@ $$
 consider the quadratic Lyapunov function
 
 $$
-
 V(x) = (x - x_e)^{\top} P (x - x_e),
-
 $$
 where $P = P^{\top} > 0$.
 

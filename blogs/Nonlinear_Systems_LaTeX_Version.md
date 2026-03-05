@@ -476,6 +476,7 @@ $$
 → Asymptotically stable.
 
 intuition:
+
 ![alt text](/blogs/image-5.png){: width="75%" }
 
 ---
@@ -497,7 +498,7 @@ Then we say it is globally AS
 **LaSalle Thm**
 preset 
 - SISL
-- let $\mathcal{S}'=\{x\in D \mid \dot V(x)=0\}$, if the only solution of the system dynamics within S is x(t)=$x_e$ = 0
+- let $\mathcal{S}'= \{x\in D \mid \dot V(x)=0 \} $, if the only solution of the system dynamics within S is x(t)=$x_e$ = 0
 
 then $x_e$ is AS
 

@@ -626,7 +626,7 @@ $$
 Evaluate at $x_e = (1,0) $:
 
 $$
-A =
+J(x) =
 \begin{bmatrix}
 0 & 1 \\
 -1 & 0
@@ -663,7 +663,7 @@ $$
 ## 16. Lyapunov Indirect Method
 after linearization,
 
-If eigenvalues of $A$:
+If eigenvalues of $J(x)$:
 
 - All have negative real parts → locally asymptotically stable  
 - At least one positive real part → unstable  

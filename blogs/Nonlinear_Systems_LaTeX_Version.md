@@ -233,7 +233,7 @@ $$
 \Vert x_n - x_m\Vert  \to 0 \quad \text{as } n,m \to \infty
 $$
 
-A space is complete if every Cauchy sequence converges in that space.
+A space is **complete** if every Cauchy sequence converges in that space.
 
 actually in $\mathbb{R}$ , every cauthy seq is converged.
 
@@ -418,7 +418,7 @@ close + bounded = compact
 
 Stable if:
 
-For any $\varepsilon>0$, there exists $\delta>0$ such that
+For $\forall$ $\varepsilon>0$, there $\exists$ $\delta>0$ such that
 
 $$
 \Vert x(0)-x_e\Vert <\delta

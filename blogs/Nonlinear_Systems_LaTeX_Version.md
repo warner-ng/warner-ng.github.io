@@ -477,6 +477,7 @@ $$
 
 intuition:
 
+
 ![alt text](/blogs/image-5.png){: width="75%" }
 
 ---

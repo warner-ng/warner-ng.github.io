@@ -4,7 +4,7 @@ layout: default
 
 ## Blogs - RL | Generative Model | Control
 ---
-### [A Daily Discipline Board](/.board.html)
+### [A Daily Discipline Board](./board.html)
 This board records my daily progress in persistently doing things that are difficult but worthwhile.
 ---
 ### [Policy Gradient & Actor-Critic Explained](./policy-gradient-actor-critic.html)

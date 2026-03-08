@@ -5,7 +5,7 @@ description: This board records my daily progress in persistently doing things t
 ---
 
 ## Daily Discipline Board
-
+doing less decision and doing more imersion
 
 
 ### Try to make it all green

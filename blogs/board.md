@@ -10,7 +10,7 @@ doing less decision and doing more imersion
 
 ### Try to make it all green
 - ✅Get up early
-- Go to a coffee shop
+- ✅Go to a coffee shop
 - Exercise
 - Explore the keyboard
 - Write a blog

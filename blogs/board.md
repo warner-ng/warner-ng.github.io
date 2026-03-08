@@ -12,23 +12,14 @@ description: This board records my daily progress in persistently doing things t
 - Weekly win: 25+ total checkmarks.
 
 ### Habits
-- [ ] Get up early
-- [ ] Go to a coffee shop
-- [ ] Exercise
-- [ ] Explore the keyboard
-- [ ] Write a blog
+- Get up early        [x] [ ]
+- Go to a coffee shop [ ] 
+- Exercise            [ ] 
+- Explore the keyboard[ ]
+- Write a blog.       [ ]
 
-### This Week Tracker
 
-| Date | Get up early | Coffee shop | Exercise | Explore keyboard | Write a blog | Total |
-|---|---|---|---|---|---|---|
-| Mon | [x] | [ ] | [ ] | [ ] | [ ] | 0/5 |
-| Tue | [ ] | [ ] | [ ] | [ ] | [ ] | 0/5 |
-| Wed | [ ] | [ ] | [ ] | [ ] | [ ] | 0/5 |
-| Thu | [ ] | [ ] | [ ] | [ ] | [ ] | 0/5 |
-| Fri | [ ] | [ ] | [ ] | [ ] | [ ] | 0/5 |
-| Sat | [ ] | [ ] | [ ] | [ ] | [ ] | 0/5 |
-| Sun | [ ] | [ ] | [ ] | [ ] | [ ] | 0/5 |
+
 
 ### Weekly Notes
 - Wins:

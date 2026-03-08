@@ -12,11 +12,11 @@ description: This board records my daily progress in persistently doing things t
 - Weekly win: 25+ total checkmarks.
 
 ### Habits
-- Get up early        [x] [ ]
-- Go to a coffee shop [ ] 
-- Exercise            [ ] 
-- Explore the keyboard[ ]
-- Write a blog.       [ ]
+- [x] [ ]Get up early
+- [ ] Go to a coffee shop
+- [ ] Exercise
+- [ ] Explore the keyboard
+- [ ] Write a blog
 
 
 

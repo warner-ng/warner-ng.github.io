@@ -22,15 +22,16 @@ From here on, I will devote myself to creating a world with human-friendly robot
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <p style="margin: 0 0 8px 0; font-size: 14px;"><a href="https://warner-ng.github.io/" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
-      <p style="margin: 5px 0; font-size: 12px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
-      <p style="font-style: italic; margin: 5px 0; font-size: 12px;">Under review, 2026</p>
+      <p style="margin: 0 0 8px 0; font-size: 15px;"><a href="https://warner-ng.github.io/" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
+      <p style="margin: 5px 0; font-size: 13px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
+      <p style="font-style: italic; margin: 5px 0; font-size: 13px;">Under review, 2026</p>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0; box-sizing: border-box; width: 100%;">
-      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Paper</a>
-      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">arXiv</a>
-      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Video</a>
-      <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Project Page</a>
+    <div style="margin-top: 0; box-sizing: border-box; width: 100%; font-size: 13px;">
+      <a href="#" style="color: #2f7ac0; text-decoration: none;">webpage</a> |
+      <a href="#" style="color: #2f7ac0; text-decoration: none;">pdf</a> |
+      <a href="#" style="color: #2f7ac0; text-decoration: none;">abstract</a> |
+      <a href="#" style="color: #2f7ac0; text-decoration: none;">bibtex</a> |
+      <a href="#" style="color: #2f7ac0; text-decoration: none;">arXiv</a>
     </div>
   </div>
 </div>
@@ -54,15 +55,15 @@ From here on, I will devote myself to creating a world with human-friendly robot
 <div style="display: flex; gap: 15px; align-items: center;">
   <div style="text-align: center;">
     <img src="images/Kyrie_Irvine.jpg?raw=true" width="100" height="100" style="object-fit: cover; border-radius: 10px;"/>
-    <p style="font-size: 12px; margin: 5px 0;">Kyrie Irving</p>
+    <p style="font-size: 13px; margin: 5px 0;">Kyrie Irving</p>
   </div>
   <div style="text-align: center;">
     <img src="images/Taylor_Swift.jpg?raw=true" width="100" height="100" style="object-fit: cover; border-radius: 10px;"/>
-    <p style="font-size: 12px; margin: 5px 0;">Taylor Swift</p>
+    <p style="font-size: 13px; margin: 5px 0;">Taylor Swift</p>
   </div>
   <div style="text-align: center;">
     <img src="images/Steve_Jobs.jpg?raw=true" width="100" height="100" style="object-fit: cover; border-radius: 10px;"/>
-    <p style="font-size: 12px; margin: 5px 0;">Steve Jobs</p>
+    <p style="font-size: 13px; margin: 5px 0;">Steve Jobs</p>
   </div>
 </div>
 </details>

@@ -22,11 +22,11 @@ From here on, I will devote myself to creating a world with human-friendly robot
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <p style="margin: 0 0 8px 0; font-size: 15px;"><a href="https://warner-ng.github.io/" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
-      <p style="margin: 5px 0; font-size: 13px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
-      <p style="font-style: italic; margin: 5px 0; font-size: 13px;">Under review, 2026</p>
+      <p style="margin: 0 0 8px 0; font-size: 16px;"><a href="https://warner-ng.github.io/" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
+      <p style="margin: 5px 0; font-size: 14px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
+      <p style="font-style: italic; margin: 5px 0; font-size: 14px;">Under review, 2026</p>
     </div>
-    <div style="margin-top: 0; box-sizing: border-box; width: 100%; font-size: 13px;">
+    <div style="margin-top: 0; box-sizing: border-box; width: 100%; font-size: 14px;">
       <a href="#" style="color: #2f7ac0; text-decoration: none;">webpage</a> |
       <a href="#" style="color: #2f7ac0; text-decoration: none;">pdf</a> |
       <a href="#" style="color: #2f7ac0; text-decoration: none;">abstract</a> |

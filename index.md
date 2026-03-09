@@ -16,13 +16,13 @@ From here on, I will devote myself to creating a world with human-friendly robot
 ## Publications
 
 <div style="border: 1px solid #ccc; border-radius: 10px; padding: 16px; margin-bottom: 30px;">
-<h3 style="margin-top: 0;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</h3>
 <div style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
   <div style="flex-shrink: 0; width: 100%; max-width: 250px;">
     <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid #ccc;"/>
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
+      <p style="margin: 0 0 8px 0; font-size: 12px;"><a href="#" style="color: #333; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
       <p style="margin: 5px 0; font-size: 12px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
       <p style="font-style: italic; margin: 5px 0; font-size: 12px;">Under review, 2026</p>
     </div>

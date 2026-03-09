@@ -79,13 +79,21 @@
          .wrapper {
             width: 1080px !important;
             max-width: none !important;
+            display: flex !important;
+            gap: 40px;
+            align-items: flex-start;
          }
          section {
             width: calc(100% - 300px) !important;
             min-height: 100vh;
+            float: none !important;
          }
          header {
             width: 260px !important;
+            position: sticky !important;
+            top: 72px;
+            float: none !important;
+            align-self: flex-start;
          }
       }
       @media print {

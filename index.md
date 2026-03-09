@@ -22,11 +22,11 @@ From here on, I will devote myself to creating a world with human-friendly robot
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <p style="margin: 0 0 8px 0; font-size: 12px;"><a href="#" style="color: #333; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
+      <p style="margin: 0 0 8px 0; font-size: 14px;"><a href="#" style="color: #333; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
       <p style="margin: 5px 0; font-size: 12px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
       <p style="font-style: italic; margin: 5px 0; font-size: 12px;">Under review, 2026</p>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 40px; box-sizing: border-box; width: 100%;">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0; box-sizing: border-box; width: 100%;">
       <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Paper</a>
       <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">arXiv</a>
       <a href="#" style="padding: 6px 12px; background-color: #5B9BD5; color: white; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 12px; white-space: nowrap;">Video</a>

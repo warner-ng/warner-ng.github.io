@@ -29,3 +29,5 @@ In practice, most people feel successful when their abilities are fully used, th
 By now, I think my brainstorming through the personal growth is finally clear. Draw the final map of myself, make solid math and coding skills in the specific area i like, that is what currently a junior student, future PhD student, and later a ecosystem leader in life should do.
 
 Now what one can do and what one cannot do under certain kinds of current conditions? Explore and see.
+
+> This purchase order solved the key financial problem. Jobs took the order to electronic component suppliers and explained that he already had a confirmed buyer. Because the order value was around $25,000, suppliers were willing to provide parts on 30-day credit.

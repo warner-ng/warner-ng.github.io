@@ -13,7 +13,7 @@ doing less decision and doing more imersion
 - ✅ ✅ Go to a coffee shop
 - ✅ ✅ Exercise
 - ✅ ✅ Explore the keyboard
-- ❌ Write a blog
+- ❌ ✅ Write a blog
 
 
 

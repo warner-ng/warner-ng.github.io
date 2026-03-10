@@ -3,6 +3,8 @@ layout: default
 ---
 
 ## Blogs - RL | Generative Model | Control
+
+
 ---
 ### [A Daily Discipline Board](./board.html)
 This board records my daily progress in persistently doing things that are difficult but worthwhile.
@@ -21,3 +23,6 @@ Complete notes on nonlinear systems: stability theory, Lyapunov methods, contrac
 
 ---
 
+### [Thoughts on personal growth](./personal_growth.html)
+What is some motivations for one except basic lifes. What is one's personality and boundaries that one can get to know and utilize.
+---

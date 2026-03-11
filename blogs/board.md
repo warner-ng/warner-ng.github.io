@@ -9,13 +9,13 @@ doing less decision and doing more imersion
 
 
 ### Try to make it all green
-- ✅ ❌ ✅ Get up early
-- ✅ ✅ ✅ Go to a coffee shop
-- ✅ ✅ ✅ Exercise
-- ✅ ✅ Explore the keyboard
-- ❌ ✅ Write a blog
+- ✅ ❌ ✅ ✅ Get up early
+- ✅ ✅ ✅ ✅ Go to a coffee shop
+- ✅ ✅ ✅ ✅ Exercise
+- ✅ ✅ ✅ Explore the keyboard
+- ❌ ✅ ✅ Write a blog
 
-i dont feel taht i can nearly make it with what i am doing right now, i should do it real quick
+i dont feel that i can nearly make it with what i am doing right now, i should do it real quick
 
 
 

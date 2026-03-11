@@ -15,7 +15,6 @@ doing less decision and doing more imersion
 - ✅ ✅ ✅ Explore the keyboard
 - ❌ ✅ ✅ Write a blog
 
-i dont feel that i can nearly make it with what i am doing right now, i should do it real quick
 
 
 

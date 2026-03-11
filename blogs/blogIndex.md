@@ -25,4 +25,5 @@ Complete notes on nonlinear systems: stability theory, Lyapunov methods, contrac
 
 ### [Thoughts on personal growth](./personal_growth.html)
 What is some motivations for one except basic lifes. What is one's personality and boundaries that one can get to know and utilize.
+
 ---

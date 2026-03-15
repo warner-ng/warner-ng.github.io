@@ -249,7 +249,7 @@ View the PDF below without needing to download it. Scroll naturally through the 
   });
 
   document.getElementById('zoom-out').addEventListener('click', function() {
-    if (zoomLevel > 0.4) {
+    if (zoomLevel > 0.2) {
       zoomLevel -= 0.2;
       rerenderAllPages();
     }

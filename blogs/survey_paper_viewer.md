@@ -118,13 +118,27 @@ View the PDF below without needing to download it. Scroll naturally through the 
 
 <script>
   let pdfDoc = null;
-  let zoomLevel = 1.2;
-  const BASE_ZOOM = 1.2;
+  let zoomLevel = 1.0;
+  let BASE_ZOOM = 1.0;
   const pageCanvases = [];
   let currentPageInView = 1;
 
   // Set up PDF.js worker
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  // Calculate fit-to-width zoom level
+  function calculateFitToWidthZoom() {
+    if (!pdfDoc) return 1.0;
+    
+    return pdfDoc.getPage(1).then(function(page) {
+      const containerWidth = document.getElementById('pdf-container').clientWidth - 20; // accounting for padding
+      const viewport = page.getViewport({ scale: 1 });
+      const fitScale = containerWidth / viewport.width;
+      zoomLevel = fitScale;
+      BASE_ZOOM = fitScale;
+      return fitScale;
+    });
+  }
 
   // Load the PDF and render all pages
   function loadPdf() {
@@ -132,7 +146,11 @@ View the PDF below without needing to download it. Scroll naturally through the 
     pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
       pdfDoc = pdf;
       document.getElementById('total-pages').textContent = pdf.numPages;
-      renderAllPages();
+      
+      // Calculate fit-to-width zoom, then render all pages
+      calculateFitToWidthZoom().then(function() {
+        renderAllPages();
+      });
     }).catch(function(error) {
       document.getElementById('pdf-container').innerHTML = '<p style="padding: 20px; color: red;">Error loading PDF. Please try downloading it directly.</p>';
       console.error('Error loading PDF:', error);

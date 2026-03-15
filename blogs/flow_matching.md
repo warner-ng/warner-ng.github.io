@@ -203,35 +203,4 @@ The key advantage: Flow Matching provides a **direct path** from noise to data, 
 
 ---
 
-## 8. Extensions: Optimal Transport
 
-There's actually a deeper connection to **Optimal Transport theory**. The linear interpolation path $(1-t)x_0 + t x_1$ is optimal under the Euclidean metric (it's the shortest path). This means Flow Matching implicitly solves an optimal transport problem!
-
-More recent work explores other interpolation strategies to improve this, connecting to **Monge maps** and more sophisticated optimal transport concepts.
-
----
-
-## 9. Recent Applications
-
-Flow Matching has shown impressive results in:
-- **Text-to-image models**: Integrating with transformers for efficient generation
-- **Language models**: Replacing diffusion in some autoregressive contexts
-- **Continuous generative modeling**: For point clouds, 3D shapes, and trajectories
-- **Control**: Generating action sequences for robotics and planning
-
-The simplicity and effectiveness make it increasingly popular for building efficient generative systems.
-
----
-
-## Summary
-
-Flow Matching is elegant because it:
-1. **Directly learns velocity fields** instead of scores
-2. **Uses simple linear paths** between noise and data (with constant velocity)
-3. **Provides tractable supervision** without density estimation
-4. **Connects to optimal transport** theory
-5. **Scales efficiently** to high-dimensional data
-
-The insight that we can construct target velocity fields through marginalization over simple conditional flows is powerful and opens up interesting research directions.
-
-Next time you see flow-based generative models, you'll understand the core mechanism: learn where each point should go (velocity field) to transform noise into data in the most direct way possible.

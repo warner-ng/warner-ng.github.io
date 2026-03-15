@@ -105,6 +105,7 @@ View the PDF below without needing to download it. Scroll naturally through the 
     <button id="zoom-out">Zoom Out</button>
     <button id="zoom-in">Zoom In</button>
     <button id="reset-zoom">Reset Zoom</button>
+    <span id="zoom-level" style="font-size: 14px; font-weight: 500;">100%</span>
     <a id="download-link" href="./robot_skill_future.pdf" download style="margin-left: auto;">
       <button>Download PDF</button>
     </a>
@@ -125,6 +126,12 @@ View the PDF below without needing to download it. Scroll naturally through the 
 
   // Set up PDF.js worker
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  // Update zoom level display
+  function updateZoomDisplay() {
+    const percentage = Math.round(zoomLevel * 100);
+    document.getElementById('zoom-level').textContent = percentage + '%';
+  }
 
   // Calculate fit-to-width zoom level
   function calculateFitToWidthZoom() {
@@ -149,6 +156,7 @@ View the PDF below without needing to download it. Scroll naturally through the 
       
       // Calculate fit-to-width zoom, then render all pages
       calculateFitToWidthZoom().then(function() {
+        updateZoomDisplay();
         renderAllPages();
       });
     }).catch(function(error) {
@@ -256,8 +264,9 @@ View the PDF below without needing to download it. Scroll naturally through the 
       console.warn('PDF not loaded yet');
       return;
     }
-    zoomLevel += 0.2;
+    zoomLevel += 0.4;
     console.log('Zoom in to:', zoomLevel);
+    updateZoomDisplay();
     rerenderAllPages();
   });
 
@@ -267,8 +276,9 @@ View the PDF below without needing to download it. Scroll naturally through the 
       return;
     }
     if (zoomLevel > 0.2) {
-      zoomLevel -= 0.2;
+      zoomLevel -= 0.4;
       console.log('Zoom out to:', zoomLevel);
+      updateZoomDisplay();
       rerenderAllPages();
     }
   });
@@ -280,6 +290,7 @@ View the PDF below without needing to download it. Scroll naturally through the 
     }
     zoomLevel = BASE_ZOOM;
     console.log('Reset zoom to:', zoomLevel);
+    updateZoomDisplay();
     rerenderAllPages();
   });
 

@@ -181,6 +181,8 @@ View the PDF below without needing to download it. Scroll naturally through the 
 
   // Render a single page to canvas
   function renderPage(pageNum, canvas) {
+    if (!pdfDoc || !canvas) return;
+    
     pdfDoc.getPage(pageNum).then(function(page) {
       const viewport = page.getViewport({ scale: zoomLevel });
       const ctx = canvas.getContext('2d');
@@ -193,7 +195,13 @@ View the PDF below without needing to download it. Scroll naturally through the 
         viewport: viewport
       };
 
-      page.render(renderContext);
+      page.render(renderContext).promise.then(function() {
+        console.log('Page', pageNum, 'rendered at zoom', zoomLevel);
+      }).catch(function(error) {
+        console.error('Error rendering page', pageNum, ':', error);
+      });
+    }).catch(function(error) {
+      console.error('Error getting page', pageNum, ':', error);
     });
   }
 
@@ -244,19 +252,34 @@ View the PDF below without needing to download it. Scroll naturally through the 
   });
 
   document.getElementById('zoom-in').addEventListener('click', function() {
+    if (!pdfDoc) {
+      console.warn('PDF not loaded yet');
+      return;
+    }
     zoomLevel += 0.2;
+    console.log('Zoom in to:', zoomLevel);
     rerenderAllPages();
   });
 
   document.getElementById('zoom-out').addEventListener('click', function() {
+    if (!pdfDoc) {
+      console.warn('PDF not loaded yet');
+      return;
+    }
     if (zoomLevel > 0.2) {
       zoomLevel -= 0.2;
+      console.log('Zoom out to:', zoomLevel);
       rerenderAllPages();
     }
   });
 
   document.getElementById('reset-zoom').addEventListener('click', function() {
+    if (!pdfDoc) {
+      console.warn('PDF not loaded yet');
+      return;
+    }
     zoomLevel = BASE_ZOOM;
+    console.log('Reset zoom to:', zoomLevel);
     rerenderAllPages();
   });
 

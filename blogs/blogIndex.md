@@ -22,6 +22,10 @@ An in-depth explanation of Policy Gradient and Actor-Critic methods in Reinforce
 The comtemporary RL algo used widely in robotics sim2real
 
 ---
+### [Flow Matching Explained](./flow_matching.html)
+An intuitive explanation of Flow Matching for generative modeling. Learn how to directly match probability flows as an efficient alternative to diffusion models.
+
+---
 ### [Nonlinear Systems — Complete Notes](./Nonlinear_Systems_LaTeX_Version.html)
 Complete notes on nonlinear systems: stability theory, Lyapunov methods, contraction mapping, and existence/uniqueness. Taught by [Prof. Koushil Sreenath.](https://hybrid-robotics.berkeley.edu/koushil/) 
 

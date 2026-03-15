@@ -6,7 +6,6 @@ description: View my survey paper on robot skills and future directions
 
 # Survey Paper: Robot Skills & Future Directions
 
-View the PDF below using your browser's native PDF viewer. Use trackpad gestures to scroll, zoom, and select text naturally:
 
 <style>
   #pdf-viewer {
@@ -48,17 +47,4 @@ View the PDF below using your browser's native PDF viewer. Use trackpad gestures
 </div>
 
 ---
-
-## About This Survey
-
-This survey paper explores the landscape of robot skills, learning approaches, and future directions in robotics. 
-
-**Features:**
-- Scroll naturally through pages
-- Zoom in/out with trackpad or mouse wheel
-- Select and copy text directly
-- Search within the document
-- Download for offline viewing
-
-Use your browser's standard PDF controls for the best experience!
 

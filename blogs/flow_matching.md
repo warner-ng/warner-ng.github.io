@@ -168,6 +168,7 @@ Here's the practical algorithm:
     \STATE Minimize: $|| v_\theta(x_t, t) - u ||^2$
     \STATE Update $\theta$ via SGD
 \ENDFOR
+\end{algorithmic}
 \end{algorithm}
 ```
 

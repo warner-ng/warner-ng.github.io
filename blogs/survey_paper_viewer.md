@@ -128,12 +128,12 @@ View the PDF below without needing to download it. Scroll naturally through the 
 
   // Calculate fit-to-width zoom level
   function calculateFitToWidthZoom() {
-    if (!pdfDoc) return 1.0;
+    if (!pdfDoc) return 1.5;
     
     return pdfDoc.getPage(1).then(function(page) {
       const containerWidth = document.getElementById('pdf-container').clientWidth - 20; // accounting for padding
       const viewport = page.getViewport({ scale: 1 });
-      const fitScale = containerWidth / viewport.width;
+      const fitScale = (containerWidth / viewport.width) * 1.3; // 1.3x multiplier for higher resolution
       zoomLevel = fitScale;
       BASE_ZOOM = fitScale;
       return fitScale;
@@ -266,12 +266,3 @@ View the PDF below without needing to download it. Scroll naturally through the 
 
 ---
 
-## About This Survey
-
-This survey paper explores the landscape of robot skills, learning approaches, and future directions in robotics. Use the viewer above to navigate through the document with intuitive controls including page navigation, zoom functionality, and the ability to download the full PDF if needed.
-
-**Features:**
-- Page navigation (previous/next)
-- Jump to specific page
-- Zoom in/out for better readability
-- Download option for offline viewing

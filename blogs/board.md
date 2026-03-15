@@ -12,8 +12,8 @@ doing less decision and doing more imersion
 - ✅ ❌ ✅ ✅ Get up early
 - ✅ ✅ ✅ ✅ Go to a coffee shop
 - ✅ ✅ ✅ ✅ Exercise
-- ✅ ✅ ✅ Explore the keyboard
-- ❌ ✅ ✅ Write a blog
+- ✅ ✅ ✅ ✅ Explore the keyboard
+- ❌ ✅ ✅ ✅ Write a blog
 
 
 

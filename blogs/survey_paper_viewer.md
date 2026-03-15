@@ -75,7 +75,6 @@ View the PDF below without needing to download it. Scroll naturally through the 
   
   .pdf-page canvas {
     display: block;
-    max-width: 100%;
     height: auto;
   }
   
@@ -135,12 +134,12 @@ View the PDF below without needing to download it. Scroll naturally through the 
 
   // Calculate fit-to-width zoom level
   function calculateFitToWidthZoom() {
-    if (!pdfDoc) return 1.5;
+    if (!pdfDoc) return 1.34;
     
     return pdfDoc.getPage(1).then(function(page) {
       const containerWidth = document.getElementById('pdf-container').clientWidth - 20; // accounting for padding
       const viewport = page.getViewport({ scale: 1 });
-      const fitScale = (containerWidth / viewport.width) * 1.3; // 1.3x multiplier for higher resolution
+      const fitScale = (containerWidth / viewport.width) * 1.34; // 1.34 = 134% for default zoom
       zoomLevel = fitScale;
       BASE_ZOOM = fitScale;
       return fitScale;

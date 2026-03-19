@@ -759,5 +759,295 @@ Then system is exponentially stable.
 
 Exponential stability implies asymptotic stability.
 
+
 ---
 
+# PART VII — REGION OF ATTRACTION
+
+## 17. Region of Attraction (ROA)
+
+Defined as:
+
+$$
+\mathcal{R} = \{x_0 : \lim_{t\to\infty} x(t,x_0)=0\}
+$$
+
+Exact ROA is difficult to compute.
+
+Using Lyapunov function:
+
+$$
+V(x) > 0,\quad \dot{V}(x) < 0
+$$
+
+Sublevel set:
+
+$$
+\Omega_c = \{x : V(x) \le c\}
+$$
+
+provides an inner estimate of ROA.
+
+For quadratic Lyapunov function:
+
+$$
+V(x)=x^\top P x
+$$
+
+the level set
+
+$$
+x^\top P x \le c
+$$
+
+is an ellipse.
+
+---
+
+# PART VIII — TIME-VARYING SYSTEMS
+
+## 18. Time-Varying System
+
+$$
+\dot{x}=f(t,x)
+$$
+
+Equilibrium satisfies:
+
+$$
+f(t,x_e)=0,\quad \forall t
+$$
+
+Region of attraction may depend on time and can shrink.
+
+---
+
+## 19. Stability Types
+
+- Stability may depend on initial time $t_0$
+- Uniform stability does not depend on $t_0$
+
+Uniform stability is stronger.
+
+---
+
+# PART IX — LYAPUNOV FOR TIME-VARYING SYSTEMS
+
+## 20. Class-$\mathcal{K}$ Functions
+
+A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
+
+- Continuous  
+- Strictly increasing  
+- $\alpha(0)=0$  
+
+---
+
+## 21. Locally Positive Definite
+
+$$
+V(t,x) \ge \alpha(\Vert x\Vert)
+$$
+
+for some $\alpha \in \mathcal{K}$.
+
+---
+
+## 22. Decrescent Function
+
+$$
+V(t,x) \le \gamma(\Vert x\Vert)
+$$
+
+for some $\gamma \in \mathcal{K}$.
+
+---
+
+## 23. Equivalent Condition
+
+Define:
+
+$$
+W(x)=\inf_{t\ge0} V(t,x)
+$$
+
+Then $W(x)$ is positive definite.
+
+---
+
+## 24. Stability Theorem
+
+If:
+
+- $f$ is locally Lipschitz in $x$  
+- $V$ is locally positive definite  
+- $V$ is decrescent  
+- $\dot{V}(t,x) \le 0$  
+
+Then equilibrium is uniformly stable.
+
+If:
+
+$$
+\dot{V}(t,x) < 0
+$$
+
+Then equilibrium is uniformly asymptotically stable.
+
+---
+
+# PART X — EXPONENTIAL STABILITY
+
+## 25. Definition
+
+Equilibrium is exponentially stable if:
+
+$$
+\Vert x(t)\Vert \le M e^{-\lambda t} \Vert x_0\Vert
+$$
+
+for some $M>0$, $\lambda>0$.
+
+---
+
+## 26. Lyapunov Condition for ES
+
+If:
+
+$$
+c_1 \Vert x\Vert^2 \le V(x) \le c_2 \Vert x\Vert^2
+$$
+
+and
+
+$$
+\dot{V}(x) \le -c_3 V(x)
+$$
+
+Then system is exponentially stable.
+
+---
+
+## 27. Relation
+
+$$
+\text{Exponential Stability} \Rightarrow \text{Asymptotic Stability} \Rightarrow \text{Stability}
+$$
+
+---
+
+## 28. Example
+
+$$
+\dot{x} = -x^3
+$$
+
+System is asymptotically stable but not exponentially stable.
+
+---
+
+# PART XI — INDIRECT METHOD
+
+## 29. Linearization
+
+Linearize system at equilibrium:
+
+$$
+A = \frac{\partial f}{\partial x}\Big|_{x=0}
+$$
+
+---
+
+## 30. Result
+
+- If all eigenvalues of $A$ have negative real parts → locally exponentially stable  
+- If any eigenvalue has positive real part → unstable  
+- If eigenvalues on imaginary axis → inconclusive  
+
+---
+
+# PART XII — CONTROL LYAPUNOV FUNCTION (CLF)
+
+## 31. Problem
+
+Design control:
+
+$$
+u = \alpha(x)
+$$
+
+such that:
+
+$$
+\dot{x} = f(x,u)
+$$
+
+is stable.
+
+---
+
+## 32. CLF Definition
+
+A function $V(x)$ is a CLF if:
+
+$$
+V(x) > 0,\quad V(0)=0
+$$
+
+and
+
+$$
+\inf_{u} \frac{\partial V}{\partial x} f(x,u) < 0,\quad \forall x \ne 0
+$$
+
+---
+
+## 33. Interpretation
+
+There always exists a control $u$ such that:
+
+$$
+\dot{V}(x,u) < 0
+$$
+
+---
+
+## 34. Control Design Idea
+
+1. Choose Lyapunov function $V(x)$  
+2. Design $u(x)$ such that:
+
+$$
+\dot{V}(x) < 0
+$$
+
+---
+
+# PART XIII — STABILIZATION
+
+## 35. Full-State Feedback
+
+Closed-loop system:
+
+$$
+\dot{x} = f(x,\alpha(x))
+$$
+
+Goal: make equilibrium globally asymptotically stable.
+
+---
+
+## 36. Key Idea
+
+Control enforces energy decrease:
+
+$$
+\dot{V}(x) < 0
+$$
+
+---
+
+## 37. Outcome
+
+- Stability achieved  
+- Possibly exponential convergence  

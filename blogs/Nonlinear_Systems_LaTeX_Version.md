@@ -5,7 +5,8 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 ---
 
 # NONLINEAR SYSTEMS — COMPLETE NOTES
-### ESSENTIAL MATRIX DERIVATIVE RULES
+
+**ESSENTIAL MATRIX DERIVATIVE RULES**
 
 #### 1. Derivative of a Transpose
 
@@ -67,7 +68,7 @@ $$
 
 
 ---
-# PART I — LINEAR VS NONLINEAR SYSTEMS
+# PART (1) — LINEAR VS NONLINEAR SYSTEMS
 
 ## 1. Linear Systems
 
@@ -103,7 +104,8 @@ Properties of linear systems:
 - The global behavior is completely determined by the spectrum of $A$
 
 
-### 1.1 limit cycle
+
+**1.1 limit cycle**
 
 A limit cycle is an isolated periodic orbit of a nonlinear autonomous system
 
@@ -190,7 +192,7 @@ Behavior depends on geometry of the vector field.
 
 ---
 
-# PART II — MATHEMATICAL FOUNDATIONS
+# PART (2) — MATHEMATICAL FOUNDATIONS
 
 ## 3. Normed Spaces
 
@@ -260,7 +262,7 @@ If $P$ is a contraction on a complete space:
 
 ---
 
-# PART III — EXISTENCE & UNIQUENESS OF ODEs
+# PART (3) — EXISTENCE & UNIQUENESS OF ODEs
 
 ## 6. Integral Form of ODE
 
@@ -357,15 +359,15 @@ $$
 Used for:
 
 - Continuous dependence on IC
-- Growth bounds  
+- Growth bounds
 
 ---
 
 ## 10. Continuous Dependence on IC (Initial Conditions)
-four question for nonlinear system
+
+Four questions for nonlinear system:
 1. solution exist?
 2. solution unique?
-
 3. have finite escape time?
 4. continuous on IC?
 
@@ -397,24 +399,25 @@ This means small perturbations in the initial condition produce small changes in
 
 ---
 
-# PART IV — STABILITY THEORY
+# PART (4) — STABILITY THEORY
 
-## 10. Equilibrium
-
+## 11. Equilibrium
 
 $$
 f(x_e)=0
 $$
 
-## 11. Compact
+---
 
-close + bounded = compact
+## 12. Compactness
 
-[0,1]
+Close + bounded = compact
+
+Example: [0,1]
 
 ---
 
-## 11. Lyapunov Stability
+## 13. Lyapunov Stability
 
 Stable if:
 
@@ -426,14 +429,7 @@ $$
 \Vert x(t)-x_e\Vert <\varepsilon
 $$
 
-that 𝑡 means any time 
-𝑡
-≥
-0
-not 
-𝑡
-→
-∞
+(Note: $t$ means any time $t \ge 0$, not $t \to \infty$)
 
 Asymptotically stable if additionally:
 
@@ -444,9 +440,9 @@ $$
 
 ---
 
-# PART V — LYAPUNOV DIRECT METHOD
+# PART (5) — LYAPUNOV DIRECT METHOD
 
-## 12. Lyapunov Function
+## 14. Lyapunov Function
 
 A scalar function $V(x)$ satisfies:
 
@@ -480,9 +476,7 @@ $$
 
 ---
 
-## 13. Global AS and LaSalle Thm (one different condition for AS)
-
-
+## 15. Global AS and LaSalle Theorem
 
 If:
 
@@ -507,7 +501,7 @@ this basically says the point will fall downward and fix only to the origin
 
 ---
 
-## 14. Instability Theorem (Chetaev)
+## 16. Instability Theorem (Chetaev)
 
 If:
 
@@ -528,9 +522,9 @@ Then equilibrium is unstable.
 
 ---
 
-# PART VI — LINEARIZATION & INDIRECT METHOD
+# PART (6) — LINEARIZATION & INDIRECT METHOD
 
-## 14. Lyapunov Equation
+## 17. Lyapunov Equation
 
 For the linearized system
 $$
@@ -563,7 +557,9 @@ $$
 
 $$
 
-## 15. Linearization
+---
+
+## 18. Linearization
 
 Linearization matrix:
 
@@ -576,7 +572,8 @@ Approximation:
 $$
 \dot{x} \approx A(x-x_e)
 $$
-### Linearization Example (Equilibrium Not at Origin)
+
+**Linearization Example (Equilibrium Not at Origin)**
 
 Consider the nonlinear system
 
@@ -661,8 +658,9 @@ $$
 
 ---
 
-## 16. Lyapunov Indirect Method
-after linearization,
+## 19. Lyapunov Indirect Method
+
+After linearization,
 
 If eigenvalues of $J(x)$:
 
@@ -674,9 +672,9 @@ Indirect method is local.
 
 ---
 
-# PART VII — REGION OF ATTRACTION
+# PART (7) — REGION OF ATTRACTION
 
-## 17. Region of Attraction (ROA)
+## 20. Region of Attraction (ROA)
 
 Defined as:
 
@@ -703,110 +701,11 @@ provides an inner estimate of ROA.
 
 ---
 
-# PART IX — TIME-VARYING SYSTEMS
+# PART (8) — TIME-VARYING SYSTEMS
 
-## 19. Time-Varying System
+## 21. Time-Varying System Analysis
 
-$$
-\dot{x}=f(t,x)
-$$
-
-Uniform stability means $\delta$ does not depend on initial time.
-
----
-
-## 20. Class-$\mathcal{K}$ Functions
-
-A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
-
-- Continuous  
-- Strictly increasing  
-- $\alpha(0)=0$  
-
-Used in Lyapunov bounds:
-
-$$
-\alpha_1(\Vert x\Vert ) \le V(t,x) \le \alpha_2(\Vert x\Vert )
-$$
-
----
-
-## 21. Exponential Stability
-
-Equilibrium is exponentially stable if:
-
-$$
-\Vert x(t)\Vert  \le M e^{-\lambda t} \Vert x_0\Vert 
-$$
-
-for some $M>0$, $\lambda>0$.
-
-Lyapunov condition:
-
-If
-
-$$
-\alpha_1\Vert x\Vert ^2 \le V(x) \le \alpha_2\Vert x\Vert ^2
-$$
-
-and
-
-$$
-\dot{V}(x) \le -\alpha_3 \Vert x\Vert ^2
-$$
-
-Then system is exponentially stable.
-
-Exponential stability implies asymptotic stability.
-
-
----
-
-# PART VII — REGION OF ATTRACTION
-
-## 17. Region of Attraction (ROA)
-
-Defined as:
-
-$$
-\mathcal{R} = \{x_0 : \lim_{t\to\infty} x(t,x_0)=0\}
-$$
-
-Exact ROA is difficult to compute.
-
-Using Lyapunov function:
-
-$$
-V(x) > 0,\quad \dot{V}(x) < 0
-$$
-
-Sublevel set:
-
-$$
-\Omega_c = \{x : V(x) \le c\}
-$$
-
-provides an inner estimate of ROA.
-
-For quadratic Lyapunov function:
-
-$$
-V(x)=x^\top P x
-$$
-
-the level set
-
-$$
-x^\top P x \le c
-$$
-
-is an ellipse.
-
----
-
-# PART VIII — TIME-VARYING SYSTEMS
-
-## 18. Time-Varying System
+**Time-Varying System**
 
 $$
 \dot{x}=f(t,x)
@@ -819,10 +718,9 @@ f(t,x_e)=0,\quad \forall t
 $$
 
 Region of attraction may depend on time and can shrink.
-
 ---
 
-## 19. Stability Types
+## 22. Stability Types
 
 - Stability may depend on initial time $t_0$
 - Uniform stability does not depend on $t_0$
@@ -831,9 +729,9 @@ Uniform stability is stronger.
 
 ---
 
-# PART IX — LYAPUNOV FOR TIME-VARYING SYSTEMS
+# PART (9) — LYAPUNOV FOR TIME-VARYING SYSTEMS
 
-## 20. Class-$\mathcal{K}$ Functions
+## 23. Class-$\mathcal{K}$ Functions
 
 A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
 
@@ -843,7 +741,7 @@ A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
 
 ---
 
-## 21. Locally Positive Definite
+## 24. Locally Positive Definite
 
 $$
 V(t,x) \ge \alpha(\Vert x\Vert)
@@ -853,7 +751,7 @@ for some $\alpha \in \mathcal{K}$.
 
 ---
 
-## 22. Decrescent Function
+## 25. Decrescent Function
 
 $$
 V(t,x) \le \gamma(\Vert x\Vert)
@@ -863,7 +761,7 @@ for some $\gamma \in \mathcal{K}$.
 
 ---
 
-## 23. Equivalent Condition
+## 26. Equivalent Condition
 
 Define:
 
@@ -875,7 +773,7 @@ Then $W(x)$ is positive definite.
 
 ---
 
-## 24. Stability Theorem
+## 27. Stability Theorem
 
 If:
 
@@ -896,9 +794,9 @@ Then equilibrium is uniformly asymptotically stable.
 
 ---
 
-# PART X — EXPONENTIAL STABILITY
+# PART (10) — EXPONENTIAL STABILITY
 
-## 25. Definition
+## 28. Definition
 
 Equilibrium is exponentially stable if:
 
@@ -908,9 +806,8 @@ $$
 
 for some $M>0$, $\lambda>0$.
 
----
 
-## 26. Lyapunov Condition for ES
+**Lyapunov Condition for ES**
 
 If:
 
@@ -926,17 +823,15 @@ $$
 
 Then system is exponentially stable.
 
----
 
-## 27. Relation
+**Relation**
 
 $$
 \text{Exponential Stability} \Rightarrow \text{Asymptotic Stability} \Rightarrow \text{Stability}
 $$
 
----
 
-## 28. Example
+**Example**
 
 $$
 \dot{x} = -x^3
@@ -946,9 +841,12 @@ System is asymptotically stable but not exponentially stable.
 
 ---
 
-# PART XI — INDIRECT METHOD
+# PART (11) — INDIRECT METHOD
 
-## 29. Linearization
+## 29. Linearization & Eigenvalue Analysis
+
+
+**Linearization**
 
 Linearize system at equilibrium:
 
@@ -956,9 +854,8 @@ $$
 A = \frac{\partial f}{\partial x}\Big|_{x=0}
 $$
 
----
 
-## 30. Result
+**Result**
 
 - If all eigenvalues of $A$ have negative real parts → locally exponentially stable  
 - If any eigenvalue has positive real part → unstable  
@@ -966,9 +863,12 @@ $$
 
 ---
 
-# PART XII — CONTROL LYAPUNOV FUNCTION (CLF)
+# PART (12) — CONTROL LYAPUNOV FUNCTION (CLF)
 
-## 31. Problem
+## 31. Control Lyapunov Function Design
+
+
+**Problem**
 
 Design control:
 
@@ -984,9 +884,8 @@ $$
 
 is stable.
 
----
 
-## 32. CLF Definition
+**CLF Definition**
 
 A function $V(x)$ is a CLF if:
 
@@ -1000,9 +899,8 @@ $$
 \inf_{u} \frac{\partial V}{\partial x} f(x,u) < 0,\quad \forall x \ne 0
 $$
 
----
 
-## 33. Interpretation
+**Interpretation**
 
 There always exists a control $u$ such that:
 
@@ -1010,9 +908,8 @@ $$
 \dot{V}(x,u) < 0
 $$
 
----
 
-## 34. Control Design Idea
+**Control Design Idea**
 
 1. Choose Lyapunov function $V(x)$  
 2. Design $u(x)$ such that:
@@ -1023,9 +920,12 @@ $$
 
 ---
 
-# PART XIII — STABILIZATION
+# PART (13) — STABILIZATION
 
-## 35. Full-State Feedback
+## 35. Full-State Feedback Control Design
+
+
+**Full-State Feedback**
 
 Closed-loop system:
 
@@ -1035,9 +935,8 @@ $$
 
 Goal: make equilibrium globally asymptotically stable.
 
----
 
-## 36. Key Idea
+**Key Idea**
 
 Control enforces energy decrease:
 
@@ -1045,9 +944,8 @@ $$
 \dot{V}(x) < 0
 $$
 
----
 
-## 37. Outcome
+**Outcome**
 
 - Stability achieved  
 - Possibly exponential convergence  

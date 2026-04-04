@@ -734,69 +734,28 @@ Uniform stability is stronger.
 ## 23. Class-$\mathcal{K}$ Functions
 
 A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
-
-- Continuous  
-- Strictly increasing  
-- $\alpha(0)=0$  
-
----
-
-## 24. Locally Positive Definite
-
-$$
-V(t,x) \ge \alpha(\Vert x\Vert)
-$$
-
-for some $\alpha \in \mathcal{K}$.
+- Continuous
+- Strictly increasing
+- $\alpha(0)=0$
 
 ---
 
-## 25. Decrescent Function
+## 24. Stability Conditions for Time-Varying Systems
 
-$$
-V(t,x) \le \gamma(\Vert x\Vert)
-$$
-
-for some $\gamma \in \mathcal{K}$.
-
----
-
-## 26. Equivalent Condition
-
-Define:
-
-$$
-W(x)=\inf_{t\ge0} V(t,x)
-$$
-
-Then $W(x)$ is positive definite.
-
----
-
-## 27. Stability Theorem
-
-If:
-
-- $f$ is locally Lipschitz in $x$  
-- $V$ is locally positive definite  
-- $V$ is decrescent  
-- $\dot{V}(t,x) \le 0$  
+If $f$ is locally Lipschitz in $x$ and $V(t,x)$ satisfies:
+- $V(t,x) \ge \alpha(\Vert x\Vert)$ (locally positive definite)
+- $V(t,x) \le \gamma(\Vert x\Vert)$ (decrescent)
+- $\dot{V}(t,x) \le 0$
 
 Then equilibrium is uniformly stable.
 
-If:
-
-$$
-\dot{V}(t,x) < 0
-$$
-
-Then equilibrium is uniformly asymptotically stable.
+If $\dot{V}(t,x) < 0$, then equilibrium is uniformly asymptotically stable.
 
 ---
 
 # PART (10) — EXPONENTIAL STABILITY
 
-## 28. Definition
+## 25. Exponential Stability
 
 Equilibrium is exponentially stable if:
 
@@ -806,47 +765,23 @@ $$
 
 for some $M>0$, $\lambda>0$.
 
----
-
-## 29. Lyapunov Condition for ES
-
-If:
-
-$$
-c_1 \Vert x\Vert^2 \le V(x) \le c_2 \Vert x\Vert^2
-$$
-
-and
-
-$$
-\dot{V}(x) \le -c_3 V(x)
-$$
-
-Then system is exponentially stable.
+Lyapunov condition: If $c_1 \Vert x\Vert^2 \le V(x) \le c_2 \Vert x\Vert^2$ and $\dot{V}(x) \le -c_3 V(x)$, then exponentially stable.
 
 ---
 
-## 30. Relation
+## 26. Stability Hierarchy
 
 $$
 \text{Exponential Stability} \Rightarrow \text{Asymptotic Stability} \Rightarrow \text{Stability}
 $$
 
----
-
-## 31. Example
-
-$$
-\dot{x} = -x^3
-$$
-
-System is asymptotically stable but not exponentially stable.
+Example: $\dot{x} = -x^3$ is asymptotically stable but NOT exponentially stable.
 
 ---
 
 # PART (11) — INDIRECT METHOD
 
-## 32. Linearization
+## 27. Linearization & Eigenvalue Test
 
 Linearize system at equilibrium:
 
@@ -854,98 +789,42 @@ $$
 A = \frac{\partial f}{\partial x}\Big|_{x=0}
 $$
 
----
-
-## 33. Result
-
-- If all eigenvalues of $A$ have negative real parts → locally exponentially stable  
-- If any eigenvalue has positive real part → unstable  
-- If eigenvalues on imaginary axis → inconclusive  
+Stability determined by eigenvalues of $A$:
+- All $\text{Re}(\lambda) < 0$ → locally asymptotically stable
+- Any $\text{Re}(\lambda) > 0$ → unstable
+- $\text{Re}(\lambda) = 0$ → inconclusive (higher-order terms decide)  
 
 ---
 
 # PART (12) — CONTROL LYAPUNOV FUNCTION (CLF)
 
-## 34. Problem
-
-Design control:
-
-$$
-u = \alpha(x)
-$$
-
-such that:
-
-$$
-\dot{x} = f(x,u)
-$$
-
-is stable.
-
----
-
-## 35. CLF Definition
+## 28. CLF Design
 
 A function $V(x)$ is a CLF if:
-
 $$
 V(x) > 0,\quad V(0)=0
 $$
 
-and
-
+and there exists control $u$ such that:
 $$
 \inf_{u} \frac{\partial V}{\partial x} f(x,u) < 0,\quad \forall x \ne 0
 $$
 
----
-
-## 36. Interpretation
-
-There always exists a control $u$ such that:
-
-$$
-\dot{V}(x,u) < 0
-$$
-
----
-
-## 37. Control Design Idea
-
-1. Choose Lyapunov function $V(x)$  
-2. Design $u(x)$ such that:
-
-$$
-\dot{V}(x) < 0
-$$
+Design: Choose $V(x)$ and design $u(x)$ to enforce $\dot{V}(x) < 0$.
 
 ---
 
 # PART (13) — STABILIZATION
 
-## 38. Full-State Feedback
+## 29. Full-State Feedback Stabilization
 
 Closed-loop system:
-
 $$
 \dot{x} = f(x,\alpha(x))
 $$
 
-Goal: make equilibrium globally asymptotically stable.
+Goal: Make equilibrium globally asymptotically stable.
 
----
+Method: Design feedback control $u = \alpha(x)$ such that $\dot{V}(x) < 0$ for a chosen Lyapunov function $V(x)$.
 
-## 39. Key Idea
-
-Control enforces energy decrease:
-
-$$
-\dot{V}(x) < 0
-$$
-
----
-
-## 40. Outcome
-
-- Stability achieved  
-- Possibly exponential convergence  
+Result: Stability achieved, possibly with exponential convergence.  

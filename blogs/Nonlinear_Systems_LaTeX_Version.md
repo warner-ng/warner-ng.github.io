@@ -806,8 +806,9 @@ $$
 
 for some $M>0$, $\lambda>0$.
 
+---
 
-**Lyapunov Condition for ES**
+## 29. Lyapunov Condition for ES
 
 If:
 
@@ -823,15 +824,17 @@ $$
 
 Then system is exponentially stable.
 
+---
 
-**Relation**
+## 30. Relation
 
 $$
 \text{Exponential Stability} \Rightarrow \text{Asymptotic Stability} \Rightarrow \text{Stability}
 $$
 
+---
 
-**Example**
+## 31. Example
 
 $$
 \dot{x} = -x^3
@@ -843,10 +846,7 @@ System is asymptotically stable but not exponentially stable.
 
 # PART (11) — INDIRECT METHOD
 
-## 29. Linearization & Eigenvalue Analysis
-
-
-**Linearization**
+## 32. Linearization
 
 Linearize system at equilibrium:
 
@@ -854,8 +854,9 @@ $$
 A = \frac{\partial f}{\partial x}\Big|_{x=0}
 $$
 
+---
 
-**Result**
+## 33. Result
 
 - If all eigenvalues of $A$ have negative real parts → locally exponentially stable  
 - If any eigenvalue has positive real part → unstable  
@@ -865,10 +866,7 @@ $$
 
 # PART (12) — CONTROL LYAPUNOV FUNCTION (CLF)
 
-## 31. Control Lyapunov Function Design
-
-
-**Problem**
+## 34. Problem
 
 Design control:
 
@@ -884,8 +882,9 @@ $$
 
 is stable.
 
+---
 
-**CLF Definition**
+## 35. CLF Definition
 
 A function $V(x)$ is a CLF if:
 
@@ -899,8 +898,9 @@ $$
 \inf_{u} \frac{\partial V}{\partial x} f(x,u) < 0,\quad \forall x \ne 0
 $$
 
+---
 
-**Interpretation**
+## 36. Interpretation
 
 There always exists a control $u$ such that:
 
@@ -908,8 +908,9 @@ $$
 \dot{V}(x,u) < 0
 $$
 
+---
 
-**Control Design Idea**
+## 37. Control Design Idea
 
 1. Choose Lyapunov function $V(x)$  
 2. Design $u(x)$ such that:
@@ -922,10 +923,7 @@ $$
 
 # PART (13) — STABILIZATION
 
-## 35. Full-State Feedback Control Design
-
-
-**Full-State Feedback**
+## 38. Full-State Feedback
 
 Closed-loop system:
 
@@ -935,8 +933,9 @@ $$
 
 Goal: make equilibrium globally asymptotically stable.
 
+---
 
-**Key Idea**
+## 39. Key Idea
 
 Control enforces energy decrease:
 
@@ -944,8 +943,9 @@ $$
 \dot{V}(x) < 0
 $$
 
+---
 
-**Outcome**
+## 40. Outcome
 
 - Stability achieved  
 - Possibly exponential convergence  

@@ -950,6 +950,8 @@ $$
 
 ## 24. Exponential Stability
 
+1.ES
+
 Equilibrium is exponentially stable if:
 
 $$
@@ -958,9 +960,29 @@ $$
 
 for some $M>0$, $\lambda>0$.
 
-Lyapunov condition: If $c_1 \Vert x\Vert^2 \le V(x) \le c_2 \Vert x\Vert^2$ and $\dot{V}(x) \le -c_3 V(x)$, then exponentially stable.
+---
 
+2.Lyapunov condition(direct method):
 
+ - If $c_1 \Vert x\Vert^2 \le V(x) \le c_2 \Vert x\Vert^2$ and $\dot{V}(x) \le -c_3 V(x)$, then exponentially stable.
+
+ ---
+
+3.Indirect Method (Linearization):
+
+- If
+$
+A = \frac{\partial f}{\partial x}\Big|_{x=0}
+$
+and all eigenvalues of $A$ satisfy
+$
+\text{Re}(\lambda_i) < 0
+$
+
+then $x_e = 0$ is exponentially stable.
+
+---
+4.hierachy
 
 $$
 \text{Exponential Stability} \Rightarrow \text{Asymptotic Stability} \Rightarrow \text{Stability}
@@ -968,9 +990,60 @@ $$
 
 Example: $\dot{x} = -x^3$ is asymptotically stable but NOT exponentially stable.
 
-# 
+---
+5.example of ES 
+Example:
 
-## 27. Linearization & Eigenvalue Test
+- System
+$$
+\dot{x} = -x^3
+$$
+is globally asymptotically stable (GAS), but convergence is slow (polynomial).
+
+- Add a small perturbation
+$$
+\dot{x} = -x^3 + \varepsilon x
+$$
+
+- Near $x=0$:
+$$
+\dot{x} \approx \varepsilon x
+$$
+so the system becomes unstable.
+
+Conclusion:
+
+- asymptotic stability can be destroyed by arbitrarily small perturbations  
+- exponential stability is robust to small perturbations  
+
+Fix (via linearization):
+
+- design the system such that the linearization
+$$
+A = \frac{\partial f}{\partial x}\Big|_{x=0}
+$$
+has eigenvalues satisfying
+$$
+\text{Re}(\lambda_i) < 0
+$$
+
+So:
+
+- add a linear stabilizing term
+$$
+\dot{x} = -x - x^3
+$$
+
+- then near $x=0$, system behaves like
+$$
+\dot{x} \approx -x
+$$
+
+- so eigenvalue $\lambda = -1 < 0$ → ensures exponential stability and robustness
+
+
+## 25. Linearization & Eigenvalue Test
+
 
 Linearize system at equilibrium:
 
@@ -979,15 +1052,17 @@ A = \frac{\partial f}{\partial x}\Big|_{x=0}
 $$
 
 Stability determined by eigenvalues of $A$:
-- All $\text{Re}(\lambda) < 0$ → locally asymptotically stable
+- All $\text{Re}(\lambda) < 0$ → locally asymptotically stable (actually ES)
 - Any $\text{Re}(\lambda) > 0$ → unstable
 - $\text{Re}(\lambda) = 0$ → inconclusive (higher-order terms decide)  
 
+# ----Control Method----
 
+## 26. Control Lyapunov Function CLF
 
-## 28. CLF Design
+> insight: How to control a system, makes it GAS
 
-A function $V(x)$ is a CLF if:
+A lyapunov function $V(x)$ is a CLF if:
 $$
 V(x) > 0,\quad V(0)=0
 $$
@@ -997,19 +1072,847 @@ $$
 \inf_{u} \frac{\partial V}{\partial x} f(x,u) < 0,\quad \forall x \ne 0
 $$
 
+> which is literally $\dot{V}(x)<0 $
+
 Design: Choose $V(x)$ and design $u(x)$ to enforce $\dot{V}(x) < 0$.
 
 
 
-## 29. Full-State Feedback Stabilization
+## 27. Artstein Theorem (1983)
 
-Closed-loop system:
+Consider:
+$$
+\dot{x} = f(x,u)
+$$
+
+If:
+- $f$ is Lipschitz  
+- there exists a CLF  
+
+then:
+
+$$
+\exists \alpha(x) \in C^\infty
+$$
+
+such that:
 $$
 \dot{x} = f(x,\alpha(x))
 $$
 
-Goal: Make equilibrium globally asymptotically stable.
+is GAS
 
-Method: Design feedback control $u = \alpha(x)$ such that $\dot{V}(x) < 0$ for a chosen Lyapunov function $V(x)$.
+> only existence, not construction
 
-Result: Stability achieved, possibly with exponential convergence.  
+---
+
+## 28. Control Affine System
+
+$$
+\dot{x} = f(x) + \sum_{i=1}^m g_i(x) u_i
+$$
+
+or
+
+$$
+\dot{x} = f(x) + g(x)u
+$$
+
+> affine = linear + shift
+
+---
+
+## 29. Lie Derivative
+
+$$
+L_f h(x) = \frac{\partial h}{\partial x} f(x)
+$$
+
+For CLF:
+$$
+\dot{V}(x) = L_f V(x) + \sum L_{g_i} V(x) u_i
+$$
+
+---
+
+## 30. Key CLF Condition
+
+$$
+\forall x \ne 0,\quad \inf_u \big[ L_f V(x) + L_g V(x) u \big] < 0
+$$
+
+equivalent:
+
+$$
+L_g V(x) = 0 \;\Rightarrow\; L_f V(x) < 0
+$$
+
+> if control cannot act, system must decay itself
+
+---
+
+## 31. Constructing Control
+
+Goal: find $u = \alpha(x)$
+
+$$
+u =
+\begin{cases}
+0, & L_g V(x)=0 \\
+-\dfrac{L_f V}{L_g V}, & L_g V(x)\ne 0
+\end{cases}
+$$
+
+> min-norm controller
+
+---
+
+## 32. Small Control Property
+
+A CLF satisfies:
+
+$$
+\forall \epsilon>0,\ \exists \delta>0,\ \forall x\in B_\delta(0), x\ne0,
+$$
+
+$$
+\exists u,\ \Vert u\Vert < \epsilon
+$$
+
+such that:
+$$
+\dot V(x) < 0
+$$
+
+---
+
+## 33. Sontag Control (GAS)
+
+For:
+$$
+\dot{x} = f(x) + g(x)u
+$$
+
+define:
+$$
+u_s(x) =
+\begin{cases}
+\dfrac{-L_f V + \sqrt{(L_f V)^2 + (L_g V)^4}}{L_g V}, & L_g V \ne 0 \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+then:
+$$
+\dot V(x) = -\sqrt{(L_f V)^2 + (L_g V)^4} < 0
+$$
+
+> ensures GAS
+
+---
+
+## 34. CLF vs Lyapunov
+
+Lyapunov:
+$$
+\dot{x} = f(x),\quad \dot V < 0
+$$
+
+CLF:
+$$
+\dot{x} = f(x)+g(x)u,\quad \exists u:\dot V<0
+$$
+
+> stability is not given, but achievable
+
+---
+
+## 35. Backstepping (idea)
+
+> stabilize system layer by layer
+
+Introduce virtual control:
+$$
+\dot{x} = f(x) + g(x)\xi,\quad \xi = u
+$$
+
+---
+
+## 36. Backstepping Example (linear)
+
+$$
+\begin{bmatrix}
+\dot{x}_1 \\
+\dot{x}_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 \\
+- c_1 & -c_2
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix}
+$$
+
+choose virtual control:
+$$
+x_2 = \alpha(x_1) = -c_1 x_1
+$$
+
+---
+
+## 37. Error Definition
+
+$$
+z = x_2 - \alpha(x_1)
+$$
+
+then:
+$$
+\dot{x}_1 = z - c_1 x_1
+$$
+
+$$
+\dot{z} = u + c_1(z - c_1 x_1)
+$$
+
+---
+
+## 38. Augmented Lyapunov
+
+$$
+V_a(x,z) = \frac{1}{2}x_1^2 + \frac{1}{2}z^2
+$$
+
+$$
+\dot V_a = x_1\dot x_1 + z\dot z
+$$
+
+choose:
+$$
+u = -x_1 - c_1(z - c_1 x_1) - c_2 z
+$$
+
+$$
+\Rightarrow \dot V_a < 0
+$$
+
+---
+
+## 39. Backstepping General Result
+
+If:
+- $V(x)$ positive definite  
+- radially unbounded  
+
+and
+$$
+L_f V + L_g V \alpha(x) \le -W(x)
+$$
+
+with $W(x)$ positive definite
+
+then:
+$$
+\text{closed-loop is GAS}
+$$
+
+---
+
+## 40. Integrator Backstepping Lemma
+
+Augmented system:
+$$
+\dot{x} = f(x) + g(x)\xi
+$$
+
+$$
+\dot{\xi} = u
+$$
+
+Lyapunov:
+$$
+V_a(x,\xi) = V(x) + \frac{1}{2}(\xi - \alpha(x))^2
+$$
+
+---
+
+## 41. Control Law (Backstepping)
+
+$$
+u =
+- c(\xi - \alpha(x))
++ \frac{\partial \alpha}{\partial x}(f(x)+g(x)\xi)
+- \frac{\partial V}{\partial x} g(x)
+$$
+
+---
+
+## 42. Weak Case (semi-definite)
+
+If $W(x)$ is only positive semi-definite:
+
+$$
+\dot V_a \le 0
+$$
+
+then system converges to:
+$$
+\mathcal{Z} = \{(x,\xi)\mid W(x)=0,\ \xi=\alpha(x)\}
+$$
+
+> not necessarily origin
+
+
+## 43. Backstepping Revisit
+
+Consider system:
+
+$$
+\dot x = x \xi,\quad \dot \xi = u
+$$
+
+Choose Lyapunov:
+
+$$
+V(x) = \frac{1}{2}x^2
+$$
+
+Let CLF:
+
+$$
+V_a(x) = V(x) + \frac{1}{2}\xi^2
+$$
+
+Then:
+
+$$
+\dot V_a = x\dot x + \xi \dot \xi = \xi (x^2 + u)
+$$
+
+Choose:
+
+$$
+u = -x^2 - c\xi
+$$
+
+Then:
+
+$$
+\dot V_a = -c\xi^2 \le 0
+$$
+
+---
+
+Using LaSalle:
+
+Invariant set:
+
+$$
+S = \{(x,\xi)\mid \dot V_a = 0\} \Rightarrow \xi = 0
+$$
+
+Then:
+
+$$
+\dot \xi = u = -x^2
+$$
+
+So:
+
+$$
+\xi = 0 \Rightarrow x = 0
+$$
+
+Only solution:
+
+$$
+(x,\xi) = (0,0)
+$$
+
+Therefore:
+> asymptotically stable
+
+---
+
+## 44. Strict Feedback System
+
+Definition:
+
+$$
+\dot x = f_0(x) + g_0(x)\xi_1
+$$
+
+$$
+\dot \xi_1 = f_1(x,\xi_1) + g_1(x,\xi_1)\xi_2
+$$
+
+$$
+\dot \xi_2 = f_2(x,\xi_1,\xi_2) + g_2(x,\xi_1,\xi_2)\xi_3
+$$
+
+$$
+\cdots
+$$
+
+Assume:
+
+$$
+f_i(0)=0
+$$
+
+---
+
+> this is also backstepping
+
+Each $\xi_i$ is a **virtual control input**
+
+Goal:
+> make whole system GAS by ensuring $\dot V < 0$
+
+---
+
+## 45. Assumption A1
+
+There exist:
+
+$$
+\alpha(x),\; V(x)
+$$
+
+such that:
+
+$$
+\dot x = f_0(x) + g_0(x)\alpha(x)
+$$
+
+is GAS (or SLS)
+
+---
+
+## 46. Backstepping Construction
+
+Step 1:
+
+$$
+\xi_1 = \alpha(x),\quad V_1(x)
+$$
+
+Step 2:
+
+$$
+\xi_2 = \alpha_1(x,\xi_1)
+$$
+
+$$
+V_2 = V_1(x) + \frac{1}{2}(\xi_1 - \alpha(x))^2
+$$
+
+Step 3:
+
+$$
+\xi_3 = \alpha_2(x,\xi_1,\xi_2)
+$$
+
+$$
+V_3 = V_2 + \frac{1}{2}(\xi_2 - \alpha_1)^2
+$$
+
+---
+
+General derivative:
+
+$$
+\dot V_2 = \frac{\partial V_2}{\partial x}\dot x
++ \frac{\partial V_2}{\partial \xi_1}\dot \xi_1
++ \frac{\partial V_2}{\partial \xi_2}\dot \xi_2
+$$
+
+---
+
+## 47. Sliding Mode Control
+
+System idea:
+$$
+\ddot y = -k y
+$$
+
+Choose:
+$$
+k = \pm 1
+$$
+
+Goal:
+$$
+y \to 0
+$$
+
+Control:
+> $k$ switches between $\pm 1$
+
+---
+
+## 48. SMC Example
+
+1. Sliding Mode Example
+
+State-space:
+$$
+\dot x_1 = x_2
+$$
+
+$$
+\dot x_2 = -k x_1
+$$
+
+For $k=1$:
+$$
+\frac{dx_1}{dx_2} = -\frac{x_2}{x_1}
+$$
+
+Integrate:
+$$
+x_1 dx_1 + x_2 dx_2 = 0
+$$
+
+$$
+\frac{x_1^2}{2} + \frac{x_2^2}{2} = C
+$$
+
+> circular trajectories (stable)
+
+---
+
+For $k=-1$:
+$$
+\frac{x_1^2}{2} - \frac{x_2^2}{2} = C
+$$
+
+> hyperbola (unstable)
+
+---
+
+Conclusion:
+> switching needed
+
+---
+
+2. Sliding Surface
+
+Define:
+$$
+s = a x_1 + x_2,\quad a>0
+$$
+
+On surface $s=0$:
+$$
+x_2 = -a x_1
+$$
+
+Then:
+$$
+\dot x_1 = -a x_1
+$$
+
+So:
+$$
+x_1 \to 0,\quad x_2 \to 0
+$$
+
+> asymptotically stable on surface
+
+---
+
+3. Reaching Condition
+
+For $s \ne 0$:
+$$
+\dot s = a\dot x_1 + \dot x_2
+$$
+
+$$
+= a x_2 + h(x) + g(x)u
+$$
+
+Assume:
+$$
+\left|\frac{a x_2 + h(x)}{g(x)}\right| \le \delta(x),\quad \delta(x)>0
+$$
+
+---
+
+4. Lyapunov for Sliding
+
+Choose:
+$$
+V(s) = \frac{1}{2}s^2
+$$
+
+Then:
+$$
+\dot V = s\dot s
+$$
+
+$$
+= s g(x)\left(\frac{a x_2 + h(x)}{g(x)} + u \right)
+$$
+
+---
+
+5. Control Law (Sliding Mode)
+
+Choose:
+$$
+u = -\beta(x)\,\text{sign}(s)
+$$
+
+where:
+$$
+\beta(x) \ge \beta_0 + \delta(x),\quad \beta_0>0
+$$
+
+Then:
+$$
+\dot V \le -g(x)\beta_0 |s| \le 0
+$$
+
+---
+
+6. Result
+
+- reaching mode: finite-time convergence to $s=0$  
+- sliding surface: asymptotic convergence to origin  
+
+---
+
+7. Conclusion
+
+- reaching phase: finite time  
+- sliding phase: infinite time to $(0,0)$  
+
+---
+
+8. Robustness
+
+Control is robust to:
+$$
+h(x),\; g(x)
+$$
+
+as long as assumption holds
+
+---
+
+## 49. Feedback Linearization
+
+1.Motivation: General Problem
+
+Consider a pendulum nonlinear system:
+
+$$
+\dot{x} = x_2
+$$
+
+$$
+\dot{x}_2 = -a\sin x_1 - b x_2 + c u
+$$
+
+Question: Can we design $u = u(x, v)$ to convert this into a linear system?
+
+This is the idea behind feedback linearization.
+
+---
+
+2.Form and Control Law
+
+If a system can be written as:
+
+$$
+\dot{x} = A x + B r(x)[u - \alpha(x)]
+$$
+
+Then we can choose:
+
+$$
+u = \alpha(x) + r(x)^{-1} v
+$$
+
+to achieve:
+
+$$
+\dot{x} = A x + B v
+$$
+
+which is linear.
+
+---
+
+3.Limitation Example
+$$
+\dot{x}_1 = a \sin x_2
+$$
+
+$$
+\dot{x}_2 = -x_1^2 + u
+$$
+
+We try to write it in the form:
+
+$$
+\dot{x} = A x + B \gamma(x)\,[u - \alpha(x)]
+$$
+
+However the nonlinearity $a \sin x_2$ appears in $\dot{x}_1$ and is **not multiplied by the input $u$**.
+
+Example 2 (matrix form)
+
+$$
+\dot{x} =
+\begin{bmatrix}
+\dot{x}_1 \\
+\dot{x}_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+a \sin x_2 \\
+- x_1^2
+\end{bmatrix}
++
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+u
+$$
+
+---
+
+4.Solution: Coordinate Transformation
+
+State transformation:
+
+$$
+z_1 = x_1,\quad z_2 = a \sin x_2
+$$
+
+Then:
+
+$$
+\dot{z}_1 = z_2
+$$
+
+$$
+\dot{z}_2 = a \cos x_2 \cdot (-x_1^2 + u)
+$$
+
+Input transformation - Choose:
+
+$$
+u = x_1^2 + \frac{v}{a \cos x_2}
+$$
+
+Resulting linear system:
+
+$$
+\dot{z}_1 = z_2
+$$
+
+$$
+\dot{z}_2 = v
+$$
+
+---
+
+## 50. Formal Definition: Feedback Linearizable
+
+A system
+
+$$
+\dot{x} = f(x) + g(x) u
+$$
+
+is feedback linearizable if there exist:
+
+- A smooth control law: $u = \alpha(x) + \beta(x) v$  
+- A coordinate transformation: $z = T(x)$  
+
+such that:
+
+$$
+\dot{z} = A z + b v
+$$
+
+for some constant matrices $A, b$.
+
+**Key questions:**
+1. When is a system feedback linearizable (checking $f, g$ only)?  
+2. What is the choice for $\alpha, \beta, T$?  
+
+**Advantages and Defects:**
+- Advantages: all linear control techniques can be used; easy recipe  
+- Defects: requires knowing system dynamics $f, g$; may cancel stabilizing nonlinearity  
+
+---
+
+### 6. Input-Output Linearization
+
+#### General SISO System
+
+$$
+\dot{x} = f(x) + g(x) u
+$$
+
+$$
+y = h(x)
+$$
+
+We want output tracking: $y \to y_d$.
+
+#### Lie Derivatives
+
+$$
+\dot{y} = L_f h(x)
+$$
+
+$$
+\ddot{y} = L_f^2 h(x) + L_g L_f h(x)\,u
+$$
+
+#### Case 1: Relative Degree $r = 2$
+
+If $L_g L_f h(x) \neq 0$, choose:
+
+$$
+u = \frac{v - L_f^2 h(x)}{L_g L_f h(x)}
+$$
+
+then:
+
+$$
+\ddot{y} = v
+$$
+
+---
+
+#### Case 2: Relative Degree $r = 3$
+
+If $L_g L_f h(x) = 0$ and $L_g L_f^2 h(x) \neq 0$, then:
+
+$$
+y^{(3)} = L_f^3 h(x) + L_g L_f^2 h(x)\,u
+$$
+
+Choose:
+
+$$
+u = \frac{v - L_f^3 h(x)}{L_g L_f^2 h(x)}
+$$
+
+then:
+
+$$
+y^{(3)} = v
+$$
+

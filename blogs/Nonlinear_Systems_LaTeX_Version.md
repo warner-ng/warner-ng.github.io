@@ -116,7 +116,7 @@ Limit cycles do not occur in linear systems.
 
 ---
 
-#### Example
+Example
 
 Consider the system in **polar coordinates**
 

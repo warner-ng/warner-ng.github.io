@@ -696,9 +696,11 @@ $\lambda_{\max} \Vert x_{max} \Vert^2 \le c
 
 ---
 
+# Time-Varying System
+
 ## 21. Stability of Time-Varying System
 
-1. Time-Varying Systems
+1.Time-Varying Systems
 
 System:
 $$
@@ -714,11 +716,9 @@ Region of Attraction (ROA): may depend on time \(t\), and can shrink.
 
 ---
 
-2. Stability **Definitions** (Time-Varying)
+2.Stability **Definitions** (Time-Varying)
 
-   
-
-   **Stability (SISL)**:
+- **Stability (SISL)**:
 
 $$
 \forall \varepsilon > 0,\; \exists \delta(\varepsilon, t_0) > 0
@@ -728,7 +728,8 @@ $$
 \Vert x(t)\Vert < \varepsilon,\; \forall t \ge t_0
 $$
 
-​	**Uniform stability**:
+- ​**Uniform stability**:
+
 $$
 \forall \varepsilon > 0,\; \exists \delta(\varepsilon) > 0
 \;\text{s.t.}\;
@@ -737,13 +738,14 @@ $$
 \Vert x(t)\Vert < \varepsilon,\; \forall t \ge t_0
 $$
 
-(note: \(\delta\) does not depend on \(t_0\))
+(note: $\delta$ does not depend on \(t_0\))
 
 Otherwise: unstable.
 
 ---
 
-​	**Asymptotic stability**:
+- ​**Asymptotic stability**:
+
 $$
 \exists \delta(t_0) > 0
 \;\text{s.t.}\;
@@ -754,7 +756,8 @@ $$
 
 ---
 
-​	**Uniform asymptotic stability**:
+- ​**Uniform asymptotic stability**:
+
 $$
 \forall x_0\le c \\
 
@@ -764,7 +767,8 @@ independent of \(t_0\)
 
 ---
 
-​	**Global uniform asymptotic stability**:
+
+- ​**Global uniform asymptotic stability**:
 $$
 \Vert x(t)\Vert \to 0 \quad \text{as } t \to \infty
 $$
@@ -790,11 +794,12 @@ Notes:
 
 
 
-## 23. Class-$\mathcal{K}$ Functions
+## 22. Class-$\mathcal{K}$ Functions
 
 we introduce this to solve previous lyapunov conditions not working problems
 
-def: 
+---
+1.class-$\mathcal{K}$
 
 A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
 
@@ -803,8 +808,122 @@ A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
 - $\alpha(0)=0$
 
 
+---
+
+2.locally positive definite
+
+A function
+$$
+V : [0,\infty) \times \mathbb{R}^n \to \mathbb{R}
+$$
+is locally positive definite if
 
 
+
+1. $V(t,0) = 0, \quad V(t,x) > 0 \;\; \forall x \ne 0,\; \forall t \ge 0$
+
+
+2. there exists \( r > 0 \) and a class-\(\mathcal{K}\) function
+$
+\alpha : [0,r) \to [0,\infty)
+$
+
+such that
+$$
+V(t,x) \ge \alpha(\Vert x \Vert), \quad \forall t \ge 0,\; \forall x \in B_r(0)
+$$
+
+
+![alt text](image-7.png){: width="75%" }
+
+---
+
+3.decrescent
+
+A continuous function
+$$
+V : [0,\infty) \times \mathbb{R}^n \to \mathbb{R}
+$$
+is decrescent if there exists \( \delta > 0 \) and a class-\(\mathcal{K}\) function
+$$
+\gamma : [0,\infty) \to [0,\infty)
+$$
+
+such that
+$$
+V(t,x) \le \gamma(\Vert x \Vert), \quad \forall t \ge 0,\; \forall x \in B_\delta(0)
+$$
+
+
+
+![alt text](image-8.png){: width="75%" }
+
+---
+## 23. Lyapunov Conditions (Time-Varying)
+
+(TFAE — The following are equivalent)
+
+1.  $V(t,x)$ is locally positive definite  
+
+2.  $\exists\; W(x)$ locally positive definite such that
+$$
+V(t,x) \ge W(x), \quad \forall t \ge 0,\; \forall x \in B_r(0)
+$$
+
+3. define
+$$
+\bar W(x) := \inf_{t \ge 0} V(t,x)
+\quad \text{is locally positive definite}
+$$
+
+---
+
+Consider the system
+$$
+\dot{x} = f(t,x), \quad x(t_0)=x_0, \quad f(t,0)=0,\; \forall t \ge 0
+$$
+
+Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
+
+---
+
+
+
+1. Uniform SISL
+
+- $x_e = 0$ is uniformly stable if there exists $V(t,x)$ such that
+
+  - $V(t,x)$ is locally positive definite  
+
+  - $V(t,x)$ is **decrescent**
+
+  - $\dot{V}(t,x) \le 0,\; \forall t \ge 0,\; x \in B_r(0)$  
+
+![alt text](image-9.png){: width="75%" }
+
+---
+
+
+
+2. Uniform Asymptotic Stability
+
+- $x_e = 0$ is uniformly asymptotically stable if
+
+  - conditions of uniform stability hold  
+
+  - $V(t,x)$ is decrescent  
+
+  - and $-\dot V(t,x)$ is locally positive definite
+
+![alt text](image-10.png){: width="75%" }
+
+Q: Why do we use “locally positive definite” $V(t,x)$ in time-varying systems instead of just $V>0$?
+
+> A: Because $V$ depends on $t$ and may shrink over time, so we need a time-independent lower bound
+$$
+V(t,x) \ge \alpha(\Vert x \Vert)
+$$
+> to ensure uniform positivity. (see class-k function)
 
 ---
 

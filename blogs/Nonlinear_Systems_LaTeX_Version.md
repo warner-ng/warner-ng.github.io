@@ -8,7 +8,7 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 
 **ESSENTIAL MATRIX DERIVATIVE RULES**
 
-#### 1. Derivative of a Transpose
+1. Derivative of a Transpose
 
 Let $X = X(t)$.
 
@@ -18,9 +18,7 @@ $$
 \left(\frac{dX}{dt}\right)^\top
 $$
 
----
-
-#### 2. Matrix Product Rule
+2. Matrix Product Rule
 
 $$
 \frac{d}{dt}(XY)
@@ -28,9 +26,7 @@ $$
 \dot X Y + X \dot Y
 $$
 
----
-
-#### 3. Quadratic Form
+3. Quadratic Form
 
 Let
 
@@ -50,9 +46,7 @@ $$
 \nabla V(x) = 2Ax
 $$
 
----
-
-#### 4. Chain Rule (Lyapunov Use)
+4. Chain Rule (Lyapunov Use)
 
 For
 
@@ -67,8 +61,6 @@ $$
 $$
 
 
----
-# PART (1) — LINEAR VS NONLINEAR SYSTEMS
 
 ## 1. Linear Systems
 
@@ -190,10 +182,6 @@ $$
 
 Behavior depends on geometry of the vector field.
 
----
-
-# PART (2) — MATHEMATICAL FOUNDATIONS
-
 ## 3. Normed Spaces
 
 A norm satisfies:
@@ -204,8 +192,7 @@ A norm satisfies:
 
 Common norms in $\mathbb{R}^n$:
 
-$$
-\Vert x\Vert _2 = \sqrt{x^\top x}, \quad$$
+$$\Vert x\Vert _2 = \sqrt{x^\top x}, \quad$$
 $$\Vert x\Vert _1 = \sum |x_i|, \quad$$
 $$\Vert x\Vert _\infty = \max_i |x_i|$$
 
@@ -259,10 +246,6 @@ If $P$ is a contraction on a complete space:
 
 - A unique fixed point exists  
 - x is cauthy and iteration converges to fixed point $x^*$
-
----
-
-# PART (3) — EXISTENCE & UNIQUENESS OF ODEs
 
 ## 6. Integral Form of ODE
 
@@ -399,7 +382,7 @@ This means small perturbations in the initial condition produce small changes in
 
 ---
 
-# PART (4) — STABILITY THEORY
+# ----STABILITY THEORY----
 
 ## 11. Equilibrium
 
@@ -438,13 +421,10 @@ x(t)\to x_e
 $$
 
 
----
 
-# PART (5) — LYAPUNOV DIRECT METHOD
+## 14. Lyapunov Direct Method
 
-## 14. Lyapunov Function
-
-A scalar function $V(x)$ satisfies:
+A scalar function $V(x)$ ( Lyapunov function )satisfies:
 
 - $V(x)>0$ for $x\neq 0$  
 - $V(0)=0$  
@@ -490,6 +470,7 @@ Then we say it is globally AS
 
 **LaSalle Thm**
 preset 
+
 - SISL
 - let $\mathcal{S}'= \{x\in D \mid \dot V(x)=0 \} $, if the only solution of the system dynamics within S is x(t)=$x_e$ = 0
 
@@ -520,9 +501,6 @@ Then equilibrium is unstable.
 ![alt text](image-6.png){: width="25%" }
 
 
----
-
-# PART (6) — LINEARIZATION & INDIRECT METHOD
 
 ## 17. Lyapunov Equation
 
@@ -552,9 +530,7 @@ If such a positive definite $P$ exists, then the equilibrium $x_e$ is locally as
 because the Lyapunov Equation makes 
 
 $$
-
 \dot{V} (x)= (x - x_e)^{\top} Q (x - x_e)<0
-
 $$
 
 ---
@@ -672,7 +648,7 @@ Indirect method is local.
 
 ---
 
-# PART (7) — REGION OF ATTRACTION
+
 
 ## 20. Region of Attraction (ROA)
 
@@ -690,7 +666,7 @@ $$
 V(x)=x^\top P x
 $$
 
-Level set:
+sublevel set:
 
 $$
 x^\top P x \le c
@@ -698,45 +674,137 @@ $$
 
 provides an inner estimate of ROA.
 
+Formular:
+
+$\because \lambda_{min} X^TX \le X^TPX \le \lambda_{max}X^TX  $  and  $x^\top P x \le c$ 
+
+$\therefore $$
+\lambda_{\min} \Vert x_{min} \Vert^2 \le c
+\;\Rightarrow\;
+\Vert x_{min} \Vert \le \sqrt{\frac{c}{\lambda_{\min}}}
+$
+
+and
+
+$\lambda_{\max} \Vert x_{max} \Vert^2 \le c
+\;\Rightarrow\;
+\Vert x_{max} \Vert \le \sqrt{\frac{c}{\lambda_{\max}}}$
+
+
+
+
 
 ---
 
-# PART (8) — TIME-VARYING SYSTEMS
+## 21. Stability of Time-Varying System
 
-## 21. Time-Varying System Analysis
+1. Time-Varying Systems
 
-**Time-Varying System**
-
+System:
 $$
-\dot{x}=f(t,x)
-$$
-
-Equilibrium satisfies:
-
-$$
-f(t,x_e)=0,\quad \forall t
+\dot{x} = f(t,x)
 $$
 
-Region of attraction may depend on time and can shrink.
----
+Equilibrium point:
+$$
+\dot{x}\big|_{x_e} = 0 \;\Longleftrightarrow\; f(t,x_e)=0, \quad \forall t \ge t_0
+$$
 
-## 22. Stability Types
-
-- Stability may depend on initial time $t_0$
-- Uniform stability does not depend on $t_0$
-
-Uniform stability is stronger.
+Region of Attraction (ROA): may depend on time \(t\), and can shrink.
 
 ---
 
-# PART (9) — LYAPUNOV FOR TIME-VARYING SYSTEMS
+2. Stability **Definitions** (Time-Varying)
+
+   
+
+   **Stability (SISL)**:
+
+$$
+\forall \varepsilon > 0,\; \exists \delta(\varepsilon, t_0) > 0
+\;\text{s.t.}\;
+\Vert x(t_0)\Vert < \delta
+\;\Rightarrow\;
+\Vert x(t)\Vert < \varepsilon,\; \forall t \ge t_0
+$$
+
+​	**Uniform stability**:
+$$
+\forall \varepsilon > 0,\; \exists \delta(\varepsilon) > 0
+\;\text{s.t.}\;
+\Vert x(t_0)\Vert < \delta
+\;\Rightarrow\;
+\Vert x(t)\Vert < \varepsilon,\; \forall t \ge t_0
+$$
+
+(note: \(\delta\) does not depend on \(t_0\))
+
+Otherwise: unstable.
+
+---
+
+​	**Asymptotic stability**:
+$$
+\exists \delta(t_0) > 0
+\;\text{s.t.}\;
+\Vert x(t_0)\Vert < \delta
+\;\Rightarrow\;
+x(t) \to 0 \quad \text{as } t \to \infty
+$$
+
+---
+
+​	**Uniform asymptotic stability**:
+$$
+\forall x_0\le c \\
+
+\Vert x(t)\Vert \to 0 \quad \text{as } t \to \infty
+$$
+independent of \(t_0\)
+
+---
+
+​	**Global uniform asymptotic stability**:
+$$
+\Vert x(t)\Vert \to 0 \quad \text{as } t \to \infty
+$$
+
+
+---
+
+Notes:
+
+- difference between uniform and normal one is the dependance of  $t_0$ 
+
+  For **normal (SISL) stability**:
+  $$
+  \forall \varepsilon>0,\;\exists \delta(\varepsilon,t_0)>0
+  $$
+  Here $\delta$ depends on $t_0$, so the system can behave differently if you start later. This is weaker.
+
+  For **uniform stability**:
+  $$
+  \forall \varepsilon>0,\;\exists \delta(\varepsilon)>0
+  $$
+  Here $\delta$ is independent of $t_0$, so the same bound works for all starting times. This is stronger.
+
+
 
 ## 23. Class-$\mathcal{K}$ Functions
 
+we introduce this to solve previous lyapunov conditions not working problems
+
+def: 
+
 A function $\alpha:[0,a)\to[0,\infty)$ is class-$\mathcal{K}$ if:
+
 - Continuous
 - Strictly increasing
 - $\alpha(0)=0$
+
+
+
+
 
 ---
 
@@ -751,9 +819,7 @@ Then equilibrium is uniformly stable.
 
 If $\dot{V}(t,x) < 0$, then equilibrium is uniformly asymptotically stable.
 
----
 
-# PART (10) — EXPONENTIAL STABILITY
 
 ## 25. Exponential Stability
 
@@ -777,9 +843,7 @@ $$
 
 Example: $\dot{x} = -x^3$ is asymptotically stable but NOT exponentially stable.
 
----
-
-# PART (11) — INDIRECT METHOD
+# 
 
 ## 27. Linearization & Eigenvalue Test
 
@@ -794,9 +858,7 @@ Stability determined by eigenvalues of $A$:
 - Any $\text{Re}(\lambda) > 0$ → unstable
 - $\text{Re}(\lambda) = 0$ → inconclusive (higher-order terms decide)  
 
----
 
-# PART (12) — CONTROL LYAPUNOV FUNCTION (CLF)
 
 ## 28. CLF Design
 
@@ -812,9 +874,7 @@ $$
 
 Design: Choose $V(x)$ and design $u(x)$ to enforce $\dot{V}(x) < 0$.
 
----
 
-# PART (13) — STABILIZATION
 
 ## 29. Full-State Feedback Stabilization
 

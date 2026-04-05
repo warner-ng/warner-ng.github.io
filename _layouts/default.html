@@ -124,12 +124,27 @@
             width: 100% !important;
             float: none !important;
             min-width: 0;
+            overflow-x: auto;
          }
          header {
             width: 100% !important;
             position: static !important;
             float: none !important;
             min-width: 0;
+         }
+         /* Make math formulas scrollable on mobile */
+         .katex-display {
+            overflow-x: auto;
+            overflow-y: hidden;
+         }
+         /* Make code blocks scrollable */
+         pre, code {
+            overflow-x: auto;
+         }
+         /* Make tables scrollable */
+         table {
+            overflow-x: auto;
+            display: block;
          }
       }
       @media print {

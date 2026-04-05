@@ -44,9 +44,10 @@
    <style>
       .nav-bar {
          background-color: #5B9BD5;
-         padding: 6px 15px; /* change the 8px around the button*/
+         padding: 6px 15px;
          display: flex;
          gap: 15px;
+         align-items: center;
          justify-content: center;
          position: fixed;
          top: 0;
@@ -87,7 +88,7 @@
          font-size: 24px;
          cursor: pointer;
          padding: 6px 12px;
-         margin-left: auto;
+         margin: 0 0 0 auto;
          transition: opacity 0.3s;
       }
       .toc-menu-btn:hover {
@@ -283,15 +284,26 @@
       var tocDrawerClose = document.getElementById('tocDrawerClose');
       var drawerContent = document.getElementById('drawerContent');
 
-      // Copy TOC to drawer
-      var originalToc = document.querySelector('.toc-container');
-      if (originalToc) {
-         drawerContent.innerHTML = originalToc.innerHTML;
+      // Function to copyt TOC to drawer
+      function updateDrawerContent() {
+         var originalToc = document.querySelector('.toc-container');
+         if (originalToc) {
+            drawerContent.innerHTML = originalToc.innerHTML;
+            return true;
+         }
+         return false;
       }
+
+      // Try to copy immediately and retry if not found
+      updateDrawerContent();
+      setTimeout(updateDrawerContent, 100);
+      setTimeout(updateDrawerContent, 500);
 
       // Toggle drawer from menu button
       if (tocMenuBtn) {
          tocMenuBtn.addEventListener('click', function() {
+            // Make sure content is up-to-date before opening
+            updateDrawerContent();
             tocDrawer.classList.add('open');
             tocOverlay.classList.add('open');
          });

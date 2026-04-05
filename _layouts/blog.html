@@ -114,17 +114,18 @@
             max-width: none !important;
             display: flex !important;
             flex-wrap: nowrap;
-            gap: 10px;
+            gap: 20px;
             align-items: flex-start;
             margin: 0 auto;
-            padding: 0 10px;
+            padding: 0 20px;
             box-sizing: border-box;
          }
          section {
-            flex: 7 1 auto;
+            flex: 7 1 0;
             min-height: 100vh;
             float: none !important;
             order: 2;
+            min-width: 0;
          }
          header {
             flex: 0 0 260px;
@@ -134,10 +135,12 @@
             align-self: flex-start;
             flex-shrink: 0;
             order: 1;
+            min-width: 0;
          }
          .toc-container {
-            flex: 2 1 auto;
+            flex: 2 1 0;
             order: 3;
+            min-width: 0;
          }
          footer {
             width: 100% !important;
@@ -145,37 +148,33 @@
             flex-basis: 100%;
          }
       }
-      /* Medium screens: start hiding TOC */
-      @media (max-width: 1200px) {
-         .toc-container {
-            display: none !important;
-         }
-         .toc-toggle {
-            display: block;
-         }
-      }
-      /* Smaller screens */
-      @media (max-width: 960px) {
+      @media (max-width: 959px) {
          .wrapper {
             display: block !important;
             width: 100% !important;
             padding: 0 !important;
-            max-width: 100% !important;
+            max-width: none !important;
+            box-sizing: border-box;
          }
          section {
             width: 100% !important;
             float: none !important;
+            min-width: 0;
          }
          header {
             width: 100% !important;
             position: static !important;
             float: none !important;
+            min-width: 0;
          }
          .toc-container {
             display: none !important;
          }
-         .toc-toggle {
-            display: block;
+      }
+      /* Medium screens: start hiding TOC */
+      @media (max-width: 1200px) {
+         .toc-container {
+            display: none !important;
          }
       }
       /* TOC Toggle Button - removed, now in nav bar */

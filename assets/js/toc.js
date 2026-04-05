@@ -9,26 +9,20 @@ document.addEventListener('DOMContentLoaded', function() {
    
    if (!section) return;
 
-   // Extract all headings from the main content
-   const headings = Array.from(section.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+   // Extract all headings from the main content (skip h1 as it's the page title)
+   const headings = Array.from(section.querySelectorAll('h2, h3, h4, h5, h6'));
    
-   // Filter out headings that don't have meaningful content
-   const meaningfulHeadings = headings.filter(h => {
-      const text = h.textContent.trim();
-      return text.length > 0 && text !== 'Hi there!' && h.id !== 'warnerWu吴秉寰';
-   });
-
-   if (meaningfulHeadings.length < 2) return; // Only show ToC if there are meaningful headings
+   if (headings.length < 1) return; // Only show ToC if there are headings
 
    // Add IDs to headings that don't have them
-   meaningfulHeadings.forEach((heading, index) => {
+   headings.forEach((heading, index) => {
       if (!heading.id) {
          heading.id = `heading-${index}`;
       }
    });
 
    // Build nested structure
-   const toc = buildTocStructure(meaningfulHeadings);
+   const toc = buildTocStructure(headings);
    
    // Create the ToC container
    const tocContainer = createTocContainer(toc);
@@ -37,13 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
    const wrapper = document.querySelector('.wrapper');
    if (wrapper) {
       section.parentNode.insertBefore(tocContainer, section.nextSibling);
-      
-      // Update wrapper classes
-      wrapper.classList.add('wrapper-with-toc');
    }
 
    // Setup scroll tracking
-   setupScrollTracking(meaningfulHeadings);
+   setupScrollTracking(headings);
 });
 
 /**

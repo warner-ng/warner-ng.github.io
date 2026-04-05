@@ -6,7 +6,7 @@
 @media (min-width: 960px) {
    .toc-container {
       display: block;
-      width: 280px;
+      width: 340px;
       position: sticky;
       top: 72px;
       max-height: calc(100vh - 72px);
@@ -16,6 +16,7 @@
       margin: 0;
       align-self: flex-start;
       flex-shrink: 0;
+      order: 3;
    }
 
    .toc-title {
@@ -95,14 +96,5 @@
 
    .toc-container::-webkit-scrollbar-thumb:hover {
       background: #999;
-   }
-
-   /* Update wrapper to work with new toc */
-   .wrapper-with-toc {
-      width: 1450px !important;
-   }
-
-   .wrapper-with-toc section {
-      width: calc(100% - 560px) !important;
    }
 }

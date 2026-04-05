@@ -6,6 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+   <link rel="stylesheet" href="{{ "/assets/css/toc.css" | relative_url }}">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic">
    <link rel="icon" type="image/png" href="/images/logo_sky_blue.png">
    {% seo %}
@@ -81,16 +82,19 @@
       /*this is the real control knob adjusting the width of the page */
       @media (min-width: 960px) {
          .wrapper {
-            width: 1150px !important;
+            width: 1480px !important;
             max-width: none !important;
             display: flex !important;
-            gap: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
             align-items: flex-start;
+            margin: 0 auto;
          }
          section {
-            width: calc(100% - 300px) !important;
+            width: 840px !important;
             min-height: 100vh;
             float: none !important;
+            order: 2;
          }
          header {
             width: 260px !important;
@@ -98,6 +102,16 @@
             top: 72px;
             float: none !important;
             align-self: flex-start;
+            flex-shrink: 0;
+            order: 1;
+         }
+         .toc-container {
+            order: 3;
+         }
+         footer {
+            width: 100% !important;
+            order: 4;
+            flex-basis: 100%;
          }
       }
       @media print {
@@ -155,5 +169,6 @@
       </footer>
    </div>
    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+   <script src="{{ "/assets/js/toc.js" | relative_url }}"></script>
 </body>
 </html>

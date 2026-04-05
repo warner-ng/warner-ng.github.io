@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: Policy Gradient & Actor-Critic Explained
 description: An in-depth explanation of Policy Gradient and Actor-Critic methods in Reinforcement Learning, covering PPO, TRPO, SAC and more.
 ---

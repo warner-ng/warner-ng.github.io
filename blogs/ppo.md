@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: ppo: proximal policy optimization
 description: The comtemporary RL algo used widely in robotics sim2real
 ---

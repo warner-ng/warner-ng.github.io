@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: Survey Paper Viewer
 description: View my survey paper on robot skills and future directions
 ---

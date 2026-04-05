@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: Nonlinear Systems — Complete Notes
 description: Complete notes on nonlinear systems covering existence & uniqueness, contraction mapping, Lyapunov theory, LaSalle theorem, instability, linearization, region of attraction, time-varying systems, and exponential stability.
 ---

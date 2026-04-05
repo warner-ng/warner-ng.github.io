@@ -834,7 +834,7 @@ V(t,x) \ge \alpha(\Vert x \Vert), \quad \forall t \ge 0,\; \forall x \in B_r(0)
 $$
 
 
-![alt text](image-7.png){: width="75%" }
+![alt text](image-7.png){: width="40%" }
 
 ---
 
@@ -856,7 +856,7 @@ $$
 
 
 
-![alt text](image-8.png){: width="75%" }
+![alt text](image-8.png){: width="40%" }
 
 ---
 ## 23. Lyapunov Conditions (Time-Varying)
@@ -899,7 +899,7 @@ Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
 
   - $\dot{V}(t,x) \le 0,\; \forall t \ge 0,\; x \in B_r(0)$  
 
-![alt text](image-9.png){: width="75%" }
+![alt text](image-9.png){: width="40%" }
 
 ---
 
@@ -915,7 +915,7 @@ Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
 
   - and $-\dot V(t,x)$ is locally positive definite
 
-![alt text](image-10.png){: width="75%" }
+![alt text](image-10.png){: width="40%" }
 
 Q: Why do we use “locally positive definite” $V(t,x)$ in time-varying systems instead of just $V>0$?
 

@@ -1,79 +1,40 @@
-/**
- * Table of Contents Generator and Scroll Tracking
- * Dynamically generates a table of contents from page headings
- * and highlights the active section as the user scrolls
- */
-
-console.log('[TOC] Script loaded');
+// Table of Contents Generator
+console.log('toc.js loaded');
 
 document.addEventListener('DOMContentLoaded', function() {
-   console.log('[TOC] DOMContentLoaded fired');
-   const section = document.querySelector('section');
-   
-   if (!section) {
-      console.warn('[TOC] No section element found');
-      return;
-   }
+   var section = document.querySelector('section');
+   if (!section) return;
 
-   // Extract all headings from the main content (skip h1 as it's the page title)
-   const headings = Array.from(section.querySelectorAll('h2, h3, h4, h5, h6'));
-   
-   console.log('[TOC] Found headings:', headings.length);
-   headings.forEach((h, i) => console.log(`  ${i}: ${h.tagName} - ${h.textContent.substring(0, 50)}`));
-   
-   if (headings.length < 1) {
-      console.warn('[TOC] No headings found, skipping TOC generation');
-      return;
-   }
+   var headings = Array.from(section.querySelectorAll('h2, h3, h4, h5, h6'));
+   if (headings.length < 1) return;
 
-   // Add IDs to headings that don't have them
-   headings.forEach((heading, index) => {
-      if (!heading.id) {
-         heading.id = `heading-${index}`;
-      }
+   headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
    });
 
-   // Build nested structure
-   const toc = buildTocStructure(headings);
+   var toc = buildTocStructure(headings);
+   var tocContainer = createTocContainer(toc);
    
-   // Create the ToC container
-   const tocContainer = createTocContainer(toc);
-   
-   // Insert the ToC after the section
-   const wrapper = document.querySelector('.wrapper');
+   var wrapper = document.querySelector('.wrapper');
    if (wrapper) {
       section.parentNode.insertBefore(tocContainer, section.nextSibling);
-      console.log('[TOC] TOC container inserted successfully');
-   } else {
-      console.warn('[TOC] Wrapper not found, cannot insert TOC');
    }
 
-   // Setup scroll tracking
    setupScrollTracking(headings);
 });
 
-/**
- * Build nested structure based on heading levels
- */
 function buildTocStructure(headings) {
-   const items = [];
-   const stack = [];
+   var items = [];
+   var stack = [];
 
-   headings.forEach(heading => {
-      const level = parseInt(heading.tagName[1]);
-      const item = {
-         level,
-         text: heading.textContent.trim(),
-         id: heading.id,
-         children: []
-      };
+   headings.forEach(function(heading) {
+      var level = parseInt(heading.tagName.charAt(1));
+      var item = { level: level, text: heading.textContent.trim(), id: heading.id, children: [] };
 
-      // Remove items from stack that are deeper than current level
       while (stack.length > 0 && stack[stack.length - 1].level >= level) {
          stack.pop();
       }
 
-      // Add to parent or root
       if (stack.length === 0) {
          items.push(item);
       } else {
@@ -86,96 +47,67 @@ function buildTocStructure(headings) {
    return items;
 }
 
-/**
- * Create the ToC HTML structure
- */
 function createTocContainer(items) {
-   const container = document.createElement('aside');
+   var container = document.createElement('aside');
    container.className = 'toc-container';
-
-   const title = document.createElement('div');
+   var title = document.createElement('div');
    title.className = 'toc-title';
    title.textContent = 'Contents';
    container.appendChild(title);
-
-   const list = createTocList(items);
-   container.appendChild(list);
-
+   container.appendChild(createTocList(items));
    return container;
 }
 
-/**
- * Create nested list elements
- */
 function createTocList(items) {
-   const ul = document.createElement('ul');
+   var ul = document.createElement('ul');
    ul.className = 'toc-list';
 
-   items.forEach(item => {
-      const li = document.createElement('li');
-      
-      const link = document.createElement('a');
-      link.href = `#${item.id}`;
+   items.forEach(function(item) {
+      var li = document.createElement('li');
+      var link = document.createElement('a');
+      link.href = '#' + item.id;
       link.textContent = item.text;
       li.appendChild(link);
-
       if (item.children.length > 0) {
          li.appendChild(createTocList(item.children));
       }
-
       ul.appendChild(li);
    });
 
    return ul;
 }
 
-/**
- * Setup scroll tracking to highlight active section
- */
 function setupScrollTracking(headings) {
-   const links = document.querySelectorAll('.toc-container a');
+   var links = document.querySelectorAll('.toc-container a');
 
    function updateActiveLink() {
-      let currentId = '';
-
-      // Find the heading closest to the top of the viewport
-      for (const heading of headings) {
-         const rect = heading.getBoundingClientRect();
-         if (rect.top <= 120) { // Account for nav bar
-            currentId = heading.id;
-         } else {
-            break;
-         }
+      var currentId = '';
+      for (var i = 0; i < headings.length; i++) {
+         var rect = headings[i].getBoundingClientRect();
+         if (rect.top <= 120) currentId = headings[i].id;
+         else break;
       }
 
-      // Update active links
-      links.forEach(link => {
+      links.forEach(function(link) {
          link.classList.remove('active');
-         if (link.getAttribute('href') === `#${currentId}`) {
+         if (link.getAttribute('href') === '#' + currentId) {
             link.classList.add('active');
-            
-            // Scroll the ToC container to keep active link visible
-            const tocContainer = document.querySelector('.toc-container');
+            var tocContainer = document.querySelector('.toc-container');
             if (tocContainer) {
-               const linkPosition = link.offsetTop;
-               const containerHeight = tocContainer.clientHeight;
-               const scrollPosition = tocContainer.scrollTop;
-
-               if (linkPosition < scrollPosition) {
-                  tocContainer.scrollTop = linkPosition - 50;
-               } else if (linkPosition > scrollPosition + containerHeight - 100) {
-                  tocContainer.scrollTop = linkPosition - containerHeight + 100;
-               }
+               var linkPos = link.offsetTop;
+               var contHeight = tocContainer.clientHeight;
+               var scrollPos = tocContainer.scrollTop;
+               if (linkPos < scrollPos) tocContainer.scrollTop = linkPos - 50;
+               else if (linkPos > scrollPos + contHeight - 100) tocContainer.scrollTop = linkPos - contHeight + 100;
             }
          }
       });
    }
 
-   // Update on scroll with throttling
-   let ticking = false;
-   window.addEventListener('scroll', () => {
+   var ticking = false;
+   window.addEventListener('scroll', function() {
       if (!ticking) {
-         window.requestAnimationFrame(() => {
+         window.requestAnimationFrame(function() {
             updateActiveLink();
             ticking = false;
          });
@@ -183,6 +115,5 @@ function setupScrollTracking(headings) {
       }
    });
 
-   // Initial call
    updateActiveLink();
 }

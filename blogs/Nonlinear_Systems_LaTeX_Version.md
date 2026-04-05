@@ -1240,7 +1240,7 @@ $$
 
 ## 36. Backstepping Example
 
-1. Backstepping Example (linear)
+1.Backstepping Example (linear)
 
 $$
 \begin{bmatrix}
@@ -1266,7 +1266,7 @@ $$
 
 ---
 
-2. Error Definition
+2.Error Definition
 
 $$
 z = x_2 - \alpha(x_1)
@@ -1284,7 +1284,7 @@ $$
 
 ---
 
-3. Augmented Lyapunov
+3.Augmented Lyapunov
 
 $$
 V_a(x,z) = \frac{1}{2}x_1^2 + \frac{1}{2}z^2
@@ -1306,7 +1306,7 @@ $$
 
 ---
 
-4. Backstepping General Result
+4.Backstepping General Result
 
 If:
 - $V(x)$ positive definite  
@@ -1328,7 +1328,7 @@ $$
 
 ---
 
-5. Integrator Backstepping Lemma
+5.Integrator Backstepping Lemma
 
 Augmented system:
 
@@ -1348,7 +1348,7 @@ $$
 
 ---
 
-6. Control Law (Backstepping)
+6.Control Law (Backstepping)
 
 $$
 u =
@@ -1359,7 +1359,7 @@ $$
 
 ---
 
-7. Weak Case (semi-definite)
+7.Weak Case (semi-definite)
 
 If $W(x)$ is only positive semi-definite:
 
@@ -1564,7 +1564,7 @@ Control:
 
 ---
 
-1. Sliding Mode Example
+1.Sliding Mode Example
 
 State-space:
 $$
@@ -1607,7 +1607,7 @@ Conclusion:
 
 ---
 
-2. Sliding Surface
+2.Sliding Surface
 
 Define:
 $$
@@ -1633,7 +1633,7 @@ $$
 
 ---
 
-3. Reaching Condition
+3.Reaching Condition
 
 For $s \ne 0$:
 $$
@@ -1651,7 +1651,7 @@ $$
 
 ---
 
-4. Lyapunov for Sliding
+4.Lyapunov for Sliding
 
 Choose:
 $$
@@ -1669,7 +1669,7 @@ $$
 
 ---
 
-5. Control Law (Sliding Mode)
+5.Control Law (Sliding Mode)
 
 Choose:
 $$
@@ -1688,21 +1688,21 @@ $$
 
 ---
 
-6. Result
+6.Result
 
 - reaching mode: finite-time convergence to $s=0$  
 - sliding surface: asymptotic convergence to origin  
 
 ---
 
-7. Conclusion
+7.Conclusion
 
 - reaching phase: finite time  
 - sliding phase: infinite time to $(0,0)$  
 
 ---
 
-8. Robustness
+8.Robustness
 
 Control is robust to:
 $$

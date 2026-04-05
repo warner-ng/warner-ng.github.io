@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
    // Create the ToC container
    const tocContainer = createTocContainer(toc);
    
-   // Insert the ToC before the section
+   // Insert the ToC after the section
    const wrapper = document.querySelector('.wrapper');
    if (wrapper) {
-      wrapper.insertBefore(tocContainer, section);
+      section.parentNode.insertBefore(tocContainer, section.nextSibling);
       
       // Update wrapper classes
       wrapper.classList.add('wrapper-with-toc');

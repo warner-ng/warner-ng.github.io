@@ -1866,7 +1866,7 @@ for some constant matrices $A, b$.
 
 ## 44.Input-Output Linearization
 
-#### General SISO System
+General SISO System
 
 $$
 \dot{x} = f(x) + g(x) u
@@ -1878,7 +1878,7 @@ $$
 
 We want output tracking: $y \to y_d$.
 
-#### Lie Derivatives
+the Lie Derivatives
 
 $$
 \dot{y} = L_f h(x)
@@ -1888,7 +1888,7 @@ $$
 \ddot{y} = L_f^2 h(x) + L_g L_f h(x)\,u
 $$
 
-#### Case 1: Relative Degree $r = 2$
+- Case 1: Relative Degree $r = 2$
 
 If $L_g L_f h(x) \neq 0$, choose:
 
@@ -1904,7 +1904,7 @@ $$
 
 ---
 
-#### Case 2: Relative Degree $r = 3$
+- Case 2: Relative Degree $r = 3$
 
 If $L_g L_f h(x) = 0$ and $L_g L_f^2 h(x) \neq 0$, then:
 

@@ -828,7 +828,7 @@ is locally positive definite if
 1. $V(t,0) = 0, \quad V(t,x) > 0 \;\; \forall x \ne 0,\; \forall t \ge 0$
 
 
-2. there exists \( r > 0 \) and a class-\(\mathcal{K}\) function
+2. there exists \( r > 0 \) and a class-$\mathcal{K}$ function
 $
 \alpha : [0,r) \to [0,\infty)
 $
@@ -854,7 +854,7 @@ $$
 V : [0,\infty) \times \mathbb{R}^n \to \mathbb{R}
 $$
 
-is decrescent if there exists \( \delta > 0 \) and a class-\(\mathcal{K}\) function
+is decrescent if there exists $ \delta > 0 $ and a class-$\mathcal{K}$ function
 
 $$
 \gamma : [0,\infty) \to [0,\infty)

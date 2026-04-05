@@ -91,9 +91,16 @@
          transition: opacity 0.3s;
          position: absolute;
          right: 15px;
+         line-height: 1;
       }
       .toc-menu-btn:hover {
          opacity: 0.8;
+      }
+      .toc-menu-text {
+         display: inline;
+         font-size: 12px;
+         margin-left: 4px;
+         vertical-align: middle;
       }
       @media (max-width: 1200px) {
          .toc-menu-btn {
@@ -226,7 +233,7 @@
    <div class="nav-bar">
       <a href="{{ "/" | absolute_url }}">Main Page</a>
       <a href="{{ "/blogs/blogIndex.html" | absolute_url }}">Blogs</a>
-      <button class="toc-menu-btn" id="tocMenuBtn" title="Table of Contents">☰</button>
+      <button class="toc-menu-btn" id="tocMenuBtn" title="Table of Contents">☰ <span class="toc-menu-text">Contents</span></button>
    </div>
    <div class="wrapper">
       <header>

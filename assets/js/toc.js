@@ -4,15 +4,27 @@
  * and highlights the active section as the user scrolls
  */
 
+console.log('[TOC] Script loaded');
+
 document.addEventListener('DOMContentLoaded', function() {
+   console.log('[TOC] DOMContentLoaded fired');
    const section = document.querySelector('section');
    
-   if (!section) return;
+   if (!section) {
+      console.warn('[TOC] No section element found');
+      return;
+   }
 
    // Extract all headings from the main content (skip h1 as it's the page title)
    const headings = Array.from(section.querySelectorAll('h2, h3, h4, h5, h6'));
    
-   if (headings.length < 1) return; // Only show ToC if there are headings
+   console.log('[TOC] Found headings:', headings.length);
+   headings.forEach((h, i) => console.log(`  ${i}: ${h.tagName} - ${h.textContent.substring(0, 50)}`));
+   
+   if (headings.length < 1) {
+      console.warn('[TOC] No headings found, skipping TOC generation');
+      return;
+   }
 
    // Add IDs to headings that don't have them
    headings.forEach((heading, index) => {
@@ -31,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
    const wrapper = document.querySelector('.wrapper');
    if (wrapper) {
       section.parentNode.insertBefore(tocContainer, section.nextSibling);
+      console.log('[TOC] TOC container inserted successfully');
+   } else {
+      console.warn('[TOC] Wrapper not found, cannot insert TOC');
    }
 
    // Setup scroll tracking

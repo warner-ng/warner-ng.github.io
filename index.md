@@ -32,7 +32,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
       <a href="#" style="color: #2f7ac0; text-decoration: none;">abstract</a> |
       <a href="#" style="color: #2f7ac0; text-decoration: none;">bibtex</a> |
       <a href="#" style="color: #2f7ac0; text-decoration: none;">arXiv</a>
-      <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: #555;">""A real-time music-conditioned whole-body control framework that make robots understand your music""</p>
+      <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: #555;">""A real-time music-conditioned whole body control policy that makes robots understand your music""</p>
     </div>
   </div>
 </div>

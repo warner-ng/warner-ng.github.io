@@ -763,6 +763,7 @@ $$
 
 \Vert x(t)\Vert \to 0 \quad \text{as } t \to \infty
 $$
+
 independent of \(t_0\)
 
 ---

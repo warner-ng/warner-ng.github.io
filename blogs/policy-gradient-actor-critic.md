@@ -79,11 +79,15 @@ here every single item is trackable. log item is calculate by PyTorch Autograd, 
 
 The difference of vanilla Policy Gradient and Actor Critic is whether there is a additional value function approximator by parameter $\phi $
 
+<div style="text-align: center;">
 ![alt text](/blogs/image-1.png)
+</div>
 
 the vanilla PG
 
+<div style="text-align: center;">
 ![alt text](/blogs/image.png)
+</div>
 
 the Actor Critic
 

@@ -138,7 +138,9 @@ $$
 the formula is not that intuitive, but the idea is to basically **CLIP** the gradient to be update.
 
 Let's consider the reward to be negative, and then
+<div style="text-align: center;">
 ![alt text](/blogs/image-2.png)
+</div>
 Photo courtesy from [AI StackExchange](https://ai.stackexchange.com/questions/37608/why-clip-the-ppo-objective-on-only-one-side)
 
 now you see: by this cutting, we enable the gradient to be within the range of [1-$\epsilon$,+$\infty$], however, it is not going to be +$\infty$ since the $L^{\text{CLIP}}(\theta')$ is very negative at the point, which the optimization will punish it and won't take any gradient to that. (we are doing gradient ascend if we have negative reward)

@@ -287,7 +287,9 @@ $$
 
 Local Lipschitz guarantees local existence and uniqueness.(with p.w. continuity)
 > piecewise continuity looks like not continued
+<div style="text-align: center;">
 ![alt text](/blogs/image-4.png){: width="75%" }
+</div>
 
 Global Lipschitz guarantees global existence (the condition for **no finite escape time**).
 
@@ -452,7 +454,9 @@ $$
 → Asymptotically stable.
 
 > intuition:
->![alt text](/blogs/image-5.png){: width="75%" }
+> <div style="text-align: center;">
+> ![alt text](/blogs/image-5.png){: width="75%" }
+> </div>
 
 ---
 
@@ -830,34 +834,43 @@ $
 $
 
 such that
+
 $$
 V(t,x) \ge \alpha(\Vert x \Vert), \quad \forall t \ge 0,\; \forall x \in B_r(0)
 $$
 
 
+<div style="text-align: center;">
 ![alt text](image-7.png){: width="40%" }
+</div>
 
 ---
 
 3.decrescent
 
 A continuous function
+
 $$
 V : [0,\infty) \times \mathbb{R}^n \to \mathbb{R}
 $$
+
 is decrescent if there exists \( \delta > 0 \) and a class-\(\mathcal{K}\) function
+
 $$
 \gamma : [0,\infty) \to [0,\infty)
 $$
 
 such that
+
 $$
 V(t,x) \le \gamma(\Vert x \Vert), \quad \forall t \ge 0,\; \forall x \in B_\delta(0)
 $$
 
 
 
+<div style="text-align: center;">
 ![alt text](image-8.png){: width="40%" }
+</div>
 
 ---
 ## 23. Lyapunov Conditions (Time-Varying)
@@ -867,11 +880,13 @@ $$
 1.  $V(t,x)$ is locally positive definite  
 
 2.  $\exists\; W(x)$ locally positive definite such that
+
 $$
 V(t,x) \ge W(x), \quad \forall t \ge 0,\; \forall x \in B_r(0)
 $$
 
 3. define
+
 $$
 \bar W(x) := \inf_{t \ge 0} V(t,x)
 \quad \text{is locally positive definite}
@@ -880,6 +895,7 @@ $$
 ---
 
 Consider the system
+
 $$
 \dot{x} = f(t,x), \quad x(t_0)=x_0, \quad f(t,0)=0,\; \forall t \ge 0
 $$
@@ -900,7 +916,9 @@ Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
 
   - $\dot{V}(t,x) \le 0,\; \forall t \ge 0,\; x \in B_r(0)$  
 
+<div style="text-align: center;">
 ![alt text](image-9.png){: width="40%" }
+</div>
 
 ---
 
@@ -916,7 +934,9 @@ Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
 
   - and $-\dot V(t,x)$ is locally positive definite
 
+<div style="text-align: center;">
 ![alt text](image-10.png){: width="40%" }
+</div>
 
 Q: Why do we use “locally positive definite” $V(t,x)$ in time-varying systems instead of just $V>0$?
 
@@ -928,20 +948,7 @@ $$
 
 ---
 
-## 24. Stability Conditions for Time-Varying Systems
-
-If $f$ is locally Lipschitz in $x$ and $V(t,x)$ satisfies:
-- $V(t,x) \ge \alpha(\Vert x\Vert)$ (locally positive definite)
-- $V(t,x) \le \gamma(\Vert x\Vert)$ (decrescent)
-- $\dot{V}(t,x) \le 0$
-
-Then equilibrium is uniformly stable.
-
-If $\dot{V}(t,x) < 0$, then equilibrium is uniformly asymptotically stable.
-
-
-
-## 25. Exponential Stability
+## 24. Exponential Stability
 
 Equilibrium is exponentially stable if:
 
@@ -953,9 +960,7 @@ for some $M>0$, $\lambda>0$.
 
 Lyapunov condition: If $c_1 \Vert x\Vert^2 \le V(x) \le c_2 \Vert x\Vert^2$ and $\dot{V}(x) \le -c_3 V(x)$, then exponentially stable.
 
----
 
-## 26. Stability Hierarchy
 
 $$
 \text{Exponential Stability} \Rightarrow \text{Asymptotic Stability} \Rightarrow \text{Stability}

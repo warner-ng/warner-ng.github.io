@@ -6,7 +6,7 @@
 @media (min-width: 960px) {
    .toc-container {
       display: block;
-      width: 263px;
+      width: 280px;
       position: sticky;
       top: 72px;
       max-height: calc(100vh - 72px);

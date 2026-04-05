@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 ---
 
 ## Blogs - RL | Generative Model | Control

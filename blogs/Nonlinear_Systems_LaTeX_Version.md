@@ -877,15 +877,15 @@ $$
 
 (TFAE — The following are equivalent)
 
-1.  $V(t,x)$ is locally positive definite  
+- $V(t,x)$ is locally positive definite  
 
-2.  $\exists\; W(x)$ locally positive definite such that
+- $\exists\; W(x)$ locally positive definite such that
 
 $$
 V(t,x) \ge W(x), \quad \forall t \ge 0,\; \forall x \in B_r(0)
 $$
 
-3. define
+- define
 
 $$
 \bar W(x) := \inf_{t \ge 0} V(t,x)

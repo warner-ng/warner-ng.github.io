@@ -696,7 +696,7 @@ $\lambda_{\max} \Vert x_{max} \Vert^2 \le c
 
 ---
 
-# Time-Varying System
+# ----Time-Varying System----
 
 ## 21. Stability of Time-Varying System
 

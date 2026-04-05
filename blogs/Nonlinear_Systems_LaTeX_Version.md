@@ -8,7 +8,7 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 
 **ESSENTIAL MATRIX DERIVATIVE RULES**
 
-1. Derivative of a Transpose
+1.Derivative of a Transpose
 
 Let $X = X(t)$.
 
@@ -18,7 +18,7 @@ $$
 \left(\frac{dX}{dt}\right)^\top
 $$
 
-2. Matrix Product Rule
+2.Matrix Product Rule
 
 $$
 \frac{d}{dt}(XY)
@@ -26,7 +26,7 @@ $$
 \dot X Y + X \dot Y
 $$
 
-3. Quadratic Form
+3.Quadratic Form
 
 Let
 
@@ -46,7 +46,7 @@ $$
 \nabla V(x) = 2Ax
 $$
 
-4. Chain Rule (Lyapunov Use)
+4.Chain Rule (Lyapunov Use)
 
 For
 
@@ -722,7 +722,7 @@ Region of Attraction (ROA): may depend on time \(t\), and can shrink.
 
 2.Stability **Definitions** (Time-Varying)
 
-- **Stability (SISL)**:
+- 1.**Stability (SISL)**:
 
 $$
 \forall \varepsilon > 0,\; \exists \delta(\varepsilon, t_0) > 0
@@ -732,7 +732,7 @@ $$
 \Vert x(t)\Vert < \varepsilon,\; \forall t \ge t_0
 $$
 
-- ​**Uniform stability**:
+- 2.​**Uniform stability**:
 
 $$
 \forall \varepsilon > 0,\; \exists \delta(\varepsilon) > 0
@@ -748,7 +748,7 @@ Otherwise: unstable.
 
 ---
 
-- ​**Asymptotic stability**:
+- 3.​**Asymptotic stability**:
 
 $$
 \exists \delta(t_0) > 0
@@ -760,7 +760,7 @@ $$
 
 ---
 
-- ​**Uniform asymptotic stability**:
+- 4.​**Uniform asymptotic stability**:
 
 $$
 \forall x_0\le c \\
@@ -773,7 +773,7 @@ independent of \(t_0\)
 ---
 
 
-- ​**Global uniform asymptotic stability**:
+- 5.​**Global uniform asymptotic stability**:
 $$
 \Vert x(t)\Vert \to 0 \quad \text{as } t \to \infty
 $$
@@ -906,15 +906,15 @@ Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
 
 
 
-1. Uniform SISL
+- 1.Uniform SISL
 
-- $x_e = 0$ is uniformly stable if there exists $V(t,x)$ such that
+  - $x_e = 0$ is uniformly stable if there exists $V(t,x)$ such that
 
-  - $V(t,x)$ is locally positive definite  
+    - $V(t,x)$ is locally positive definite  
 
-  - $V(t,x)$ is **decrescent**
+    - $V(t,x)$ is **decrescent**
 
-  - $\dot{V}(t,x) \le 0,\; \forall t \ge 0,\; x \in B_r(0)$  
+    - $\dot{V}(t,x) \le 0,\; \forall t \ge 0,\; x \in B_r(0)$  
 
 <div style="text-align: center;">
 <img src="image-9.png" width="40%" alt="alt text" />
@@ -924,15 +924,15 @@ Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
 
 
 
-2. Uniform Asymptotic Stability
+- 2.Uniform Asymptotic Stability
 
-- $x_e = 0$ is uniformly asymptotically stable if
+  - $x_e = 0$ is uniformly asymptotically stable if
 
-  - conditions of uniform stability hold  
+    - conditions of uniform stability hold  
 
-  - $V(t,x)$ is decrescent  
+    - $V(t,x)$ is decrescent  
 
-  - and $-\dot V(t,x)$ is locally positive definite
+   - and $-\dot V(t,x)$ is locally positive definite
 
 <div style="text-align: center;">
 <img src="image-10.png" width="40%" alt="alt text" />
@@ -1238,7 +1238,9 @@ $$
 
 ---
 
-## 36. Backstepping Example (linear)
+## 36. Backstepping Example
+
+1. Backstepping Example (linear)
 
 $$
 \begin{bmatrix}
@@ -1256,20 +1258,22 @@ x_2
 \end{bmatrix}
 $$
 
-choose virtual control:
+Choose virtual control:
+
 $$
 x_2 = \alpha(x_1) = -c_1 x_1
 $$
 
 ---
 
-## 37. Error Definition
+2. Error Definition
 
 $$
 z = x_2 - \alpha(x_1)
 $$
 
-then:
+Then:
+
 $$
 \dot{x}_1 = z - c_1 x_1
 $$
@@ -1280,7 +1284,7 @@ $$
 
 ---
 
-## 38. Augmented Lyapunov
+3. Augmented Lyapunov
 
 $$
 V_a(x,z) = \frac{1}{2}x_1^2 + \frac{1}{2}z^2
@@ -1290,7 +1294,8 @@ $$
 \dot V_a = x_1\dot x_1 + z\dot z
 $$
 
-choose:
+Choose:
+
 $$
 u = -x_1 - c_1(z - c_1 x_1) - c_2 z
 $$
@@ -1301,13 +1306,14 @@ $$
 
 ---
 
-## 39. Backstepping General Result
+4. Backstepping General Result
 
 If:
 - $V(x)$ positive definite  
 - radially unbounded  
 
 and
+
 $$
 L_f V + L_g V \alpha(x) \le -W(x)
 $$
@@ -1315,15 +1321,17 @@ $$
 with $W(x)$ positive definite
 
 then:
+
 $$
 \text{closed-loop is GAS}
 $$
 
 ---
 
-## 40. Integrator Backstepping Lemma
+5. Integrator Backstepping Lemma
 
 Augmented system:
+
 $$
 \dot{x} = f(x) + g(x)\xi
 $$
@@ -1333,13 +1341,14 @@ $$
 $$
 
 Lyapunov:
+
 $$
 V_a(x,\xi) = V(x) + \frac{1}{2}(\xi - \alpha(x))^2
 $$
 
 ---
 
-## 41. Control Law (Backstepping)
+6. Control Law (Backstepping)
 
 $$
 u =
@@ -1350,7 +1359,7 @@ $$
 
 ---
 
-## 42. Weak Case (semi-definite)
+7. Weak Case (semi-definite)
 
 If $W(x)$ is only positive semi-definite:
 
@@ -1359,6 +1368,7 @@ $$
 $$
 
 then system converges to:
+
 $$
 \mathcal{Z} = \{(x,\xi)\mid W(x)=0,\ \xi=\alpha(x)\}
 $$
@@ -1366,7 +1376,7 @@ $$
 > not necessarily origin
 
 
-## 43. Backstepping Revisit
+## 37. Backstepping Revisit
 
 Consider system:
 
@@ -1437,7 +1447,7 @@ Therefore:
 
 ---
 
-## 44. Strict Feedback System
+## 38. Strict Feedback System
 
 Definition:
 
@@ -1474,7 +1484,7 @@ Goal:
 
 ---
 
-## 45. Assumption A1
+## 39. Assumption A1
 
 There exist:
 
@@ -1492,7 +1502,7 @@ is GAS (or SLS)
 
 ---
 
-## 46. Backstepping Construction
+## 40. Backstepping Construction
 
 Step 1:
 
@@ -1532,7 +1542,7 @@ $$
 
 ---
 
-## 47. Sliding Mode Control
+## 41. Sliding Mode Control
 
 System idea:
 $$
@@ -1553,8 +1563,6 @@ Control:
 > $k$ switches between $\pm 1$
 
 ---
-
-## 48. SMC Example
 
 1. Sliding Mode Example
 
@@ -1705,9 +1713,9 @@ as long as assumption holds
 
 ---
 
-## 49. Feedback Linearization
+## 42. Feedback Linearization
 
-1.Motivation: General Problem
+1. Motivation: General Problem
 
 Consider a pendulum nonlinear system:
 
@@ -1825,7 +1833,7 @@ $$
 
 ---
 
-## 50. Formal Definition: Feedback Linearizable
+## 43. Formal Definition: Feedback Linearizable
 
 A system
 
@@ -1856,7 +1864,7 @@ for some constant matrices $A, b$.
 
 ---
 
-### 6. Input-Output Linearization
+## 44.Input-Output Linearization
 
 #### General SISO System
 

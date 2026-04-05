@@ -79,6 +79,25 @@
       .nav-bar a:hover {
          background-color: #2f7ac0;
       }
+      .toc-menu-btn {
+         display: none;
+         background: none;
+         border: none;
+         color: white;
+         font-size: 24px;
+         cursor: pointer;
+         padding: 6px 12px;
+         margin-left: auto;
+         transition: opacity 0.3s;
+      }
+      .toc-menu-btn:hover {
+         opacity: 0.8;
+      }
+      @media (max-width: 1200px) {
+         .toc-menu-btn {
+            display: block;
+         }
+      }
       /*this is the real control knob adjusting the width of the page */
       @media (min-width: 960px) {
          .wrapper {
@@ -152,25 +171,7 @@
             display: block;
          }
       }
-      /* TOC Toggle Button */
-      .toc-toggle {
-         display: none;
-         position: fixed;
-         bottom: 30px;
-         right: 30px;
-         background-color: #5B9BD5;
-         color: white;
-         border: none;
-         padding: 12px 16px;
-         border-radius: 5px;
-         cursor: pointer;
-         font-weight: bold;
-         z-index: 998;
-         transition: background-color 0.3s;
-      }
-      .toc-toggle:hover {
-         background-color: #2f7ac0;
-      }
+      /* TOC Toggle Button - removed, now in nav bar */
       /* TOC Drawer Modal */
       .toc-drawer {
          display: none;
@@ -223,6 +224,7 @@
    <div class="nav-bar">
       <a href="{{ "/" | absolute_url }}">Main Page</a>
       <a href="{{ "/blogs/blogIndex.html" | absolute_url }}">Blogs</a>
+      <button class="toc-menu-btn" id="tocMenuBtn" title="Table of Contents">☰</button>
    </div>
    <div class="wrapper">
       <header>
@@ -266,7 +268,6 @@
          {% endunless %}
       </footer>
    </div>
-   <button class="toc-toggle" id="tocToggle">📋 Contents</button>
    <div class="toc-overlay" id="tocOverlay"></div>
    <div class="toc-drawer" id="tocDrawer">
       <button class="toc-drawer-close" id="tocDrawerClose">✕</button>
@@ -275,24 +276,26 @@
    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
    <script src="{{ "/assets/js/toc.js" | relative_url }}"></script>
    <script>
-      // TOC Drawer Toggle
-      const tocToggle = document.getElementById('tocToggle');
-      const tocDrawer = document.getElementById('tocDrawer');
-      const tocOverlay = document.getElementById('tocOverlay');
-      const tocDrawerClose = document.getElementById('tocDrawerClose');
-      const drawerContent = document.getElementById('drawerContent');
+      // TOC Menu Button Handler
+      var tocMenuBtn = document.getElementById('tocMenuBtn');
+      var tocDrawer = document.getElementById('tocDrawer');
+      var tocOverlay = document.getElementById('tocOverlay');
+      var tocDrawerClose = document.getElementById('tocDrawerClose');
+      var drawerContent = document.getElementById('drawerContent');
 
       // Copy TOC to drawer
-      const originalToc = document.querySelector('.toc-container');
+      var originalToc = document.querySelector('.toc-container');
       if (originalToc) {
          drawerContent.innerHTML = originalToc.innerHTML;
       }
 
-      // Toggle drawer
-      tocToggle.addEventListener('click', function() {
-         tocDrawer.classList.add('open');
-         tocOverlay.classList.add('open');
-      });
+      // Toggle drawer from menu button
+      if (tocMenuBtn) {
+         tocMenuBtn.addEventListener('click', function() {
+            tocDrawer.classList.add('open');
+            tocOverlay.classList.add('open');
+         });
+      }
 
       // Close drawer
       tocDrawerClose.addEventListener('click', function() {

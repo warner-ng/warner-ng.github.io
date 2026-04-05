@@ -4,7 +4,7 @@ title: Nonlinear Systems — Complete Notes
 description: Complete notes on nonlinear systems covering existence & uniqueness, contraction mapping, Lyapunov theory, LaSalle theorem, instability, linearization, region of attraction, time-varying systems, and exponential stability.
 ---
 
-# ---------NONLINEAR SYSTEMS — COMPLETE NOTES-----------
+# ""NONLINEAR SYSTEMS — COMPLETE NOTES""
 
 **ESSENTIAL MATRIX DERIVATIVE RULES**
 
@@ -384,7 +384,7 @@ This means small perturbations in the initial condition produce small changes in
 
 ---
 
-# ------------------STABILITY THEORY--------------------
+# ""STABILITY THEORY""
 
 ## 11. Equilibrium
 
@@ -700,7 +700,7 @@ $\lambda_{\max} \Vert x_{max} \Vert^2 \le c
 
 ---
 
-# ------------------Time-Varying System-----------------
+# ""Time-Varying System""
 
 ## 21. Stability of Time-Varying System
 
@@ -1056,7 +1056,7 @@ Stability determined by eigenvalues of $A$:
 - Any $\text{Re}(\lambda) > 0$ → unstable
 - $\text{Re}(\lambda) = 0$ → inconclusive (higher-order terms decide)  
 
-# --------------------Control Method--------------------
+# ""Control Method""
 
 ## 26. Control Lyapunov Function CLF
 

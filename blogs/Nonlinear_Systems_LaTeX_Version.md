@@ -1877,6 +1877,14 @@ $$
 $$
 y = h(x)
 $$
+previously we do 
+
+
+$$
+u = \alpha(x) + r(x)^{-1} v
+$$
+
+now if we make it simpler, instead of having all the state x linearized, we 
 
 We want output tracking: $y \to y_d$.
 

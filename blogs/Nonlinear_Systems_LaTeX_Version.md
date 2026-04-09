@@ -1207,7 +1207,7 @@ $$
 \dot V(x) = -\sqrt{(L_f V)^2 + (L_g V)^4} < 0
 $$
 
-> ensures GAS
+> this input is contructed to ensures GAS
 
 ---
 
@@ -1720,7 +1720,7 @@ as long as assumption holds
 Consider a pendulum nonlinear system:
 
 $$
-\dot{x} = x_2
+\dot{x_1} = x_2
 $$
 
 $$
@@ -1733,7 +1733,7 @@ This is the idea behind feedback linearization.
 
 ---
 
-2.Form and Control Law
+2.**def**
 
 If a system can be written as:
 
@@ -1758,6 +1758,8 @@ which is linear.
 ---
 
 3.Limitation Example
+
+
 $$
 \dot{x}_1 = a \sin x_2
 $$
@@ -1797,7 +1799,7 @@ $$
 
 ---
 
-4.Solution: Coordinate Transformation
+4.Solution: **Coordinate Transformation**
 
 State transformation:
 

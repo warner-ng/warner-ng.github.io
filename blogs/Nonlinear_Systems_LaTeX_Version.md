@@ -1866,7 +1866,7 @@ for some constant matrices $A, b$.
 
 ---
 
-## 44.Input-Output Linearization
+## 44.Input-Output Linearization & Relative Degree
 
 General SISO System
 
@@ -1934,3 +1934,162 @@ $$
 y^{(3)} = v
 $$
 
+---
+
+## 45. Zero Dynamics
+
+$$
+\dot{x} = f(x) + g(x)u,\quad y = h(x)
+$$
+
+$$
+y^{(r)} = L_f^r h(x) + L_g L_f^{r-1} h(x)\,u
+$$
+
+$$
+u^* = \frac{-L_f^r h(x)}{L_g L_f^{r-1} h(x)}
+$$
+
+$$
+y = \dot y = \cdots = y^{(r-1)} = 0
+$$
+
+$$
+\dot{x} = f(x) + g(x)u^*
+\quad (\text{restricted on } y=0)
+$$
+
+
+
+## 46. Minimum Phase / Stability
+
+$$
+\dot{x}_z = f_z(x_z)
+$$
+
+$$
+\text{zero dynamics stable} \;\Rightarrow\; \text{minimum phase}
+$$
+
+$$
+\text{zero dynamics unstable} \;\Rightarrow\; \text{non-minimum phase}
+$$
+---
+Example: Zero Dynamics + Pole-Zero
+
+System:
+
+$$
+\dot{x}_1 = x_2
+$$
+
+$$
+\dot{x}_2 = \alpha x_3 + u
+$$
+
+$$
+\dot{x}_3 = \beta x_3 - u
+$$
+
+$$
+y = x_1
+$$
+
+---
+
+Relative Degree
+
+$$
+r = 2
+$$
+
+
+---
+
+Zero Dynamics
+
+On manifold:
+
+$$
+y = x_1 = 0
+$$
+
+$$
+\dot{y} = x_2 = 0
+$$
+
+$$
+\ddot{y} = 0
+$$
+
+---
+
+Solve for input:
+
+$$
+\ddot{y} = \alpha x_3 + u = 0
+$$
+
+$$
+u^* = -\alpha x_3
+$$
+
+---
+
+Substitute into internal state:
+
+$$
+\dot{x}_3 = \beta x_3 - u^*
+$$
+
+$$
+= \beta x_3 + \alpha x_3
+$$
+
+$$
+= (\alpha + \beta)x_3
+$$
+
+---
+
+Zero Dynamics
+
+$$
+\dot{x}_3 = (\alpha + \beta)x_3
+$$
+
+---
+
+Stability
+
+$$
+\alpha + \beta < 0 \Rightarrow \text{stable}
+$$
+
+$$
+\alpha + \beta > 0 \Rightarrow \text{unstable}
+$$
+
+---
+**bonus**
+Transfer Function
+
+$$
+G(s) = \frac{s - (\alpha + \beta)}{s^2 (s - \beta)}
+$$
+
+❓: how to get this
+
+---
+
+Relative Degree
+
+$$
+r = 2
+$$
+
+$$
+r = \#\text{poles} - \#\text{zeros}
+$$
+
+---

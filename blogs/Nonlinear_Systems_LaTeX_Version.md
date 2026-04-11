@@ -1978,6 +1978,8 @@ $$
 ![alt text](image-11.png)
 
 > if we use z for vector [y, y', y'', ..., y^(n-1)], this $\mathcal{Z}$ is the plane where $y = \dot y = \cdots = y^{(r-1)} = 0$
+
+
 ---
 Example: Zero Dynamics + Pole-Zero
 

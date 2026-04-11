@@ -2039,9 +2039,12 @@ $$
 \text{zero dynamics unstable} \;\Rightarrow\; \text{non-minimum phase}
 $$
 
-![alt text](image-11.png)
+<div style="text-align: center;">
+<img src="/blogs/image-11.png" width="75%" alt="alt text" />
+</div>
 
 > if we use z for vector [y, y', y'', ..., y^(n-1)], this $\mathcal{Z}$ is the plane where $y = \dot y = \cdots = y^{(r-1)} = 0$ ,with dim of n-r
+
 
 
 ---

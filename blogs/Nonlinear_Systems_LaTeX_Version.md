@@ -1956,12 +1956,74 @@ $$
 y = \dot y = \cdots = y^{(r-1)} = 0
 $$
 
+let 
+
 $$
-\dot{x} = f(x) + g(x)u^*
-\quad (\text{restricted on } y=0)
+z = \begin{bmatrix}
+y \\
+\dot y \\
+\vdots \\
+y^{(n-1)}
+\end{bmatrix} \in \mathbb{R}^n
+$$
+
+$$
+\dot z =
+\begin{bmatrix}
+0 & 1 & 0 & \cdots & 0 \\
+0 & 0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & 1 \\
+0 & 0 & 0 & \cdots & 0
+\end{bmatrix} z
++
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+1
+\end{bmatrix} v
 $$
 
 
+Choose linear control:
+$$
+v = -K z
+$$
+
+State equation:
+$$
+\dot z = (A - BK) z
+$$
+
+If expressed in terms of output and Lie derivatives:
+$$
+v = -k_1 h(x) - k_2 L_f h(x) - \cdots - k_n L_f^{\,n-1} h(x)
+$$
+
+where
+$$
+\begin{aligned}
+y &= h(x) \\
+\dot y &= L_f h(x) \\
+\ddot y &= L_f^2 h(x) \\
+&\;\;\vdots \\
+y^{(r-1)} &= L_f^{\,r-1} h(x)
+\end{aligned}
+$$
+
+Then:
+$$
+z(t) \to 0 \quad \text{as } t \to \infty
+$$
+
+Thus:
+$$
+y(t) \to 0
+$$
+
+now we know, we force r-dim of states to be zero. Since the whole state space is n-dim, we have n-r dim to be determine, which is call zero dynamics
+
+Solving other n-r state is to solve zero dynamics
 
 ## 46. Minimum Phase / Stability
 
@@ -1979,7 +2041,7 @@ $$
 
 ![alt text](image-11.png)
 
-> if we use z for vector [y, y', y'', ..., y^(n-1)], this $\mathcal{Z}$ is the plane where $y = \dot y = \cdots = y^{(r-1)} = 0$
+> if we use z for vector [y, y', y'', ..., y^(n-1)], this $\mathcal{Z}$ is the plane where $y = \dot y = \cdots = y^{(r-1)} = 0$ ,with dim of n-r
 
 
 ---
@@ -2060,7 +2122,7 @@ $$
 
 ---
 
-Zero Dynamics
+**Zero Dynamics**
 
 $$
 \dot{x}_3 = (\alpha + \beta)x_3

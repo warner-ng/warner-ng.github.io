@@ -1843,6 +1843,8 @@ $$
 \dot{x} = f(x) + g(x) u
 $$
 
+where f(x) denotes nonlinearity, g(x)is linearity.
+
 is feedback linearizable if there exist:
 
 - A smooth control law: $u = \alpha(x) + \beta(x) v$  

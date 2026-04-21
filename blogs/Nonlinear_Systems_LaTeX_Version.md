@@ -8,6 +8,16 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 
 **ESSENTIAL MATRIX DERIVATIVE RULES**
 
+| Matrix type | Form | Eigenvalues | Quick rule |
+|---|---|---|---|
+| **Diagonal** | `diag(a, d)` | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal directly |
+| **Upper triangular** | $\begin{bmatrix} a & b \\ 0 & d \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal, ignore $b$ |
+| **Lower triangular** | $\begin{bmatrix} a & 0 \\ c & d \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal, ignore $c$ |
+| **Anti-diagonal** | $\begin{bmatrix} 0 & b \\ c & 0 \end{bmatrix}$ | $\lambda=\pm\sqrt{bc}$ | $bc>0$: real saddle; $bc<0$: imaginary center |
+| **General $2\times2$** | $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$ | $\lambda^2-\text{tr}\,\lambda+\det=0$ | Use trace & determinant |
+| **Diagonal/Triangular $3\times3$** | $\begin{bmatrix} a & * & * \\ 0 & d & * \\ 0 & 0 & f \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d,\ \lambda_3=f$ | Read off diagonal directly |
+| **Anti-diagonal $3\times3$** | $\begin{bmatrix} 0 & 0 & c \\ 0 & d & 0 \\ e & 0 & 0 \end{bmatrix}$ | $\lambda_1=d,\ \lambda_{2,3}=\pm\sqrt{ce}$ | Middle entry gives one $\lambda$; corner pair interact |
+
 1.Derivative of a Transpose
 
 Let $X = X(t)$.
@@ -1713,456 +1723,70 @@ as long as assumption holds
 
 ---
 
-## 42. Feedback Linearization
+## 42. Condition for Feedback Linearization
 
-1. Motivation: General Problem
+### Introduction to Feedback Linearization
 
-Consider a pendulum nonlinear system:
-
-$$
-\dot{x_1} = x_2
-$$
+Consider a nonlinear system of the form:
 
 $$
-\dot{x}_2 = -a\sin x_1 - b x_2 + c u
+\dot{x} = f(x) + g(x)u
 $$
 
-Question: Can we design $u = u(x, v)$ to convert this into a linear system?
+The goal of feedback linearization is to transform this nonlinear system into an equivalent linear system through a change of coordinates and a feedback law.
 
-This is the idea behind feedback linearization.
+Let the new coordinates be $z = \Phi(x)$ and the new input be $v$. We want to find a transformation such that the system dynamics in the new coordinates are linear:
+
+$$
+\dot{z} = Az + Bv
+$$
+
+If we can achieve this, we can use linear control techniques to control the system.
+
+---
+### Differential Geometry Concepts
+
+To understand feedback linearization, we need some concepts from differential geometry.
+
+-   **Manifold**: A space that is locally Euclidean. For our purposes, the state space of the system can often be considered a manifold.
+-   **Vector Field**: A function that assigns a tangent vector to each point on a manifold. In our system $\dot{x} = f(x)$, $f(x)$ is a vector field.
+-   **Lie Bracket**: The Lie bracket of two vector fields $f$ and $g$, denoted as $[f, g]$, is another vector field defined as:
+    $$
+    [f, g](x) = \frac{\partial g}{\partial x}f(x) - \frac{\partial f}{\partial x}g(x)
+    $$
+    The Lie bracket measures the non-commutativity of the flows of the vector fields. If $[f, g] = 0$, the vector fields are said to commute.
+
+-   **Adjoint**: The adjoint operator is a way to represent repeated Lie brackets.
+    $$
+    \text{ad}_f g(x) = [f, g](x)
+    $$
+    $$
+    \text{ad}_f^2 g(x) = [f, [f, g]](x)
+    $$
+    And in general:
+    $$
+    \text{ad}_f^k g(x) = [f, \text{ad}_f^{k-1} g(x)]
+    $$
+
+-   **Distribution**: A distribution $\Delta$ is a collection of vector subspaces of the tangent space at each point. For a set of vector fields $\{g_1, \dots, g_m\}$, the distribution is the span of these vector fields at each point $x$:
+    $$
+    \Delta(x) = \text{span}\{g_1(x), \dots, g_m(x)\}
+    $$
+
+-   **Involutive Distribution**: A distribution $\Delta$ is involutive if for any two vector fields $X, Y \in \Delta$, their Lie bracket $[X, Y]$ is also in $\Delta$.
 
 ---
 
-2.**def**
+### Frobenius' Theorem
 
-If a system can be written as:
+Frobenius' Theorem provides a condition for the existence of a solution to a system of partial differential equations. In the context of control theory, it gives us a condition for feedback linearizability.
 
-$$
-\dot{x} = A x + B r(x)[u - \alpha(x)]
-$$
-
-Then we can choose:
-
-$$
-u = \alpha(x) + r(x)^{-1} v
-$$
-
-to achieve:
-
-$$
-\dot{x} = A x + B v
-$$
-
-which is linear.
-
----
-
-3.Limitation Example
-
-
-$$
-\dot{x}_1 = a \sin x_2
-$$
-
-$$
-\dot{x}_2 = -x_1^2 + u
-$$
-
-We try to write it in the form:
-
-$$
-\dot{x} = A x + B \gamma(x)\,[u - \alpha(x)]
-$$
-
-However the nonlinearity $a \sin x_2$ appears in $\dot{x}_1$ and is **not multiplied by the input $u$**.
-
-Example 2 (matrix form)
-
-$$
-\dot{x} =
-\begin{bmatrix}
-\dot{x}_1 \\
-\dot{x}_2
-\end{bmatrix}
-=
-\begin{bmatrix}
-a \sin x_2 \\
-- x_1^2
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-u
-$$
-
----
-
-4.Solution: **Coordinate Transformation**
-
-State transformation:
-
-$$
-z_1 = x_1,\quad z_2 = a \sin x_2
-$$
-
-Then:
-
-$$
-\dot{z}_1 = z_2
-$$
-
-$$
-\dot{z}_2 = a \cos x_2 \cdot (-x_1^2 + u)
-$$
-
-Input transformation - Choose:
-
-$$
-u = x_1^2 + \frac{v}{a \cos x_2}
-$$
-
-Resulting linear system:
-
-$$
-\dot{z}_1 = z_2
-$$
-
-$$
-\dot{z}_2 = v
-$$
-
----
-
-## 43. Formal Definition: Feedback Linearizable
-
-A system
-
-$$
-\dot{x} = f(x) + g(x) u
-$$
-
-where f(x) denotes nonlinearity, g(x)is linearity.
-
-is feedback linearizable if there exist:
-
-- A smooth control law: $u = \alpha(x) + \beta(x) v$  
-- A coordinate transformation: $z = T(x)$  
-
-such that:
-
-$$
-\dot{z} = A z + b v
-$$
-
-for some constant matrices $A, b$.
-
-**Key questions:**
-1. When is a system feedback linearizable (checking $f, g$ only)?  
-2. What is the choice for $\alpha, \beta, T$?  
-
-**Advantages and Defects:**
-- Advantages: all linear control techniques can be used; easy recipe  
-- Defects: requires knowing system dynamics $f, g$; may cancel stabilizing nonlinearity  
-
----
-
-## 44.Input-Output Linearization & Relative Degree
-
-General SISO System
-
-$$
-\dot{x} = f(x) + g(x) u
-$$
-
-$$
-y = h(x)
-$$
-previously we do 
-
-
-$$
-u = \alpha(x) + r(x)^{-1} v
-$$
-
-now if we make it simpler, instead of having all the state x linearized, we 
-
-We want output tracking: $y \to y_d$.
-
-the Lie Derivatives
-
-$$
-\dot{y} = L_f h(x)
-$$
-
-$$
-\ddot{y} = L_f^2 h(x) + L_g L_f h(x)\,u
-$$
-
-- Case 1: Relative Degree $r = 2$
-
-If $L_g L_f h(x) \neq 0$, choose:
-
-$$
-u = \frac{v - L_f^2 h(x)}{L_g L_f h(x)}
-$$
-
-then:
-
-$$
-\ddot{y} = v
-$$
-
----
-
-- Case 2: Relative Degree $r = 3$
-
-If $L_g L_f h(x) = 0$ and $L_g L_f^2 h(x) \neq 0$, then:
-
-$$
-y^{(3)} = L_f^3 h(x) + L_g L_f^2 h(x)\,u
-$$
-
-Choose:
-
-$$
-u = \frac{v - L_f^3 h(x)}{L_g L_f^2 h(x)}
-$$
-
-then:
-
-$$
-y^{(3)} = v
-$$
-
----
-
-## 45. Zero Dynamics
-
-$$
-\dot{x} = f(x) + g(x)u,\quad y = h(x)
-$$
-
-$$
-y^{(r)} = L_f^r h(x) + L_g L_f^{r-1} h(x)\,u
-$$
+A system is feedback linearizable if and only if:
+1.  The matrix $\begin{bmatrix} g(x) & \text{ad}_f g(x) & \dots & \text{ad}_f^{n-1} g(x) \end{bmatrix}$ has rank $n$.
+2.  The distribution $D = \text{span}\{g, \text{ad}_f g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
 
+If these conditions hold, we can find a function $h(x)$ such that:
 $$
-u^* = \frac{-L_f^r h(x)}{L_g L_f^{r-1} h(x)}
+\frac{\partial h}{\partial x} \begin{bmatrix} g(x) & \text{ad}_f g(x) & \dots & \text{ad}_f^{n-2} g(x) \end{bmatrix} = 0
 $$
-
-$$
-y = \dot y = \cdots = y^{(r-1)} = 0
-$$
-
-let 
-
-$$
-z = \begin{bmatrix}
-y \\
-\dot y \\
-\vdots \\
-y^{(n-1)}
-\end{bmatrix} \in \mathbb{R}^n
-$$
-
-$$
-\dot z =
-\begin{bmatrix}
-0 & 1 & 0 & \cdots & 0 \\
-0 & 0 & 1 & \cdots & 0 \\
-\vdots & \vdots & \vdots & \ddots & 1 \\
-0 & 0 & 0 & \cdots & 0
-\end{bmatrix} z
-+
-\begin{bmatrix}
-0 \\
-0 \\
-\vdots \\
-1
-\end{bmatrix} v
-$$
-
-
-Choose linear control:
-$$
-v = -K z
-$$
-
-State equation:
-$$
-\dot z = (A - BK) z
-$$
-
-If expressed in terms of output and Lie derivatives:
-$$
-v = -k_1 h(x) - k_2 L_f h(x) - \cdots - k_n L_f^{\,n-1} h(x)
-$$
-
-where
-$$
-\begin{aligned}
-y &= h(x) \\
-\dot y &= L_f h(x) \\
-\ddot y &= L_f^2 h(x) \\
-&\;\;\vdots \\
-y^{(r-1)} &= L_f^{\,r-1} h(x)
-\end{aligned}
-$$
-
-Then:
-$$
-z(t) \to 0 \quad \text{as } t \to \infty
-$$
-
-Thus:
-$$
-y(t) \to 0
-$$
-
-now we know, we force r-dim of states to be zero. Since the whole state space is n-dim, we have n-r dim to be determine, which is call zero dynamics
-
-Solving other n-r state is to solve zero dynamics
-
-## 46. Minimum Phase / Stability
-
-$$
-\dot{x}_z = f_z(x_z)
-$$
-
-$$
-\text{zero dynamics stable} \;\Rightarrow\; \text{minimum phase}
-$$
-
-$$
-\text{zero dynamics unstable} \;\Rightarrow\; \text{non-minimum phase}
-$$
-
-<div style="text-align: center;">
-<img src="/blogs/image-11.png" width="75%" alt="alt text" />
-</div>
-
-> if we use z for vector [y, y', y'', ..., y^(n-1)], this $\mathcal{Z}$ is the plane where $y = \dot y = \cdots = y^{(r-1)} = 0$ ,with dim of n-r
-
-
-
----
-Example: Zero Dynamics + Pole-Zero
-
-System:
-
-$$
-\dot{x}_1 = x_2
-$$
-
-$$
-\dot{x}_2 = \alpha x_3 + u
-$$
-
-$$
-\dot{x}_3 = \beta x_3 - u
-$$
-
-$$
-y = x_1
-$$
-
----
-
-Relative Degree
-
-$$
-r = 2
-$$
-
-
----
-
-Zero Dynamics
-
-On manifold:
-
-$$
-y = x_1 = 0
-$$
-
-$$
-\dot{y} = x_2 = 0
-$$
-
-$$
-\ddot{y} = 0
-$$
-
----
-
-Solve for input:
-
-$$
-\ddot{y} = \alpha x_3 + u = 0
-$$
-
-$$
-u^* = -\alpha x_3
-$$
-
----
-
-Substitute into internal state:
-
-$$
-\dot{x}_3 = \beta x_3 - u^*
-$$
-
-$$
-= \beta x_3 + \alpha x_3
-$$
-
-$$
-= (\alpha + \beta)x_3
-$$
-
----
-
-**Zero Dynamics**
-
-$$
-\dot{x}_3 = (\alpha + \beta)x_3
-$$
-
----
-
-Stability
-
-$$
-\alpha + \beta < 0 \Rightarrow \text{stable}
-$$
-
-$$
-\alpha + \beta > 0 \Rightarrow \text{unstable}
-$$
-
----
-**bonus**
-Transfer Function
-
-$$
-G(s) = \frac{s - (\alpha + \beta)}{s^2 (s - \beta)}
-$$
-
-❓: how to get this
-
----
-
-Relative Degree
-
-$$
-r = 2
-$$
-
-$$
-r = \#\text{poles} - \#\text{zeros}
-$$
-
----
+The existence of such a solution $h(x)$ for the above Partial Differential Equation is guaranteed by Frobenius' Theorem if the distribution $\Delta = \{g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.

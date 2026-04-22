@@ -32,4 +32,6 @@ Complete notes on nonlinear systems: stability theory, Lyapunov methods, contrac
 
 ---
 
+### [Nonlinear Systems Fun Fact](./nonlinear_fact.html)
+ 
 

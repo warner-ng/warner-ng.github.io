@@ -696,7 +696,7 @@ $\therefore $$
 \lambda_{\min} \Vert x_{min} \Vert^2 \le c
 \;\Rightarrow\;
 \Vert x_{min} \Vert \le \sqrt{\frac{c}{\lambda_{\min}}}
-$
+$$
 
 and
 
@@ -2182,9 +2182,9 @@ $$
 
 
 
-## 47. Condition for Feedback Linearization
+## 47. Conditions for Feedback Linearization
 
-### Introduction to Feedback Linearization
+1.Introduction to Feedback Linearization
 
 Consider a nonlinear system of the form:
 
@@ -2203,7 +2203,7 @@ $$
 If we can achieve this, we can use linear control techniques to control the system.
 
 ---
-### Differential Geometry Concepts
+2.Differential Geometry Concepts
 
 To understand feedback linearization, we need some concepts from differential geometry.
 
@@ -2236,7 +2236,7 @@ To understand feedback linearization, we need some concepts from differential ge
 
 ---
 
-### Frobenius' Theorem
+3.Frobenius' Theorem
 
 
 A solution $h(x)$ to the PDE exists if the distribution  
@@ -2247,7 +2247,7 @@ is **involutive** (Frobenius Theorem).
 
 ---
 
-### feedback linearizable THM
+## 48. feedback linearizable THM
 
 A system is feedback linearizable if and only if:
 1.  The matrix $\begin{bmatrix} g(x) & \text{ad}_f g(x) & \dots & \text{ad}_f^{n-1} g(x) \end{bmatrix}$ has rank $n$.
@@ -2258,3 +2258,88 @@ $$
 \frac{\partial h}{\partial x} \begin{bmatrix} g(x) & \text{ad}_f g(x) & \dots & \text{ad}_f^{n-2} g(x) \end{bmatrix} = 0
 $$
 The existence of such a solution $h(x)$ for the above Partial Differential Equation is guaranteed by Frobenius' Theorem if the distribution $\Delta = \{g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
+
+## 49. Proof of Feedback Linearizability
+
+To show that a system is feedback linearizable, we need to prove that it has a relative degree of $n$.
+
+**Lemma**: A system has relative degree $n$ if and only if there exists a function $h(x)$ such that:
+$$
+L_g L_f^k h(x) = 0, \quad \forall k = 0, \dots, n-2
+$$
+$$
+L_g L_f^{n-1} h(x) \neq 0
+$$
+
+The existence of such a function $h(x)$ is guaranteed by Frobenius' Theorem if the distribution $\Delta = \text{span}\{g, \text{ad}_f g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
+
+**Proof by Contradiction**:
+Assume that $L_g h(x) = 0$. Then from the conditions for relative degree, we have:
+$$
+\frac{\partial h}{\partial x} [g(x), \text{ad}_f g(x), \dots, \text{ad}_f^{n-1} g(x)] = [0, 0, \dots, L_g L_f^{n-1} h(x)]
+$$
+If the matrix $[g(x), \text{ad}_f g(x), \dots, \text{ad}_f^{n-1} g(x)]$ has full rank, and we need $\frac{\partial h}{\partial x} \neq 0$ for a valid transformation, then we cannot have all elements on the right be zero. This implies that $L_g L_f^{n-1} h(x)$ cannot be zero, which confirms that the relative degree is $n$.
+
+## 50. Example of Feedback Linearization
+
+Consider the system:
+$$
+\dot{x} = \begin{bmatrix} a\sin(x_2) \\ -x_1^2 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u
+$$
+Here, $f(x) = \begin{bmatrix} a\sin(x_2) \\ -x_1^2 \end{bmatrix}$ and $g(x) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$.
+
+First, we check if the system is feedback linearizable. We compute the Lie bracket $[f, g]$:
+$$
+[f, g] = \frac{\partial g}{\partial x}f - \frac{\partial f}{\partial x}g = 0 - \begin{bmatrix} 0 & a\cos(x_2) \\ -2x_1 & 0 \end{bmatrix} \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -a\cos(x_2) \\ 0 \end{bmatrix}
+$$
+The controllability matrix is:
+$$
+\begin{bmatrix} g & [f,g] \end{bmatrix} = \begin{bmatrix} 0 & -a\cos(x_2) \\ 1 & 0 \end{bmatrix}
+$$
+This matrix has rank 2 for all $x$ where $a\cos(x_2) \neq 0$.
+
+The distribution $\Delta = \text{span}\{g\}$ is involutive because for any scalar functions $\alpha(x), \beta(x)$, the Lie bracket $[\alpha g, \beta g]$ is in $\Delta$.
+
+Now we need to find $h(x)$ such that $L_g h(x) = 0$.
+$$
+L_g h(x) = \nabla h \cdot g = \frac{\partial h}{\partial x_1} (0) + \frac{\partial h}{\partial x_2} (1) = \frac{\partial h}{\partial x_2} = 0
+$$
+This implies that $h(x)$ is a function of $x_1$ only. Let's choose $h(x) = x_1$.
+
+Now we check the second condition:
+$$
+L_g L_f h(x) = L_g ( \nabla h \cdot f) = L_g (a \ sin(x_2)) = \nabla(a \ sin(x_2)) \cdot g = \begin{bmatrix} 0 & a\cos(x_2) \end{bmatrix} \begin{bmatrix} 0 \\ 1 \end{bmatrix} = a\cos(x_2)
+$$
+Since $L_g L_f h(x) \neq 0$ (in general), the system has relative degree 2 and is feedback linearizable.
+
+## 51. MIMO Systems FB Lin
+
+For Multi-Input Multi-Output (MIMO) systems, we consider a square system with $m$ inputs and $m$ outputs.
+$$
+\dot{x} = f(x) + \sum_{j=1}^{m} g_j(x) u_j = f(x) + G(x)u
+$$
+$$
+y_i = h_i(x), \quad i=1, \dots, m
+$$
+where $G(x) = [g_1(x), \dots, g_m(x)]$.
+
+---
+1.Vector Relative Degree
+
+A MIMO system has a vector relative degree $\{r_1, \dots, r_m\}$ if:
+1.  $L_{g_j} L_f^k h_i(x) = 0$ for all $j=1, \dots, m$, for all $k < r_i - 1$, and for all $x$ in a neighborhood of $x_0$.
+2.  The $m \times m$ matrix
+    $$
+    A(x) = \begin{bmatrix} L_{g_1}L_f^{r_1-1}h_1(x) & \dots & L_{g_m}L_f^{r_1-1}h_1(x) \\ \vdots & \ddots & \vdots \\ L_{g_1}L_f^{r_m-1}h_m(x) & \dots & L_{g_m}L_f^{r_m-1}h_m(x) \end{bmatrix}
+    $$
+    is nonsingular at $x=x_0$.
+
+If these conditions are met, we can define an input-output linearizing feedback law. The $i$-th output derivative is:
+$$
+y_i^{(r_i)} = L_f^{r_i} h_i(x) + \sum_{j=1}^{m} L_{g_j} L_f^{r_i-1} h_i(x) u_j
+$$
+In matrix form:
+$$
+\begin{bmatrix} y_1^{(r_1)} \\ \vdots \\ y_m^{(r_m)} \end{bmatrix} = \begin{bmatrix} L_f^{r_1}h_1(x) \\ \vdots \\ L_f^{r_m}h_m(x) \end{bmatrix} + A(x) \begin{bmatrix} u_1 \\ \vdots \\ u_m \end{bmatrix}
+$$
+By choosing $u = A(x)^{-1}(-b(x)+v)$, where $b(x)$ is the vector of $L_f^{r_i}h_i(x)$ terms, we can achieve $y_i^{(r_i)} = v_i$.

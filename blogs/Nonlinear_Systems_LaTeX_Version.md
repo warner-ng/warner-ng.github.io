@@ -2238,7 +2238,16 @@ To understand feedback linearization, we need some concepts from differential ge
 
 ### Frobenius' Theorem
 
-Frobenius' Theorem provides a condition for the existence of a solution to a system of partial differential equations. In the context of control theory, it gives us a condition for feedback linearizability.
+
+A solution $h(x)$ to the PDE exists if the distribution  
+$$
+\Delta = \{ g, \operatorname{ad}_f g, \dots, \operatorname{ad}_f^{n-1} g \}
+$$  
+is **involutive** (Frobenius Theorem).
+
+---
+
+### feedback linearizable THM
 
 A system is feedback linearizable if and only if:
 1.  The matrix $\begin{bmatrix} g(x) & \text{ad}_f g(x) & \dots & \text{ad}_f^{n-1} g(x) \end{bmatrix}$ has rank $n$.

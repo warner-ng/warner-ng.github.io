@@ -692,7 +692,8 @@ Formular:
 
 $\because \lambda_{min} X^TX \le X^TPX \le \lambda_{max}X^TX  $  and  $x^\top P x \le c$ 
 
-$\therefore $$
+$\therefore $
+$$
 \lambda_{\min} \Vert x_{min} \Vert^2 \le c
 \;\Rightarrow\;
 \Vert x_{min} \Vert \le \sqrt{\frac{c}{\lambda_{\min}}}

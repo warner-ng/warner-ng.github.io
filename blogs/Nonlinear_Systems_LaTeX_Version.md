@@ -2241,9 +2241,11 @@ To understand feedback linearization, we need some concepts from differential ge
 
 
 A solution $h(x)$ to the PDE exists if the distribution  
+
 $$
 \Delta = \{ g, \operatorname{ad}_f g, \dots, \operatorname{ad}_f^{n-1} g \}
 $$  
+
 is **involutive** (Frobenius Theorem).
 
 ---
@@ -2255,9 +2257,11 @@ A system is feedback linearizable if and only if:
 2.  The distribution $D = \text{span}\{g, \text{ad}_f g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
 
 If these conditions hold, we can find a function $h(x)$ such that:
+
 $$
 \frac{\partial h}{\partial x} \begin{bmatrix} g(x) & \text{ad}_f g(x) & \dots & \text{ad}_f^{n-2} g(x) \end{bmatrix} = 0
 $$
+
 The existence of such a solution $h(x)$ for the above Partial Differential Equation is guaranteed by Frobenius' Theorem if the distribution $\Delta = \{g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
 
 ## 49. Proof of Feedback Linearizability
@@ -2265,9 +2269,11 @@ The existence of such a solution $h(x)$ for the above Partial Differential Equat
 To show that a system is feedback linearizable, we need to prove that it has a relative degree of $n$.
 
 **Lemma**: A system has relative degree $n$ if and only if there exists a function $h(x)$ such that:
+
 $$
 L_g L_f^k h(x) = 0, \quad \forall k = 0, \dots, n-2
 $$
+
 $$
 L_g L_f^{n-1} h(x) \neq 0
 $$
@@ -2276,9 +2282,11 @@ The existence of such a function $h(x)$ is guaranteed by Frobenius' Theorem if t
 
 **Proof by Contradiction**:
 Assume that $L_g h(x) = 0$. Then from the conditions for relative degree, we have:
+
 $$
 \frac{\partial h}{\partial x} [g(x), \text{ad}_f g(x), \dots, \text{ad}_f^{n-1} g(x)] = [0, 0, \dots, L_g L_f^{n-1} h(x)]
 $$
+
 If the matrix $[g(x), \text{ad}_f g(x), \dots, \text{ad}_f^{n-1} g(x)]$ has full rank, and we need $\frac{\partial h}{\partial x} \neq 0$ for a valid transformation, then we cannot have all elements on the right be zero. This implies that $L_g L_f^{n-1} h(x)$ cannot be zero, which confirms that the relative degree is $n$.
 
 ## 50. Example of Feedback Linearization

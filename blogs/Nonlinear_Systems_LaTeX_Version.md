@@ -2284,33 +2284,43 @@ If the matrix $[g(x), \text{ad}_f g(x), \dots, \text{ad}_f^{n-1} g(x)]$ has full
 ## 50. Example of Feedback Linearization
 
 Consider the system:
+
 $$
 \dot{x} = \begin{bmatrix} a\sin(x_2) \\ -x_1^2 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u
 $$
+
 Here, $f(x) = \begin{bmatrix} a\sin(x_2) \\ -x_1^2 \end{bmatrix}$ and $g(x) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$.
 
 First, we check if the system is feedback linearizable. We compute the Lie bracket $[f, g]$:
+
 $$
 [f, g] = \frac{\partial g}{\partial x}f - \frac{\partial f}{\partial x}g = 0 - \begin{bmatrix} 0 & a\cos(x_2) \\ -2x_1 & 0 \end{bmatrix} \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -a\cos(x_2) \\ 0 \end{bmatrix}
 $$
+
 The controllability matrix is:
+
 $$
 \begin{bmatrix} g & [f,g] \end{bmatrix} = \begin{bmatrix} 0 & -a\cos(x_2) \\ 1 & 0 \end{bmatrix}
 $$
+
 This matrix has rank 2 for all $x$ where $a\cos(x_2) \neq 0$.
 
 The distribution $\Delta = \text{span}\{g\}$ is involutive because for any scalar functions $\alpha(x), \beta(x)$, the Lie bracket $[\alpha g, \beta g]$ is in $\Delta$.
 
 Now we need to find $h(x)$ such that $L_g h(x) = 0$.
+
 $$
 L_g h(x) = \nabla h \cdot g = \frac{\partial h}{\partial x_1} (0) + \frac{\partial h}{\partial x_2} (1) = \frac{\partial h}{\partial x_2} = 0
 $$
+
 This implies that $h(x)$ is a function of $x_1$ only. Let's choose $h(x) = x_1$.
 
 Now we check the second condition:
+
 $$
 L_g L_f h(x) = L_g ( \nabla h \cdot f) = L_g (a \ sin(x_2)) = \nabla(a \ sin(x_2)) \cdot g = \begin{bmatrix} 0 & a\cos(x_2) \end{bmatrix} \begin{bmatrix} 0 \\ 1 \end{bmatrix} = a\cos(x_2)
 $$
+
 Since $L_g L_f h(x) \neq 0$ (in general), the system has relative degree 2 and is feedback linearizable.
 
 ## 51. MIMO Systems FB Lin

@@ -2316,12 +2316,15 @@ Since $L_g L_f h(x) \neq 0$ (in general), the system has relative degree 2 and i
 ## 51. MIMO Systems FB Lin
 
 For Multi-Input Multi-Output (MIMO) systems, we consider a square system with $m$ inputs and $m$ outputs.
+
 $$
 \dot{x} = f(x) + \sum_{j=1}^{m} g_j(x) u_j = f(x) + G(x)u
 $$
+
 $$
 y_i = h_i(x), \quad i=1, \dots, m
 $$
+
 where $G(x) = [g_1(x), \dots, g_m(x)]$.
 
 ---
@@ -2336,11 +2339,15 @@ A MIMO system has a vector relative degree $\{r_1, \dots, r_m\}$ if:
     is nonsingular at $x=x_0$.
 
 If these conditions are met, we can define an input-output linearizing feedback law. The $i$-th output derivative is:
+
 $$
 y_i^{(r_i)} = L_f^{r_i} h_i(x) + \sum_{j=1}^{m} L_{g_j} L_f^{r_i-1} h_i(x) u_j
 $$
+
 In matrix form:
+
 $$
 \begin{bmatrix} y_1^{(r_1)} \\ \vdots \\ y_m^{(r_m)} \end{bmatrix} = \begin{bmatrix} L_f^{r_1}h_1(x) \\ \vdots \\ L_f^{r_m}h_m(x) \end{bmatrix} + A(x) \begin{bmatrix} u_1 \\ \vdots \\ u_m \end{bmatrix}
 $$
+
 By choosing $u = A(x)^{-1}(-b(x)+v)$, where $b(x)$ is the vector of $L_f^{r_i}h_i(x)$ terms, we can achieve $y_i^{(r_i)} = v_i$.

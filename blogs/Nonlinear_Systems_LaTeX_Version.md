@@ -1247,6 +1247,16 @@ $$
 \dot{x} = f(x) + g(x)\xi,\quad \xi = u
 $$
 
+this is usually use when
+  1. actural u does not appear in the first equation, which means the first line is not directly controllable
+
+  such as 
+
+![alt text](image-15.png)
+
+and 
+
+![alt text](image-16.png)
 ---
 
 ## 36. Backstepping Example
@@ -1601,6 +1611,9 @@ $$
 $$
 
 > circular trajectories (stable)
+> <div style="text-align: center;">
+> <img src="/blogs/image-13.png" width="75%" alt="alt text" />
+> </div>
 
 ---
 
@@ -1611,6 +1624,9 @@ $$
 
 > hyperbola (unstable)
 
+> <div style="text-align: center;">
+> <img src="/blogs/image-14.png" width="75%" alt="alt text" />
+> </div>
 ---
 
 Conclusion:
@@ -2350,11 +2366,13 @@ where $G(x) = [g_1(x), \dots, g_m(x)]$.
 
 A MIMO system has a vector relative degree $\{r_1, \dots, r_m\}$ if:
 1.  $L_{g_j} L_f^k h_i(x) = 0$ for all $j=1, \dots, m$, for all $k < r_i - 1$, and for all $x$ in a neighborhood of $x_0$.
-2.  The $m \times m$ matrix
+2.  The $m \times m$ decoupling matrix
     $$
     A(x) = \begin{bmatrix} L_{g_1}L_f^{r_1-1}h_1(x) & \dots & L_{g_m}L_f^{r_1-1}h_1(x) \\ \vdots & \ddots & \vdots \\ L_{g_1}L_f^{r_m-1}h_m(x) & \dots & L_{g_m}L_f^{r_m-1}h_m(x) \end{bmatrix}
     $$
     is nonsingular at $x=x_0$.
+
+    basically is taking the derivative of output $h_i$ exactly $r_i$ times.
 
 If these conditions are met, we can define an input-output linearizing feedback law. The $i$-th output derivative is:
 
@@ -2369,3 +2387,5 @@ $$
 $$
 
 By choosing $u = A(x)^{-1}(-b(x)+v)$, where $b(x)$ is the vector of $L_f^{r_i}h_i(x)$ terms, we can achieve $y_i^{(r_i)} = v_i$.
+
+> the reason why we need decoupling matrix to be full rank:

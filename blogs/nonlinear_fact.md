@@ -25,3 +25,5 @@ $$\dot{V}(x) = x^T \underbrace{(A^T P + PA)}_{= -\alpha I} x = -\alpha x^T x < 0
 so the lyapunov equation would be 
 
 $$A^T P + PA = -\alpha I$$
+
+5. the understanding of the rank for the matrix, and singularity vs. nonsingularity: 

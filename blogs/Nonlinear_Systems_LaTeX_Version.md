@@ -1592,7 +1592,7 @@ Control:
 
 2.discussion of k=$\pm 1$
 
-State-space:
+first, transform to State-space:
 $$
 \dot x_1 = x_2
 $$
@@ -1641,17 +1641,22 @@ Conclusion:
 
 3.Sliding Surface
 
+> this surface is a surface because of the problem formation $\dot x_1 = x_2 $
+
 Define:
+
 $$
 s = a x_1 + x_2,\quad a>0
 $$
 
 On surface $s=0$:
+
 $$
 x_2 = -a x_1
 $$
 
 Then:
+
 $$
 \dot x_1 = -a x_1
 $$
@@ -1699,8 +1704,10 @@ $$
 $$
 
 Assume:
+
+
 $$
-\left|\frac{a x_2 + h(x)}{g(x)}\right| \le \delta(x),\quad \delta(x)>0
+\left|\frac{a x_2 + h(x)}{g(x)}\right| \le \delta(x),\quad \delta(x)>0 \tag{1}
 $$
 
 ---
@@ -1715,7 +1722,7 @@ Then:
 
 $$\dot{V} = s\dot{s} = s \cdot g(x) \cdot \frac{ax_2 + h(x)}{g(x)} + sg(x)u$$
 
-$$\leq g(x)|s| \cdot c(x) + sg(x)u$$
+$$\leq g(x)|s| \cdot \delta(x) + sg(x)u$$
 
 Choose:
 
@@ -1729,7 +1736,7 @@ So:
 
 $$\dot{V} \leq -g(x)\beta_0|s| \leq 0$$
 
-Now we prove A.S.
+Now we prove A.S. as long as the Assumption holds. Because we can choose a, so the assumption Equation (1) will hold.
 
 
 ---

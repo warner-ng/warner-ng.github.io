@@ -1669,9 +1669,13 @@ $$
 
 More General Example of Sliding Mode Control
 
+2nd order system
+
 $$\dot{x}_1 = x_2$$
 
 $$\dot{x}_2 = h(x) + g(x)u$$
+
+> if it is not this form, transform it first
 
 $h$ and $g$ are unknown, but satisfied:
 

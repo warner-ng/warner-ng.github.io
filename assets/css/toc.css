@@ -1,4 +1,7 @@
 /* Table of Contents Sidebar */
+html {
+	scroll-padding-top: 72px; /* Adjust this value to match your header's height */
+}
 .toc-container {
    display: none;
 }

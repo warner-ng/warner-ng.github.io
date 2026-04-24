@@ -1563,19 +1563,24 @@ $$
 
 ---
 
-## 41. Sliding Mode Control
+## 41. Sliding Mode Control (idea)
 
-System idea:
+1.A simple system to discuss
+
+System takes the form of:
+
 $$
 \ddot y = -k y
 $$
 
 Choose:
+
 $$
 k = \pm 1
 $$
 
 Goal:
+
 $$
 y \to 0
 $$
@@ -1585,7 +1590,7 @@ Control:
 
 ---
 
-1.Sliding Mode Example
+2.discussion of k=$\pm 1$
 
 State-space:
 $$
@@ -1634,7 +1639,7 @@ Conclusion:
 
 ---
 
-2.Sliding Surface
+3.Sliding Surface
 
 Define:
 $$
@@ -1660,9 +1665,27 @@ $$
 
 ---
 
-3.Reaching Condition
+## General case for Sliding Mode Control
 
-For $s \ne 0$:
+More General Example of Sliding Mode Control
+
+$$\dot{x}_1 = x_2$$
+
+$$\dot{x}_2 = h(x) + g(x)u$$
+
+$h$ and $g$ are unknown, but satisfied:
+
+$$g(x) > g_0 > 0, \quad \forall x \in \mathbb{R}^2$$
+
+**Problem Statements**
+
+Design $u(x)$, s.t. $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$ is AS.
+
+We do this by sliding mode control.
+
+---
+
+- step 1: choosing sliding surface
 $$
 \dot s = a\dot x_1 + \dot x_2
 $$
@@ -1678,58 +1701,50 @@ $$
 
 ---
 
-4.Lyapunov for Sliding
+- step 2: Choose Lyapunov functon to ensure AS:
 
-Choose:
-$$
-V(s) = \frac{1}{2}s^2
-$$
+Pick Lyapunov function:
+
+$$V(s) = \frac{1}{2}s^2$$
 
 Then:
-$$
-\dot V = s\dot s
-$$
 
-$$
-= s g(x)\left(\frac{a x_2 + h(x)}{g(x)} + u \right)
-$$
+$$\dot{V} = s\dot{s} = s \cdot g(x) \cdot \frac{ax_2 + h(x)}{g(x)} + sg(x)u$$
 
----
-
-5.Control Law (Sliding Mode)
+$$\leq g(x)|s| \cdot c(x) + sg(x)u$$
 
 Choose:
-$$
-u = -\beta(x)\,\text{sign}(s)
-$$
+
+$$u = -\beta(x)\,\text{sign}(x) \tag{2}$$
 
 where:
-$$
-\beta(x) \ge \beta_0 + \delta(x),\quad \beta_0>0
-$$
 
-Then:
-$$
-\dot V \le -g(x)\beta_0 |s| \le 0
-$$
+$$\beta(x) \geq \beta_0 + \delta(x), \quad \beta_0 > 0$$
+
+So:
+
+$$\dot{V} \leq -g(x)\beta_0|s| \leq 0$$
+
+Now we prove A.S.
+
 
 ---
 
-6.Result
+Result
 
 - reaching mode: finite-time convergence to $s=0$  
 - sliding surface: asymptotic convergence to origin  
 
 ---
 
-7.Conclusion
+Conclusion
 
 - reaching phase: finite time  
 - sliding phase: infinite time to $(0,0)$  
 
 ---
 
-8.Robustness
+Robustness
 
 Control is robust to:
 $$

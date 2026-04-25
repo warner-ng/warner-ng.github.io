@@ -2415,3 +2415,5 @@ $$
 By choosing $u = A(x)^{-1}(-b(x)+v)$, where $b(x)$ is the vector of $L_f^{r_i}h_i(x)$ terms, we can achieve $y_i^{(r_i)} = v_i$.
 
 > the reason why we need decoupling matrix to be full rank:
+
+- because that would mean our u (input) can control all m states. if it is not full rank, then, some rows are uncontrollable, thus making system failed

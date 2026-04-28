@@ -257,6 +257,8 @@ If $P$ is a contraction on a complete space:
 - A unique fixed point exists  
 - x is cauthy and iteration converges to fixed point $x^*$
 
+> the P mapping could map the whole function to another function, so that the range contract (see homework)
+
 ## 6. Integral Form of ODE
 
 Given:
@@ -302,6 +304,7 @@ Local Lipschitz guarantees local existence and uniqueness.(with p.w. continuity)
 </div>
 
 Global Lipschitz guarantees global existence (the condition for **no finite escape time**).
+> how to find: take the derivative of f(x)
 
 - you can actually take the derivative of the **linear system**, then the answer is the lipschitz constant
 - lipschitz continuity $\rightarrow $ continuity
@@ -688,22 +691,25 @@ $$
 
 provides an inner estimate of ROA.
 
+  1. first V(x)is a lyapunov function
+  2. find biggest c s.t. $\dot{V} <0$
+
 Formular:
 
 $\because \lambda_{min} X^TX \le X^TPX \le \lambda_{max}X^TX  $  and  $x^\top P x \le c$ 
 
 $\therefore $
 $$
-\lambda_{\min} \Vert x_{min} \Vert^2 \le c
+\lambda_{\min} \Vert x_{max} \Vert^2 \le c
 \;\Rightarrow\;
-\Vert x_{min} \Vert \le \sqrt{\frac{c}{\lambda_{\min}}}
+\Vert x_{max} \Vert \le \sqrt{\frac{c}{\lambda_{\min}}}
 $$
 
 and
 
-$\lambda_{\max} \Vert x_{max} \Vert^2 \le c
+$\lambda_{\max} \Vert x_{min} \Vert^2 \le c
 \;\Rightarrow\;
-\Vert x_{max} \Vert \le \sqrt{\frac{c}{\lambda_{\max}}}$
+\Vert x_{min} \Vert \le \sqrt{\frac{c}{\lambda_{\max}}}$
 
 
 
@@ -753,7 +759,7 @@ $$
 \Vert x(t)\Vert < \varepsilon,\; \forall t \ge t_0
 $$
 
-(note: $\delta$ does not depend on \(t_0\))
+(note: $\delta$ does not depend on $t_0$)
 
 Otherwise: unstable.
 
@@ -779,7 +785,7 @@ $$
 \Vert x(t)\Vert \to 0 \quad \text{as } t \to \infty
 $$
 
-independent of \(t_0\)
+independent of $t_0$
 
 ---
 
@@ -915,48 +921,70 @@ Assume $f$ is locally Lipschitz in $x$ and piecewise continuous in $t$
 
 ---
 
+1) Stability in the sense of Lyapunov (local)
+
+If there exists a function \(V(t,x)\) such that:
+
+- local Positive definite:
+$$
+\alpha_1(\|x\|) \le V(t,x) 
+$$
+
+- Non-increasing along trajectories:
+$$
+\dot V = \frac{\partial V}{\partial t} + \frac{\partial V}{\partial x} f(t,x) \le 0
+$$
+
+then the equilibrium is **locally Lyapunov stable**.
+
+---
+2) Uniform Stability (Uniform SISL, local)
+
+If in addition:
+
+- V is **decrescent** (upper bound independent of \(t\))  
 
 
-- 1.Uniform SISL
+then the system is **locally uniformly stable**.
 
-  - $x_e = 0$ is uniformly stable if there exists $V(t,x)$ such that
 
-    - $V(t,x)$ is locally positive definite  
+---
+3) Asymptotic stability (non-uniform, local)
 
-    - $V(t,x)$ is **decrescent**
 
-    - $\dot{V}(t,x) \le 0,\; \forall t \ge 0,\; x \in B_r(0)$  
+- local Positive definite:
+$$
+\alpha_1(\|x\|) \le V(t,x) 
+$$
+
+- $\dot{V}$ decreases along trajectories:
+$$
+\dot V = \frac{\partial V}{\partial t} + \frac{\partial V}{\partial x} f(t,x) < 0
+$$
+
+- Note: convergence may depend on initial time \(t_0\).
+
+---
+
+4) Uniform asymptotic stability (UAS, local)
+
+To get uniformity (independent of initial time), require:
+
+- V decrescent
+
+Then the system is **locally uniformly asymptotically stable**.
+
 
 <div style="text-align: center;">
 <img src="image-9.png" width="40%" alt="alt text" />
 </div>
 
----
-
-
-
-- 2.Uniform Asymptotic Stability
-
-  - $x_e = 0$ is uniformly asymptotically stable if
-
-    - conditions of uniform stability hold  
-
-    - $V(t,x)$ is decrescent  
-
-   - and $-\dot V(t,x)$ is locally positive definite
 
 <div style="text-align: center;">
 <img src="image-10.png" width="40%" alt="alt text" />
 </div>
 
-Q: Why do we use “locally positive definite” $V(t,x)$ in time-varying systems instead of just $V>0$?
-
-> A: Because $V$ depends on $t$ and may shrink over time, so we need a time-independent lower bound
-$$
-V(t,x) \ge \alpha(\Vert x \Vert)
-$$
-> to ensure uniform positivity. (see class-k function)
-
+> blue line is the trajectory.
 ---
 
 ## 24. Exponential Stability
@@ -1129,6 +1157,12 @@ $$
 \dot{x} = f(x) + g(x)u
 $$
 
+and
+
+$$
+y = h(x)
+$$
+
 > affine = linear + shift
 
 ---
@@ -1253,10 +1287,9 @@ this is usually use when
   such as 
 
 ![alt text](image-15.png)
-
 and 
-
 ![alt text](image-16.png)
+
 ---
 
 ## 36. Backstepping Example
@@ -2376,6 +2409,8 @@ Since $L_g L_f h(x) \neq 0$ (in general), the system has relative degree 2 and i
 ## 51. MIMO Systems FB Lin
 
 For Multi-Input Multi-Output (MIMO) systems, we consider a square system with $m$ inputs and $m$ outputs.
+
+[ ] why should it must in m*m?
 
 $$
 \dot{x} = f(x) + \sum_{j=1}^{m} g_j(x) u_j = f(x) + G(x)u

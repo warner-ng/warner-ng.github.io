@@ -692,7 +692,11 @@ $$
 provides an inner estimate of ROA.
 
   1. first V(x)is a lyapunov function
-  2. find biggest c s.t. $\dot{V} <0$
+  2. find biggest c s.t. $\dot{V} <0$ (for nonlinear you first linearize it, and then finding open ball for x in the case of **nonlinear** one, then calculate c base on your open ball x?)
+
+  look at home work
+
+  > yes, and then calculate c using the following inequation
 
 Formular:
 

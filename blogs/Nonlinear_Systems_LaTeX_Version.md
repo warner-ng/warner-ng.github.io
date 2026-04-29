@@ -2042,94 +2042,54 @@ y^{(3)} = v
 $$
 
 ---
-
 ## 45. Zero Dynamics
 
 $$
 \dot{x} = f(x) + g(x)u,\quad y = h(x)
 $$
 
+Differentiate $y$ until $u$ appears (after $r$ times):
+
 $$
 y^{(r)} = L_f^r h(x) + L_g L_f^{r-1} h(x)\,u
 $$
 
-$$
-u^* = \frac{-L_f^r h(x)}{L_g L_f^{r-1} h(x)}
-$$
+Choose $u$ to linearize the output channel ($\ddot y = v$):
 
 $$
-y = \dot y = \cdots = y^{(r-1)} = 0
+u = \frac{v - L_f^r h(x)}{L_g L_f^{r-1} h(x)}
 $$
 
-let 
+Let the output state vector be:
 
 $$
-z = \begin{bmatrix}
-y \\
-\dot y \\
-\vdots \\
-y^{(R-1)}
-\end{bmatrix} \in \mathbb{R}^n
-
+z = \begin{bmatrix} y \\ \dot y \\ \vdots \\ y^{(r-1)} \end{bmatrix} \in \mathbb{R}^r
 $$
+
+Then:
 
 $$
 \dot z =
 \begin{bmatrix}
-0 & 1 & 0 & \cdots & 0 \\
-0 & 0 & 1 & \cdots & 0 \\
-\vdots & \vdots & \vdots & \ddots & 1 \\
-0 & 0 & 0 & \cdots & 0
+0 & 1 & \cdots & 0 \\
+\vdots & & \ddots & \vdots \\
+0 & 0 & \cdots & 1 \\
+0 & 0 & \cdots & 0
 \end{bmatrix} z
 +
-\begin{bmatrix}
-0 \\
-0 \\
-\vdots \\
-1
-\end{bmatrix} v
+\begin{bmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{bmatrix} v
 $$
 
+Choose linear control $v = -Kz$ so that $\dot z = (A - BK)z$ is stable, giving $z(t) \to 0$, thus $y(t) \to 0$.
 
-Choose linear control:
-$$
-v = -K z
-$$
+---
 
-State equation:
-$$
-\dot z = (A - BK) z
-$$
+**Zero dynamics:** the full state space is $n$-dimensional. The output makes $y = \dot y = \cdots = y^{(r-1)} = 0$ which solves $r$ dimensions. The remaining $n - r$ dimensions are not controlled by $v$ — their evolution on the manifold $\{z = 0\}$ is the **zero dynamics**.
 
-If expressed in terms of output and Lie derivatives:
-$$
-v = -k_1 h(x) - k_2 L_f h(x) - \cdots - k_n L_f^{\,n-1} h(x)
-$$
+To find zero dynamics: set $z = 0$ (i.e. $y = \dot y = \cdots = 0$), substitute $u^* = \frac{-L_f^r h(x)}{L_g L_f^{r-1} h(x)}$, and solve for the remaining $n-r$ states.
 
-where
-$$
-\begin{aligned}
-y &= h(x) \\
-\dot y &= L_f h(x) \\
-\ddot y &= L_f^2 h(x) \\
-&\;\;\vdots \\
-y^{(r-1)} &= L_f^{\,r-1} h(x)
-\end{aligned}
-$$
-
-Then:
-$$
-z(t) \to 0 \quad \text{as } t \to \infty
-$$
-
-Thus:
-$$
-y(t) \to 0
-$$
-
-now we know, we force r-dim of states to be zero. Since the whole state space is n-dim, we have n-r dim to be determine, which is call zero dynamics
-
-Solving other n-r state is to solve zero dynamics
+- If zero dynamics are **stable** → full state converges → input-output linearization works
+- If zero dynamics are **unstable** → internal states blow up even as $y \to 0$ → system is *non-minimum phase*
 
 ## 46. Minimum Phase / Stability
 

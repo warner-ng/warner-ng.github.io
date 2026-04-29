@@ -11,12 +11,12 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 | Matrix type | Form | Eigenvalues | Quick rule |
 |---|---|---|---|
 | **Diagonal** | `diag(a, d)` | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal directly |
-| **Upper triangular** | $\begin{bmatrix} a & b \\ 0 & d \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal, ignore $b$ |
-| **Lower triangular** | $\begin{bmatrix} a & 0 \\ c & d \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal, ignore $c$ |
-| **Anti-diagonal** | $\begin{bmatrix} 0 & b \\ c & 0 \end{bmatrix}$ | $\lambda=\pm\sqrt{bc}$ | $bc>0$: real saddle; $bc<0$: imaginary center |
-| **General $2\times2$** | $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$ | $\lambda^2-\text{tr}\,\lambda+\det=0$ | Use trace & determinant |
-| **Diagonal/Triangular $3\times3$** | $\begin{bmatrix} a & * & * \\ 0 & d & * \\ 0 & 0 & f \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d,\ \lambda_3=f$ | Read off diagonal directly |
-| **Anti-diagonal $3\times3$** | $\begin{bmatrix} 0 & 0 & c \\ 0 & d & 0 \\ e & 0 & 0 \end{bmatrix}$ | $\lambda_1=d,\ \lambda_{2,3}=\pm\sqrt{ce}$ | Middle entry gives one $\lambda$; corner pair interact |
+| **Upper triangular** | $\begin{bmatrix} a & b \\\\ 0 & d \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal, ignore $b$ |
+| **Lower triangular** | $\begin{bmatrix} a & 0 \\\\ c & d \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d$ | Read off diagonal, ignore $c$ |
+| **Anti-diagonal** | $\begin{bmatrix} 0 & b \\\\ c & 0 \end{bmatrix}$ | $\lambda=\pm\sqrt{bc}$ | $bc>0$: real saddle; $bc<0$: imaginary center |
+| **General $2\times2$** | $\begin{bmatrix} a & b \\\\ c & d \end{bmatrix}$ | $\lambda^2-\text{tr}\,\lambda+\det=0$ | Use trace & determinant |
+| **Diagonal/Triangular $3\times3$** | $\begin{bmatrix} a & * & * \\\\ 0 & d & * \\\\ 0 & 0 & f \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d,\ \lambda_3=f$ | Read off diagonal directly |
+| **Anti-diagonal $3\times3$** | $\begin{bmatrix} 0 & 0 & c \\\\ 0 & d & 0 \\\\ e & 0 & 0 \end{bmatrix}$ | $\lambda_1=d,\ \lambda_{2,3}=\pm\sqrt{ce}$ | Middle entry gives one $\lambda$; corner pair interact |
 
 1.Derivative of a Transpose
 
@@ -117,7 +117,7 @@ $$
 
 A trajectory $\gamma $ is a limit cycle if
 
-- it is **periodic**
+- it is **periodic** $\text{i.e. if there exists some } t_0 > 0 \text{ such that } x(t + t_0) = x(t) \text{ for all } t \in \mathbb{R}.$
 - there are no other periodic orbits arbitrarily close to it
 
 Nearby trajectories may approach the orbit (stable), move away from it (unstable), or approach from one side only (semi-stable).
@@ -429,10 +429,10 @@ $$
 
 (Note: $t$ means any time $t \ge 0$, not $t \to \infty$)
 
-Asymptotically stable if additionally:
+Asymptotically stable if, first satisfied SISL, additionally:
 
 $$
-x(t)\to x_e
+\exists \delta > 0 \text{ s.t. } \|x_0\| < \delta \Rightarrow \|x(t, x_0)\| \to 0 \text{ as } t \to \infty
 $$
 
 

@@ -2497,7 +2497,8 @@ giving closed-loop characteristic polynomial $s^2 + k_2 s + k_1$. Choose $k_1, k
 
 For Multi-Input Multi-Output (MIMO) systems, we consider a square system with $m$ inputs and $m$ outputs.
 
-[ ] why should it must in m*m?
+Q: why should it must in m*m?
+> because this way we could solve the inverse of decouple matrix A. This makes it like the SISO I/O Lin.
 
 $$
 \dot{x} = f(x) + \sum_{j=1}^{m} g_j(x) u_j = f(x) + G(x)u

@@ -2476,7 +2476,7 @@ By choosing $u = A(x)^{-1}(-b(x)+v)$, where $b(x)$ is the vector of $L_f^{r_i}h_
 
 $$\dot x = f(x, u), \qquad y = h(x)$$
 
-**Goal:** use $u$ to drive $x$ as desired, using available $y$.
+**Goal of control theory:** use $u$ to drive $x$ as desired, using available $y$.
 
 | Method | What it does |
 |---|---|

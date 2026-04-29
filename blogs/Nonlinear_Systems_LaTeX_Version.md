@@ -2381,6 +2381,52 @@ If the matrix $[g(x), \text{ad}_f g(x), \dots, \text{ad}_f^{n-1} g(x)]$ has full
 
 ## 50. Example of Feedback Linearization
 
+
+
+**Goal:** find $z = \Phi(x)$ such that in $z$-coordinates, $\dot z = Az + Bv$ (linear).
+
+---
+
+**Step 1: Check controllability**
+
+$$\Delta = \text{span}\{g,\, \text{ad}_f g,\, \ldots,\, \text{ad}_f^{n-1} g\}$$
+
+Must have rank $n$ — otherwise some directions are unreachable.
+
+**Step 2: Check involutivity**
+
+$\Delta$ must be involutive: $X, Y \in \Delta \Rightarrow [X,Y] \in \Delta$.
+
+This guarantees the PDE for $h(x)$ has a solution (Frobenius theorem).
+
+---
+
+**Step 3: Solve for $h(x)$**
+
+Find scalar $h(x)$ such that:
+$$L_g h = 0,\quad L_g L_f h = 0,\quad \ldots,\quad L_g L_f^{n-2} h = 0, \quad L_g L_f^{n-1} h \neq 0$$
+
+*$h(x)$ is the first coordinate of $z$ — everything else follows from it.*
+
+**Step 4: Build $\Phi(x)$**
+
+$$z = \Phi(x) = \begin{bmatrix} h(x) \\ L_f h(x) \\ \vdots \\ L_f^{n-1} h(x) \end{bmatrix}$$
+
+Because $\dot z_i = z_{i+1}$ must hold, each coordinate is just the time derivative of the previous one.
+
+**Step 5: Design $u$**
+
+$$u = \frac{v - L_f^n h(x)}{L_g L_f^{n-1} h(x)}$$
+
+This cancels all nonlinearities, giving $z^{(n)} = v$.
+
+**Step 6: Linear control**
+
+$$v = -Kz \implies \dot z = (A - BK)z$$
+
+Choose $K$ for desired eigenvalues.
+
+---
 Consider the system:
 
 $$
@@ -2389,6 +2435,7 @@ $$
 
 Here, $f(x) = \begin{bmatrix} a\sin(x_2) \\ -x_1^2 \end{bmatrix}$ and $g(x) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$.
 
+**Step 1**:
 First, we check if the system is feedback linearizable. We compute the Lie bracket $[f, g]$:
 
 $$
@@ -2403,8 +2450,11 @@ $$
 
 This matrix has rank 2 for all $x$ where $a\cos(x_2) \neq 0$.
 
+
+**Step 2**:
 The distribution $\Delta = \text{span}\{g\}$ is involutive because for any scalar functions $\alpha(x), \beta(x)$, the Lie bracket $[\alpha g, \beta g]$ is in $\Delta$.
 
+**Step 3**:
 Now we need to find $h(x)$ such that $L_g h(x) = 0$.
 
 $$
@@ -2420,6 +2470,28 @@ L_g L_f h(x) = L_g ( \nabla h \cdot f) = L_g (a \ sin(x_2)) = \nabla(a \ sin(x_2
 $$
 
 Since $L_g L_f h(x) \neq 0$ (in general), the system has relative degree 2 and is feedback linearizable.
+
+**Step 4: Build $\Phi(x)$**
+
+$$z = \Phi(x) = \begin{bmatrix} h(x) \\ L_f h(x) \end{bmatrix} = \begin{bmatrix} x_1 \\ a\sin(x_2) \end{bmatrix}$$
+
+**Step 5: Design $u$**
+
+Compute $L_f^2 h(x)$:
+
+$$L_f^2 h = L_f(a\sin(x_2)) = \nabla(a\sin(x_2)) \cdot f = \begin{bmatrix} 0 & a\cos(x_2) \end{bmatrix} \begin{bmatrix} a\sin(x_2) \\ -x_1^2 \end{bmatrix} = -a x_1^2 \cos(x_2)$$
+
+So:
+
+$$u = \frac{v - L_f^2 h}{L_g L_f h} = \frac{v + ax_1^2\cos(x_2)}{a\cos(x_2)}$$
+
+**Step 6: Linear control**
+
+In $z$-coordinates the system is $\ddot z_1 = v$. Choose:
+
+$$v = -k_1 z_1 - k_2 z_2 = -k_1 x_1 - k_2 a\sin(x_2)$$
+
+giving closed-loop characteristic polynomial $s^2 + k_2 s + k_1$. Choose $k_1, k_2 > 0$ for stability.
 
 ## 51. MIMO Systems FB Lin
 

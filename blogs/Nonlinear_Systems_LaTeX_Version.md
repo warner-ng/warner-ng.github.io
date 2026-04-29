@@ -2337,14 +2337,19 @@ $$
 The existence of such a solution $h(x)$ for the above Partial Differential Equation is guaranteed by Frobenius' Theorem if the distribution $\Delta = \{g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
 
 ---
+
+The PDE is:
+$$\frac{\partial h}{\partial x} \cdot g(x) = 0, \quad \frac{\partial h}{\partial x} \cdot \text{ad}_f g(x) = 0, \quad \ldots, \quad \frac{\partial h}{\partial x} \cdot \text{ad}_f^{n-2} g(x) = 0$$
+
+Find a scalar $h(x)$ whose gradient is orthogonal to all vectors in $\Delta$ except the last one $\text{ad}_f^{n-1}g$. Once found, the full coordinate transformation is:
+
+$$\Phi(x) = \begin{bmatrix} h(x) \\ L_f h(x) \\ \vdots \\ L_f^{n-1} h(x) \end{bmatrix}$$
+
+Involutivity of $\Delta$ (Frobenius) guarantees this PDE has a consistent solution.
+
+---
 intuition:
 The two conditions together guarantee that a valid coordinate transformation $z = \Phi(x)$ exists.
-
-**Rank $n$:** $u$ can influence all $n$ directions of state space. Without this, some directions are unreachable — same reason an uncontrollable linear system can't be put in controllable canonical form.
-
-**Involutivity:** the PDE for $\Phi(x)$ is consistent. You need $h(x)$ such that:
-$$\frac{\partial h}{\partial x} \cdot v = 0 \quad \forall v \in \Delta$$
-By Frobenius, this has a solution iff $\Delta$ is involutive. If $\Delta$ twists, no smooth $\Phi$ (the transition)exists.
 
 **Together:** rank $n$ gives enough directions, involutivity makes them geometrically compatible. Both are necessary — rank without involutivity gives no valid $\Phi$, involutivity without rank means $\Phi$ exists but doesn't cover the full state space.
 

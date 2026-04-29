@@ -2266,7 +2266,7 @@ To understand feedback linearization, we need some concepts from differential ge
     $$
     [f, g](x) = \frac{\partial g}{\partial x}f(x) - \frac{\partial f}{\partial x}g(x)
     $$
-    The Lie bracket measures the non-commutativity of the flows of the vector fields. If $[f, g] = 0$, the vector fields are said to commute.
+    The Lie bracket measures the non-commutativity of the flows of the vector fields. If $[f, g] = 0$, the vector fields are said to commute. (the vector fields are in a flat plane)
 
 -   **Adjoint**: The adjoint operator is a way to represent repeated Lie brackets.
     $$
@@ -2301,12 +2301,32 @@ $$
 is **involutive** (Frobenius Theorem).
 
 ---
+- The core question
+When can we find a coordinate change $z = \Phi(x)$ that makes the system linear?
+
+- Lie bracket
+$$[f,g](x) = \frac{\partial g}{\partial x}f(x) - \frac{\partial f}{\partial x}g(x)$$
+
+*Measures how much two flow directions fail to commute — zero means the flows are flat relative to each other.*
+
+- Distribution $\Delta$
+$$\Delta = \text{span}\{g,\, \text{ad}_f g,\, \ldots,\, \text{ad}_f^{n-1} g\}$$
+
+*The set of all directions the system can be steered by input u— analogous to the **controllability matrix**.*
+
+- Involutivity
+$\Delta$ is involutive if $X, Y \in \Delta \Rightarrow [X,Y] \in \Delta$.
+
+*$\Delta$ doesn't "twist" — it defines a consistent flat submanifold everywhere in state space.*
+
+
+---
 
 ## 48. feedback linearizable THM
 
 A system is feedback linearizable if and only if:
 1.  The matrix $\begin{bmatrix} g(x) & \text{ad}_f g(x) & \dots & \text{ad}_f^{n-1} g(x) \end{bmatrix}$ has rank $n$.
-2.  The distribution $D = \text{span}\{g, \text{ad}_f g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
+2.  The distribution $D = \text{span}[g, \text{ad}_f g, \dots, \text{ad}_f^{n-2} g]$ is involutive.
 
 If these conditions hold, we can find a function $h(x)$ such that:
 
@@ -2315,6 +2335,18 @@ $$
 $$
 
 The existence of such a solution $h(x)$ for the above Partial Differential Equation is guaranteed by Frobenius' Theorem if the distribution $\Delta = \{g, \dots, \text{ad}_f^{n-2} g\}$ is involutive.
+
+---
+intuition:
+The two conditions together guarantee that a valid coordinate transformation $z = \Phi(x)$ exists.
+
+**Rank $n$:** $u$ can influence all $n$ directions of state space. Without this, some directions are unreachable — same reason an uncontrollable linear system can't be put in controllable canonical form.
+
+**Involutivity:** the PDE for $\Phi(x)$ is consistent. You need $h(x)$ such that:
+$$\frac{\partial h}{\partial x} \cdot v = 0 \quad \forall v \in \Delta$$
+By Frobenius, this has a solution iff $\Delta$ is involutive. If $\Delta$ twists, no smooth $\Phi$ (the transition)exists.
+
+**Together:** rank $n$ gives enough directions, involutivity makes them geometrically compatible. Both are necessary — rank without involutivity gives no valid $\Phi$, involutivity without rank means $\Phi$ exists but doesn't cover the full state space.
 
 ## 49. Proof of Feedback Linearizability
 
@@ -2340,6 +2372,7 @@ $$
 $$
 
 If the matrix $[g(x), \text{ad}_f g(x), \dots, \text{ad}_f^{n-1} g(x)]$ has full rank, and we need $\frac{\partial h}{\partial x} \neq 0$ for a valid transformation, then we cannot have all elements on the right be zero. This implies that $L_g L_f^{n-1} h(x)$ cannot be zero, which confirms that the relative degree is $n$.
+
 
 ## 50. Example of Feedback Linearization
 

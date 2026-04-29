@@ -1316,6 +1316,12 @@ x_2
 \end{bmatrix}
 $$
 
+first write as this:
+
+$$
+\dot{x}_1 = x_2, \qquad \dot{x}_2 = -c_1 x_1 - c_2 x_2
+$$
+
 Choose virtual control:
 
 $$
@@ -1630,6 +1636,7 @@ Control:
 2.discussion of k=$\pm 1$
 
 first, transform to State-space:
+
 $$
 \dot x_1 = x_2
 $$
@@ -1732,6 +1739,11 @@ We do this by sliding mode control.
 ---
 
 - step 1: choosing sliding surface
+
+$$
+ s = a x_1 +  x_2
+$$
+
 $$
 \dot s = a\dot x_1 + \dot x_2
 $$

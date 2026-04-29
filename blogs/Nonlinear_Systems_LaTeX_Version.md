@@ -1795,6 +1795,7 @@ Result
 - reaching mode: finite-time convergence to $s=0$  
 - sliding surface: asymptotic convergence to origin  
 
+![alt text](image-18.png)
 ---
 
 Conclusion
@@ -2468,3 +2469,20 @@ By choosing $u = A(x)^{-1}(-b(x)+v)$, where $b(x)$ is the vector of $L_f^{r_i}h_
 > the reason why we need decoupling matrix to be full rank:
 
 - because that would mean our u (input) can control all m states. if it is not full rank, then, some rows are uncontrollable, thus making system failed
+
+
+## 52. Final: State \ input \ output
+
+
+$$\dot x = f(x, u), \qquad y = h(x)$$
+
+**Goal:** use $u$ to drive $x$ as desired, using available $y$.
+
+| Method | What it does |
+|---|---|
+| Feedback linearization | use **input** to cancels nonlinearities in $\dot x = f(x)+g(x)u$ exactly. Requires full **state** + accurate model. |
+| Input-output linearization | Differentiates _**OUTPUT**_ $y=h(x)$ until **input** $u$ appears, cancels nonlinearities in the $y$-to-$u$ channel. **state** that are not cover(Zero dynamics) may be unstable. |
+| Backstepping | Recursively stabilizes each **state** using virtual **inputs**, designs real $u$ at the last step. |
+| Sliding mode | using **input** u which relate to sliding surface to Forces **state** onto surface $s=0$, then slides to origin. Robust to model uncertainty. |
+
+**Feedback lin. vs Input-output lin.:** Both cancel nonlinearities, but feedback linearization linearizes the full state dynamics while input-output linearization only linearizes the output response — leaving internal dynamics potentially unstable.

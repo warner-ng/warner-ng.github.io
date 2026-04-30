@@ -18,6 +18,24 @@ description: Complete notes on nonlinear systems covering existence & uniqueness
 | **Diagonal/Triangular $3\times3$** | $\begin{bmatrix} a & * & * \\\\ 0 & d & * \\\\ 0 & 0 & f \end{bmatrix}$ | $\lambda_1=a,\ \lambda_2=d,\ \lambda_3=f$ | Read off diagonal directly |
 | **Anti-diagonal $3\times3$** | $\begin{bmatrix} 0 & 0 & c \\\\ 0 & d & 0 \\\\ e & 0 & 0 \end{bmatrix}$ | $\lambda_1=d,\ \lambda_{2,3}=\pm\sqrt{ce}$ | Middle entry gives one $\lambda$; corner pair interact |
 
+**INVERSE OF A $2\times2$ MATRIX**
+
+For
+
+$$
+A=\begin{bmatrix} a & b \\ c & d \end{bmatrix},\qquad \det A = ad-bc,
+$$
+
+the inverse exists iff $\det A\neq 0$, and is given by
+
+$$
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}.
+$$
+
+**Quick rule:** swap the diagonal entries ($a\leftrightarrow d$), negate the off-diagonal entries ($b\to -b$, $c\to -c$), then divide by $\det A$.
+
+Sanity check: $AA^{-1}=I$.
+
 1.Derivative of a Transpose
 
 Let $X = X(t)$.

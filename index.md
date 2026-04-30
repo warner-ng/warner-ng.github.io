@@ -24,7 +24,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
     <div>
       <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="https://warner-ng.github.io/" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
       <p style="margin: 5px 0; font-size: 14.67px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
-      <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;">Under review, 2026</p>
+      <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>ICML 2026</strong></p>
     </div>
     <div style="margin-top: 0; box-sizing: border-box; width: 100%; font-size: 14.67px;">
       <a href="#" style="color: #2f7ac0; text-decoration: none;">webpage</a> |

@@ -1,5 +1,5 @@
 ---
 layout: blog
-title: 
-description: 
+title: Riccati Equation
+description: Notes on the algebraic and differential Riccati equation in optimal control (LQR).
 ---

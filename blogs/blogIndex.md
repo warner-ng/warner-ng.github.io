@@ -24,15 +24,14 @@ An intuitive explanation of Flow Matching for generative modeling. Learn how to 
 
 ---
 ### [Policy Gradient & Actor-Critic Explained](./policy-gradient-actor-critic.html)
-An in-depth explanation of Policy Gradient and Actor-Critic methods in Reinforcement Learning.
-
+Explanation of Policy Gradient and Actor-Critic methods in Reinforcement Learning, taught by [Prof. Sergey Levine](https://people.eecs.berkeley.edu/~svlevine/) in CS185 2026 
 ---
 ### [PPO: Proximal Policy Optimization](./ppo.html)
 The contemporary RL algo used widely in robotics sim2real.
 
 ---
 ### [Nonlinear Systems — Complete Notes](./Nonlinear_Systems_LaTeX_Version.html)
-Complete notes on nonlinear systems: stability theory, Lyapunov methods, contraction mapping, and existence/uniqueness. Taught by [Prof. Koushil Sreenath.](https://hybrid-robotics.berkeley.edu/koushil/)
+Complete notes on nonlinear systems: stability theory, Lyapunov methods, contraction mapping, and existence/uniqueness. Taught by [Prof. Koushil Sreenath.](https://hybrid-robotics.berkeley.edu/koushil/) in ME 237
 
 ---
 ### [Nonlinear Systems Fun Fact](./nonlinear_fact.html)

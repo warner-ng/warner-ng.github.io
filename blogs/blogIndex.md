@@ -2,7 +2,7 @@
 layout: blog
 ---
 
-## Blogs - RL | Generative Model | Control
+## Blogs - RL | Generative Model | Control | Humanoid Animation
 
 
 ---

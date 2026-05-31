@@ -993,6 +993,7 @@ $$
 To get uniformity (independent of initial time), require:
 
 - V decrescent
+- $\dot V(t,x) \le -\alpha_3(\|x\|)$
 
 Then the system is **locally uniformly asymptotically stable**.
 
@@ -1006,7 +1007,7 @@ Then the system is **locally uniformly asymptotically stable**.
 <img src="image-10.png" width="40%" alt="alt text" />
 </div>
 
-> blue line is the trajectory.
+
 ---
 
 ## 24. Exponential Stability

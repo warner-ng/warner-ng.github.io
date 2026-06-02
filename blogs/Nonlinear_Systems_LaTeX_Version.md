@@ -1319,73 +1319,64 @@ and
 
 1.Backstepping Example (linear)
 
-$$
-\begin{bmatrix}
-\dot{x}_1 \\
-\dot{x}_2
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 1 \\
-- c_1 & -c_2
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix}
-$$
+Question
 
-first write as this:
+Given
 
 $$
-\dot{x}_1 = x_2, \qquad \dot{x}_2 = -c_1 x_1 - c_2 x_2
+\dot x_1=x_2,\qquad \dot x_2=u
 $$
 
-Choose virtual control:
+design \(u\) so the origin is stable.
+
+Step
+
+Treat \(x_2\) as virtual control.
 
 $$
-x_2 = \alpha(x_1) = -c_1 x_1
+x_2=\alpha(x_1)=-c_1x_1
 $$
 
----
-
-2.Error Definition
+Define the error.
 
 $$
-z = x_2 - \alpha(x_1)
+z=x_2-\alpha(x_1)=x_2+c_1x_1
 $$
 
-Then:
+Then
 
 $$
-\dot{x}_1 = z - c_1 x_1
+\dot x_1=z-c_1x_1
 $$
 
-$$
-\dot{z} = u + c_1(z - c_1 x_1)
-$$
-
----
-
-3.Augmented Lyapunov
+Differentiate \(z\).
 
 $$
-V_a(x,z) = \frac{1}{2}x_1^2 + \frac{1}{2}z^2
+\dot z=\dot x_2+c_1\dot x_1
+=u+c_1(z-c_1x_1)
 $$
 
-$$
-\dot V_a = x_1\dot x_1 + z\dot z
-$$
-
-Choose:
+Choose Lyapunov function.
 
 $$
-u = -x_1 - c_1(z - c_1 x_1) - c_2 z
+V_a=\frac12x_1^2+\frac12z^2
 $$
 
+Choose control.
+
 $$
-\Rightarrow \dot V_a < 0
+u=-x_1-c_1(z-c_1x_1)-c_2z
 $$
+
+Result
+
+Then
+
+$$
+\dot V_a=-c_1x_1^2-c_2z^2<0
+$$
+
+so the origin is asymptotically stable.
 
 ---
 

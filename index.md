@@ -2,7 +2,7 @@
 
 ---
 
-My name is Binghuan (Warner) Wu, a junior student passionate about robotics and sustainable energy. I am fortunate to conduct robotics research under the guidance of [Prof. Koushil Sreenath](https://hybrid-robotics.berkeley.edu/koushil/).
+My name is Binghuan (Warner) Wu, a junior student passionate about robotics and sustainable energy. I am fortunate to conduct robotics research under the guidance of [Prof. Koushil Sreenath](https://hybrid-robotics.berkeley.edu/koushil/). My research focus are humanoid robot visual motor learning, whole-body control using both control theory and learning method.
 
 From here on, I will devote myself to creating a world with human-friendly robots that are natural, elegant and helpful. Welcome to join me on this journey!
 

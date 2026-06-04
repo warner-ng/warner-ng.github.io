@@ -1,0 +1,10 @@
+{% assign clustrmaps_id = "mTZmUph4vjdpXM7mzNvlXo1xGAH3Rw4DVw0hT4u5654" %}
+{% if page.url == "/" %}
+<div class="visitor-counter" aria-label="Visitor map">
+   <script type="text/javascript" src="https://cdn.clustrmaps.com/map_v2.js?cl=5faff4&w=300&t=tt&d={{ clustrmaps_id }}&co=e0f2ff&ct=55abf4"></script>
+</div>
+{% else %}
+<div class="visitor-counter visitor-counter--hidden" aria-hidden="true">
+   <script type="text/javascript" src="https://cdn.clustrmaps.com/map_v2.js?cl=5faff4&w=1&t=tt&d={{ clustrmaps_id }}&co=e0f2ff&ct=55abf4"></script>
+</div>
+{% endif %}

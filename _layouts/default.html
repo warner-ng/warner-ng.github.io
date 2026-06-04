@@ -151,6 +151,19 @@
          .nav-bar { display: none; }
          body { padding-top: 0; }
       }
+      .visitor-counter {
+         display: flex;
+         justify-content: center;
+         margin: 24px 0 0;
+      }
+      .visitor-counter--hidden {
+         position: absolute;
+         width: 1px;
+         height: 1px;
+         overflow: hidden;
+         opacity: 0;
+         pointer-events: none;
+      }
    </style>
 </head>
 
@@ -189,16 +202,12 @@
       </header>
       <section>
          {{ content }}
+         {% include visitor-counter.html %}
       </section>
       <footer>
          {% if site.github.is_project_page %}
          <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
          {% endif %}
-         {% unless page.url == "/" %}
-         <div style="display:none;"> <!-- ClustrMaps to count every visit, invisible, don't change this setting! -->
-         <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=5faff4&w=1&t=tt&d=mTZmUph4vjdpXM7mzNvlXo1xGAH3Rw4DVw0hT4u5654&co=e0f2ff&ct=55abf4'></script>
-         </div>
-         {% endunless %}
       </footer>
    </div>
    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>

@@ -22,21 +22,88 @@ From here on, I will devote myself to creating a world with human-friendly robot
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="https://warner-ng.github.io/" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
+      <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="https://discoforcing.github.io/" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
       <p style="margin: 5px 0; font-size: 14.67px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
       <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>ICML 2026</strong></p>
     </div>
     <div style="margin-top: 0; box-sizing: border-box; width: 100%; font-size: 14.67px;">
-      <a href="#" style="color: #2f7ac0; text-decoration: none;">webpage</a> |
-      <a href="#" style="color: #2f7ac0; text-decoration: none;">pdf</a> |
-      <a href="#" style="color: #2f7ac0; text-decoration: none;">abstract</a> |
-      <a href="#" style="color: #2f7ac0; text-decoration: none;">bibtex</a> |
-      <a href="#" style="color: #2f7ac0; text-decoration: none;">arXiv</a>
+      <a href="https://discoforcing.github.io/" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none;">webpage</a> |
+      <a href="https://arxiv.org/pdf/2605.28491" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none;">pdf</a> |
+      <a href="#" id="open-abstract-modal" style="color: #2f7ac0; text-decoration: none;">abstract</a> |
+      <a href="#" id="open-bibtex-modal" style="color: #2f7ac0; text-decoration: none;">bibtex</a> |
+      <a href="https://arxiv.org/abs/2605.28491" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none;">arXiv</a>
       <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: #555;">""A real-time music-conditioned whole body control policy that makes robots understand your music""</p>
     </div>
   </div>
 </div>
 </div>
+
+<div id="paper-modal-overlay" style="position: fixed; inset: 0; background: rgba(0, 0, 0, 0.35); display: none; z-index: 1200;"></div>
+
+<div id="paper-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(760px, calc(100vw - 32px)); max-height: min(80vh, 920px); background: #ffffff; border-radius: 12px; border: 1px solid #d9d9d9; box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2); display: none; z-index: 1201; overflow: hidden;">
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #f6f9fc; border-bottom: 1px solid #e6e6e6;">
+    <strong id="paper-modal-title" style="color: #2f7ac0;">DiscoForcing</strong>
+    <button id="close-paper-modal" type="button" style="cursor: pointer; border: 1px solid #d0d0d0; background: white; border-radius: 6px; padding: 4px 10px; color: #555;">Close</button>
+  </div>
+  <div id="paper-modal-content" style="padding: 14px 16px 18px 16px; color: #444; overflow-y: auto; max-height: calc(80vh - 58px); line-height: 1.58;"></div>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('paper-modal-overlay');
+    var modal = document.getElementById('paper-modal');
+    var title = document.getElementById('paper-modal-title');
+    var content = document.getElementById('paper-modal-content');
+    var openAbstractBtn = document.getElementById('open-abstract-modal');
+    var openBibtexBtn = document.getElementById('open-bibtex-modal');
+    var closeBtn = document.getElementById('close-paper-modal');
+
+    var abstractText = 'We study real-time audio-responsive character control as a deployment-faithful problem: strictly causal, bounded-latency streaming that must generate coherent full-body motion at interactive frame rates while the audio condition can change abruptly (tempo shifts, drops, or user edits). Prior music-to-motion systems are largely optimized for offline generation with global context, and degrade in streaming rollouts where conditioning history becomes stale or unreliable. We introduce DiscoForcing, a streaming audio-driven diffusion framework that combines a causal music encoder that captures rhythmic structure and phase dynamics with a diffusion-forcing sequence model trained under heterogeneous noise levels across the temporal horizon. Building on this, we design a hybrid temporal schedule and a history-guided streaming sampler to explicitly trade off responsiveness against long-horizon consistency under non-stationary audio. Implemented in an end-to-end real-time interactive system with online avatar playback and humanoid deployment workflows, DiscoForcing delivers more stable long-horizon rollouts and sharper audio-motion alignment than prior baselines under matched causality and latency constraints while maintaining real-time throughput.';
+
+    var bibtexText = '@inproceedings{ji2026discoforcing,\n  title={DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing},\n  author={Ji, Kaiyang and Qian, Bingsheng and Wu, Binghuan and Chen, Kangyi and Shi, Ye and Wang, Jingya},\n  booktitle={Forty-third International Conference on Machine Learning},\n  year={2026}\n}';
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function showModal(modalTitle, bodyHtml) {
+      title.textContent = modalTitle;
+      content.innerHTML = bodyHtml;
+      overlay.style.display = 'block';
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideModal() {
+      overlay.style.display = 'none';
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    openAbstractBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      showModal('DiscoForcing - Abstract', '<p style="margin: 0;">' + escapeHtml(abstractText) + '</p>');
+    });
+
+    openBibtexBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      showModal('DiscoForcing - BibTeX', '<pre style="margin: 0; padding: 12px; background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 8px; overflow-x: auto; white-space: pre;">' + escapeHtml(bibtexText) + '</pre>');
+    });
+
+    closeBtn.addEventListener('click', hideModal);
+    overlay.addEventListener('click', hideModal);
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.style.display === 'block') {
+        hideModal();
+      }
+    });
+  })();
+</script>
 
 ---
 
@@ -104,9 +171,3 @@ From here on, I will devote myself to creating a world with human-friendly robot
 <br>
 
 ---
-
-<div style="display: flex; justify-content: center;">
-<div style="border-radius: 12px; overflow: hidden; display: inline-block;">
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=5faff4&w=300&t=tt&d=mTZmUph4vjdpXM7mzNvlXo1xGAH3Rw4DVw0hT4u5654&co=e0f2ff&ct=55abf4'></script>
-</div>
-</div>

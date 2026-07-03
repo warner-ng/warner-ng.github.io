@@ -1,10 +1,26 @@
-{% assign visitor_counter_url = "https://hits.sh/warner-ng.github.io.svg?style=flat&amp;label=Visitors&amp;color=5faff4&amp;labelColor=e0f2ff" %}
+{% assign visitor_counter_key = "warnerngio26" %}
 {% if page.url == "/" %}
-<div class="visitor-counter" aria-label="Visitor counter">
-   <img src="{{ visitor_counter_url }}" alt="Visitor counter" width="70" height="20" loading="lazy">
+<div class="visitor-counter" aria-label="Visitor map">
+   <script id="_wauwngmap">
+      var _wau_opt = window._wau_opt || {};
+      _wau_opt.target = "_blank";
+      _wau_opt.fbase = false;
+      window._wau_opt = _wau_opt;
+      var _wau = _wau || [];
+      _wau.push(["map", "{{ visitor_counter_key }}", "wngmap", "300", "150", "textbook", "default-blue"]);
+   </script>
+   <script async src="https://waust.at/m.js"></script>
 </div>
 {% else %}
 <div class="visitor-counter visitor-counter--hidden" aria-hidden="true">
-   <img src="{{ visitor_counter_url }}" alt="" width="1" height="1" loading="lazy">
+   <script id="_wauwnghit">
+      var _wau_opt = window._wau_opt || {};
+      _wau_opt.target = "_blank";
+      _wau_opt.fbase = false;
+      window._wau_opt = _wau_opt;
+      var _wau = _wau || [];
+      _wau.push(["small", "{{ visitor_counter_key }}", "wnghit"]);
+   </script>
+   <script async src="https://waust.at/s.js"></script>
 </div>
 {% endif %}

@@ -6,7 +6,7 @@ description: Learning notes on Dataset Aggregation (DAgger).
 
 The Imitation Learning problem is usually mixed with RL, since Imitation Learning is a inclusive term(function-related) while RL is a principle-related term. So RL could serve as one kind of imitation learning. Paper of this could be seen at [DeepMimic](https://arxiv.org/abs/1804.02717).
 
-Imitation Learning, in its strict definition, is to learn a whole trajectory of action under expert demostrations, using whatever methods. The goal of imitation learning is to find a policy $\pi$ 
+Imitation Learning, in its strict definition, is to learn a whole trajectory of action under expert demostrations, using whatever methods. The goal of imitation learning is to find a policy $\pi$
 
 
 $$

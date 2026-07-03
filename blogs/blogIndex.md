@@ -34,10 +34,6 @@ Learning notes on Dataset Aggregation (DAgger).
 
 
 ---
-### 
-
-
----
 ### [Nonlinear Systems — Complete Notes](./Nonlinear_Systems_LaTeX_Version.html)
 Complete notes on nonlinear systems: stability theory, Lyapunov methods, contraction mapping, and existence/uniqueness. Taught by [Prof. Koushil Sreenath.](https://hybrid-robotics.berkeley.edu/koushil/) in ME 237
 

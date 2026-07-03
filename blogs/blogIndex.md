@@ -17,10 +17,6 @@ View my survey paper on robot skills with an interactive PDF viewer. Navigate pa
 ### [The Bitter Lesson — Reflections on Sutton's Talk](./The_Bitter_Lesson.html)
 Notes on Richard Sutton's "Bitter Lesson": human heuristics vs. large-scale learning and search, and what prediction learning means for how machines (and humans) learn.
 
----
-### [Flow Matching Explained](./flow_matching.html)
-An intuitive explanation of Flow Matching for generative modeling. Learn how to directly match probability flows as an efficient alternative to diffusion models.
-
 
 ---
 ### [Policy Gradient & Actor-Critic Explained](./policy-gradient-actor-critic.html)
@@ -30,6 +26,16 @@ Explanation of Policy Gradient and Actor-Critic methods in Reinforcement Learnin
 ---
 ### [PPO: Proximal Policy Optimization](./ppo.html)
 The contemporary RL algo used widely in robotics sim2real.
+
+
+---
+### [DAgger](./DAgger.html)
+Learning notes on Dataset Aggregation (DAgger).
+
+
+---
+### 
+
 
 ---
 ### [Nonlinear Systems — Complete Notes](./Nonlinear_Systems_LaTeX_Version.html)

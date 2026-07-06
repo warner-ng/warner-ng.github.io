@@ -17,10 +17,10 @@ From here on, I will devote myself to creating a world with human-friendly robot
 
 ## Publications
 
-<div style="border: 1px solid #ccc; border-radius: 10px; padding: 16px; margin-bottom: 30px;">
+<div style="border: 1px solid var(--border-muted); border-radius: 10px; padding: 16px; margin-bottom: 30px;">
 <div style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
   <div style="flex-shrink: 0; width: 100%; max-width: 250px;">
-    <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid #ccc;"/>
+    <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
@@ -34,7 +34,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
       <a href="#" id="open-abstract-modal" style="color: #2f7ac0; text-decoration: none;">abstract</a> |
       <a href="#" id="open-bibtex-modal" style="color: #2f7ac0; text-decoration: none;">bibtex</a> |
       <a href="https://arxiv.org/abs/2605.28491" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none;">arXiv</a>
-      <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: #555;">""A real-time music-conditioned whole body control policy that makes robots understand your music""</p>
+      <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">""A real-time music-conditioned whole body control policy that makes robots understand your music""</p>
     </div>
   </div>
 </div>
@@ -42,12 +42,12 @@ From here on, I will devote myself to creating a world with human-friendly robot
 
 <div id="paper-modal-overlay" style="position: fixed; inset: 0; background: rgba(0, 0, 0, 0.35); display: none; z-index: 1200;"></div>
 
-<div id="paper-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(760px, calc(100vw - 32px)); max-height: min(80vh, 920px); background: #ffffff; border-radius: 12px; border: 1px solid #d9d9d9; box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2); display: none; z-index: 1201; overflow: hidden;">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #f6f9fc; border-bottom: 1px solid #e6e6e6;">
+<div id="paper-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(760px, calc(100vw - 32px)); max-height: min(80vh, 920px); background: var(--panel-bg); border-radius: 12px; border: 1px solid var(--border-muted); box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28); display: none; z-index: 1201; overflow: hidden;">
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--panel-bg-soft); border-bottom: 1px solid var(--border-muted);">
     <strong id="paper-modal-title" style="color: #2f7ac0;">DiscoForcing</strong>
-    <button id="close-paper-modal" type="button" style="cursor: pointer; border: 1px solid #d0d0d0; background: white; border-radius: 6px; padding: 4px 10px; color: #555;">Close</button>
+    <button id="close-paper-modal" type="button" style="cursor: pointer; border: 1px solid var(--border-muted); background: var(--page-bg); border-radius: 6px; padding: 4px 10px; color: var(--text-main);">Close</button>
   </div>
-  <div id="paper-modal-content" style="padding: 14px 16px 18px 16px; color: #444; overflow-y: auto; max-height: calc(80vh - 58px); line-height: 1.58;"></div>
+  <div id="paper-modal-content" style="padding: 14px 16px 18px 16px; color: var(--text-main); overflow-y: auto; max-height: calc(80vh - 58px); line-height: 1.58;"></div>
 </div>
 
 <script>
@@ -94,7 +94,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
 
     openBibtexBtn.addEventListener('click', function (event) {
       event.preventDefault();
-      showModal('DiscoForcing - BibTeX', '<pre style="margin: 0; padding: 12px; background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 8px; overflow-x: auto; white-space: pre;">' + escapeHtml(bibtexText) + '</pre>');
+      showModal('DiscoForcing - BibTeX', '<pre style="margin: 0; padding: 12px; background: var(--panel-bg-soft); border: 1px solid var(--border-muted); border-radius: 8px; overflow-x: auto; white-space: pre; color: var(--text-main);">' + escapeHtml(bibtexText) + '</pre>');
     });
 
     closeBtn.addEventListener('click', hideModal);
@@ -166,8 +166,8 @@ From here on, I will devote myself to creating a world with human-friendly robot
           allowfullscreen="true" 
           style="width: 540px; height: 360px; max-width: 100%; border-radius: 10px;">
   </iframe>
-  <p style="font-style: italic; margin-top: 10px; color: #666;">My homebrew RL tutorial series with theory and codes</p>
-  <p style="font-style: italic; margin-top: 10px; color: #666;">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>
+  <p style="font-style: italic; margin-top: 10px; color: var(--text-muted);">My homebrew RL tutorial series with theory and codes</p>
+  <p style="font-style: italic; margin-top: 10px; color: var(--text-muted);">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>
 </div>
 </details>
 <br>

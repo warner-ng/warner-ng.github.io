@@ -12,13 +12,13 @@ description: View my survey paper on robot skills and future directions
     position: relative;
     width: 100%;
     margin: 20px 0;
-    background: #f5f5f5;
+    background: var(--panel-bg);
   }
   
   #pdf-embed {
     width: 100%;
     height: 900px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-muted);
     border-radius: 4px;
   }
   

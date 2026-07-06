@@ -56,27 +56,31 @@
          --scrollbar-track: #f1f1f1;
          --scrollbar-thumb: #cccccc;
          --scrollbar-thumb-hover: #999999;
+         --nav-bg: #5B9BD5;
+         --nav-bg-hover: #2f7ac0;
       }
       @media (prefers-color-scheme: dark) {
          :root {
-            --page-bg: #1b1d21;
-            --panel-bg: #23262b;
-            --panel-bg-soft: #282c32;
+            --page-bg: #272a30;
+            --panel-bg: #30343b;
+            --panel-bg-soft: #373c44;
             --text-main: #d7dbe0;
             --text-strong: #edf1f5;
             --text-muted: #b7bdc5;
             --text-soft: #9ea6b0;
-            --border-muted: #3a4048;
-            --toc-hover-bg: #282c32;
+            --border-muted: #4a515c;
+            --toc-hover-bg: #373c44;
             --toc-active-bg: rgba(91, 155, 213, 0.14);
-            --scrollbar-track: #23262b;
-            --scrollbar-thumb: #3a4048;
+            --scrollbar-track: #30343b;
+            --scrollbar-thumb: #4a515c;
             --scrollbar-thumb-hover: #9ea6b0;
+            --nav-bg: #2f7ac0;
+            --nav-bg-hover: #245f98;
          }
       }
       html { background-color: var(--page-bg); }
       .nav-bar {
-         background-color: #5B9BD5;
+         background-color: var(--nav-bg);
          padding: 6px 15px;
          display: flex;
          gap: 15px;
@@ -150,13 +154,13 @@
          color: white;
          text-decoration: none;
          padding: 6px 15px;
-         background-color: #5B9BD5;
+         background-color: var(--nav-bg);
          border-radius: 5px;
          font-weight: bold;
          transition: background-color 0.3s;
       }
       .nav-bar a:hover {
-         background-color: #2f7ac0;
+         background-color: var(--nav-bg-hover);
       }
       /* Responsive flex layout */
       @media (min-width: 960px) {

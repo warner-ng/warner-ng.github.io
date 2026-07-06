@@ -26,7 +26,7 @@ description: View my survey paper on robot skills and future directions
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background: #0366d6;
+    background: var(--accent-blue);
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -34,7 +34,7 @@ description: View my survey paper on robot skills and future directions
   }
   
   .pdf-download-link:hover {
-    background: #0256c7;
+    background: var(--accent-blue-hover);
   }
 </style>
 

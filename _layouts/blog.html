@@ -52,13 +52,16 @@
          --text-muted: #666666;
          --text-soft: #999999;
          --border-muted: #cccccc;
+         --separator-muted: #e5e5e5;
          --toc-hover-bg: #f5f5f5;
          --toc-active-bg: #eff4fa;
          --scrollbar-track: #f1f1f1;
          --scrollbar-thumb: #cccccc;
          --scrollbar-thumb-hover: #999999;
-         --nav-bg: #5B9BD5;
-         --nav-bg-hover: #2f7ac0;
+         --accent-blue: #5B9BD5;
+         --accent-blue-hover: #2f7ac0;
+         --nav-bg: var(--accent-blue);
+         --nav-bg-hover: var(--accent-blue-hover);
       }
       @media (prefers-color-scheme: dark) {
          :root {
@@ -70,13 +73,16 @@
             --text-muted: #b7bdc5;
             --text-soft: #9ea6b0;
             --border-muted: #4a515c;
+            --separator-muted: #4b515a;
             --toc-hover-bg: #373c44;
             --toc-active-bg: rgba(91, 155, 213, 0.14);
             --scrollbar-track: #30343b;
             --scrollbar-thumb: #4a515c;
             --scrollbar-thumb-hover: #9ea6b0;
-            --nav-bg: #2f7ac0;
-            --nav-bg-hover: #245f98;
+            --accent-blue: #2f7ac0;
+            --accent-blue-hover: #245f98;
+            --nav-bg: var(--accent-blue);
+            --nav-bg-hover: var(--accent-blue-hover);
          }
       }
       html { background-color: var(--page-bg); }
@@ -118,8 +124,16 @@
       small {
          color: var(--text-muted);
       }
+      a {
+         color: var(--accent-blue);
+      }
+      a:hover {
+         color: var(--accent-blue-hover);
+      }
       hr {
-         border-color: var(--border-muted);
+         height: 1px;
+         border: 0;
+         background-color: var(--separator-muted);
       }
       table {
          border-color: var(--border-muted);

@@ -24,16 +24,16 @@ From here on, I will devote myself to creating a world with human-friendly robot
   </div>
   <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="https://discoforcing.github.io/" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
+      <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="https://discoforcing.github.io/" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
       <p style="margin: 5px 0; font-size: 14.67px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>
       <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>ICML 2026</strong></p>
     </div>
     <div style="margin-top: 0; box-sizing: border-box; width: 100%; font-size: 14.67px;">
-      <a href="https://discoforcing.github.io/" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none;">webpage</a> |
-      <a href="https://arxiv.org/pdf/2605.28491" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none;">pdf</a> |
-      <a href="#" id="open-abstract-modal" style="color: #2f7ac0; text-decoration: none;">abstract</a> |
-      <a href="#" id="open-bibtex-modal" style="color: #2f7ac0; text-decoration: none;">bibtex</a> |
-      <a href="https://arxiv.org/abs/2605.28491" target="_blank" rel="noopener" style="color: #2f7ac0; text-decoration: none;">arXiv</a>
+      <a href="https://discoforcing.github.io/" target="_blank" rel="noopener" style="text-decoration: none;">webpage</a> |
+      <a href="https://arxiv.org/pdf/2605.28491" target="_blank" rel="noopener" style="text-decoration: none;">pdf</a> |
+      <a href="#" id="open-abstract-modal" style="text-decoration: none;">abstract</a> |
+      <a href="#" id="open-bibtex-modal" style="text-decoration: none;">bibtex</a> |
+      <a href="https://arxiv.org/abs/2605.28491" target="_blank" rel="noopener" style="text-decoration: none;">arXiv</a>
       <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">""A real-time music-conditioned whole body control policy that makes robots understand your music""</p>
     </div>
   </div>
@@ -44,7 +44,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
 
 <div id="paper-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(760px, calc(100vw - 32px)); max-height: min(80vh, 920px); background: var(--panel-bg); border-radius: 12px; border: 1px solid var(--border-muted); box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28); display: none; z-index: 1201; overflow: hidden;">
   <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--panel-bg-soft); border-bottom: 1px solid var(--border-muted);">
-    <strong id="paper-modal-title" style="color: #2f7ac0;">DiscoForcing</strong>
+    <strong id="paper-modal-title" style="color: var(--accent-blue);">DiscoForcing</strong>
     <button id="close-paper-modal" type="button" style="cursor: pointer; border: 1px solid var(--border-muted); background: var(--page-bg); border-radius: 6px; padding: 4px 10px; color: var(--text-main);">Close</button>
   </div>
   <div id="paper-modal-content" style="padding: 14px 16px 18px 16px; color: var(--text-main); overflow-y: auto; max-height: calc(80vh - 58px); line-height: 1.58;"></div>

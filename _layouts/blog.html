@@ -349,20 +349,30 @@
          pointer-events: none;
       }
       .page-parent-nav {
-         position: sticky;
+         position: fixed;
          top: 54px;
-         z-index: 10;
-         background-color: var(--page-bg);
-         padding: 6px 0 10px;
-         margin: 0 0 8px;
+         left: max(16px, calc((100vw - 1480px) / 2 + 300px));
+         z-index: 998;
+         padding: 0;
+         margin: 0;
       }
       .page-parent-link {
          display: inline-block;
          padding: 6px 12px;
          border: 1px solid var(--border-muted);
          border-radius: 6px;
+         background-color: var(--page-bg);
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
          text-decoration: none;
-         margin-bottom: 18px;
+      }
+      .has-parent-link {
+         padding-top: 42px;
+      }
+      @media (max-width: 959px) {
+         .page-parent-nav {
+            top: 52px;
+            left: 16px;
+         }
       }
    </style>
 </head>
@@ -401,7 +411,7 @@
          {% endif %}
          {% endif %}
       </header>
-      <section>
+      <section{% if page.parent_url %} class="has-parent-link"{% endif %}>
          {% if page.parent_url %}
          <p class="page-parent-nav">
             <a class="page-parent-link" href="{{ page.parent_url | relative_url }}">{{ page.parent_label | default: "Back" }}</a>

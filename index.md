@@ -22,7 +22,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
     container-type: inline-size;
   }
 
-  @container (max-width: 525px) {
+  @container (max-width: 575px) {
     .publication-row {
       flex-direction: column !important;
     }

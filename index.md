@@ -17,12 +17,32 @@ From here on, I will devote myself to creating a world with human-friendly robot
 
 ## Publications
 
-<div style="border: 1px solid var(--border-muted); border-radius: 10px; padding: 16px; margin-bottom: 30px;">
-<div style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
-  <div style="flex-shrink: 0; width: 100%; max-width: 250px;">
+<style>
+  .publication-card {
+    container-type: inline-size;
+  }
+
+  @container (max-width: 800px) {
+    .publication-row {
+      flex-direction: column !important;
+    }
+
+    .publication-media {
+      max-width: min(100%, 520px) !important;
+    }
+
+    .publication-copy {
+      width: 100% !important;
+    }
+  }
+</style>
+
+<div class="publication-card" style="border: 1px solid var(--border-muted); border-radius: 10px; padding: 16px; margin-bottom: 30px;">
+<div class="publication-row" style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
+  <div class="publication-media" style="flex-shrink: 0; width: 100%; max-width: 250px;">
     <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
   </div>
-  <div style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+  <div class="publication-copy" style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
       <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="https://discoforcing.github.io/" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 700;">DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing</a></p>
       <p style="margin: 5px 0; font-size: 14.67px;">Kaiyang Ji*, Bingsheng Qian*, <strong>Binghuan Wu*</strong>, Kangyi Chen, Ye Shi, Jingya Wang</p>

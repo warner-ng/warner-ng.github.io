@@ -2,7 +2,7 @@
 layout: blog
 ---
 
-## Blogs - RL | Generative Model | Control | Humanoid Animation
+## Blogs - RL | Generative Model | Control | Humanoid Animation | Philosophy
 
 
 ---
@@ -16,6 +16,11 @@ View my survey paper on robot skills with an interactive PDF viewer. Navigate pa
 ---
 ### [The Bitter Lesson — Reflections on Sutton's Talk](./The_Bitter_Lesson.html)
 Notes on Richard Sutton's "Bitter Lesson": human heuristics vs. large-scale learning and search, and what prediction learning means for how machines (and humans) learn.
+
+
+---
+### [Philosophy](./Philosophy.html)
+Learning notes on philosophy.
 
 
 ---
@@ -58,3 +63,5 @@ Why Euler angle parameterizations of rotation suffer from gimbal lock, and what 
 Notes on the reaching law and reaching speed in sliding mode control, and how they trade off chattering against convergence time.
 
 ---
+### [Magic Gate](./magic%20gate/index.html)
+*a wonderland of questions and wanderings*

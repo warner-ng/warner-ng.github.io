@@ -22,15 +22,12 @@ From here on, I will devote myself to creating a world with human-friendly robot
     container-type: inline-size;
   }
 
-  @container (max-width: 800px) {
+  @container (max-width: 525px) {
     .publication-row {
       flex-direction: column !important;
     }
 
-    .publication-media {
-      max-width: min(100%, 520px) !important;
-    }
-
+    .publication-media,
     .publication-copy {
       width: 100% !important;
     }
@@ -39,7 +36,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
 
 <div class="publication-card" style="border: 1px solid var(--border-muted); border-radius: 10px; padding: 16px; margin-bottom: 30px;">
 <div class="publication-row" style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
-  <div class="publication-media" style="flex-shrink: 0; width: 100%; max-width: 250px;">
+  <div class="publication-media" style="flex-shrink: 0; width: 250px; max-width: 100%;">
     <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
   </div>
   <div class="publication-copy" style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">

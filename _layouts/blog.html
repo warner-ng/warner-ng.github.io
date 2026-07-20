@@ -348,6 +348,14 @@
          opacity: 0;
          pointer-events: none;
       }
+      .page-parent-link {
+         display: inline-block;
+         padding: 6px 12px;
+         border: 1px solid var(--border-muted);
+         border-radius: 6px;
+         text-decoration: none;
+         margin-bottom: 18px;
+      }
    </style>
 </head>
 
@@ -386,6 +394,11 @@
          {% endif %}
       </header>
       <section>
+         {% if page.parent_url %}
+         <p>
+            <a class="page-parent-link" href="{{ page.parent_url | relative_url }}">{{ page.parent_label | default: "Back" }}</a>
+         </p>
+         {% endif %}
          {{ content }}
          {% include visitor-counter.html %}
       </section>

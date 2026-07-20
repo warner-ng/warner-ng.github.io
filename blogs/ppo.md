@@ -2,6 +2,8 @@
 layout: blog
 title: ppo - proximal policy optimization
 description: The comtemporary RL algo used widely in robotics sim2real
+parent_url: /blogs/blogIndex.html
+parent_label: Back to Blogs
 ---
 
 # PPO: proximal policy optimization

@@ -2,6 +2,8 @@
 layout: blog
 title: Philosophy
 description: Learning notes on philosophy.
+parent_url: /blogs/blogIndex.html
+parent_label: Back to Blogs
 ---
 
 ## Overview

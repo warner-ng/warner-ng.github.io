@@ -2,6 +2,8 @@
 layout: blog
 title: Survey Paper Viewer
 description: View my survey paper on robot skills and future directions
+parent_url: /blogs/blogIndex.html
+parent_label: Back to Blogs
 ---
 
 # Survey Paper: Robot Skills & Future Directions

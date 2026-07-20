@@ -2,6 +2,8 @@
 layout: blog
 title: Magic Gate
 description: a wonderland of questions and wanderings
+parent_url: /blogs/blogIndex.html
+parent_label: Back to Blogs
 ---
 
 ## Magic Gate
@@ -27,4 +29,3 @@ Notes for wandering thoughts.
 ---
 ### [Loose Threads](./loose_threads.html)
 Notes for unfinished questions.
-

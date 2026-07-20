@@ -2,6 +2,8 @@
 layout: blog
 title: DAgger
 description: Learning notes on Dataset Aggregation (DAgger).
+parent_url: /blogs/blogIndex.html
+parent_label: Back to Blogs
 ---
 
 The Imitation Learning problem is usually mixed with RL, since Imitation Learning is a inclusive term(function-related) while RL is a principle-related term. So RL could serve as one kind of imitation learning. Paper of this could be seen at [DeepMimic](https://arxiv.org/abs/1804.02717).

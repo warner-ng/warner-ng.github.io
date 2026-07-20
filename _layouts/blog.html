@@ -349,12 +349,13 @@
          pointer-events: none;
       }
       .page-parent-nav {
-         position: fixed;
+         position: sticky;
          top: 76px;
-         right: 24px;
          z-index: 998;
          padding: 0;
-         margin: 0;
+         margin: 0 0 8px;
+         text-align: right;
+         pointer-events: none;
       }
       .page-parent-link {
          display: inline-block;
@@ -364,14 +365,20 @@
          background-color: var(--page-bg);
          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
          text-decoration: none;
+         pointer-events: auto;
       }
       .has-parent-link {
-         padding-top: 42px;
+         padding-top: 0;
       }
       @media (max-width: 959px) {
          .page-parent-nav {
+            position: fixed;
             top: 58px;
             right: 14px;
+            margin: 0;
+         }
+         .has-parent-link {
+            padding-top: 42px;
          }
       }
    </style>

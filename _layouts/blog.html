@@ -348,6 +348,14 @@
          opacity: 0;
          pointer-events: none;
       }
+      .page-parent-nav {
+         position: sticky;
+         top: 54px;
+         z-index: 10;
+         background-color: var(--page-bg);
+         padding: 6px 0 10px;
+         margin: 0 0 8px;
+      }
       .page-parent-link {
          display: inline-block;
          padding: 6px 12px;
@@ -395,7 +403,7 @@
       </header>
       <section>
          {% if page.parent_url %}
-         <p>
+         <p class="page-parent-nav">
             <a class="page-parent-link" href="{{ page.parent_url | relative_url }}">{{ page.parent_label | default: "Back" }}</a>
          </p>
          {% endif %}

@@ -27,7 +27,6 @@ From here on, I will devote myself to creating a world with human-friendly robot
       flex-direction: column !important;
     }
 
-    .publication-media,
     .publication-copy {
       width: 100% !important;
     }

@@ -4,11 +4,12 @@ layout: blog
 
 ## Blogs - RL | Generative Model | Control | Humanoid Animation | Philosophy
 
----
+
+
 ### [13. Philosophy](./13_Philosophy.html)
 Learning notes on philosophy.
-
 ---
+
 ### [12. DAgger](./12_DAgger.html)
 Learning notes on Dataset Aggregation (DAgger).
 

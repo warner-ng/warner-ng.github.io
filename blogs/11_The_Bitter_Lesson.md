@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: The Bitter Lesson — Reflections on Sutton's Talk
+title: 11. The Bitter Lesson — Reflections on Sutton's Talk
 description: Notes on Richard Sutton's "Bitter Lesson": human heuristics vs. large-scale learning and search, and what prediction learning means for how machines (and humans) learn.
 parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs

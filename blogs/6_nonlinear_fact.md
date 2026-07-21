@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Nonlinear facts
+title: 6. Nonlinear facts
 description: some facts that i should record while i study this
 parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs

@@ -12,20 +12,20 @@ parent_label: Back to Blogs
 
 
 ---
-### [Small Doors](./small_doors.html)
-Notes for questions that feel small at first.
+### [4. Distillation Is So Slow](./4_distillation_is_slow.html)
+Why is distillation so slow, and is this the common practice?
 
 
 ---
-### [Strange Loops](./strange_loops.html)
-Notes for recursive thoughts, self-reference, and ideas that circle back.
-
-
----
-### [Night Walks](./night_walks.html)
+### [3. Night Walks](./3_night_walks.html)
 Notes for wandering thoughts.
 
 
 ---
-### [Distillation Is So Slow](./distillation_is_slow.html)
-Why is distillation so slow, and is this the common practice?
+### [2. Strange Loops](./2_strange_loops.html)
+Notes for recursive thoughts, self-reference, and ideas that circle back.
+
+
+---
+### [1. Small Doors](./1_small_doors.html)
+Notes for questions that feel small at first.

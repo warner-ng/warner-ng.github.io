@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: DAgger
+title: 12. DAgger
 description: Learning notes on Dataset Aggregation (DAgger).
 parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs

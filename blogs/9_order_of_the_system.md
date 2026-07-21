@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Order of the System
+title: 9. Order of the System
 description: Why don't we use triple-dot or higher-order derivatives to model dynamic systems?
 parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs

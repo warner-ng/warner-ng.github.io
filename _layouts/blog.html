@@ -161,6 +161,12 @@
          padding-bottom: 12px;
          margin-bottom: 22px;
       }
+      section h2 {
+         border-bottom: 1px solid var(--separator-muted);
+         padding-bottom: 8px;
+         margin-top: 28px;
+         margin-bottom: 18px;
+      }
       img {
          border-color: var(--border-muted);
       }
@@ -433,10 +439,21 @@
          {% endif %}
          {% endif %}
       </header>
-      <section{% if page.parent_url %} class="has-parent-link"{% endif %}>
-         {% if page.parent_url %}
+      {% assign back_url = page.parent_url %}
+      {% assign back_label = page.parent_label %}
+      {% if back_url == nil and page.url != "/blogs/blogIndex.html" %}
+         {% if page.url contains "/blogs/magic%20gate/" and page.url != "/blogs/magic%20gate/index.html" %}
+            {% assign back_url = "/blogs/magic%20gate/index.html" %}
+            {% assign back_label = "Back to Magic Gate" %}
+         {% else %}
+            {% assign back_url = "/blogs/blogIndex.html" %}
+            {% assign back_label = "Back to Blogs" %}
+         {% endif %}
+      {% endif %}
+      <section{% if back_url %} class="has-parent-link"{% endif %}>
+         {% if back_url %}
          <p class="page-parent-nav">
-            <a class="page-parent-link" href="{{ page.parent_url | relative_url }}">{{ page.parent_label | default: "Back" }}</a>
+            <a class="page-parent-link" href="{{ back_url | relative_url }}">{{ back_label | default: "Back" }}</a>
          </p>
          {% endif %}
          {{ content }}

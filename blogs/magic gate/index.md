@@ -27,5 +27,5 @@ Notes for wandering thoughts.
 
 
 ---
-### [Loose Threads](./loose_threads.html)
-Notes for unfinished questions.
+### [Distillation Is So Slow](./distillation_is_slow.html)
+Why is distillation so slow, and is this the common practice?

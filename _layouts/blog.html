@@ -378,6 +378,9 @@
          text-align: right;
          pointer-events: none;
       }
+      .page-parent-nav--left {
+         text-align: left;
+      }
       .page-parent-link {
          display: inline-block;
          padding: 6px 12px;
@@ -452,8 +455,8 @@
       {% endif %}
       <section{% if back_url %} class="has-parent-link"{% endif %}>
          {% if back_url %}
-         <p class="page-parent-nav">
-            <a class="page-parent-link" href="{{ back_url | relative_url }}">{{ back_label | default: "Back" }}</a>
+         <p class="page-parent-nav{% if page.parent_align == 'left' %} page-parent-nav--left{% endif %}">
+            <a class="page-parent-link" href="{{ back_url | relative_url }}">&lt; {{ back_label | default: "Back" }}</a>
          </p>
          {% endif %}
          {{ content }}

@@ -2,7 +2,6 @@
 layout: blog
 parent_url: /
 parent_label: Back to Main Page
-parent_align: left
 ---
 
 ## Blogs - RL | Generative Model | Control | Humanoid Animation | Philosophy

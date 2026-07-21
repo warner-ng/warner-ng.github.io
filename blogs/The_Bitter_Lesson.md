@@ -6,6 +6,8 @@ parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs
 ---
 
+# The Bitter Lesson — Reflections on Sutton's Talk
+
 In this blog, richard encode what he thinks about two different paradigms - Human Heuristic or Large scale learning and searching
 
 He also notes the Large and Small difference is not just computing, but heuristic info vs meta-learning info

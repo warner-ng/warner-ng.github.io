@@ -159,6 +159,16 @@
       img {
          border-color: var(--border-muted);
       }
+      section p > img:only-child,
+      section p > a:only-child > img:only-child,
+      section .blog-note-image {
+         display: block;
+         max-width: 200px;
+         max-height: 200px;
+         width: auto;
+         height: auto;
+         margin: 16px auto;
+      }
       header img {
          width: 200px !important;
          height: 200px !important;

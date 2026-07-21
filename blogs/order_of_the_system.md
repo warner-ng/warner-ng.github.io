@@ -6,6 +6,6 @@ parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs
 ---
 
-![alt text](image-17.png)
+![alt text](images/order_of_the_system/image-17.png){: .blog-note-image }
 
 Why don't we use trible dot or more to model the problem?

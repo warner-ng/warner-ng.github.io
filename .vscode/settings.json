@@ -1,0 +1,9 @@
+{
+  "markdown.copyFiles.destination": {
+    "/blogs/**/*.md": "images/${documentBaseName}/",
+    "/index.md": "images/${documentBaseName}/"
+  },
+  "markdown.editor.filePaste.enabled": true,
+  "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+  "markdown.editor.drop.enabled": true
+}

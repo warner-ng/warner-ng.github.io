@@ -41,11 +41,11 @@ parent_label: Back to Blogs
 </style>
 
 <div id="pdf-viewer">
-  <embed id="pdf-embed" src="./robot_skill_future.pdf" type="application/pdf">
+  <embed id="pdf-embed" src="/pdf/robot_skill_future.pdf" type="application/pdf">
 </div>
 
 <div style="margin-top: 20px;">
-  <a href="./robot_skill_future.pdf" download class="pdf-download-link">Download PDF</a>
+  <a href="/pdf/robot_skill_future.pdf" download class="pdf-download-link">Download PDF</a>
 </div>
 
 ---

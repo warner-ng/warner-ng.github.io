@@ -320,7 +320,7 @@ $$
 Local Lipschitz guarantees local existence and uniqueness.(with p.w. continuity)
 > piecewise continuity looks like not continued
 <div style="text-align: center;">
-<img src="/blogs/image-4.png" width="75%" alt="alt text" />
+<img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-4.png" alt="alt text" />
 </div>
 
 Global Lipschitz guarantees global existence (the condition for **no finite escape time**).
@@ -488,7 +488,7 @@ $$
 
 > intuition:
 > <div style="text-align: center;">
-> <img src="/blogs/image-5.png" width="75%" alt="alt text" />
+> <img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-5.png" alt="alt text" />
 > </div>
 
 ---
@@ -535,7 +535,7 @@ and $\exists \varepsilon$ s.t. all $\dot{V}(x)$ >0 in this \{ $B_\epsilon(X_e)$ 
 
 Then equilibrium is unstable.
 
-![alt text](image-6.png){: width="25%" }
+![alt text](images/Nonlinear_Systems_LaTeX_Version/image-6.png){: .blog-note-image }
 
 
 
@@ -882,7 +882,7 @@ $$
 
 
 <div style="text-align: center;">
-<img src="image-7.png" width="40%" alt="alt text" />
+<img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-7.png" alt="alt text" />
 </div>
 
 ---
@@ -910,7 +910,7 @@ $$
 
 
 <div style="text-align: center;">
-<img src="image-8.png" width="40%" alt="alt text" />
+<img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-8.png" alt="alt text" />
 </div>
 
 ---
@@ -1001,12 +1001,12 @@ Then the system is **locally uniformly asymptotically stable**.
 
 
 <div style="text-align: center;">
-<img src="image-9.png" width="40%" alt="alt text" />
+<img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-9.png" alt="alt text" />
 </div>
 
 
 <div style="text-align: center;">
-<img src="image-10.png" width="40%" alt="alt text" />
+<img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-10.png" alt="alt text" />
 </div>
 
 
@@ -1311,9 +1311,9 @@ this is usually use when
 
   such as 
 
-![alt text](image-15.png)
+![alt text](images/Nonlinear_Systems_LaTeX_Version/image-15.png){: .blog-note-image }
 and 
-![alt text](image-16.png)
+![alt text](images/Nonlinear_Systems_LaTeX_Version/image-16.png){: .blog-note-image }
 
 ---
 
@@ -1673,7 +1673,7 @@ $$
 
 > circular trajectories (stable)
 > <div style="text-align: center;">
-> <img src="/blogs/image-13.png" width="75%" alt="alt text" />
+> <img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-13.png" alt="alt text" />
 > </div>
 
 ---
@@ -1686,7 +1686,7 @@ $$
 > hyperbola (unstable)
 
 > <div style="text-align: center;">
-> <img src="/blogs/image-14.png" width="75%" alt="alt text" />
+> <img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-14.png" alt="alt text" />
 > </div>
 ---
 
@@ -1807,7 +1807,7 @@ Result
 - reaching mode: finite-time convergence to $s=0$  
 - sliding surface: asymptotic convergence to origin  
 
-![alt text](image-18.png)
+![alt text](images/Nonlinear_Systems_LaTeX_Version/image-18.png){: .blog-note-image }
 ---
 
 Conclusion
@@ -2118,7 +2118,7 @@ $$
 $$
 
 <div style="text-align: center;">
-<img src="/blogs/image-11.png" width="75%" alt="alt text" />
+<img class="blog-note-image" src="images/Nonlinear_Systems_LaTeX_Version/image-11.png" alt="alt text" />
 </div>
 
 > if we use z for vector [y, y', y'', ..., y^(n-1)], this $\mathcal{Z}$ is the plane where $y = \dot y = \cdots = y^{(r-1)} = 0$ ,with dim of n-r

@@ -141,7 +141,7 @@ the formula is not that intuitive, but the idea is to basically **CLIP** the gra
 
 Let's consider the reward to be negative, and then
 <div style="text-align: center;">
-<img src="/blogs/image-2.png" alt="alt text" />
+<img class="blog-note-image" src="images/ppo/image-2.png" alt="alt text" />
 </div>
 Photo courtesy from [AI StackExchange](https://ai.stackexchange.com/questions/37608/why-clip-the-ppo-objective-on-only-one-side)
 

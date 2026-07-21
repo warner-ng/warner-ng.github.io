@@ -167,6 +167,9 @@
          margin-top: 28px;
          margin-bottom: 18px;
       }
+      section h2:first-of-type {
+         margin-top: 0;
+      }
       img {
          border-color: var(--border-muted);
       }
@@ -439,18 +442,21 @@
          {% endif %}
          {% endif %}
       </header>
-      {% assign back_url = page.parent_url %}
-      {% assign back_label = page.parent_label %}
-      {% if page.path != "blogs/blogIndex.md" %}
-         {% if page.path contains "blogs/magic gate/" and page.path != "blogs/magic gate/index.md" %}
-            {% assign back_url = "/blogs/magic%20gate/index.html" %}
-            {% assign back_label = "Back to Magic Gate" %}
-         {% elsif back_url == nil %}
+      {% assign back_url = nil %}
+      {% assign back_label = nil %}
+      {% if page.path == "blogs/blogIndex.md" %}
+         {% assign back_url = nil %}
+      {% elsif page.path contains "blogs/magic gate/" %}
+         {% if page.path == "blogs/magic gate/index.md" %}
             {% assign back_url = "/blogs/blogIndex.html" %}
             {% assign back_label = "Back to Blogs" %}
          {% else %}
-            {% assign back_label = back_label | default: "Back to Blogs" %}
+            {% assign back_url = "/blogs/magic%20gate/index.html" %}
+            {% assign back_label = "Back to Magic Gate" %}
          {% endif %}
+      {% else %}
+         {% assign back_url = "/blogs/blogIndex.html" %}
+         {% assign back_label = "Back to Blogs" %}
       {% endif %}
       <section{% if back_url %} class="has-parent-link"{% endif %}>
          {% if back_url %}

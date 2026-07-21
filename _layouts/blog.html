@@ -441,13 +441,15 @@
       </header>
       {% assign back_url = page.parent_url %}
       {% assign back_label = page.parent_label %}
-      {% if back_url == nil and page.url != "/blogs/blogIndex.html" %}
-         {% if page.url contains "/blogs/magic%20gate/" and page.url != "/blogs/magic%20gate/index.html" %}
+      {% if page.path != "blogs/blogIndex.md" %}
+         {% if page.path contains "blogs/magic gate/" and page.path != "blogs/magic gate/index.md" %}
             {% assign back_url = "/blogs/magic%20gate/index.html" %}
             {% assign back_label = "Back to Magic Gate" %}
-         {% else %}
+         {% elsif back_url == nil %}
             {% assign back_url = "/blogs/blogIndex.html" %}
             {% assign back_label = "Back to Blogs" %}
+         {% else %}
+            {% assign back_label = back_label | default: "Back to Blogs" %}
          {% endif %}
       {% endif %}
       <section{% if back_url %} class="has-parent-link"{% endif %}>

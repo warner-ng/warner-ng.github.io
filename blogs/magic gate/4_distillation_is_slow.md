@@ -16,3 +16,11 @@ I wonder if this is the common practice.
 6k iteration, man that is a lot, which means simply debugging one specific bug could take you 5 hours
 
 I have to turn to people for help, and at the same time, think about what I can do first
+
+Damn, this is so silly I actually spend 4 hour dooing an ablation. I add only depth info, no proprioceptive.
+
+I conclude 2 points:
+
+1. yes, parallel is a good habit to keep, so you always know something should be tested using the time. and it boost your awareness as well
+
+2. if i want to make clear, write down my own thought and questions down.

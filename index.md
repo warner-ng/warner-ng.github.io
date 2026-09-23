@@ -42,6 +42,14 @@ From here on, I will devote myself to creating a world with human-friendly robot
     <p style="margin: 0 0 8px 0; font-size: 16.67px; font-weight: 700;">AlignMimic: Learning Visual Alignment for Precise Humanoid-Object Interaction</p>
     <p style="margin: 5px 0; font-size: 14.67px;"><strong>Binghuan Wu</strong>, Yiren Rong, Junyang Wu, Koushil Sreenath</p>
     <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>Under review</strong></p>
+    <p style="margin: 8px 0; font-size: 14.67px;">
+      <a href="#" style="text-decoration: none;">webpage</a> |
+      <a href="#" style="text-decoration: none;">pdf</a> |
+      <a href="#" style="text-decoration: none;">abstract</a> |
+      <a href="#" style="text-decoration: none;">bibtex</a> |
+      <a href="#" style="text-decoration: none;">arXiv</a>
+    </p>
+    <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">A depth-based loco-manipulation algorithm that can park your bike!</p>
   </div>
 </div>
 </div>
@@ -55,6 +63,14 @@ From here on, I will devote myself to creating a world with human-friendly robot
     <p style="margin: 0 0 8px 0; font-size: 16.67px; font-weight: 700;">GenPlan: Generative Scene-Grounded Motion Planning and Execution for Humanoid Robots</p>
     <p style="margin: 5px 0; font-size: 14.67px;">Yiren Rong, Tse-Wen Chen, Matei Gardea, <strong>Binghuan Wu</strong>, Koushil Sreenath</p>
     <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>Under review</strong></p>
+    <p style="margin: 8px 0; font-size: 14.67px;">
+      <a href="#" style="text-decoration: none;">webpage</a> |
+      <a href="#" style="text-decoration: none;">pdf</a> |
+      <a href="#" style="text-decoration: none;">abstract</a> |
+      <a href="#" style="text-decoration: none;">bibtex</a> |
+      <a href="#" style="text-decoration: none;">arXiv</a>
+    </p>
+    <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">A generative real-to-sim-to-real framework that plans robot trajectories anywhere!</p>
   </div>
 </div>
 </div>

@@ -5,8 +5,10 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+   <link rel="preload" href="{{ '/assets/fonts/lato/lato-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="{{ '/assets/fonts/lato/lato-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+   <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic">
    <link rel="icon" type="image/png" href="/images/logo_sky_blue.png">
    {% seo %}
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">

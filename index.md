@@ -36,6 +36,32 @@ From here on, I will devote myself to creating a world with human-friendly robot
 <div class="publication-card" style="border: 1px solid var(--border-muted); border-radius: 10px; padding: 16px; margin-bottom: 30px;">
 <div class="publication-row" style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
   <div class="publication-media" style="flex-shrink: 0; width: 250px; max-width: 100%;">
+    <img src="images/alignmimic.gif?raw=true" alt="AlignMimic real-world bicycle-racking demonstration" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
+  </div>
+  <div class="publication-copy" style="flex: 1; min-width: 200px; max-width: 100%;">
+    <p style="margin: 0 0 8px 0; font-size: 16.67px; font-weight: 700;">AlignMimic: Learning Visual Alignment for Precise Humanoid-Object Interaction</p>
+    <p style="margin: 5px 0; font-size: 14.67px;"><strong>Binghuan Wu</strong>, Yiren Rong, Junyang Wu, Koushil Sreenath</p>
+    <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>Under review</strong></p>
+  </div>
+</div>
+</div>
+
+<div class="publication-card" style="border: 1px solid var(--border-muted); border-radius: 10px; padding: 16px; margin-bottom: 30px;">
+<div class="publication-row" style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
+  <div class="publication-media" style="flex-shrink: 0; width: 250px; max-width: 100%;">
+    <img src="images/genplan.png?raw=true" alt="GenPlan scene-grounded humanoid motion planning figure" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
+  </div>
+  <div class="publication-copy" style="flex: 1; min-width: 200px; max-width: 100%;">
+    <p style="margin: 0 0 8px 0; font-size: 16.67px; font-weight: 700;">GenPlan: Generative Scene-Grounded Motion Planning and Execution for Humanoid Robots</p>
+    <p style="margin: 5px 0; font-size: 14.67px;">Yiren Rong, Tse-Wen Chen, Matei Gardea, <strong>Binghuan Wu</strong>, Koushil Sreenath</p>
+    <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>Under review</strong></p>
+  </div>
+</div>
+</div>
+
+<div class="publication-card" style="border: 1px solid var(--border-muted); border-radius: 10px; padding: 16px; margin-bottom: 30px;">
+<div class="publication-row" style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
+  <div class="publication-media" style="flex-shrink: 0; width: 250px; max-width: 100%;">
     <img src="images/demo.gif?raw=true" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
   </div>
   <div class="publication-copy" style="flex: 1; min-width: 200px; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between;">

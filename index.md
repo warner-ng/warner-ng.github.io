@@ -49,7 +49,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
       <a href="#" style="text-decoration: none;">bibtex</a> |
       <a href="#" style="text-decoration: none;">arXiv</a>
     </p>
-    <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">A depth-based loco-manipulation algorithm that can park your bike!</p>
+    <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">&quot;A depth-based loco-manipulation algorithm that can park your bike!&quot;</p>
   </div>
 </div>
 </div>
@@ -70,7 +70,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
       <a href="#" style="text-decoration: none;">bibtex</a> |
       <a href="#" style="text-decoration: none;">arXiv</a>
     </p>
-    <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">A generative real-to-sim-to-real framework that plans robot trajectories anywhere!</p>
+    <p style="font-style: italic; margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">&quot;A generative real-to-sim-to-real framework that plans robot trajectories anywhere!&quot;</p>
   </div>
 </div>
 </div>

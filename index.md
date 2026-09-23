@@ -39,7 +39,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
     <img src="images/alignmimic.gif?raw=true" alt="AlignMimic real-world bicycle-racking demonstration" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
   </div>
   <div class="publication-copy" style="flex: 1; min-width: 200px; max-width: 100%;">
-    <p style="margin: 0 0 8px 0; font-size: 16.67px; font-weight: 700;">AlignMimic: Learning Visual Alignment for Precise Humanoid-Object Interaction</p>
+    <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="#" style="text-decoration: none; font-weight: 700;">AlignMimic: Learning Visual Alignment for Precise Humanoid-Object Interaction</a></p>
     <p style="margin: 5px 0; font-size: 14.67px;"><strong>Binghuan Wu</strong>, Yiren Rong, Junyang Wu, Koushil Sreenath</p>
     <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>Under review</strong></p>
     <p style="margin: 8px 0; font-size: 14.67px;">
@@ -60,7 +60,7 @@ From here on, I will devote myself to creating a world with human-friendly robot
     <img src="images/genplan.png?raw=true" alt="GenPlan scene-grounded humanoid motion planning figure" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid var(--border-muted);"/>
   </div>
   <div class="publication-copy" style="flex: 1; min-width: 200px; max-width: 100%;">
-    <p style="margin: 0 0 8px 0; font-size: 16.67px; font-weight: 700;">GenPlan: Generative Scene-Grounded Motion Planning and Execution for Humanoid Robots</p>
+    <p style="margin: 0 0 8px 0; font-size: 16.67px;"><a href="#" style="text-decoration: none; font-weight: 700;">GenPlan: Generative Scene-Grounded Motion Planning and Execution for Humanoid Robots</a></p>
     <p style="margin: 5px 0; font-size: 14.67px;">Yiren Rong, Tse-Wen Chen, Matei Gardea, <strong>Binghuan Wu</strong>, Koushil Sreenath</p>
     <p style="font-style: italic; margin: 5px 0; font-size: 14.67px;"><strong>Under review</strong></p>
     <p style="margin: 8px 0; font-size: 14.67px;">

@@ -202,7 +202,14 @@ From here on, I will devote myself to creating a world with human-friendly robot
 <summary><strong>My Homebrew RL Tutorial Series</strong></summary>
 <br>
 <div style="text-align: center; margin: 20px 0;">
-  <p><a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba" target="_blank" rel="noopener">Watch the tutorial series on Bilibili</a></p>
+  <iframe src="https://player.bilibili.com/player.html?bvid=BV1WqweeYE3q&page=1&autoplay=0"
+          scrolling="no"
+          border="0"
+          frameborder="no"
+          framespacing="0"
+          allowfullscreen="true"
+          style="width: 540px; height: 360px; max-width: 100%; border-radius: 10px;">
+  </iframe>
   <p style="font-style: italic; margin-top: 10px; color: var(--text-muted);">My homebrew RL tutorial series with theory and codes</p>
   <p style="font-style: italic; margin-top: 10px; color: var(--text-muted);">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>
 </div>

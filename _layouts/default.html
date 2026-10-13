@@ -293,18 +293,14 @@
       }
       .rl-tutorial-gallery {
          display: grid;
-         grid-template-columns: repeat(3, minmax(0, 1fr));
-         gap: 10px;
+         /* Match the cropped image ratios so the visible gaps stay equal. */
+         grid-template-columns: minmax(0, 1.840909fr) minmax(0, 1.564551fr) minmax(0, 1.558952fr);
+         gap: 15px;
          margin-bottom: 12px;
       }
-      .rl-tutorial-frame {
-         aspect-ratio: 486 / 264;
-         display: flex;
-         justify-content: center;
-      }
       .rl-tutorial-crop {
-         height: 100%;
-         max-width: 100%;
+         width: 100%;
+         align-self: start;
          aspect-ratio: var(--preview-ratio);
          overflow: hidden;
          border-radius: 8px;

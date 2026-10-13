@@ -202,10 +202,16 @@ From here on, I will devote myself to creating a world with human-friendly robot
 <summary><strong>My Homebrew RL Tutorial Series</strong></summary>
 <br>
 <div style="text-align: center; margin: 20px 0;">
-  <div class="rl-tutorial-gallery" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px;">
-    <img src="images/rl-tutorial-bellman.png" alt="Bellman equation and value iteration tutorial" width="1600" height="1000" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border-radius: 8px;">
-    <img src="images/rl-tutorial-notes.png" alt="Reinforcement learning notes explaining value iteration" width="1600" height="1000" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border-radius: 8px;">
-    <img src="images/rl-tutorial-code.png" alt="Python implementation of value iteration" width="1600" height="1000" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border-radius: 8px;">
+  <div class="rl-tutorial-gallery">
+    <div class="rl-tutorial-frame"><div class="rl-tutorial-crop" style="--preview-ratio: 486 / 264;">
+      <img src="images/rl-tutorial-bellman.png" alt="Bellman equation and value iteration tutorial" width="486" height="264" loading="lazy">
+    </div></div>
+    <div class="rl-tutorial-frame"><div class="rl-tutorial-crop" style="--preview-ratio: 1430 / 914;">
+      <img src="images/rl-tutorial-notes.png" alt="Reinforcement learning notes explaining value iteration" width="1430" height="946" loading="lazy">
+    </div></div>
+    <div class="rl-tutorial-frame"><div class="rl-tutorial-crop" style="--preview-ratio: 1428 / 916;">
+      <img src="images/rl-tutorial-code.png" alt="Python implementation of value iteration" width="1428" height="954" loading="lazy">
+    </div></div>
   </div>
   <a href="https://www.bilibili.com/video/BV1WqweeYE3q/" target="_blank" rel="noopener noreferrer">Watch on Bilibili ↗</a>
   <p style="font-style: italic; margin-top: 10px; color: var(--text-muted);">My homebrew RL tutorial series with theory and codes</p>

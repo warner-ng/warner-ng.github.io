@@ -291,6 +291,30 @@
          height: 24px;
          fill: currentColor;
       }
+      .rl-tutorial-gallery {
+         display: grid;
+         grid-template-columns: repeat(3, minmax(0, 1fr));
+         gap: 10px;
+         margin-bottom: 12px;
+      }
+      .rl-tutorial-frame {
+         aspect-ratio: 486 / 264;
+         display: flex;
+         justify-content: center;
+      }
+      .rl-tutorial-crop {
+         height: 100%;
+         max-width: 100%;
+         aspect-ratio: var(--preview-ratio);
+         overflow: hidden;
+         border-radius: 8px;
+      }
+      .rl-tutorial-crop img {
+         display: block;
+         width: 100%;
+         max-width: none;
+         height: auto;
+      }
    </style>
 </head>
 

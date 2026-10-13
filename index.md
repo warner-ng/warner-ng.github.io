@@ -202,6 +202,11 @@ From here on, I will devote myself to creating a world with human-friendly robot
 <summary><strong>My Homebrew RL Tutorial Series</strong></summary>
 <br>
 <div style="text-align: center; margin: 20px 0;">
+  <div class="rl-tutorial-gallery" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px;">
+    <img src="images/rl-tutorial-bellman.png" alt="Bellman equation and value iteration tutorial" width="1600" height="1000" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border-radius: 8px;">
+    <img src="images/rl-tutorial-notes.png" alt="Reinforcement learning notes explaining value iteration" width="1600" height="1000" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border-radius: 8px;">
+    <img src="images/rl-tutorial-code.png" alt="Python implementation of value iteration" width="1600" height="1000" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border-radius: 8px;">
+  </div>
   <a href="https://www.bilibili.com/video/BV1WqweeYE3q/" target="_blank" rel="noopener noreferrer">Watch on Bilibili ↗</a>
   <p style="font-style: italic; margin-top: 10px; color: var(--text-muted);">My homebrew RL tutorial series with theory and codes</p>
   <p style="font-style: italic; margin-top: 10px; color: var(--text-muted);">Explore more episodes inside <a href="https://www.bilibili.com/video/BV1WqweeYE3q/?vd_source=166c5eb6c6dcc6e1244ee9c8b88a89ba">My channel</a></p>

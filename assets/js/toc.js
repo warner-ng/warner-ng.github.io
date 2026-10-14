@@ -1,9 +1,9 @@
-// Table of Contents Generator
-console.log('toc.js loaded');
+// Fill the sidebar already rendered by the blog layout, without moving content.
 
 document.addEventListener('DOMContentLoaded', function() {
    var section = document.querySelector('section');
-   if (!section) return;
+   var tocContainer = document.querySelector('.toc-container');
+   if (!section || !tocContainer) return;
 
    var headings = Array.from(section.querySelectorAll('h2, h3, h4, h5, h6'));
    if (headings.length < 1) return;
@@ -13,12 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
    });
 
    var toc = buildTocStructure(headings);
-   var tocContainer = createTocContainer(toc);
-   
-   var wrapper = document.querySelector('.wrapper');
-   if (wrapper) {
-      section.parentNode.insertBefore(tocContainer, section);
-   }
+   tocContainer.appendChild(createTocList(toc));
 
    setupScrollTracking(headings);
 });
@@ -45,17 +40,6 @@ function buildTocStructure(headings) {
    });
 
    return items;
-}
-
-function createTocContainer(items) {
-   var container = document.createElement('aside');
-   container.className = 'toc-container';
-   var title = document.createElement('div');
-   title.className = 'toc-title';
-   title.textContent = 'Contents';
-   container.appendChild(title);
-   container.appendChild(createTocList(items));
-   return container;
 }
 
 function createTocList(items) {

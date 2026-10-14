@@ -10,7 +10,7 @@
    <link rel="preload" href="{{ '/assets/fonts/lato/lato-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
    <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-   <link rel="stylesheet" href="{{ "/assets/css/toc.css" | relative_url }}">
+   <link rel="stylesheet" href="{{ "/assets/css/toc.css?v=" | append: site.github.build_revision | relative_url }}">
    <link rel="icon" type="image/png" href="/images/logo_sky_blue.png">
    {% seo %}
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -413,6 +413,9 @@
          {% assign back_url = "/blogs/blogIndex.html" %}
          {% assign back_label = "Back to Blogs" %}
       {% endif %}
+      <aside class="toc-container" aria-label="Table of contents">
+         <div class="toc-title">Contents</div>
+      </aside>
       <section{% if back_url %} class="has-parent-link"{% endif %}>
          {% if back_url %}
          <p class="page-parent-nav">
@@ -434,7 +437,7 @@
       <div id="drawerContent"></div>
    </div>
    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-   <script src="{{ "/assets/js/toc.js" | relative_url }}"></script>
+   <script defer src="{{ "/assets/js/toc.js?v=" | append: site.github.build_revision | relative_url }}"></script>
    <script>
       // TOC Menu Button Handler
       var tocMenuBtn = document.getElementById('tocMenuBtn');

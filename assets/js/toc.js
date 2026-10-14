@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
    
    var wrapper = document.querySelector('.wrapper');
    if (wrapper) {
-      section.parentNode.insertBefore(tocContainer, section.nextSibling);
+      section.parentNode.insertBefore(tocContainer, section);
    }
 
    setupScrollTracking(headings);

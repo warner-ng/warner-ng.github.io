@@ -223,11 +223,11 @@
             display: block;
          }
       }
-      /* Center the blog content and its table of contents as one group. */
+      /* Put the TOC in the former 260px profile column. */
       @media (min-width: 960px) {
          .wrapper {
-            width: min(calc(100% - 20px), 1240px) !important;
-            max-width: 1240px !important;
+            width: min(calc(100% - 20px), 1520px) !important;
+            max-width: 1520px !important;
             display: flex !important;
             flex-wrap: wrap;
             gap: 20px;
@@ -237,16 +237,16 @@
             box-sizing: border-box;
          }
          section {
-            flex: 7 1 0;
+            flex: 1 1 0;
             width: auto !important;
             min-height: 100vh;
             float: none !important;
-            order: 1;
+            order: 2;
             min-width: 0;
          }
          .toc-container {
-            flex: 2 1 0;
-            order: 2;
+            flex: 0 0 260px;
+            order: 1;
             min-width: 0;
          }
          footer {

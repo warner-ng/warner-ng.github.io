@@ -182,11 +182,9 @@
       /* Responsive flex layout */
       @media (min-width: 960px) {
          .wrapper {
-            /* Keep the two-column layout readable instead of stretching with
-               the browser indefinitely. On a 14-inch MacBook Pro at full
-               screen, 1200px is roughly four fifths of the viewport. */
-            width: min(calc(100% - 20px), 1520px) !important;
-            max-width: 1520px !important;
+            /* Cap the layout at the user's measured Edge content width. */
+            width: min(calc(100% - 20px), 1247px) !important;
+            max-width: 1247px !important;
             display: flex !important;
             flex-wrap: nowrap;
             gap: 20px;

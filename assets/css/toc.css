@@ -6,7 +6,7 @@ html {
    display: none;
 }
 
-@media (min-width: 880px) {
+@media (min-width: 800px) {
    .toc-container {
       display: block;
       position: sticky;

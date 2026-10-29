@@ -218,13 +218,13 @@
          margin-left: 4px;
          vertical-align: middle;
       }
-      @media (max-width: 1200px) {
+      @media (max-width: 879px) {
          .toc-menu-btn {
             display: block;
          }
       }
       /* Put the TOC in the former 260px profile column. */
-      @media (min-width: 960px) {
+      @media (min-width: 880px) {
          .wrapper {
             width: min(calc(100% - 20px), 1247px) !important;
             max-width: 1247px !important;
@@ -239,6 +239,8 @@
          section {
             flex: 1 1 0;
             width: auto !important;
+            border: 0;
+            padding-top: 0;
             min-height: 100vh;
             float: none !important;
             order: 2;
@@ -256,7 +258,7 @@
             flex-basis: 100%;
          }
       }
-      @media (max-width: 959px) {
+      @media (max-width: 879px) {
          .wrapper {
             display: block !important;
             width: 100% !important;
@@ -289,8 +291,8 @@
             display: block;
          }
       }
-      /* Medium screens: start hiding TOC */
-      @media (max-width: 1200px) {
+      /* Collapse the TOC at the same width as the main page profile. */
+      @media (max-width: 879px) {
          .toc-container {
             display: none !important;
          }
@@ -376,7 +378,7 @@
       .has-parent-link {
          padding-top: 0;
       }
-      @media (max-width: 959px) {
+      @media (max-width: 879px) {
          .page-parent-nav {
             position: fixed;
             top: 58px;

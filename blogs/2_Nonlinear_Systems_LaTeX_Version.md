@@ -2003,11 +2003,9 @@ $$
 u = \alpha(x) + r(x)^{-1} v
 $$
 
-now if we make it simpler, instead of having all the state x linearized, we 
+now if we make it simpler, instead of having all the state $x$ linearized, we only want the map from the input to the output $y$ to be linear, so that we can do output tracking: $y \to y_d$.
 
-We want output tracking: $y \to y_d$.
-
-the Lie Derivatives
+so we keep taking derivatives of $y$ until $u$ shows up, using the Lie derivatives. In general $\dot y = L_f h(x) + L_g h(x)\,u$, and here $L_g h(x) = 0$, so
 
 $$
 \dot{y} = L_f h(x)

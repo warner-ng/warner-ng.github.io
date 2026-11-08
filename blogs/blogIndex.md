@@ -58,9 +58,4 @@ Complete notes on nonlinear systems: stability theory, Lyapunov methods, contrac
 
 ---
 ### [1. Policy Gradient & Actor-Critic Explained](./1_policy-gradient-actor-critic.html)
-Explanation of Policy Gradient and Actor-Critic methods in Reinforcement Learning, taught by [Prof. Sergey Levine](https://people.eecs.berkeley.edu/~svlevine/) in CS185 2026 
-
-
----
-### [14. Magic Gate](./magic%20gate/index.html)
-*a wonderland of questions and wanderings*
+Explanation of Policy Gradient and Actor-Critic methods in Reinforcement Learning, taught by [Prof. Sergey Levine](https://people.eecs.berkeley.edu/~svlevine/) in CS185 2026

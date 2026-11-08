@@ -403,14 +403,6 @@
       {% assign back_label = nil %}
       {% if page.path == "blogs/blogIndex.md" %}
          {% assign back_url = nil %}
-      {% elsif page.path contains "blogs/magic gate/" %}
-         {% if page.path == "blogs/magic gate/index.md" %}
-            {% assign back_url = "/blogs/blogIndex.html" %}
-            {% assign back_label = "Back to Blogs" %}
-         {% else %}
-            {% assign back_url = "/blogs/magic%20gate/index.html" %}
-            {% assign back_label = "Back to Magic Gate" %}
-         {% endif %}
       {% else %}
          {% assign back_url = "/blogs/blogIndex.html" %}
          {% assign back_label = "Back to Blogs" %}

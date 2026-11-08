@@ -6,6 +6,8 @@ parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs
 ---
 
+# Riccati Equation
+
 This is a problem I encountered when doing online solving in MPC (Model Predictive Control). The problem formulation has two parts. One is the state, denoted by $x$. The other is the objective function, denoted by $J$:
 
 $$

@@ -2015,6 +2015,8 @@ $$
 \ddot{y} = L_f^2 h(x) + L_g L_f h(x)\,u
 $$
 
+> relative degree $r$: the number of times we differentiate the output $y$ before the input $u$ shows up. Intuitively, it is how many integrators sit between $u$ and $y$, e.g. force to position $m\ddot y = u$ has $r = 2$.
+
 - Case 1: Relative Degree $r = 2$
 
 If $L_g L_f h(x) \neq 0$, choose:

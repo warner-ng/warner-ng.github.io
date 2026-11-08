@@ -42,19 +42,9 @@ $$
 
 At the last step there is no need to control anymore, so only the state term remains.
 
-### Cost-to-go and the Bellman equation
-
-Define $J_t(x)$ as the smallest possible value of the remaining part of $J$, from time $t$ to the end, when the state at time $t$ is $x$. (In many texts this is written $V_t(x)$ and called the value function; it is just the remaining part of $J$.)
-
-**Principle of optimality.** Any tail of an optimal trajectory must itself be optimal. So the best we can do from time $t$ is the cost of this step plus the best we can do from wherever we land:
-
-$$
-J_t(x) = \min_{u} \Big[\, x^\top Q\, x + u^\top R\, u + J_{t+1}(Ax + Bu) \,\Big]
-$$
-
-This is the **Bellman equation**. Since $J_t$ needs $J_{t+1}$, it is solved backward, starting from the last step.
-
 ### Start from the last step
+
+Let $J_t(x)$ be the remaining part of $J$ from time $t$ to the end, when the state at time $t$ is $x$. At the last step it is just
 
 $$
 J_T(x) = x^\top Q\, x
@@ -96,7 +86,13 @@ This has exactly the same form as $J_T(x) = x^\top Q\, x$; only the matrix in th
 
 ### Repeat: the Riccati difference equation
 
-Going back one more step works the same way, with $Q$ in the last term replaced by $P_{t+1}$. So for every $t$:
+What we did above is exactly the Bellman equation: the best we can do from time $t$ is the cost of this step plus the best we can do from where we land, which comes from the principle of optimality (any tail of an optimal trajectory is itself optimal).
+
+$$
+J_t(x) = \min_{u} \Big[\, x^\top Q\, x + u^\top R\, u + J_{t+1}(Ax + Bu) \,\Big]
+$$
+
+So going back one more step works the same way, with $Q$ in the last term replaced by $P_{t+1}$. For every $t$:
 
 $$
 P_t = Q + A^\top P_{t+1} A - A^\top P_{t+1} B\, (R + B^\top P_{t+1} B)^{-1} B^\top P_{t+1} A
@@ -105,15 +101,6 @@ $$
 $$
 u_t^* = -(R + B^\top P_{t+1} B)^{-1} B^\top P_{t+1} A\; x_t
 $$
-
-### Why $P$ converges
-
-Count by the number of steps remaining, $n = T - t$. Then $P$ is:
-
-- **Non-decreasing.** One more remaining step means one more step of cost, and every step costs at least zero.
-- **Bounded above.** If $(A, B)$ is stabilizable (controllability is enough), there is some gain $\bar K$ that makes $A - B\bar K$ stable. Using it forever, the state shrinks geometrically, so the total cost is finite. The optimal cost can only be lower.
-
-A non-decreasing sequence that is bounded above converges.
 
 ### The algebraic Riccati equation
 
@@ -139,56 +126,41 @@ If you have thoughts on this, feel free to tell me.
 
 ## From LQR to MPC
 
-### What the constraints break
-
-Now bring the restrictions back: $-10 \le u \le 10$, plus the bounds on each state. The LQR law $u_t = -K x_t$ knows nothing about them.
-
-- If the limits are never reached, nothing changes. From $x_0 = [2,\,1,\,1]^\top$, the LQR input peaks at $\lvert u \rvert = 4.46$ and the states stay within $\lvert x_1 \rvert \le 6$, $\lvert x_2 \rvert \le 4$, $\lvert x_3 \rvert \le 4.61$. So for the original exercise, the constrained problem has the same answer as LQR.
-- If they are reached, the simplest fix is to clip $u$ to the limits. This is no longer optimal, and clipping $u$ does nothing about the state limits.
-- More fundamentally, the derivation above breaks. With a limit on $u$, the minimum in the Bellman equation can sit on the boundary instead of where the derivative is zero, so $J_t(x)$ is no longer a single quadratic $x^\top P x$. Without that "same form" step, there is no Riccati equation and no fixed $K$.
+Now bring the restrictions back: $u$ falls within $-10$ to $10$, plus the bounds on each state. The LQR law can no longer be used directly, because $u_t = -K x_t$ is not guaranteed to stay in this domain.
 
 ### The MPC idea
 
-Since we can no longer get a formula offline, MPC solves the problem numerically online, from the current state, at every time step:
+Since we can no longer get a formula offline, we use MPC to solve the problem numerically online, from the current state at each time step. It is the same idea, but now we solve it with quadratic programming instead of the algebraic Riccati equation.
 
-**Step 1.** At time $t$, measure the current state $x_t$.
-
-**Step 2.** Predict $N$ steps ahead, and use the state equation to replace all future states with the inputs at once:
+The "predictive" part is that $J$ now becomes a new objective that includes the next $N$ steps from the current state $x_t$:
 
 $$
-X = \bar A\, x_t + \bar B\, U, \qquad X = \begin{bmatrix} x_{t+1} \\ \vdots \\ x_{t+N} \end{bmatrix},\quad U = \begin{bmatrix} u_t \\ \vdots \\ u_{t+N-1} \end{bmatrix}
+J = \sum_{i=1}^{N} x_{t+i}^\top Q\, x_{t+i} + \sum_{i=0}^{N-1} u_{t+i}^\top R\, u_{t+i}
 $$
 
-**Step 3.** The objective becomes a quadratic function of $U$ alone, and the limits become linear inequalities on $U$. This is a quadratic program (QP):
+Using the state equation again and again, every future state can be written with $x_t$ and the inputs only, so we stack them into one big matrix:
 
 $$
-\min_U\ \tfrac12\, U^\top H\, U + f^\top U \quad \text{s.t.} \quad u_{\min} \le U \le u_{\max}
+\underbrace{\begin{bmatrix} x_{t+1} \\ x_{t+2} \\ x_{t+3} \\ \vdots \\ x_{t+N} \end{bmatrix}}_{X}
+=
+\underbrace{\begin{bmatrix} A \\ A^2 \\ A^3 \\ \vdots \\ A^N \end{bmatrix}}_{\bar A} x_t
++
+\underbrace{\begin{bmatrix} B & 0 & 0 & \cdots & 0 \\ AB & B & 0 & \cdots & 0 \\ A^2B & AB & B & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ A^{N-1}B & A^{N-2}B & A^{N-3}B & \cdots & B \end{bmatrix}}_{\bar B}
+\underbrace{\begin{bmatrix} u_t \\ u_{t+1} \\ u_{t+2} \\ \vdots \\ u_{t+N-1} \end{bmatrix}}_{U}
 $$
 
+Putting it back into $J$ with $\bar Q = \mathrm{diag}(Q, \dots, Q)$ and $\bar R = \mathrm{diag}(R, \dots, R)$, the states disappear again, and we get a quadratic program in $U$:
+
 $$
-H = 2\big(\bar B^\top \bar Q\, \bar B + \bar R\big), \qquad f = 2\, \bar B^\top \bar Q\, \bar A\, x_t
+\min_U\ \tfrac12\, U^\top H\, U + f^\top U \quad \text{s.t.} \quad -10 \le U \le 10, \qquad H = 2\big(\bar B^\top \bar Q\, \bar B + \bar R\big),\quad f = 2\, \bar B^\top \bar Q\, \bar A\, x_t
 $$
 
-It is solved with an iterative QP solver; the course code uses ADMM, and my version uses accelerated projected gradient.
-**Step 4.** Apply only the first input $u_t$ and throw away the rest. At the next step, measure again and repeat. This is the receding horizon.
+To solve it we can use ADMM (Alternating Direction Method of Multipliers), which splits the problem into an unconstrained quadratic in $U$ that has a closed-form solution, and a clipping step onto $[-10, 10]$, connected by an auxiliary variable $s$ and a dual variable $v$:
 
-### Why this is a natural extension of LQR
+$$
+U \leftarrow -(H + \rho I)^{-1}\big(f + \rho\,(v - s)\big), \qquad s \leftarrow \mathrm{clip}(U + v,\ -10,\ 10), \qquad v \leftarrow v + U - s
+$$
 
-- It uses the same model and the same $Q$, $R$ objective. The only differences are the constraints and that the problem is solved online.
-- When no constraint is active, the QP solution is the unconstrained one, and its first input is exactly the LQR input. For the Tianwen-1 system with $N = 10$, the first row of the unconstrained QP solution is $[-1.910,\ 0.637,\ 2.070]$, the same gain the Riccati recursion gives, and equal to the infinite-horizon $K$ to four digits.
-- MPC only looks $N$ steps ahead instead of forever. A common fix is to use the $P$ from the algebraic Riccati equation as the weight on the last predicted state, $x_{t+N}^\top P\, x_{t+N}$, which counts the cost after step $N$ as if LQR took over from there. (The course code simply uses $Q$ there.)
+In my version I used accelerated projected gradient instead, which takes a gradient step on $U$, clips it, and adds Nesterov momentum. Either way, we only apply the first input $u_t$, then measure the new state and solve again at the next step.
 
-In short: LQR is MPC without constraints, and MPC is LQR that can respect limits, at the price of solving a QP at every step.
-
-### An example where the constraint matters
-
-Start from $x_0 = [6,\,3,\,3]^\top$, three times the original initial state, with $\lvert u \rvert \le 10$. Over 40 steps:
-
-| Controller | Peak $\lvert u \rvert$ | Total cost |
-|---|---|---|
-| LQR, with $u$ clipped to $\pm 10$ | 10 | 2337 |
-| MPC, $N = 10$ | 10 | 1419 |
-
-Both bring the state to zero, but MPC's cost is about 39% lower, because it plans around the limit instead of running into it. Both trajectories also reach $\lvert x_2 \rvert = 12$, beyond its bound of 10. That is because this MPC, like the course code, only constrains $u$. To respect the state bounds, add them to the QP as $x_{\min} \le \bar A\, x_t + \bar B\, U \le x_{\max}$.
-
-There is also a limit to what any controller can do. From $x_0 = [10,\,5,\,5]^\top$, both controllers diverge. The open-loop system is unstable and the throttle is bounded, so from far enough away no allowed input can pull the state back. Once the state bounds are added, MPC shows this as an infeasible QP, which is what the comment in the course code warns about.
+For the Tianwen-1 problem, take $N = 10$, $Q = I$, $R = 1$ and $x_0 = [2,\,1,\,1]^\top$. The input rises to about $4.46$ at the second step and then shrinks to zero, so it stays inside $[-10, 10]$, and all three states go back to zero in about 8 steps.

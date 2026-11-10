@@ -3,6 +3,14 @@ layout: blog
 ---
 ## Blogs - RL • Generative Model • Control • Humanoid Animation • Philosophy
 
+### [15. Kalman Filter, Part 2 — The Gain and the Covariance](./15_kalman_filter_part2.html)
+Why a robot needs the Kalman filter, how the gain is used in three steps, and how the covariance turns those steps into a computation.
+
+---
+### [14. Kalman Filter, Part 1 — Estimating by Recursion](./14_kalman_filter_part1.html)
+The Kalman filter starts from a very ordinary idea, updating an average one measurement at a time.
+
+---
 ### [13. Philosophy](./13_Philosophy.html)
 Learning notes on philosophy.
 

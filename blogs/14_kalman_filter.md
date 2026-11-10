@@ -1,12 +1,12 @@
 ---
 layout: blog
-title: 15. Kalman Filter, Part 2 — The Gain and the Covariance
+title: 14. Kalman Filter — The Gain and the Covariance
 description: Why a robot needs the Kalman filter, how the gain is used in three steps, and how the covariance turns those steps into a computation.
 parent_url: /blogs/blogIndex.html
 parent_label: Back to Blogs
 ---
 
-# Kalman Filter, Part 2 — The Gain and the Covariance
+# Kalman Filter — The Gain and the Covariance
 
 ## 1. Why and how to use it
 

@@ -10,15 +10,15 @@ parent_label: Back to Blogs
 
 ## 1. Why and how to use it
 
-The Kalman filter exists because no single source of data can locate a robot well. The paper that introduced `robot_localization` [1] shows this in one experiment. A Pioneer 3 robot drove a loop around a parking lot and came back to where it started, and the same recorded data were run through the EKF with five different sets of sensors. With wheel odometry alone (Fig. 3, yellow), the estimated path leaves the parking lot and wanders through the houses next to it, and the final position is more than 174 m from the start, because the robot's biased wheel encoders report every straight line as a mild right turn. Adding one IMU (Fig. 4) or two (Fig. 5) keeps the path near the lot, but the end point is still 40 to 47 m off in $y$. Only when GPS is fused as well (Fig. 6 and Fig. 7) does the estimate follow the GPS track, and the loop-closure error drops to about 1 m.
+Why bother with a Kalman filter? Because one sensor alone can't locate a robot. In [1], a robot drove a loop around a parking lot, and the same data went through the EKF with different sensors. Odometry only: it ends 174 m off, in the houses next door. Add IMUs: still 40 to 47 m off. Add GPS: about 1 m.
 
 <div style="text-align: center;">
 <img class="blog-note-image" src="images/kalman/moore2014_fig2-7.webp" alt="EKF output with different sensor sets, Fig. 2 to Fig. 7 of Moore and Stouch 2014" />
 </div>
 
-*Fig. 2 to Fig. 7 from Moore and Stouch [1]. Red is the robot's path as the mean of two raw GPS tracks. The EKF fuses odometry only (yellow), odometry and one IMU (cyan), odometry and two IMUs (orange, the second IMU stopped midway), then adds one GPS (blue) or two GPS units (green).*
+*Fig. 2 to 7 from [1]. Red: reference path (mean of two GPS tracks). EKF with odometry only (yellow), + one IMU (cyan), + two IMUs (orange), + one GPS (blue), + two GPS (green).*
 
-The simplest case of this filtering is estimating one fixed quantity from repeated measurements. If a ruler is read $k$ times, giving the measurements $z\_1, \dots, z\_k$, the natural estimate $\hat{x}\_k$ of the true length is their average. It can be computed recursively, because the sum of the first $k-1$ measurements is already contained in the last estimate as $(k-1)\,\hat{x}\_{k-1}$:
+Start with the simplest case: measure one length with a ruler $k$ times. The best guess is the average, and the first $k-1$ readings already add up to $(k-1)\,\hat{x}\_{k-1}$, so you don't need to keep them:
 
 $$
 \begin{aligned}
@@ -28,21 +28,19 @@ $$
 \end{aligned}
 $$
 
-Throughout, $z$ is a measurement, read directly from the sensor, and $\hat{x}$ is an estimate, computed by the filter. Abstracting the last line gives
+Here $z$ is the sensor reading and $\hat{x}$ is our estimate. In general form:
 
 $$
-\underbrace{\hat{x}_k}_{\text{current estimate}} = \underbrace{\hat{x}_{k-1}}_{\text{last estimate}} + K_k\,\big(\underbrace{z_k}_{\text{current measurement}} - \underbrace{\hat{x}_{k-1}}_{\text{last estimate}}\big),
+\underbrace{\hat{x}_k}_{\text{current estimate}} = \underbrace{\hat{x}_{k-1}}_{\text{last estimate}} + K_k\,\big(\underbrace{z_k}_{\text{current measurement}} - \underbrace{\hat{x}_{k-1}}_{\text{last estimate}}\big).
 $$
 
-where the coefficient $K\_k$ is the Kalman gain. In the average it is $\frac{1}{k}$, which depends only on how many measurements have arrived. The Kalman filter instead computes it from the error of the last estimate, $e\_{EST,k-1}$, and the error of the current measurement, $e\_{MEA,k}$:
+$K\_k$ is the Kalman gain. For the average it is $\frac{1}{k}$. The Kalman filter instead compares the estimate error with the measurement error (see Section 2):
 
 $$
-K_k = \frac{e_{EST,k-1}}{e_{EST,k-1} + e_{MEA,k}},
+K_k = \frac{e_{EST,k-1}}{e_{EST,k-1} + e_{MEA,k}}.
 $$
 
-which comes from Section 2. The two extreme cases show how it works. If $e\_{EST,k-1} \gg e\_{MEA,k}$, the last estimate is inaccurate, so $K\_k \approx 1$ and the current estimate equals the current measurement, $\hat{x}\_k \approx z\_k$. If $e\_{EST,k-1} \ll e\_{MEA,k}$, the last estimate is accurate, so $K\_k \approx 0$ and the current estimate stays at the last estimate, $\hat{x}\_k \approx \hat{x}\_{k-1}$.
-
-Using the filter therefore takes three steps, repeated for every new measurement:
+If $e\_{EST,k-1} \gg e\_{MEA,k}$, the old estimate is bad, so $K\_k \approx 1$ and $\hat{x}\_k \approx z\_k$. If $e\_{EST,k-1} \ll e\_{MEA,k}$, it is good, so $K\_k \approx 0$ and $\hat{x}\_k \approx \hat{x}\_{k-1}$. So every new reading takes three steps:
 
 $$
 \begin{aligned}
@@ -52,30 +50,28 @@ $$
 \end{aligned}
 $$
 
-Step 3 updates the error of the estimate, not the estimate itself, which Step 2 has already done. The next round needs this error, because Step 1 at time $k+1$ uses $e\_{EST,k}$, while the measurement error $e\_{MEA}$ comes from the sensor and needs no update. Running the three steps shows that the gain gets smaller and smaller, and so does the estimate error. The reason is in the formulas themselves. The gain is always less than 1, so Step 3 makes the estimate error shrink, and a smaller estimate error makes the next gain smaller through Step 1. What is still unclear is how $K\_k$ is found, and how it is actually computed at each step.
+Note that Step 3 updates the error, not the estimate, because Step 1 needs it next round ($e\_{MEA}$ comes from the sensor). Since $K\_k < 1$, the error and the next gain keep shrinking. What's left: where does $K\_k$ come from, and how do you compute it?
 
 ## 2. Finding $K\_k$ with the covariance
 
-The gain $K\_k$ has to be found, and finding it requires the covariance of the estimate error. With the estimate error defined as $e\_k = x\_k - \hat{x}\_k$, the covariance in its simplest form is
+To find $K\_k$, we need the covariance of the estimate error $e\_k = x\_k - \hat{x}\_k$:
 
 $$
 P_k = E\big[e_ke_k^\top\big].
 $$
 
-We want the estimate to be close to the true value, so the error should be small, which means minimizing the covariance of the error, and specifically its trace $\mathrm{tr}(P\_k)$.
-
-Why this quantity is a covariance, and why its trace is the thing to minimize, follows from $e\_k$ being a vector. For a state with two components, $e\_k = [e\_1,\ e\_2]^\top$ and
+We want the error small, so we minimize its trace $\mathrm{tr}(P\_k)$. Why a covariance? Because $e\_k$ is a vector. With two components:
 
 $$
 \begin{gathered}
 P_k = E\left[\begin{bmatrix} e_1 \\ e_2 \end{bmatrix}\begin{bmatrix} e_1 & e_2 \end{bmatrix}\right] = \begin{bmatrix} E[e_1^2] & E[e_1e_2] \\ E[e_2e_1] & E[e_2^2] \end{bmatrix},\\
-\mathrm{tr}(P_k) = E[e_1^2] + E[e_2^2],
+\mathrm{tr}(P_k) = E[e_1^2] + E[e_2^2].
 \end{gathered}
 $$
 
-which is exactly the covariance matrix of the error. Its diagonal holds the squared error of each component, so the trace is the total squared error, and minimizing $\mathrm{tr}(P\_k)$ makes every component of the error small. **The covariance matrix is only a measuring tool; there is nothing special about it.**
+The diagonal holds each component's squared error, so the trace is the total squared error. **The covariance matrix is only a measuring tool; there is nothing special about it.**
 
-The derivation that minimizes $\mathrm{tr}(P\_k)$ over $K\_k$ is skipped here. What matters is the roles: $K\_k$ is the parameter we solve for, and $P\_k$ is the matrix we want to make as small as possible. Minimizing it turns the three steps of Section 1 into a computation. The estimate error $e\_{EST}$ is replaced by $P$, and the measurement error $e\_{MEA}$ is replaced by its own covariance, $R = E\big[v\_kv\_k^\top\big]$, where $v\_k = z\_k - x\_k$ is the error of a single measurement. For the ruler, $R$ is the variance of one reading. For a fixed state that the sensor measures directly, as in the ruler example, each step is computed as
+We skip the derivation. Just remember: $K\_k$ is what we solve for, and $P\_k$ is what we make small. Now swap the errors of Section 1 for covariances: $e\_{EST}$ becomes $P$, and $e\_{MEA}$ becomes $R = E\big[v\_kv\_k^\top\big]$, where $v\_k = z\_k - x\_k$ is one measurement's error. For the ruler, $R$ is the variance of one reading:
 
 $$
 \begin{aligned}
@@ -85,11 +81,11 @@ $$
 \end{aligned}
 $$
 
-$R$ comes from the sensor, and $P$ starts from an initial value $P\_0$ and is then kept up to date by Step 3, so every quantity needed for $K\_k$ is known at each step. For one variable the inverse becomes a division, $K\_k = P\_{k-1}/(P\_{k-1} + R)$, which is the formula from Section 1.
+$R$ comes from the sensor and $P$ starts at $P\_0$, so everything is known. With one variable the inverse is a division, $K\_k = P\_{k-1}/(P\_{k-1} + R)$, the formula from Section 1.
 
-This also brings back the average from the start of Section 1. Take the first reading as the first estimate, $\hat{x}\_1 = z\_1$, so its error covariance is that of one reading, $P\_1 = R$. Step 1 then gives $K\_2 = R/(R + R) = 1/2$, and Step 3 gives $P\_2 = R/2$. The next round gives $K\_3 = (R/2)/(R/2 + R) = 1/3$ and $P\_3 = R/3$, and in general $K\_k = 1/k$ and $P\_k = R/k$. The average is therefore exactly what the Kalman filter computes for a fixed quantity measured by a sensor of constant accuracy, and $P\_k = R/k$ is why averaging more readings gives a better estimate.
+Check that it gives the average: start with $\hat{x}\_1 = z\_1$, so $P\_1 = R$. Then $K\_2 = R/(R + R) = 1/2$, $P\_2 = R/2$, $K\_3 = 1/3$, $P\_3 = R/3$, and in general $K\_k = 1/k$, $P\_k = R/k$. So averaging is a Kalman filter on a fixed quantity, and $P\_k = R/k$ is why more readings help.
 
-The three steps are a special case of the equations that `robot_localization` actually runs, equations (5) to (7) of [1]. The paper adds two things. First, a sensor usually measures only part of the state, for example wheel odometry measures velocity but not position, so the measurement is written $z = Hx$, where the matrix $H$ picks out the measured part. A ruler measures the length directly, so $H = I$. Second, a car keeps moving between measurements, so before each correction the paper predicts the state and its covariance one step forward with the motion model, and writes the predicted covariance as $\hat{P}\_k$. A ruler does not move, so the prediction is just the last value, $\hat{P}\_k = P\_{k-1}$. Setting $H = I$ and $\hat{P}\_k = P\_{k-1}$ turns each equation of the paper into one of our steps:
+These steps are a special case of eqs. (5) to (7) in [1], which `robot_localization` runs. The paper adds two things. A sensor often measures only part of the state, so $z = Hx$, with $H$ picking the measured part. A ruler measures all of it, so $H = I$. And a car moves between readings, so the paper first predicts the covariance forward, $\hat{P}\_k$. A ruler doesn't move, so $\hat{P}\_k = P\_{k-1}$. Plug both in:
 
 | | Paper [1], general case | Section 2, with $H = I$ and $\hat{P}\_k = P\_{k-1}$ |
 |---|---|---|
@@ -97,19 +93,19 @@ The three steps are a special case of the equations that `robot_localization` ac
 | Step 2, estimate, eq. (6) | $x\_k = \hat{x}\_k + K\big(z - H\hat{x}\_k\big)$ | $\hat{x}\_k = \hat{x}\_{k-1} + K\_k\big(z\_k - \hat{x}\_{k-1}\big)$ |
 | Step 3, error covariance, eq. (7) | $P\_k = (I - KH)\hat{P}\_k(I - KH)^\top + KRK^\top$ | $P\_k = (I - K\_k)\,P\_{k-1}$ |
 
-In the paper a hat marks a predicted value, so its $\hat{x}\_k$ is the last estimate moved forward by the model, while in this post a hat marks any estimate. The third row looks different because the paper keeps a longer form of Step 3. When $K$ is exactly the optimal gain, the two forms give the same $P\_k$. The paper uses the long one because rounding errors keep $K$ from ever being exactly optimal, and the long form keeps $P\_k$ a valid covariance "by ensuring that $P\_k$ remains positive semi-definite" [1]. Computing the three steps is therefore computing (5) to (7) for a sensor that measures the whole state of something that does not move.
+Note that in the paper a hat means *predicted*, here it means *estimated*. Row 3 is a longer form. With the exact optimal $K$ both give the same $P\_k$, but rounding means $K$ is never exact, and the long form keeps $P\_k$ "positive semi-definite" [1].
 
 ## 3. The three steps in ekf.cpp
 
-In `robot_localization` the three steps live in the `correct()` function of `ekf.cpp`. Before a measurement reaches it, `ros_filter.cpp` has already converted the sensor message into the frame the filter works in, in `preparePose`, `prepareTwist` and `prepareAcceleration`. Inside `correct()`, `estimateErrorCovariance_` is $P$, `measurementCovarianceSubset` is $R$, `stateToMeasurementSubset` is $H$, `kalmanGainSubset` is $K$, and `state_` is the state estimate. The filter does not compute $R$ itself. The same prepare functions copy it from the covariance field that each sensor message carries, so the gain is only as good as the covariance the sensor driver reports. In the experiments of [1], the odometry and IMU data were noisier than their reported covariances, which is part of why the filter's own position variance in the IMU runs came out much smaller than its true position error. At this point `estimateErrorCovariance_` holds the predicted covariance $\hat{P}\_k$, because `predict()` has just moved it forward.
+The three steps live in `correct()` of `ekf.cpp`. Before that, `preparePose`, `prepareTwist` and `prepareAcceleration` in `ros_filter.cpp` convert each sensor message into the filter's frame and copy its covariance in as $R$. So $R$ is only as good as what the sensor driver reports. In [1], odometry and IMU were noisier than reported, which is partly why the filter's position variance came out far smaller than its true error.
 
-The code never computes $H^\top$ as a separate sensor model. It builds $H$ from the list of state variables the sensor measures and then transposes it. Take a state with only three variables, position, velocity and acceleration, and a sensor that reports only velocity. $H$ then selects the second variable,
+In `correct()`, `estimateErrorCovariance_` is $P$ (already predicted to $\hat{P}\_k$), `measurementCovarianceSubset` is $R$, `stateToMeasurementSubset` is $H$, `kalmanGainSubset` is $K$, and `state_` is $\hat{x}$. $H$ is just a selector. Say the state is position, velocity and acceleration, and the sensor measures only velocity:
 
 $$
 x = \begin{bmatrix} \text{position} \\ \text{velocity} \\ \text{acceleration} \end{bmatrix}, \qquad H = \begin{bmatrix} 0 & 1 & 0 \end{bmatrix}, \qquad H^\top = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
 $$
 
-so $Hx$ is the predicted velocity, which can be compared directly with the measured one. The code builds $H$ the same way, putting a single 1 in the column of each measured variable, and gets $H^\top$ from Eigen's `.transpose()`:
+so $Hx$ is the predicted velocity. The code puts a 1 in each measured variable's column, and gets $H^\top$ with `.transpose()`:
 
 ```cpp
 // H: one row per measured variable, a 1 in that variable's column
@@ -134,7 +130,7 @@ estimateErrorCovariance_.noalias() += kalmanGainSubset *
                                       kalmanGainSubset.transpose();
 ```
 
-In Step 1, `pht` is $PH^\top$ and `hphrInv` is $(HPH^\top + R)^{-1}$, so their product is equation (5) written term by term. In Step 2, `stateSubset` holds the predicted values of the measured variables, which is $H\hat{x}\_k$, so `innovationSubset` is the difference between the measurement and the prediction, $z - H\hat{x}\_k$. Between computing it and updating the state, the code wraps angle differences into $[-\pi, \pi]$ and skips the update entirely if the measurement lies too far from the prediction under a Mahalanobis distance threshold. Step 3 is the long form (7) from the table above, with `gainResidual` as $I - KH$.
+`pht` is $PH^\top$ and `hphrInv` is $(HPH^\top + R)^{-1}$, so Step 1 is eq. (5). `stateSubset` is $H\hat{x}\_k$, so `innovationSubset` is $z - H\hat{x}\_k$. Before Step 2, the code wraps angle differences into $[-\pi, \pi]$ and skips measurements too far from the prediction (a Mahalanobis distance check). Step 3 is the long form (7), with `gainResidual` as $I - KH$.
 
 ## References
 

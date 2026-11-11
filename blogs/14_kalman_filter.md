@@ -75,7 +75,7 @@ $$
 
 which is exactly the covariance matrix of the error. Its diagonal holds the squared error of each component, so the trace is the total squared error, and minimizing $\mathrm{tr}(P\_k)$ makes every component of the error small. **The covariance matrix is only a measuring tool; there is nothing special about it.**
 
-The derivation that minimizes $\mathrm{tr}(P\_k)$ over $K\_k$ is skipped here. What matters is the roles: $K\_k$ is the parameter we solve for, and $P\_k$ is the matrix we want to make as small as possible. Minimizing it turns the three steps of Section 1 into a computation, with $P$ in place of the estimate error $e\_{EST}$ and the covariance $R$ of the measurement noise in place of the measurement error $e\_{MEA}$. For a fixed state that the sensor measures directly, as in the ruler example, each step is computed as
+The derivation that minimizes $\mathrm{tr}(P\_k)$ over $K\_k$ is skipped here. What matters is the roles: $K\_k$ is the parameter we solve for, and $P\_k$ is the matrix we want to make as small as possible. Minimizing it turns the three steps of Section 1 into a computation. The estimate error $e\_{EST}$ is replaced by $P$, and the measurement error $e\_{MEA}$ is replaced by its own covariance, $R = E\big[v\_kv\_k^\top\big]$, where $v\_k = z\_k - x\_k$ is the error of a single measurement. For the ruler, $R$ is the variance of one reading. For a fixed state that the sensor measures directly, as in the ruler example, each step is computed as
 
 $$
 \begin{aligned}

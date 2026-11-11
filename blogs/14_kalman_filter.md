@@ -22,9 +22,9 @@ The simplest case of this filtering is estimating one fixed quantity from repeat
 
 $$
 \begin{aligned}
-\hat{x}_k &= \frac{1}{k}\big(z_1 + z_2 + \cdots + z_k\big) && \text{(average of } k \text{ measurements)}\\
+\hat{x}_k &= \frac{1}{k}\big(z_1 + z_2 + \cdots + z_k\big) \qquad \text{(average)}\\
 &= \frac{1}{k}\big(z_1 + \cdots + z_{k-1}\big) + \frac{1}{k}z_k = \frac{k-1}{k}\,\hat{x}_{k-1} + \frac{1}{k}z_k\\
-&= \hat{x}_{k-1} + \frac{1}{k}\big(z_k - \hat{x}_{k-1}\big) && \text{(recursive form)}
+&= \hat{x}_{k-1} + \frac{1}{k}\big(z_k - \hat{x}_{k-1}\big) \qquad \text{(recursive)}
 \end{aligned}
 $$
 
@@ -67,7 +67,10 @@ We want the estimate to be close to the true value, so the error should be small
 Why this quantity is a covariance, and why its trace is the thing to minimize, follows from $e\_k$ being a vector. For a state with two components, $e\_k = [e\_1,\ e\_2]^\top$ and
 
 $$
-P_k = E\left[\begin{bmatrix} e_1 \\ e_2 \end{bmatrix}\begin{bmatrix} e_1 & e_2 \end{bmatrix}\right] = \begin{bmatrix} E[e_1^2] & E[e_1e_2] \\ E[e_2e_1] & E[e_2^2] \end{bmatrix}, \qquad \mathrm{tr}(P_k) = E[e_1^2] + E[e_2^2],
+\begin{gathered}
+P_k = E\left[\begin{bmatrix} e_1 \\ e_2 \end{bmatrix}\begin{bmatrix} e_1 & e_2 \end{bmatrix}\right] = \begin{bmatrix} E[e_1^2] & E[e_1e_2] \\ E[e_2e_1] & E[e_2^2] \end{bmatrix},\\
+\mathrm{tr}(P_k) = E[e_1^2] + E[e_2^2],
+\end{gathered}
 $$
 
 which is exactly the covariance matrix of the error. Its diagonal holds the squared error of each component, so the trace is the total squared error, and minimizing $\mathrm{tr}(P\_k)$ makes every component of the error small. **The covariance matrix is only a measuring tool; there is nothing special about it.**

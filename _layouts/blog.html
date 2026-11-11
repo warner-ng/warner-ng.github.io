@@ -148,6 +148,14 @@
          background-color: var(--panel-bg-soft);
          color: var(--text-main);
       }
+      @media (prefers-color-scheme: dark) {
+         .highlight .o, .highlight .ow,
+         .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
+         .highlight .kp, .highlight .kr, .highlight .kt,
+         .highlight .nt, .highlight .nn, .highlight .nc, .highlight .ne {
+            color: var(--text-strong);
+         }
+      }
       blockquote {
          border-left-color: var(--border-muted);
       }

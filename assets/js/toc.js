@@ -24,7 +24,7 @@ function buildTocStructure(headings) {
 
    headings.forEach(function(heading) {
       var level = parseInt(heading.tagName.charAt(1));
-      var item = { level: level, text: heading.textContent.trim(), id: heading.id, children: [] };
+      var item = { level: level, html: heading.innerHTML.trim(), id: heading.id, children: [] };
 
       while (stack.length > 0 && stack[stack.length - 1].level >= level) {
          stack.pop();
@@ -50,7 +50,7 @@ function createTocList(items) {
       var li = document.createElement('li');
       var link = document.createElement('a');
       link.href = '#' + item.id;
-      link.textContent = item.text;
+      link.innerHTML = item.html;
       li.appendChild(link);
       if (item.children.length > 0) {
          li.appendChild(createTocList(item.children));

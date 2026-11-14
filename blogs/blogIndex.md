@@ -3,6 +3,10 @@ layout: blog
 ---
 ## Blogs - RL • Generative Model • Control • Humanoid Animation • Philosophy
 
+### [15. Learning MPC Modeling Through Quadruped Loco-Manipulation](./15_mpc_modeling.html)
+Learning how to turn a quadruped with a robotic arm into a prediction model, an objective, and constraints for MPC.
+
+---
 ### [14. Kalman Filter — The Gain and the Covariance](./14_kalman_filter.html)
 Why a robot needs the Kalman filter, how the gain is used in three steps, and how the covariance turns those steps into a computation.
 

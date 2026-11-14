@@ -107,7 +107,9 @@ The first constraint is the friction pyramid: it limits the foot forces accordin
 
 This simulation shows the quadruped approaching a box, gripping its handle, lifting it, and walking with it. The approach and grasp are simulated in two stages with the robot and gripper states carried between them. During the grasp, the box is free to move and the gripper uses contact forces and friction to hold it.
 
-<video controls preload="metadata" width="100%">
-  <source src="{{ '/blogs/videos/quadruped-physical-grasp.mp4' | relative_url }}" type="video/mp4">
+<video controls playsinline preload="metadata" width="100%" poster="{{ '/blogs/videos/quadruped-physical-grasp-poster.jpg' | relative_url }}">
+  <source src="{{ '/blogs/videos/quadruped-physical-grasp-fast.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support embedded video.
 </video>
+
+[Download the simulation video]({{ '/blogs/videos/quadruped-physical-grasp-fast.mp4' | relative_url }})
